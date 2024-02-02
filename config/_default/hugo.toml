@@ -1,0 +1,10 @@
+
+baseURL = "https://akitect.io"
+defaultContentLanguage = "vi"
+title = "Akitect"
+
+# Enable robots.txt
+enableRobotsTXT = true
+
+# theme
+theme = "gohugo-courses"
