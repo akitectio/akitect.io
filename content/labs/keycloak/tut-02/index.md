@@ -23,7 +23,7 @@ Dưới đây là các bước chúng ta cần thực hiện khi triển khai ke
 
 ### Bước 1: Cài đặt Microk8s
 
-Them khảo ở bài viết: [Microk8s](/categories/microk8s)
+Them khảo ở bài viết: [Microk8s](//courses/microk8s)
 
 ### Bước 2: Tạo tạo file `keycloak-service.yaml`
 

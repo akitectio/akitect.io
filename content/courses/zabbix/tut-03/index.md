@@ -25,10 +25,10 @@ Bước 1: Cài Zabbix Agent 2
 
 - Cài đặt kho lưu trữ Zabbix
 
-```
-# wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-4%2Bubuntu22.04_all.deb
-# dpkg -i zabbix-release_6.2-4+ubuntu22.04_all.deb
-# apt update
+```shell
+wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-4%2Bubuntu22.04_all.deb
+dpkg -i zabbix-release_6.2-4+ubuntu22.04_all.deb
+apt update
 ```
 
 - Cài đặt Zabbix Agent2
@@ -40,8 +40,8 @@ Bước 1: Cài Zabbix Agent 2
 - Bắt đầu quy trình Zabbix Agent2
 
 ```shell
-# systemctl restart zabbix-agent2
-# systemctl enable zabbix-agent2
+systemctl restart zabbix-agent2
+systemctl enable zabbix-agent2
 ```
 
 Bước 2: Cấu hình Zabbix Agent 2 trỏ vào Zabbix Server

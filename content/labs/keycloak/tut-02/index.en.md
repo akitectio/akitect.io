@@ -25,7 +25,7 @@ Here are the steps to deploy Keycloak on Kubernetes:
 
 ### Step 1: Install Microk8s
 
-Refer to the article: [Microk8s](/categories/microk8s)
+Refer to the article: [Microk8s](//courses/microk8s)
 
 ### Step 2: Create the `keycloak-service.yaml` file
 
