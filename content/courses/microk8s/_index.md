@@ -1,31 +1,40 @@
 ---
 title: Microk8s
-description: Microk8s là một cách nhanh chóng để cài đặt một Kubernetes đơn giản trên máy tính cá nhân hoặc máy chủ.
+description: Microk8s là một cách nhanh chóng và dễ dàng để cài đặt một Kubernetes đơn giản trên máy tính cá nhân hoặc máy chủ. Trong khóa học này, chúng ta sẽ tìm hiểu về cách cài đặt và cấu hình Microk8s, cũng như cách triển khai ứng dụng trên Microk8s.
 weight: 0
 type: courses_detail
 free: true
 tags: 
-    - cloud-functions
-    - firebase
-vimeo: 320683784
+    - microk8s
+    - kubernetes
 deprecated: true
-featuredImage: /courses/spring-boot.avif
+featuredImage: /series-banner/microk8s-series.webp
 lastmod: 2019-08-24T10:23:30-09:00
+updated: 2021-08-24T10:23:30-09:00
+author: DUY TRAN
 ---
 
-This course takes a hands-on approach to Firebase Cloud Functions where we build seven different microservices, each demonstrating a fundamental concept of the platform. Here's a quick summary of the topics you will learn.
+Microk8s là một cách nhanh chóng và dễ dàng để cài đặt một Kubernetes đơn giản trên máy tính cá nhân hoặc máy chủ. Trong khóa học này, chúng ta sẽ tìm hiểu về cách cài đặt và cấu hình Microk8s, cũng như cách triển khai ứng dụng trên Microk8s.
 
-- Serverless Computing Basics
-- HTTP and ExpressJS
-- Event-driven Background Functions
-- Firestore Functions
-- Storage Buckets and the Functions Filesystem
-- Working with Google APIs
-- Callable Functions and Authentication
-- Working with 3rd party APIs like Twilio to send SMS Text messages
-- By the end of this course you will have the foundation necessary to build virtually any Back-End feature into your Firebase app.
+## Mục tiêu
 
-This Project is for Developers who... are building a mobile or web app with Firebase, want to learn how to build Back-End features in a serverless NodeJS Back-End and want direct access to the content creator (let's chat on Slack).  Experience Level Required - have at least some experience with JavaScript and programming fundamentals.  The course is fast-paced and content-rich, but most of the subject matter is suitable for developers with beginner JavaScript skills. It is expected that you're already familiar with Firebase because Cloud Functions are a way to extend the platform.
+- Hiểu được cách cài đặt và cấu hình Microk8s
+- Biết cách triển khai ứng dụng trên Microk8s
+- Biết cách quản lý và vận hành Microk8s
 
-Brand New to Firebase?
-If you've never used Firebase, start by working with the frontend SDKs before attempting Cloud Functions. The video below is a great way to get started:
+## Đối tượng
+
+- Những người quản trị hệ thống, mạng và dịch vụ
+- Những người quản trị cơ sở dữ liệu
+- Những người quản trị hệ thống mạng
+- Những người quản trị hệ thống ứng dụng
+- Những người quản trị hệ thống giám sát
+
+## Nội dung
+
+- Giới thiệu về Microk8s
+- Cài đặt và cấu hình Microk8s
+- Triển khai ứng dụng trên Microk8s
+- Quản lý và vận hành Microk8s
+- Thực hành và bài tập
+- Tài liệu tham khảo

@@ -3,15 +3,12 @@ title: Spring Boot
 description: Một framework mạnh mẽ mà bất kì Java Developer nào cũng phải biết!
 weight: 0
 type: courses_detail
-free: true
 tags: 
     - cloud-functions
     - firebase
-vimeo: 320683784
-deprecated: true
+draft: true
 featuredImage: /courses/spring-boot.avif
 lastmod: 2019-08-24T10:23:30-09:00
-author: Jeff Delaney
 ---
 
 This course takes a hands-on approach to Firebase Cloud Functions where we build seven different microservices, each demonstrating a fundamental concept of the platform. Here's a quick summary of the topics you will learn.
