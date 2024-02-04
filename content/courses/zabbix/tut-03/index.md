@@ -33,13 +33,13 @@ Bước 1: Cài Zabbix Agent 2
 
 - Cài đặt Zabbix Agent2
 
-```
+```shell
  apt install zabbix-agent2 zabbix-agent2-plugin-*
 ```
 
 - Bắt đầu quy trình Zabbix Agent2
 
-```perl
+```shell
 # systemctl restart zabbix-agent2
 # systemctl enable zabbix-agent2
 ```
@@ -50,13 +50,13 @@ Như ở bài cài đặt zabbix server ở địa chỉ 10.19.2.1
 
 Mình dùng lệnh để mở tiệp cấu hình zabbix
 
-```perl
+```shell
 nano /etc/zabbix/zabbix_agent2.conf
 ```
 
 trong tiệp tìm và đổi lại những chổ cấu hình
 
-```python
+```shell
 ListenIP=0.0.0.0
 Server=10.19.2.1
 Hostname=Zabbix PostgreSQL
@@ -64,7 +64,7 @@ Hostname=Zabbix PostgreSQL
 
 lưu lại và khởi động lại dịch vụ
 
-```perl
+```shell
  systemctl restart zabbix-agent2
 ```
 
@@ -78,7 +78,7 @@ Bước 3: Cấu hình template **PostgreSQL by Zabbix agent 2**
 
 1. Tạo người dùng PostgreSQL để theo dõi (password ở đây mình đặt là **Password@123**):
 
-```
+```shell
 CREATE USER zbx_monitor WITH PASSWORD 'Password@123' INHERIT;
 GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_dir(text) TO zbx_monitor;
 GRANT EXECUTE ON FUNCTION pg_catalog.pg_stat_file(text) TO zbx_monitor;
@@ -87,7 +87,7 @@ GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_waldir() TO zbx_monitor;
 
 2. Chỉnh sửa pg_hba.conf để cho phép kết nối từ Zabbix:
 
-```
+```shell
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
   host       all        zbx_monitor     localhost               md5
 ```

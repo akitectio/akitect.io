@@ -25,7 +25,7 @@ Bước 1: Cài Zabbix Agent 2
 
 - Cài đặt kho lưu trữ Zabbix
 
-```python
+```shell
 yum update -y
  rpm -Uvh https://repo.zabbix.com/zabbix/6.2/rhel/7/x86_64/zabbix-release-6.2-3.el7.noarch.rpm
 yum clean all
@@ -33,13 +33,13 @@ yum clean all
 
 - Cài đặt Zabbix Agent2
 
-```css
+```shell
 yum install zabbix-agent2 zabbix-agent2-plugin-* -y
 ```
 
 - Bắt đầu quy trình Zabbix Agent2
 
-```perl
+```shell
 systemctl restart zabbix-agent2
 systemctl enable zabbix-agent2
 ```
@@ -50,13 +50,13 @@ Như ở bài cài đặt zabbix server ở địa chỉ 10.19.2.1
 
 Mình dùng lệnh để mở tiệp cấu hình zabbix
 
-```perl
+```shell
 nano /etc/zabbix/zabbix_agent2.conf
 ```
 
 trong tiệp tìm và đổi lại những chổ cấu hình
 
-```python
+```shell
 ListenIP=0.0.0.0
 Server=10.19.2.1
 Hostname=Zabbix Mongodb
@@ -64,7 +64,7 @@ Hostname=Zabbix Mongodb
 
 lưu lại và khởi động lại dịch vụ
 
-```perl
+```shell
 systemctl restart zabbix-agent2
 ```
 
@@ -82,19 +82,19 @@ Khi tác nhân đã được triển khai và cấu hình, bạn cần đảm b�
 
 Truy cập vào mongodb ta dùng lệnh
 
-```
+```shell
 mongosh
 ```
 
 Chuyển sang cơ sở dữ liệu quản trị MongoDB:
 
-```
+```shell
 use admin
 ```
 
 Tạo người dùng với quyền ‘userAdMinanyDatabase‘ :
 
-```
+```shell
 db.createUser(
 ... {
 ..... user: "zabbix_mon",

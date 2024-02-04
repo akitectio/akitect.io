@@ -33,7 +33,7 @@ weight: 1
 
 Bước 1: Cài đặt zabbix 6.2
 
-```
+```shell
 sudo su
 apt update && apt -y upgrade
 wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-1+ubuntu22.04_all.deb
@@ -44,7 +44,7 @@ root@zabbix-serverr:~# apt install -y zabbix-server-mysql zabbix-frontend-php za
 
 Bước 2: Cài đặt và cấu hình mysql
 
-```
+```shell
 sudo su
 apt install -y mysql-server
 systemctl start mysql
@@ -54,14 +54,14 @@ systemctl status mysql
 
 Bước 3: Tạo database và user zabbix
 
-```
+```shell
 sudo su
  mysql -uroot -p
 ```
 
 Khi đăng nhập thành công thì ta chạy lệnh bên dưới để tạo database và user
 
-```
+```shell
 create database zabbix_db character set utf8 collate utf8_bin;
 create user zabbix_user@localhost identified by 'zabbix@123';
 GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'zabbix_user'@'localhost' WITH GRANT OPTION;
@@ -73,7 +73,7 @@ FLUSH PRIVILEGES;
 
 Bước 4: Import database mặt định của zabbix
 
-```
+```shell
 sudo su
 zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uroot -p zabbix_db
 ```
@@ -89,7 +89,7 @@ nano /etc/zabbix/zabbix_server.conf
 
 Thềm vào dòng cuối cùng và lưu lại
 
-```
+```shell
 DBName=zabbix_db
 DBUser=zabbix_user
 DBPassword=zabbix@123
@@ -99,21 +99,21 @@ Bước 6: Cấu hình nginx trỏ vào IP của máy chủ ở đây ip máy ch
 
 Dùng lệnh để mở tiệp cấu hình
 
-```
+```shell
 sudo su
 nano /etc/zabbix/nginx.conf
 ```
 
 Tìm dòng và thay đổi cấu hình
 
-```
+```shell
 listen          80;
 server_name	10.19.2.1
 ```
 
 Bước 7: Khởi đọng lại dịch vụ
 
-```
+```shell
 sudo su
 systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm

@@ -25,7 +25,7 @@ Step 1: Install Zabbix Agent 2
 
 - Install Zabbix repository
 
-```python
+```shell
 yum update -y
  rpm -Uvh https://repo.zabbix.com/zabbix/6.2/rhel/7/x86_64/zabbix-release-6.2-3.el7.noarch.rpm
 yum clean all
@@ -33,13 +33,13 @@ yum clean all
 
 - Install Zabbix Agent2
 
-```css
+```shell
 yum install zabbix-agent2 zabbix-agent2-plugin-* -y
 ```
 
 - Start Zabbix Agent2 process
 
-```perl
+```shell
 systemctl restart zabbix-agent2
 systemctl enable zabbix-agent2
 ```
@@ -50,13 +50,13 @@ As in the Zabbix server installation at address 10.19.2.1
 
 Use the following command to open the Zabbix configuration file:
 
-```perl
+```shell
 nano /etc/zabbix/zabbix_agent2.conf
 ```
 
 Find and change the configuration:
 
-```python
+```shell
 ListenIP=0.0.0.0
 Server=10.19.2.1
 Hostname=Zabbix Mongodb
@@ -64,7 +64,7 @@ Hostname=Zabbix Mongodb
 
 Save and restart the service:
 
-```perl
+```shell
 systemctl restart zabbix-agent2
 ```
 
@@ -82,19 +82,19 @@ When the agent has been deployed and configured, you need to ensure that you hav
 
 Access mongodb using the command:
 
-```
+```shell
 mongosh
 ```
 
 Switch to the MongoDB admin database:
 
-```
+```shell
 use admin
 ```
 
 Create a user with the ‘userAdMinanyDatabase‘ role:
 
-```
+```shell
 db.createUser(
 ... {
 ..... user: "zabbix_mon",

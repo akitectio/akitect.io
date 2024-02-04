@@ -25,7 +25,7 @@ To install Zabbix server on Ubuntu 22.04, the following steps are required:
 
 Step 1: Install Zabbix 6.2
 
-```
+```shell
 sudo su
 apt update && apt -y upgrade
 wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-1+ubuntu22.04_all.deb
@@ -36,7 +36,7 @@ root@zabbix-serverr:~# apt install -y zabbix-server-mysql zabbix-frontend-php za
 
 Step 2: Install and configure MySQL
 
-```
+```shell
 sudo su
 apt install -y mysql-server
 systemctl start mysql
@@ -46,14 +46,14 @@ systemctl status mysql
 
 Step 3: Create Zabbix database and user
 
-```
+```shell
 sudo su
  mysql -uroot -p
 ```
 
 After logging in, run the following commands to create the database and user:
 
-```
+```shell
 create database zabbix_db character set utf8 collate utf8_bin;
 create user zabbix_user@localhost identified by 'zabbix@123';
 GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'zabbix_user'@'localhost' WITH GRANT OPTION;
@@ -65,7 +65,7 @@ FLUSH PRIVILEGES;
 
 Step 4: Import Zabbix default database
 
-```
+```shell
 sudo su
 zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uroot -p zabbix_db
 ```
@@ -74,14 +74,14 @@ Step 5: Find and change Zabbix configuration
 
 Use the following command to open the Zabbix configuration file:
 
-```
+```shell
 sudo su
 nano /etc/zabbix/zabbix_server.conf
 ```
 
 Add the following lines to the end of the file and save:
 
-```
+```shell
 DBName=zabbix_db
 DBUser=zabbix_user
 DBPassword=zabbix@123
@@ -91,21 +91,21 @@ Step 6: Configure Nginx to point to the IP address of the server (in this case, 
 
 Use the following command to open the Nginx configuration file:
 
-```
+```shell
 sudo su
 nano /etc/zabbix/nginx.conf
 ```
 
 Find the line and change the configuration:
 
-```
+```shell
 listen          80;
 server_name	10.19.2.1
 ```
 
 Step 7: Restart the services
 
-```
+```shell
 sudo su
 systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm

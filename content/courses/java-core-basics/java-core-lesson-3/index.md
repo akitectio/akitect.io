@@ -427,7 +427,7 @@ if (age < 18) {
 
 Ví dụ về cấu trúc điều khiển vòng lặp:
 
-```
+```java
 int i;
 
 for (i = 0; i < 10; i++) {

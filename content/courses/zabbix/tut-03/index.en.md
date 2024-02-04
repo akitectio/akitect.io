@@ -25,7 +25,7 @@ Step 1: Install Zabbix Agent 2
 
 - Install Zabbix repository
 
-```
+```shell
 # wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-4%2Bubuntu22.04_all.deb
 # dpkg -i zabbix-release_6.2-4+ubuntu22.04_all.deb
 # apt update
@@ -33,13 +33,13 @@ Step 1: Install Zabbix Agent 2
 
 - Install Zabbix Agent2
 
-```
+```shell
  apt install zabbix-agent2 zabbix-agent2-plugin-*
 ```
 
 - Start Zabbix Agent2 process
 
-```perl
+```shell
 # systemctl restart zabbix-agent2
 # systemctl enable zabbix-agent2
 ```
@@ -50,13 +50,13 @@ As in the Zabbix server installation at address 10.19.2.1
 
 Use the following command to open the Zabbix configuration file:
 
-```perl
+```shell
 nano /etc/zabbix/zabbix_agent2.conf
 ```
 
 Find and change the configuration:
 
-```python
+```shell
 ListenIP=0.0.0.0
 Server=10.19.2.1
 Hostname=Zabbix PostgreSQL
@@ -64,7 +64,7 @@ Hostname=Zabbix PostgreSQL
 
 Save and restart the service:
 
-```perl
+```shell
  systemctl restart zabbix-agent2
 ```
 
@@ -78,7 +78,7 @@ Step 3: Configure the **PostgreSQL by Zabbix agent 2** template
 
 1. Create a PostgreSQL user for monitoring (password here is set to **Password@123**):
 
-```
+```shell
 CREATE USER zbx_monitor WITH PASSWORD 'Password@123' INHERIT;
 GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_dir(text) TO zbx_monitor;
 GRANT EXECUTE ON FUNCTION pg_catalog.pg_stat_file(text) TO zbx_monitor;
@@ -87,7 +87,7 @@ GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_waldir() TO zbx_monitor;
 
 2. Edit pg_hba.conf to allow connections from Zabbix:
 
-```
+```shell
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
   host       all        zbx_monitor     localhost               md5
 ```
