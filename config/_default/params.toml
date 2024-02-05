@@ -1,1 +1,8 @@
+[analytics]
+enable = true
+
+[analytics.google]
+id = "G-HK7K88DBRS"
+anonymizeIP = true
+
 googleNewsUrl = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
