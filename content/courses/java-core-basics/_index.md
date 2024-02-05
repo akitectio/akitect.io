@@ -6,7 +6,8 @@ type: courses_detail
 free: true
 tags: 
     - java
-    - Java Core
+    - java-core
+    - java-core-basics
 featuredImage: /series-banner/java-core-basics.webp
 lastmod: 2019-08-24T10:23:30-09:00
 updated: 2021-08-24T10:23:30-09:00

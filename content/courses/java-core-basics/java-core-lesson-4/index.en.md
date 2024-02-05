@@ -12,8 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
   - 1-dimensional
   - 2-dimensional
 title: Lesson 4 - String Processing, 1-Dimensional Array, 2-Dimensional Array

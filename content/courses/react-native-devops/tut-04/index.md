@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Bài 4 - Cài đặt Fastlane cho IOS đẩy IPA lên Firebase Distribution và Testflight
 url: /bai-4-cai-dat-fastlane-cho-ios-day-ipa-len-firebase-distribution-va-testflight
 weight: 4

@@ -12,12 +12,11 @@ images:
   - /postgresql-dba-01-gioi-thieu-ve-postgresql-database/images/index.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - Database
-  - PostgreSQL
-  - Ubuntu
-  - PostgreSQL 16
-  - PostgreSQL Database Administrator
-title: PostgreSQL DBA 01 - Giới thiệu về PostgreSQL Database
+  - database
+  - postgresql
+  - ubuntu
+  - database-administrator
+title: Lesson 1 - Giới thiệu về PostgreSQL Database
 url: /postgresql-dba-01-gioi-thieu-ve-postgresql-database
 weight: 1
 ---

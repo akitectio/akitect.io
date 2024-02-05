@@ -12,8 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
 title: Lesson 1 - Giới thiệu tổng quan về Java Core
 url: /java-core-lesson-1-gioi-thieu-tong-quan-ve-java-core
 weight: 1

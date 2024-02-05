@@ -19,7 +19,7 @@ tags:
   - ORDBMS
   - Object Model PostgreSQL
   - PostgreSQL DBA
-title: PostgreSQL DBA 03 - Object Model PostgreSQL
+title: Lesson 3 - Object Model PostgreSQL
 url: /postgresql-dba-03-object-model-postgresql
 weight: 3
 ---

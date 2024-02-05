@@ -12,8 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
 title: Lesson 3 - Naming rules, data types and casts, operators, control structures, and branching
 url: /java-core-lesson-3-naming-rules-data-types-and-casts-operators-control-structures-and-branching
 weight: 3

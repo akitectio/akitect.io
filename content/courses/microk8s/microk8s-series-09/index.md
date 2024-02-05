@@ -17,13 +17,9 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
-  - microservices pattern
-  - kong api gateway
   - grafana
-  - Zabbix
-  - Prometheus
+  - zabbix-agent
+  - prometheus
   - alertmanager
 title: Bài 9 - Sử dụng bộ tích hợp Monitoring System (Elasticsearch, Fluentd and Kibana, Grafana, Zipkin) của Microk8s
 url: /bai-9-su-dung-bo-tich-hop-monitoring-system-elasticsearch-fluentd-and-kibana-grafana-zipkin-cua-microk8s

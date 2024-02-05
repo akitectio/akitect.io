@@ -12,9 +12,9 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
-  - java OOP
+  - java
+  - java-core
+  - java-oop
 title: Lesson 6 - Lập trình hướng đối tượng (OOP - Object Oriented Programming)
 url: /java-core-lesson-6-lap-trinh-huong-doi-tuong-oop-object-oriented-programming
 weight: 6

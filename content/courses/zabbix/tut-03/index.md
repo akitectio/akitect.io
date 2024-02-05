@@ -14,7 +14,7 @@ series:
   - zabbix-tutorial
 tags:
   - zabbix-agent
-  - Zabbix Server
+  - zabbix-server
   - zabbix-agent-6.2
 title: Lesstion 2 - Zabbix Agent 2 trên Ubuntu 22.04 theo dõi máy chủ PostgreSQL
 url: /zabbix-agent-2-tren-ubuntu-2204-theo-doi-may-chu-postgresql

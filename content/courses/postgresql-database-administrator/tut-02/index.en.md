@@ -12,13 +12,12 @@ images:
   - /postgresql-dba-02-postgresql-vs-other-databases/images/index.en.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - Database
-  - PostgreSQL
-  - PostgreSQL vs. Other Databases
-  - PostgreSQL vs. SQLite
-  - PostgreSQL vs. MySQL/MariaDB
-  - PostgreSQL vs. Oracle
-title: PostgreSQL DBA 02 - PostgreSQL vs. Other Databases
+  - database
+  - postgreSQL
+  - sqlite
+  - mysql
+  - oracle
+title: Lesson 2 - PostgreSQL vs. Other Databases
 url: /postgresql-dba-02-postgresql-vs-other-databases
 weight: 2
 ---

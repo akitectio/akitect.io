@@ -17,8 +17,6 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
 title: Bài 3 - Cài đặt và chạy môi trường ảo hoá Oracle VM VirtualBox 7 bằng Vagrant
 url: bai-3-cai-dat-va-chay-moi-truong-ao-hoa-oracle-vm-virtualbox-7-bang-vagrant
 weight: 3

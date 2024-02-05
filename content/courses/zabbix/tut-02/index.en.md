@@ -14,7 +14,7 @@ series:
   - zabbix-tutorial
 tags:
   - zabbix-agent
-  - Zabbix Server
+  - zabbix-server
   - zabbix-agent-6.2
 title: Lesstion 2 - Zabbix Agent 2 on CentOS 7 server used to monitor Mongodb Replica Set
 url: /zabbix-agent-2-on-centos-7-server-used-to-monitor-mongodb-replica-set

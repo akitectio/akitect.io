@@ -19,7 +19,7 @@ tags:
   - virtualbox
   - virtualbox 7
   - virtualbox 7 on ubuntu 22.04
-  - Jenkins Agent
+  - jenkins-agent
   - Pipeline
 title: Lesson 7 - Configuring Jenkins on Ubuntu 22.04 and writing Pipeline Build Service
 url: /lesson-7-configuring-jenkins-on-ubuntu-2204-and-writing-pipeline-build-service

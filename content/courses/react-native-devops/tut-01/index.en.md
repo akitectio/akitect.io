@@ -15,10 +15,7 @@ series:
 tags:
   - react-native-devops
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Lesson 1 - React Native DevOps basic concepts and settings
 url: /lesson-1-react-native-devops-basic-concepts-and-settings
 weight: 1

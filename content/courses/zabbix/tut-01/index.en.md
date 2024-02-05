@@ -14,7 +14,7 @@ series:
   - zabbix-tutorial
 tags:
   - zabbix-agent
-  - Zabbix Server
+  - zabbix-server
   - zabbix-agent-6.2
 title: Lesstion 1 - Monitoring the server and notifying when the server has problems has never been difficult with Zabbix
 url: /monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix

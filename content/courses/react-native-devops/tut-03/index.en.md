@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Lesson 3 - Register Firebase and configure Fastlane to push APK to Firebase Distribution (Test version)
 url: /lesson-3-register-firebase-and-configure-fastlane-to-push-apk-to-firebase-distribution-test-version
 weight: 3

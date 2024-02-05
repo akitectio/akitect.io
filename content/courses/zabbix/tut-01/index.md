@@ -14,7 +14,7 @@ series:
   - zabbix-tutorial
 tags:
   - zabbix-agent
-  - Zabbix Server
+  - zabbix-server
   - zabbix-agent-6.2
 title: Lesstion 1 - Giám sát máy chủ và thông báo khi máy chủ gặp sự cố chưa bao giờ khó với Zabbix
 url: /giam-sat-may-chu-va-thong-bao-khi-may-chu-gap-su-co-chua-bao-gio-kho-voi-zabbix

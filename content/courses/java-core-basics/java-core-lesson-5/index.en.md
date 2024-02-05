@@ -12,9 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
-  - "Java Collections framework "
+  - java
+  - java-core
 title: Lesson 5 - Java Collections Framework
 url: /java-core-lesson-5-java-collections-framework-en
 weight: 5

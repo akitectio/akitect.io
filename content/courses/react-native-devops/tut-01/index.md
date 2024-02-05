@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Bài 1 - React Native DevOps các khái niệm và các cài đặt căn bản
 url: /bai-1-react-native-devops-cac-khai-niem-va-cac-cai-dat-can-ban
 weight: 1

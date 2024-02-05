@@ -12,13 +12,12 @@ images:
   - /postgresql-dba-02-postgresql-so-voi-co-so-du-lieu-khac/images/index.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - Database
-  - PostgreSQL
-  - PostgreSQL vs. Other Databases
-  - PostgreSQL vs. SQLite
-  - PostgreSQL vs. MySQL/MariaDB
-  - PostgreSQL vs. Oracle
-title: PostgreSQL DBA 02 - PostgreSQL so với cơ sở dữ liệu khác
+  - database
+  - postgreSQL
+  - sqlite
+  - mysql
+  - oracle
+title: Lesson 2 - PostgreSQL so với cơ sở dữ liệu khác
 url: /postgresql-dba-02-postgresql-so-voi-co-so-du-lieu-khac
 weight: 2
 ---

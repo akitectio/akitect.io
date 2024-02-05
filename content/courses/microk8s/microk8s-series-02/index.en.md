@@ -17,8 +17,6 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
 title: Lesson 2 - Create an Ubuntu 22.04 virtual machine using Oracle VM VirtualBox 7
 url: /lesson-2-create-an-ubuntu-2204-virtual-machine-using-oracle-vm-virtualbox-7
 weight: 2

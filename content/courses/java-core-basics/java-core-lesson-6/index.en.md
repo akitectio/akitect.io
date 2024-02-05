@@ -12,9 +12,9 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
-  - java OOP
+  - java
+  - java-core
+  - java-oop
 title: Lesson 6 - Object Oriented Programming (OOP)
 url: /java-core-lesson-6-object-oriented-programming-oop
 weight: 6

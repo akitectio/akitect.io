@@ -12,8 +12,13 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
+  - jdk-11
+  - apple-m1-silicon
+  - mac-m1
+  - eclipse
+  - java-home
 title: Lesson 2 - Install JDK 11 development environment and tools and set up Java Home on Mac M1
 url: /java-core-lesson-2-install-jdk-11-development-environment-and-tools-and-set-up-java-home-on-mac-m1
 weight: 2

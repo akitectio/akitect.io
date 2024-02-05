@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Lesson 2 - Building a DEVELOPMENT - STAGING - PRODUCTION environment
 url: /lesson-2-building-a-development-staging-production-environment
 weight: 2

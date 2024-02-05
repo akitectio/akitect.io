@@ -17,8 +17,6 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
 title: Bài 5 - Cài đặt và sử dụng ingress trong bộ tích hợp của Microk8s
 url: /bai-5-cai-dat-va-su-dung-ingress-trong-bo-tich-hop-cua-microk8s
 weight: 5

@@ -12,12 +12,11 @@ images:
   - /postgresql-dba-01-introduction-to-postgresql-database/images/index.en.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - Database
-  - PostgreSQL
-  - Ubuntu
-  - PostgreSQL 16
-  - PostgreSQL Database Administrator
-title: PostgreSQL DBA 01 - Introduction to PostgreSQL Database
+  - database
+  - postgresql
+  - ubuntu
+  - database-administrator
+title: Lesson 1 - Introduction to PostgreSQL Database
 url: /postgresql-dba-01-introduction-to-postgresql-database
 weight: 1
 ---

@@ -12,13 +12,13 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
-  - JDK 11
-  - Apple M1 Silicon
-  - Mac M1
+  - java
+  - java-core
+  - jdk-11
+  - apple-m1-silicon
+  - mac-m1
   - eclipse
-  - Java Home
+  - java-home
 title: Lesson 2 - Cài đặt môi trường và công cụ phát triển JDK 11 và thiết lập Java Home trên Mac M1
 url: /java-core-lesson-2-cai-dat-moi-truong-va-cong-cu-phat-trien-jdk-11-va-thiet-lap-java-home-tren-mac-m1
 weight: 2

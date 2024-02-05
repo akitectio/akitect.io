@@ -17,10 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
-  - microservices pattern
-  - kong api gateway
+  - kong-api-gateway
 title: Lesson 8 - Using Kong Gateway to deploy API Gateway for Microservices system on Microk8s
 url: /lesson-8-using-kong-gateway-to-deploy-api-gateway-for-microservices-system-on-microk8s
 weight: 8

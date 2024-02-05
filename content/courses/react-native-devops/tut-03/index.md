@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Bài 3 - Đăng ký Firebase và cấu hình Fastlane đẩy APK lên Firebase Distribution (Phiên bản thử nghiệm)
 url: /bai-3-dang-ky-firebase-va-cau-hinh-fastlane-day-apk-len-firebase-distribution-phien-ban-thu-nghiem
 weight: 3

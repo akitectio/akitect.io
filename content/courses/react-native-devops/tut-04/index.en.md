@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Lesson 4 - Install Fastlane for IOS to push IPA to Firebase Distribution and Testflight
 url: /lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight
 weight: 4

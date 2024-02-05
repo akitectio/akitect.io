@@ -14,10 +14,7 @@ series:
   - rn-devops
 tags:
   - react-native
-  - Jenkins Agent
-  - Build React Native app
-  - build reactjs
-  - build react native
+  - jenkins-agent
 title: Bài 2 - Xây dựng môi trường DEVELOPMENT - STAGING - PRODUCTION
 url: /bai-2-xay-dung-moi-truong-development-staging-production
 weight: 2

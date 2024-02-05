@@ -16,7 +16,7 @@ tags:
   - "Extend LVM "
   - ubuntu 22.04
   - "Linux command "
-  - build react native
+  - react-native
 title: Extend LVM Disk trên Linux Ubuntu 22.04
 url: /extend-lvm-disk-tren-ubuntu-22-04
 weight: 1

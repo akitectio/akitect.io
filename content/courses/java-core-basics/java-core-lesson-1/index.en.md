@@ -12,8 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
 title: Lesson 1 - Overview of Java Core
 url: /java-core-lesson-1-overview-of-java-core
 weight: 1

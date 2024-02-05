@@ -12,8 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - java-core-basics
 tags:
-  - Java
-  - Java core
+  - java
+  - java-core
 title: Lesson 3 - Quy tắc đặt tên, kiểu dữ liệu và ép kiểu, toán tử, cấu trúc điều khiển và rẽ nhánh
 url: /java-core-lesson-3-quy-tac-dat-ten-kieu-du-lieu-va-ep-kieu-toan-tu-cau-truc-dieu-khien-va-re-nhanh
 weight: 3
