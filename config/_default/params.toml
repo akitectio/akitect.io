@@ -1,11 +1,13 @@
+[google_new]
+hide = false
+url = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
+
 [analytics]
 enable = true
 
 [analytics.google]
 id = "G-HK7K88DBRS"
 anonymizeIP = true
-
-googleNewsUrl = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
 
 
 [[social]]
@@ -28,3 +30,9 @@ icon = "fa fa-twitter"
 avatar = "/avatar.png"
 title = "Hello Everyone!"
 description = " I'm Duy, a lover of technology, programming,solution architect and everything related to IT."
+
+[courses]
+seo_image = "/courses.webp"
+
+[labs]
+seo_image = "/labs.webp"
