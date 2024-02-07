@@ -1,10 +1,15 @@
+[[main]]
+name = "Home"
+pageRef = "/"
+weight = 1
+
 
 [[main]]
 name = "Labs"
 pageRef = "/labs"
-weight = 1
+weight = 2
 
 [[main]]
 name = "Courses"
 pageRef = "/courses"
-weight = 2
+weight = 3

@@ -6,3 +6,25 @@ id = "G-HK7K88DBRS"
 anonymizeIP = true
 
 googleNewsUrl = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
+
+
+[[social]]
+href = "https://www.facebook.com"
+icon = "fa fa-facebook"
+
+[[social]]
+href = "https://www.instagram.com"
+icon = "fa fa-instagram"
+
+[[social]]
+href = "https://www.snapchat.com"
+icon = "fa fa-snapchat"
+
+[[social]]
+href = "https://www.twitter.com"
+icon = "fa fa-twitter"
+
+[home]
+avatar = "/avatar.png"
+title = "Hello Everyone!"
+description = " I'm Duy, a lover of technology, programming,solution architect and everything related to IT."
