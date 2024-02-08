@@ -1,3 +1,6 @@
+[google_adsense]
+url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
+
 [google_new]
 hide = false
 url = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
@@ -14,20 +17,28 @@ anonymizeIP = true
 
 
 [[social]]
-href = "https://www.facebook.com"
+href = "https://www.facebook.com/akitect.io"
 icon = "fa fa-facebook"
 
 [[social]]
-href = "https://www.instagram.com"
+href = "https://www.instagram.com/akitectio"
 icon = "fa fa-instagram"
 
 [[social]]
-href = "https://www.snapchat.com"
-icon = "fa fa-snapchat"
+href = "https://www.linkedin.com/in/akitect-io"
+icon = "fa fa-linkedin"
 
 [[social]]
-href = "https://www.twitter.com"
-icon = "fa fa-twitter"
+href = "https://youtube.com/akitect"
+icon = "fa fa-youtube"
+
+[[social]]
+href = "https://github.com/akitectio"
+icon = "fa fa-github"
+
+[[social]]
+href = "https://t.me/+i45gRt8FGyRkOGY1"
+icon = "fa fa-telegram"
 
 [home]
 avatar = "/avatar.png"
@@ -42,7 +53,7 @@ seo_image = "/labs.webp"
 
 [seo]
 default_author = "DUY TRAN, akitect.io@gmail.com"
-default_keywords = "akitect, akitect.io, kubernetes, docker, devops, cloud, cloud-native, microservices, architecture, design, software, development, programming, coding, programming languages, golang, python, javascript, typescript, react, vue, angular, nodejs, express, nestjs, spring, springboot, java, kotlin, rust, c, c++, c#, dotnet, dotnetcore, dotnet5, dotnet6, aspnet, aspnetcore, aspnet5, aspnet6, web, webdev, webdevelopment, webdesign, webdesigner, webdeveloper, frontend, backend, fullstack, fullstackdeveloper, fullstackdevelopment, fullstackdesign, fullstackdesigner, fullstackdev, fullstackdevs"
+default_keywords = "akitect, akitect.io, kubernetes, docker, devops, cloud, cloud-native, microservices, architecture, design, software, development, programming, coding"
 default_description = "Akitect is a blog about software development, programming, coding, software architecture, software design, cloud-native, microservices, devops, kubernetes, docker, cloud, and more."
 default_image = "/images/akitect.png"
 fb_app_id = "1234567890"
