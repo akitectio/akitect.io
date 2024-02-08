@@ -2,10 +2,6 @@
 baseURL = "https://akitect.io"
 defaultContentLanguage = "vi"
 title = "Akitect"
-# Enable syntax highlighting
-pygmentsStyle = "monokai"
-pygmentsCodeFences = true
-pygmentsUseClasses = true
 # Enable robots.txt
 enableRobotsTXT = true
 
