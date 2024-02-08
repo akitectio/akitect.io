@@ -18,7 +18,6 @@ title: Lesson 1 - Giới thiệu tổng quan về Java Core
 url: /java-core-lesson-1-gioi-thieu-tong-quan-ve-java-core
 weight: 1
 ---
-
 Java là một ngôn ngữ lập trình cấp cao, đa năng, hướng đối tượng và bảo mật được phát triển bởi James Gosling tại Sun Microsystems, Inc. vào năm 1991. Nó được chính thức gọi là Oak. Năm 1995, Sun Microsystem đổi tên thành Java. Năm 2009, Sun Microsystem tiếp quản bởi Oracle Corporation.
 
 # Các tính năng của Java
