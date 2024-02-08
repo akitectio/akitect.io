@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
       - name: Pull from gohugo-courses repository
         run: |
-          git clone git@github.com:akitectio/gohugo-courses.git themes/gohugo-courses
+          git clone https://github.com/akitectio/gohugo-courses.git themes/gohugo-courses
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
