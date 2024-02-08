@@ -1,3 +1,5 @@
 [submodule "themes/gohugo-courses"]
 	path = themes/gohugo-courses
 	url = git@github.com:akitectio/gohugo-courses.git
+	branch = main
+
