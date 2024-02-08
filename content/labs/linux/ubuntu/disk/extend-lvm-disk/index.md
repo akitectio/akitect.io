@@ -11,12 +11,10 @@ images:
   - /series/ubuntu-lvm.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - extend disk
-  - lvm ubuntu
-  - "Extend LVM "
-  - ubuntu 22.04
-  - "Linux command "
-  - react-native
+  - extend-disk
+  - lvm-ubuntu
+  - extend-lvm
+  - linux-command
 title: Extend LVM Disk trên Linux Ubuntu 22.04
 url: /extend-lvm-disk-tren-ubuntu-22-04
 weight: 1

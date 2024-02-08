@@ -11,11 +11,11 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 tags:
   [
     "Ubuntu",
-    "Phân vùng ổ cứng",
-    "Logical Volume",
-    "File System",
-    "Volume Group",
-    "Physical Volume",
+    "hard-disk-partitioning",
+    "logical-volume",
+    "file-system",
+    "volume-group",
+    "physical-volume",
   ]
 title: Tạo thêm một phân vùng mới trong Ubuntu 22.04
 url: /tao-them-mot-phan-vung-moi-trong-ubuntu-22-04

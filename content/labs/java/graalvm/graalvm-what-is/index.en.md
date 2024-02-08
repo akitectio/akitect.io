@@ -9,17 +9,9 @@ images:
   - /series/graalvm/graalvm-what-is.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - GraalVM
-  - JavaVirtualMachine
-  - PolyglotProgramming
-  - HighPerformanceComputing
-  - CloudApplications
-  - Microservices
-  - Oracle
-  - CrossLanguageInterop
-  - AOTCompilation
-  - JITCompilation
-  - TechInnovation
+  - graal-vm
+  - java-virtual-machine
+  - jvm
 title: What is GraalVM?
 url: /what-is-graalvm/
 weight: 1

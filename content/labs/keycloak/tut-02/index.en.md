@@ -12,11 +12,8 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 lightgallery: true
 tags:
   - keycloak
-  - docker
-  - docker compose
-  - keycloak 22.0.4
-  - microk8s
   - kubernetes
+  - microk8s
 title: Deploy Keycloak version 22.0.4 on Microk8s
 url: /keycloak-deploy-version-2204-on-microk8s
 ---

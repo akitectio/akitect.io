@@ -12,7 +12,7 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 tags:
   - keycloak
   - docker
-  - docker compose
+  - docker-compose
 title: Triển khai Keycloak phiên bản 22.0.4 với Docker Compose
 url: /trien-khai-keycloak-phien-ban-2204-voi-docker-compose
 ---

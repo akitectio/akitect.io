@@ -10,16 +10,8 @@ images:
   - /series/network/so-luoc-ve-tcp-ip.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - TCP/IP
-  - Giao thức mạng
-  - Internet
-  - Truyền dữ liệu
-  - Protocol Suite
-  - TCP
-  - IP
-  - Networking
-  - Data Transmission
-  - Technology
+  - tcp-ip
+  - network-protocol
 title: Sơ lược về TCP/IP
 url: /so-luoc-ve-tcp-ip
 weight: 1

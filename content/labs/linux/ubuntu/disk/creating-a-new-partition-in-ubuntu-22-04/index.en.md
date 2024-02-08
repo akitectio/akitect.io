@@ -11,11 +11,11 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 tags:
   [
     "Ubuntu",
-    "Hard Disk Partitioning",
-    "Logical Volume",
-    "File System",
-    "Volume Group",
-    "Physical Volume",
+    "hard-disk-partitioning",
+    "logical-volume",
+    "file-system",
+    "volume-group",
+    "physical-volume",
   ]
 title: Creating a new partition in Ubuntu 22.04
 url: /creating-a-new-partition-in-ubuntu-22-04

@@ -10,13 +10,14 @@ images:
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
   - maas-101
-tags:
-  - MAAS
-  - Ubuntu 22.04 LTS
-  - Server Management
-  - Cloud Infrastructure
-  - Data Center Automation
-  - Bare Metal Provisioning
+tags: [
+ 'maas',
+ 'ubuntu-22.04-lts',
+ 'server-management',
+ 'cloud-infrastructure',
+ 'data-center-automation',
+ 'bare-metal-provisioning'
+ ]
 title: Installation and Configuration of MAAS (Metal as a Service) on Ubuntu 22.04 LTS
 url: /installation-and-configuration-of-maas-metal-as-a-service-on-ubuntu-22-04-lts
 weight: 2

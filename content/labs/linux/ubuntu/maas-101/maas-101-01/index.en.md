@@ -10,19 +10,20 @@ images:
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
   - maas-101
-tags:
-  - MAAS
-  - Ubuntu 22.04
-  - Cloud Computing
-  - Bare Metal Provisioning
-  - Infrastructure Management
-  - Server Automation
-  - Data Center Management
-  - Network Management
-  - Virtualization
-  - Virtual Machine
-  - Open Source Software
-  - Linux Administration
+tags: [
+ 'maas',
+ 'ubuntu-22.04',
+ 'cloud-computing',
+ 'bare-metal-provisioning',
+ 'infrastructure-management',
+ 'server-automation',
+ 'data-center-management',
+ 'network-management',
+ 'virtualization',
+ 'virtual-machine',
+ 'open-source-software',
+ 'linux-administration'
+ ]
 title: Introduction to MAAS (Metal as a Service)
 url: /introduction-to-maas-metal-as-a-service
 weight: 1

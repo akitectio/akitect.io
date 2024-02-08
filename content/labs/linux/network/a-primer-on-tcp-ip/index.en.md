@@ -10,16 +10,8 @@ images:
   - /series/network/so-luoc-ve-tcp-ip.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - TCP/IP
-  - Network Protocol
-  - Internet
-  - Data Transmission
-  - Protocol Suite
-  - TCP
-  - IP
-  - Networking
-  - Data Transmission
-  - Technology
+  - tcp-ip
+  - network-protocol
 title: An Overview of TCP/IP
 url: /overview-of-tcp-ip
 weight: 1

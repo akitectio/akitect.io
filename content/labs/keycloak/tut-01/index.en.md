@@ -13,7 +13,7 @@ lightgallery: false
 tags:
   - keycloak
   - docker
-  - docker compose
+  - docker-compose
 title: Deploy Keycloak version 22.0.4 with docker compose
 url: /deploy-keycloak-version-22-0-4-with-docker-compose
 ---

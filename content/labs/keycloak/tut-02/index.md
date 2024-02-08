@@ -13,7 +13,6 @@ lightgallery: true
 tags:
   - keycloak
   - kubernetes
-  - Keycloak 22.0.4
   - microk8s
 title: Triển khai Keycloak phiên bản 22.0.4 trên Microk8s
 url: /keycloak-trien-khai-phien-ban-2204-tren-microk8s
