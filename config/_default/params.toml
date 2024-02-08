@@ -29,7 +29,7 @@ href = "https://www.linkedin.com/in/akitect-io"
 icon = "fa fa-linkedin"
 
 [[social]]
-href = "https://youtube.com/akitect"
+href = "https://youtube.com/@akitect"
 icon = "fa fa-youtube"
 
 [[social]]
@@ -55,5 +55,5 @@ seo_image = "/labs.webp"
 default_author = "DUY TRAN, akitect.io@gmail.com"
 default_keywords = "akitect, akitect.io, kubernetes, docker, devops, cloud, cloud-native, microservices, architecture, design, software, development, programming, coding"
 default_description = "Akitect is a blog about software development, programming, coding, software architecture, software design, cloud-native, microservices, devops, kubernetes, docker, cloud, and more."
-default_image = "/images/akitect.png"
-fb_app_id = "1234567890"
+default_image = "/home-baner.webp"
+# fb_app_id = "1234567890"
