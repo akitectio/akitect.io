@@ -16,7 +16,7 @@ tags:
   - zabbix-agent
   - zabbix-server
   - zabbix-agent-6.2
-title: Lesstion 2 - Zabbix 6.2 alerts via Telegram
+title: Lesstion 4 - Zabbix 6.2 alerts via Telegram
 url: /zabbix-62-alerts-via-telegram
 weight: 4
 ---

@@ -2,6 +2,9 @@
 hide = false
 url = "https://news.google.com/publications/CAAqBwgKMKrRpwwwvNm1BA?hl=vi&gl=VN&ceid=VN%3Avi"
 
+[google_site_verification]
+key = "kOA7UqBkoO-Trr2fcevW1nee1flUJdFq8HCbGtzdyXA"
+
 [analytics]
 enable = true
 
@@ -36,3 +39,9 @@ seo_image = "/courses.webp"
 
 [labs]
 seo_image = "/labs.webp"
+
+[seo]
+default_author = "DUY TRAN, akitect.io@gmail.com"
+default_keywords = "akitect, akitect.io, kubernetes, docker, devops, cloud, cloud-native, microservices, architecture, design, software, development, programming, coding, programming languages, golang, python, javascript, typescript, react, vue, angular, nodejs, express, nestjs, spring, springboot, java, kotlin, rust, c, c++, c#, dotnet, dotnetcore, dotnet5, dotnet6, aspnet, aspnetcore, aspnet5, aspnet6, web, webdev, webdevelopment, webdesign, webdesigner, webdeveloper, frontend, backend, fullstack, fullstackdeveloper, fullstackdevelopment, fullstackdesign, fullstackdesigner, fullstackdev, fullstackdevs"
+default_description = "Akitect is a blog about software development, programming, coding, software architecture, software design, cloud-native, microservices, devops, kubernetes, docker, cloud, and more."
+default_image = "/images/akitect.png"

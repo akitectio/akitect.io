@@ -16,7 +16,7 @@ tags:
   - zabbix-agent
   - zabbix-server
   - zabbix-agent-6.2
-title: Lesstion 2 - Zabbix Agent 2 on Ubuntu 22.04 monitors a PostgreSQL server
+title: Lesstion 3 - Zabbix Agent 2 on Ubuntu 22.04 monitors a PostgreSQL server
 url: /zabbix-agent-2-tren-ubuntu-2204-theo-doi-may-chu-postgresql
 weight: 3
 ---
