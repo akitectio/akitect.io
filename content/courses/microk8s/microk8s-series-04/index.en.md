@@ -17,7 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Lesson 4 - Installing Kubernetes with Microk8s 1.26 on Ubuntu 22.04
+title: Lesson 3 - Installing Kubernetes with Microk8s 1.26 on Ubuntu 22.04
 url: /lesson-4-installing-kubernetes-with-microk8s-1-26-on-ubuntu-22-04
 weight: 4
 ---

@@ -34,7 +34,7 @@ weight: 2
 
 To create a project, use the command:
 
-```
+```bash
 npx react-native init ReactNativeDevOps
 ```
 
@@ -44,7 +44,7 @@ npx react-native init ReactNativeDevOps
 
 Install **react-native-config**
 
-```
+```bash
 npm i react-native-config --save
 ```
 
@@ -54,7 +54,7 @@ npm i react-native-config --save
 
 1. Run the command
 
-```
+```bash
 npx pod-install
 ```
 
@@ -62,7 +62,7 @@ npx pod-install
 
 Open Xcode with the command
 
-```
+```bash
 open ios/ReactNativeDevOps.xcworkspace
 ```
 
@@ -74,7 +74,7 @@ then open the **AppDelegate.mm** file
 
 Go to the **android/app/build.gradle** file and add the following code to line 2:
 
-```
+```java
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 ```
 
@@ -82,7 +82,7 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 
 In the **android/app/proguard-rules.pro** file, add the line:
 
-```
+```java
 -keep class com.reactnativedevops.BuildConfig { *; }
 ```
 
@@ -92,21 +92,21 @@ Next, create 3 files in the root directory:
 
 1. DEVELOPMENT (.env)
 
-```
+```bash
 API_KEY=devKey
 API_URI=https://dev.com/api
 ```
 
 2. STAGING (.env.stg)
 
-```
+```bash
 API_KEY=stagingKey
 API_URI=https://staging.com/api
 ```
 
 3. PRODUCTION (.env.prod)
 
-```
+```bash
 API_KEY=productKey
 API_URI=https://prod.com/api
 ```
@@ -115,7 +115,7 @@ API_URI=https://prod.com/api
 
 Then, use the config by adding to scripts in package.json
 
-```
+```json
 {
   "name": "ReactNativeDevOps",
   "version": "0.0.1",
@@ -163,7 +163,7 @@ After configuring, use the command to run the test config
 
 1. dev
 
-```
+```bash
 npm run dev-ios
 ```
 
@@ -171,7 +171,7 @@ npm run dev-ios
 
 2. stg
 
-```
+```bash
 npm run stg-ios
 ```
 
@@ -179,7 +179,7 @@ npm run stg-ios
 
 3. prod
 
-```
+```bash
 npm run prod-ios
 ```
 

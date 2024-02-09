@@ -54,7 +54,7 @@ Tải file **GoogleService-Info.plist** về và nhấp vào "Next
 
 Sau khi tải về chúng ta mở xcode bằng lệnh
 
-```
+```bash
 open ios/ReactNativeDevOps.xcworkspace
 ```
 
@@ -170,7 +170,7 @@ Nhấp double click vào tiệp mới tải về và import vào keychain accese
 
 Tiếp theo ta dùng lệnh fastlane init để add bộ build của ios
 
-```
+```bash
 fastlane init
 ```
 
@@ -182,7 +182,7 @@ Tiếp theo ta chọn số 4
 
 Tiếp theo ta add thên plugin firebase_app_distribution
 
-```
+```bash
 fastlane add_plugin firebase_app_distribution
 ```
 
@@ -190,7 +190,7 @@ fastlane add_plugin firebase_app_distribution
 
 Tiếp tục cập nhật file ios->fastlane->Fastfile
 
-```
+```bash
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
@@ -243,7 +243,7 @@ end
 
 firebase_app_distribution phần app vs firebase_cli_token các bạn xem ở bài trước nhé, mình có hướng dẫn ở bài trước rồi, tiếp tục ta dùng lệnh **fastlane firebase** để chạy lệnh
 
-```
+```bash
 fastlane firebase
 ```
 
@@ -287,7 +287,7 @@ Như vậy ta vùa thành công tạo **New App** có app name là **React Nativ
 
 Tiếp tục cập nhật file ios->fastlane->Fastfile thêm đoạn config build mới vào
 
-```
+```bash
  desc "Push a new beta build to TestFlight"
     lane :beta do |options|
 
@@ -315,7 +315,7 @@ Tiếp tục cập nhật file ios->fastlane->Fastfile thêm đoạn config buil
 
 Tiếp tục cập nhật file ios->fastlane->Appfile thêm đoạn config build mới vào
 
-```
+```bash
 # app_identifier("[[APP_IDENTIFIER]]") # The bundle identifier of your app
 # apple_id("[[APPLE_ID]]") # Your Apple Developer Portal username
 app_identifier("com.reactnativedevops") # The bundle identifier of your app
@@ -332,7 +332,7 @@ team_id("") # Developer Portal Team ID
 
 sau khi update ta dùng lệnh **fastlane beta -verbose** để build
 
-```
+```bash
 fastlane beta -verbose
 ```
 

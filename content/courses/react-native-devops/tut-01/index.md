@@ -207,13 +207,13 @@ Nhấp vào **More Actions**, sau đó chọn **SDK Manager**, Tick theo trên h
 
 1. Homebrew
 
-```
+```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 2. JDK 11
 
-```
+```bash
 brew tap homebrew/cask-versions
 brew install --cask zulu11
 ```
@@ -224,7 +224,7 @@ brew install --cask zulu11
 
 Mở tiệp .zshrc và thêm vào dòng bên dưới
 
-```
+```bash
 # Android
 export ANDROID_SDK="$HOME/Library/Android/sdk"
 export ANDROID_SDK_TOOLS="$ANDROID_SDK/tools"
@@ -242,7 +242,7 @@ export LC_ALL=en_US.UTF-8
 
 dùng lệnh để apply cấu hình
 
-```
+```bash
 source $HOME/.zshrc
 ```
 
@@ -252,7 +252,7 @@ source $HOME/.zshrc
 
 Ta cài đặt jenkins bằng lệnh
 
-```
+```bash
 brew install jenkins-lts
 ```
 
@@ -262,7 +262,7 @@ brew install jenkins-lts
 
 Sau khi cài đặt thành cộng ta start bằng lệnh
 
-```
+```bash
 brew services start jenkins-lt
 ```
 
@@ -274,7 +274,7 @@ Sau đó ta vào đường dẫn http://127.0.0.1:8080/login?from=%2F để logi
 
 ta lấy password mặt định bằng lệnh
 
-```nginx
+```bash
 cat /Users/duytran/.jenkins/secrets/initialAdminPassword
 ```
 
@@ -282,7 +282,7 @@ cat /Users/duytran/.jenkins/secrets/initialAdminPassword
 
 Cấu hình public ip kết nối vào bằng cách mở tất cả ip kết nối đến jenkins
 
-```shell
+```bash
 #nano /usr/local/opt/jenkins-lts/homebrew.mxcl.jenkins-lts.plist
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -316,7 +316,7 @@ Cấu hình public ip kết nối vào bằng cách mở tất cả ip kết n�
 
 Sau đó restart service và kết nối bình thường bằng ip của mạng
 
-```shell
+```bash
 brew services restart jenkins-lt
 ```
 
@@ -324,7 +324,7 @@ brew services restart jenkins-lt
 
 Ta cài đăt bằng lệnh fastlane
 
-```shell
+```bash
 brew install fastlane
 ```
 

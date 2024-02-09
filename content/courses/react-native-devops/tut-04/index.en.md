@@ -54,7 +54,7 @@ Download the file **GoogleService-Info.plist** and click "Next
 
 After downloading, we open xcode with the command
 
-```
+```bash
 open ios/ReactNativeDevOps.xcworkspace
 ```
 
@@ -169,7 +169,7 @@ Double click on the newly downloaded file and import it into keychain accounts
 
 Next we use the fastlane init command to add the iOS build kit
 
-```
+```bash
 fastlane init
 ```
 
@@ -189,7 +189,7 @@ fastlane add_plugin firebase_app_distribution
 
 Continue updating the file ios->fastlane->Fastfile
 
-```
+```bash
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
@@ -242,7 +242,7 @@ end
 
 firebase_app_distribution part app vs firebase_cli_token, you can see in the previous post, I have instructions in the previous post, continue using the command **fastlane firebase**
 
-```
+```bash
 fastlane firebase
 ```
 
@@ -286,7 +286,7 @@ So we have successfully created **New App** with app name **React Native Devops*
 
 Continue updating the ios->fastlane->Fastfile file to add the new build config section
 
-```
+```bash
   desc "Push a new beta build to TestFlight"
      lane :beta do |options|
 
@@ -314,7 +314,7 @@ Continue updating the ios->fastlane->Fastfile file to add the new build config s
 
 Continue updating the ios->fastlane->Appfile file to add the new build config section
 
-```
+```bash
 # app_identifier("[[APP_IDENTIFIER]]") # The bundle identifier of your app
 # apple_id("[[APPLE_ID]]") # Your Apple Developer Portal username
 app_identifier("com.reactnativedevops") # The bundle identifier of your app
@@ -331,7 +331,7 @@ team_id("") # Developer Portal Team ID
 
 After updating, we use the command **fastlane beta -verbose** to build
 
-```
+```bash
 fastlane beta -verbose
 ```
 

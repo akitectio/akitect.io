@@ -17,7 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Lesson 5 - Install and use ingress in the Microk8s integrator
+title: Lesson 4 - Install and use ingress in the Microk8s integrator
 url: /lesson-5-install-and-use-ingress-in-the-microk8s-integrator
 weight: 5
 ---

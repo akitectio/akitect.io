@@ -21,7 +21,7 @@ tags:
   - virtualbox 7 on ubuntu 22.04
   - jenkins-agent
   - Pipeline
-title: Bài 7 - Cấu hình Jenkins trên Ubuntu 22.04 và viết Pipeline Build Service
+title: Bài 6 - Cấu hình Jenkins trên Ubuntu 22.04 và viết Pipeline Build Service
 url: /bai-7-cau-hinh-jenkins-tren-ubuntu-2204-va-viet-pipeline-build-service
 weight: 7
 ---

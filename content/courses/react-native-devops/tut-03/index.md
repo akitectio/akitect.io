@@ -108,7 +108,7 @@ sau khi login thành công chúng ta cọn "**Add Project**"
 
 Đầu tiền vào thư mục **android** :
 
-```
+```bash
 cd android
 ```
 
@@ -116,7 +116,7 @@ cd android
 
 sau đó init fastlane bằng lệnh
 
-```
+```bash
 fastlane init
 ```
 
@@ -126,7 +126,7 @@ Sau khi init thành công thì sẽ có thư mục **fastlane** và 2 file "**Ap
 
 Cài đặt firebase-tools dùng để lấy token login
 
-```
+```bash
  npm i firebase-tools -g
 ```
 
@@ -134,7 +134,7 @@ Cài đặt firebase-tools dùng để lấy token login
 
 sau khi mình cài đặt thành công và sử dụng lệnh để lấy token login
 
-```
+```bash
 firebase login:ci
 ```
 
@@ -142,7 +142,7 @@ firebase login:ci
 
 như vậy mình đã có token login
 
-```
+```bash
 1//0gP2yENNqCT1oCgYIARAAGBASNwF-L9IrqQI9gih5h73FSmaozzyn0HSQXxS7Vyyav2h4zEk4ClMbgmz6CwbEShz_qJVMmTxiGas
 ```
 
@@ -150,7 +150,7 @@ Tiếp tục mình sẽ lấy app-id
 
 {{< figure src="./images/9b64793d-9975-456a-9253-49b5273b84db.png" >}}
 
-```
+```bash
 1:320882145170:android:21837959d5ffc9fe65b34b
 ```
 
@@ -158,14 +158,14 @@ Tiếp tục ta cập nhật "**Appfile**" , "**Fastfile**"
 
 - Appfile
 
-```
+```bash
 json_key_file("") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 package_name("com.reactnativedevops") # e.g. com.krausefx.app
 ```
 
 - Fastfile
 
-```
+```bash
 default_platform(:android)
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
@@ -189,7 +189,7 @@ end
 
 Tiếp tục add plugin cho fastlane
 
-```
+```bash
 fastlane add_plugin firebase_app_distribution
 ```
 
@@ -203,7 +203,7 @@ Kích hoạt Firebase Distribution trên Firebase console:
 
 Sau đó ta dùng lệnh để build
 
-```
+```bash
 cd android && fastlane beta
 ```
 

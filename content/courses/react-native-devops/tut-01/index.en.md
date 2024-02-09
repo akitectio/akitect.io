@@ -210,7 +210,7 @@ Click on **More Actions**, then select **SDK Manager**. Check the boxes as shown
 
 1. Homebrew
 
-```
+```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -218,7 +218,7 @@ This command installs Homebrew, a package manager for macOS.
 
 2. JDK 11
 
-```
+```bash
 brew tap homebrew/cask-versions
 brew install --cask zulu11
 ```
@@ -229,7 +229,7 @@ brew install --cask zulu11
 
 Open the .zshrc file and add the line below
 
-```
+```bash
 # Android
 export ANDROID_SDK="$HOME/Library/Android/sdk"
 export ANDROID_SDK_TOOLS="$ANDROID_SDK/tools"
@@ -247,7 +247,7 @@ export LC_ALL=en_US.UTF-8
 
 Use command to apply configuration
 
-```
+```bash
 source $HOME/.zshrc
 ```
 
@@ -257,7 +257,7 @@ source $HOME/.zshrc
 
 We install jenkins using the command
 
-```
+```bash
 brew install jenkins-lts
 ```
 
@@ -267,7 +267,7 @@ brew install jenkins-lts
 
 After installing successfully, we start with the command
 
-```
+```bash
 brew services start jenkins-lt
 ```
 
@@ -279,7 +279,7 @@ Then we go to http://127.0.0.1:8080/login?from=%2F to log into the system
 
 We get the default password with the command
 
-```nginx
+```bash
 cat /Users/duytran/.jenkins/secrets/initialAdminPassword
 ```
 
@@ -288,7 +288,7 @@ cat /Users/duytran/.jenkins/secrets/initialAdminPassword
 Configure the public ip connection by opening all connection ips to jenkins
 by command
 
-```shell
+```bash
 #nano /usr/local/opt/jenkins-lts/homebrew.mxcl.jenkins-lts.plist
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -322,7 +322,7 @@ by command
 
 Then restart the service and connect normally using the network's IP
 
-```shell
+```bash
 brew services restart jenkins-lt
 ```
 
@@ -330,7 +330,7 @@ brew services restart jenkins-lt
 
 We install using the fastlane command
 
-```shell
+```bash
 brew install fastlane
 ```
 

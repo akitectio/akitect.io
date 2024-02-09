@@ -19,7 +19,7 @@ tags:
   - ubuntu
   - virtualbox
   - kong-api-gateway
-title: Bài 8 - Dùng Kong Gateway để triển khai API Gateway cho hệ thống Microservices trên Microk8s
+title: Bài 7 - Dùng Kong Gateway để triển khai API Gateway cho hệ thống Microservices trên Microk8s
 url: /bai-8-dung-kong-gateway-de-trien-khai-api-gateway-cho-he-thong-microservices-tren-microk8s
 weight: 8
 ---

@@ -17,7 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Lesson 6 - Installing and using private registry in the Microk8s integrator
+title: Lesson 5 - Installing and using private registry in the Microk8s integrator
 url: /lesson-6-installing-and-using-private-registry-in-the-microk8s-integrator
 weight: 6
 ---

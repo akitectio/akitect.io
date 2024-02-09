@@ -18,7 +18,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Bài 6 - Cài đặt và sử dụng private registry trong bộ tích hợp của Microk8s
+title: Bài 5 - Cài đặt và sử dụng private registry trong bộ tích hợp của Microk8s
 url: /bai-6-cai-dat-va-su-dung-private-registry-trong-bo-tich-hop-cua-microk8s
 weight: 6
 ---

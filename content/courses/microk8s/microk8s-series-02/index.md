@@ -17,7 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Bài 2 - Tạo máy ảo ubuntu 22.04 bằng Oracle VM VirtualBox 7
+title: Bài 1 - Tạo máy ảo ubuntu 22.04 bằng Oracle VM VirtualBox 7
 url: /bai-2-tao-may-ao-ubuntu-2204-bang-oracle-vm-virtualbox-7
 weight: 2
 ---

@@ -17,8 +17,8 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Lesson 3 - Install and run the Oracle VM VirtualBox 7 virtualization environment using Vagrant
-url: lesson-3-install-and-run-the-oracle-vm-virtualbox-7-virtualization-environment-using-vagrant
+title: Lesson 2 - Install and run the Oracle VM VirtualBox 7 virtualization environment using Vagrant
+url: lesson-2-install-and-run-the-oracle-vm-virtualbox-7-virtualization-environment-using-vagrant
 weight: 3
 ---
 

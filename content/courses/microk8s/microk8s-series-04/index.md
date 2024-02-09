@@ -17,7 +17,7 @@ tags:
   - k8s
   - ubuntu
   - virtualbox
-title: Bài 4 - Cài đặt Kubernetes với Microk8s 1.26 trên Ubuntu 22.04
+title: Bài 3 - Cài đặt Kubernetes với Microk8s 1.26 trên Ubuntu 22.04
 url: /bai-4-cai-dat-kubernetes-voi-microk8s-126-tren-ubuntu-2204
 weight: 4
 ---

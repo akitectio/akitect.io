@@ -108,7 +108,7 @@ After successfully logging in, select "**Add Project**"
 
 First go to the **android** folder:
 
-```
+```bash
 cd android
 ```
 
@@ -116,7 +116,7 @@ cd android
 
 then init fastlane with command
 
-```
+```bash
 fastlane init
 ```
 
@@ -126,7 +126,7 @@ After successful init, there will be a **fastlane** folder and 2 files "**Appfil
 
 Install firebase-tools to get login token
 
-```
+```bash
   npm i firebase-tools -g
 ```
 
@@ -134,7 +134,7 @@ Install firebase-tools to get login token
 
 After I successfully installed and used the command to get the login token
 
-```
+```bash
 firebase login:ci
 ```
 
@@ -142,7 +142,7 @@ firebase login:ci
 
 So I have a login token
 
-```
+```bash
 1//0gP2yENNqCT1oCgYIARAAGBASNwF-L9IrqQI9gih5h73FSmaozzyn0HSQXxS7Vyyav2h4zEk4ClMbgmz6CwbEShz_qJVMmTxiGas
 ```
 
@@ -150,7 +150,7 @@ Continuing, I will get the app-id
 
 {{< figure src="./images/9b64793d-9975-456a-9253-49b5273b84db.png" >}}
 
-```
+```bash
 1:320882145170:android:21837959d5ffc9fe65b34b
 ```
 
@@ -158,14 +158,14 @@ Continue to update "**Appfile**", "**Fastfile**"
 
 - Appfile
 
-```
+```bash
 json_key_file("") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 package_name("com.reactnativedevops") # e.g. com.krausefx.app
 ```
 
 - Fastfile
 
-```
+```bash
 default_platform(:android)
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
@@ -189,7 +189,7 @@ end
 
 Continue adding plugins for fastlane
 
-```
+```bash
 fastlane add_plugin firebase_app_distribution
 ```
 
@@ -203,7 +203,7 @@ Enable Firebase Distribution on the Firebase console:
 
 Then we use the command to build
 
-```
+```bash
 cd android && fastlane beta
 ```
 

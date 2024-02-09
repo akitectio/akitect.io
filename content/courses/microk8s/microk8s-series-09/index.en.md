@@ -21,7 +21,7 @@ tags:
   - zabbix-agent
   - prometheus
   - alertmanager
-title: Lesson 9 - Using the Monitoring System integration (Elasticsearch, Fluentd and Kibana, Grafana, Zipkin) of Microk8s
+title: Lesson 8 - Using the Monitoring System integration (Elasticsearch, Fluentd and Kibana, Grafana, Zipkin) of Microk8s
 url: /lesson-9-using-the-monitoring-system-integration-elasticsearch-fluentd-and-kibana-grafana-zipkin-of-microk8s
 weight: 9
 ---
