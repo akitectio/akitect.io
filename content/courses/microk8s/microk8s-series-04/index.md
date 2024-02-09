@@ -84,7 +84,7 @@ Do lần đầu vẽ tay nên vẽ cũng hơi khó xem, mình sẽ cố đẹp h
 
 ### Bước 2: Update và upgrade tất cả các node
 
-```
+```bash
 sudo apt update && apt upgrade -y
 ```
 
@@ -92,13 +92,13 @@ sudo apt update && apt upgrade -y
 
 - Mở file: /etc/hosts
 
-```
+```bash
 nano /etc/hosts
 ```
 
 - Thêm vào cuối file :
 
-```
+```bash
 #master
 192.168.56.2  microk8s-master-01
 192.168.56.3  microk8s-master-02
@@ -121,13 +121,13 @@ nano /etc/hosts
 
 ### Bước 4: Cài đặt microk8s
 
-```
+```bash
 sudo snap install microk8s --classic --channel=1.26
 ```
 
 Microk8s tạo ra một nhóm để kích hoạt sử dụng các lệnh liền mạch yêu cầu đặc quyền root. Để thêm người dùng hiện tại của bạn vào nhóm và có quyền truy cập vào thư mục bộ đệm Kube, hãy chạy hai lệnh sau:
 
-```
+```bash
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 su - $USER
@@ -144,7 +144,7 @@ Do hệ thống mình chạy luôn trên máy host bằng Virtuabox nên mình m
 
 Các bạn vui lòng thực hiện lệnh sau trên tất cả các node:
 
-```
+```bash
 sudo ufw allow 16443/tcp
 sudo ufw allow 10250/tcp
 sudo ufw allow 10255/tcp
@@ -165,7 +165,7 @@ sudo ufw allow 1338/tcp
 
 - Tạo token add-node trên con **microk8s-master-01** :
 
-```
+```bash
 microk8s add-node --token-ttl 3600
 ```
 
@@ -178,13 +178,13 @@ Mình có 2 đường mạng:
 
 - join các máy chủ master, ở đây mình thực hiện lệnh add ở máy **microk8s-master-01** thì mình cần add 2 máy **microk8s-master-02** và **microk8s-master-03**
 
-```
+```bash
 microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b
 ```
 
 - Tiếp tục join worker vào các node **microk8s-worker-1, microk8s-worker-2, microk8s-worker-3, microk8s-worker-4** cũng là đoạn token trên, và chỉ cần thêm **_--worker_** sau cùng đoạn join
 
-```
+```bash
 microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b --worker
 ```
 
@@ -198,13 +198,13 @@ Còn để kiể tra các master node chúng ta dùng lệnh `microk8s status` �
 
 ### Bước 6: Kích hoạt addon dashboard dns storage
 
-```
+```bash
 microk8s enable dns dashboard hostpath-storage
 ```
 
 sau khi thành công bạn dùng lệnh **microk8s dashboard-proxy** ở VM **microk8s-master-01** để mở dashboard
 
-```
+```bash
 microk8s dashboard-proxy
 ```
 

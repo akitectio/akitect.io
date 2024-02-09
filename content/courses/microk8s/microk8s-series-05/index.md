@@ -41,13 +41,13 @@ weight: 5
 
 Cập nhật các gói cài đặt apt
 
-```nginx
+```bash
 sudo apt update
 ```
 
 Cài đặt Nginx
 
-```nginx
+```bash
 sudo apt install nginx -y
 ```
 
@@ -55,7 +55,7 @@ sudo apt install nginx -y
 
 ### Bước 2 – Cấp quyền HTTP Firewall
 
-```shell
+```bash
 sudo ufw allow 'Nginx HTTP'
 ```
 
@@ -71,7 +71,7 @@ Kiểm tra service nginx có hoạt đông không?
 
 Để cài đặt các bạn chạy lệnh:
 
-```nginx
+```bash
 curl -fsSL https://code-server.dev/install.sh | sh
 
 sudo systemctl enable --now code-server@$USER
@@ -80,7 +80,7 @@ sudo systemctl enable --now code-server@$USER
 
 sau khi cài đặt xong thì mình vào thư mục config
 
-```nginx
+```bash
 nano ~/.config/code-server/config.yaml
 
 bind-addr: 0.0.0.0:9999
@@ -98,7 +98,7 @@ sudo service code-server@$USER restart
 
 Để kích hoạt [Inpress Controller](https://github.com/kubernetes/ingress-nginx) của Microk8s chúng ta sử dụng lệnh:
 
-```nginx
+```bash
 microk8s enable ingress
 ```
 
@@ -148,7 +148,7 @@ Windows Path: **C:\Windows\System32\drivers\etc\hosts**
 
 MacOS & Linux Path: **/etc/hosts**
 
-```nginx
+```bash
 127.0.0.1 microk8s-dashboard.localhost
 ```
 
@@ -158,19 +158,19 @@ MacOS & Linux Path: **/etc/hosts**
 
 đi đến thư mục: **/etc/nginx/sites-enabled**
 
-```nginx
+```bash
 cd /etc/nginx/sites-enabled
 ```
 
 tạo file **microk8s-dashboard.localhost**
 
-```nginx
+```bash
 sudo nano microk8s-dashboard.localhost
 ```
 
 copy đoạn config thêm vào file **microk8s-dashboard.localhost.conf**
 
-```nginx
+```bash
 
 upstream host_mircok8s_worker {
     server 192.168.56.5;
@@ -210,7 +210,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 Khởi động lại service:
 
-```nginx
+```bash
 sudo systemctl restart nginx
 ```
 

@@ -29,13 +29,13 @@ Mình ssh vào VM **microk8s-master-01 (192.168.56.2)** để thực hện, vai 
 
 Sau khi login vào microk8s-master-01 thành công ta tiến hành kích hoạt registry bằng lệnh
 
-```nginx
+```bash
 microk8s enable registry
 ```
 
 Sau khi kích hoạt registry thì persistent volume mặt định là 20G dùng để lưu trữu images, tuy nhiên bạn có thể cấp thêm để phù hợp với ứng dụng của bạn
 
-```nginx
+```bash
 microk8s enable registry:size=40Gi
 ```
 
@@ -49,7 +49,7 @@ microk8s enable registry:size=40Gi
 
 - Gỡ cài đặt phiên bản cũ
 
-```nginx
+```bash
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
@@ -59,21 +59,21 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 - Cập nhật chỉ mục gói apt và cài đặt các gói để cho phép apt sử dụng kho lưu trữ qua HTTPS:
 
-```nginx
+```bash
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg lsb-release
 ```
 
 - Thêm khóa GPG chính thức của Docker:
 
-```nginx
+```bash
  sudo mkdir -p /etc/apt/keyrings
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
 - Sử dụng lệnh để thiết lập repository
 
-```nginx
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
@@ -84,19 +84,19 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 
 1. Cập nhât các gói apt
 
-```nginx
+```bash
  sudo apt-get update
 ```
 
 2. Cài đặt Docker Engine, containerd và Docker Compose.
 
-```nginx
+```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
 3. thêm quyền docker
 
-```nginx
+```bash
 sudo gpasswd -a $USER docker
 newgrp docker
 sudo su $USER
@@ -108,13 +108,13 @@ sudo su $USER
 
 Ở máy build và máy push từ Docker chúng ta cần thêm cấu hình ở file **/etc/docker/daemon.json**
 
-```nginx
+```bash
 sudo nano /etc/docker/daemon.json
 ```
 
 thêm đoạn cấu hình vào
 
-```nginx
+```json
 {
   "insecure-registries" : ["192.168.56.2:32000"]
 }
@@ -124,7 +124,7 @@ thêm đoạn cấu hình vào
 
 Lưu lại và khởi động lại service docker
 
-```nginx
+```bash
 sudo systemctl restart docker
 ```
 
@@ -132,7 +132,7 @@ Bây giờ ta test cấu hình theo các bước:
 
 1. Pull image Nginx
 
-```nginx
+```bash
 docker pull nginx
 ```
 
@@ -140,7 +140,7 @@ docker pull nginx
 
 2. tag file image nginx -> 192.168.56.2:32000/duy-tran-nginx
 
-```nginx
+```bash
  docker tag nginx 192.168.56.2:32000/duy-tran-nginx
 ```
 
@@ -148,7 +148,7 @@ docker pull nginx
 
 4. Push image 10.19.2.92:32000/duy-tran-nginx lên registry
 
-```nginx
+```bash
  docker push 192.168.56.2:32000/duy-tran-nginx
 ```
 
@@ -160,7 +160,7 @@ Microk8s 1.23 và các phiên bản mới hơn sử dụng các tệp máy chủ
 
 Đầu tiên, hãy tạo thư mục và tiệp nếu nó không tồn tại:
 
-```nginx
+```bash
 sudo mkdir -p /var/snap/microk8s/current/args/certs.d/192.168.56.2:32000
 sudo touch /var/snap/microk8s/current/args/certs.d/192.168.56.2:32000/hosts.toml
 ```
@@ -179,7 +179,7 @@ capabilities = ["pull", "resolve"]
 
 Lưu lại và khởi động lại dịch vụ microk8s
 
-```nginx
+```bash
 microk8s stop
 microk8s start
 ```
@@ -231,7 +231,7 @@ spec:
 
 2. Run file **duy-tran-nginx-all.yaml**
 
-```nginx
+```bash
  microk8s kubectl apply -f duy-tran-nginx-all.yaml
 ```
 
@@ -245,7 +245,7 @@ Có 2 cách để test:
 
 2. run dashboard để kiểm tra
 
-```nginx
+```bash
 microk8s dashboard-proxy
 ```
 
@@ -253,7 +253,5 @@ microk8s dashboard-proxy
 
 {{< figure src="./516a3f6a-8f07-420a-a4c6-c466d3e54e23.webp" >}}
 
-Nếu bạn thấy bài chia sẽ này hay xin hãy cho mình một like và đăng ký để ủng hộ mình nhé.
-Cảm ơn các bạn nhiều ♥️♥️♥️♥️
 
 Link [github](https://github.com/akitectio/microk8s-series/) để các bạn copy cho nhanh các tiệp

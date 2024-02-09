@@ -13,14 +13,10 @@ series:
   - microk8s-series
 tags:
   - microk8s
-  - Kubernetes
+  - kubernetes
   - k8s
   - ubuntu
-  - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
   - jenkins-agent
-  - Pipeline
 title: Lesson 6 - Configuring Jenkins on Ubuntu 22.04 and writing Pipeline Build Service
 url: /lesson-7-configuring-jenkins-on-ubuntu-2204-and-writing-pipeline-build-service
 weight: 7
@@ -39,19 +35,19 @@ In this guide, you will install Jenkins on Ubuntu 22.04, start the development s
 
 To install the OpenJDK version of Java, first update your **apt** package index:
 
-```nginx
+```bash
 sudo apt update
 ```
 
 Next, check if Java is already installed:
 
-```nginx
+```bash
 java -version
 ```
 
 If Java is not yet installed, you will receive the following output:
 
-```nginx
+```bash
 Output
 Command 'java' not found, but can be installed with:
 
@@ -64,7 +60,7 @@ sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
 
 Execute the following command to install the JRE from OpenJDK 11:
 
-```nginx
+```bash
 sudo apt install openjdk-11-jre-headless
 ```
 
@@ -72,11 +68,11 @@ The JRE will allow you to run most Java software.
 
 Verify the installation with:
 
-```nginx
+```bash
 java -version
 ```
 
-```nginx
+```bash
 Output
 openjdk version "11.0.14" 2022-01-18
 OpenJDK Runtime Environment (build 11.0.14+9-Ubuntu-0ubuntu2)
@@ -91,13 +87,13 @@ The version of Jenkins that comes with the default Ubuntu packages is usually th
 
 First, add the repository key to your system:
 
-```nginx
+```bash
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
 ```
 
 Next, add the Debian package repository address to your server's **sources.list**:
 
-```nginx
+```bash
 sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 ```
 
@@ -105,13 +101,13 @@ The **[signed-by=/usr/share/keyrings/jenkins.gpg]** part of the line ensures tha
 
 After both commands have been entered, run an **APT** update so that **APT** will use the new repository.
 
-```nginx
+```bash
 sudo apt update
 ```
 
 Finally, install Jenkins with the command:
 
-```nginx
+```bash
 sudo apt install jenkins
 ```
 
@@ -121,19 +117,19 @@ Now that Jenkins and its dependencies are installed, we will start the Jenkins s
 
 Now that Jenkins is installed, let's start it using **systemctl**:
 
-```nginx
+```bash
 sudo systemctl start jenkins.service
 ```
 
 Since **systemctl** does not display status output, we will use the status command to verify that Jenkins has started successfully:
 
-```nginx
+```bash
 sudo systemctl status jenkins
 ```
 
 If everything went smoothly, the first part of the status output shows that the service is running and configured to start on boot:
 
-```nginx
+```bash
 Output
 ● jenkins.service - Jenkins Continuous Integration Server
      Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
@@ -152,19 +148,19 @@ Now that Jenkins is up and running, you need to enable the firewall and use it.
 
 By default, Jenkins runs on port **8080**. Open that port using **ufw**:
 
-```nginx
+```bash
 sudo ufw allow 8080
 ```
 
 Check the status of **UFW** to confirm the new rules:
 
-```nginx
+```bash
 sudo ufw status
 ```
 
 You will see that access is allowed to port 8080 from anywhere:
 
-```nginx
+```bash
 Output
 Status: active
 
@@ -188,7 +184,7 @@ You will receive the Unlock Jenkins screen, displaying the location of the initi
 
 In the terminal window, use the **cat** command to display the password:
 
-```nginx
+```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
@@ -230,7 +226,7 @@ https://github.com/akitectio/microk8s-series/tree/main/microservices
 
 In the build directory, there will be a Jenkinsfile that I have written with the following structure:
 
-```nginx
+```bash
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any

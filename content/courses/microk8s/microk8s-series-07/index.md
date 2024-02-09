@@ -13,14 +13,10 @@ series:
   - microk8s-series
 tags:
   - microk8s
-  - Kubernetes
+  - kubernetes
   - k8s
   - ubuntu
-  - virtualbox
-  - virtualbox 7
-  - virtualbox 7 on ubuntu 22.04
   - jenkins-agent
-  - Pipeline
 title: Bài 6 - Cấu hình Jenkins trên Ubuntu 22.04 và viết Pipeline Build Service
 url: /bai-7-cau-hinh-jenkins-tren-ubuntu-2204-va-viet-pipeline-build-service
 weight: 7
@@ -39,19 +35,19 @@ rong hướng dẫn này, bạn sẽ cài đặt Jenkins trên Ubuntu 22.04, b�
 
 Để cài đặt phiên bản OpenJDK của Java, trước tiên hãy cập nhật chỉ mục gói **apt** của bạn:
 
-```nginx
+```bash
 sudo apt update
 ```
 
 Tiếp theo, kiểm tra xem Java đã được cài đặt chưa:
 
-```nginx
+```bash
 java -version
 ```
 
 Nếu Java hiện chưa được cài đặt, bạn sẽ nhận được kết quả sau:
 
-```nginx
+```bash
 Output
 Command 'java' not found, but can be installed with:
 
@@ -64,7 +60,7 @@ sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
 
 Thực hiện lệnh sau để cài đặt JRE từ OpenJDK 11:
 
-```nginx
+```bash
 sudo apt install openjdk-11-jre-headless
 ```
 
@@ -72,11 +68,11 @@ JRE sẽ cho phép bạn chạy hầu hết các phần mềm Java.
 
 Xác minh cài đặt với:
 
-```nginx
+```bash
 java -version
 ```
 
-```nginx
+```bash
 Output
 openjdk version "11.0.14" 2022-01-18
 OpenJDK Runtime Environment (build 11.0.14+9-Ubuntu-0ubuntu2)
@@ -91,13 +87,13 @@ Phiên bản Jenkins đi kèm với các gói Ubuntu mặc định thường là
 
 Đầu tiên, thêm khóa kho lưu trữ vào hệ thống của bạn:
 
-```nginx
+```bash
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
 ```
 
 Tiếp theo, hãy thêm địa chỉ kho lưu trữ gói Debian vào **sources.list** của máy chủ:
 
-```nginx
+```bash
 sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 ```
 
@@ -105,13 +101,13 @@ Phần **[signed-by=/usr/share/keyrings/jenkins.gpg]** của dòng đảm bảo 
 
 Sau khi cả hai lệnh đã được nhập, hãy chạy cập nhật **APT** để **APT** sẽ sử dụng kho lưu trữ mới.
 
-```nginx
+```bash
 sudo apt update
 ```
 
 Cuối cùng, cài đặt Jenkins bằng lệnh :
 
-```nginx
+```bash
 sudo apt install jenkins
 ```
 
@@ -121,19 +117,19 @@ Bây giờ Jenkins và các phần phụ thuộc của nó đã sẵn sàng, ch�
 
 Bây giờ Jenkins đã được cài đặt, hãy bắt đầu bằng cách sử dụng **systemctl**:
 
-```nginx
+```bash
 sudo systemctl start jenkins.service
 ```
 
 Vì **systemctl** không hiển thị đầu ra trạng thái, nên chúng tôi sẽ sử dụng lệnh status để xác minh rằng Jenkins đã bắt đầu thành công:
 
-```nginx
+```bash
 sudo systemctl status jenkins
 ```
 
 Nếu mọi thứ suôn sẻ, phần đầu của đầu ra trạng thái cho thấy dịch vụ đang hoạt động và được định cấu hình để bắt đầu khi khởi động:
 
-```nginx
+```bash
 Output
 ● jenkins.service - Jenkins Continuous Integration Server
      Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
@@ -152,19 +148,19 @@ Bây giờ Jenkins đã hoạt động và chạy, bay giờ bạn cần phải 
 
 Theo mặc định, Jenkins chạy trên cổng **8080**. Mở cổng đó bằng **ufw**:
 
-```nginx
+```bash
 sudo ufw allow 8080
 ```
 
 Kiểm tra trạng thái của **UFW** để xác nhận các quy tắc mới:
 
-```nginx
+```bash
 sudo ufw status
 ```
 
 Bạn sẽ thấy rằng các truy cập được phép chuyển đến cổng 8080 từ mọi nơi:
 
-```nginx
+```bash
 Output
 Status: active
 
@@ -188,7 +184,7 @@ Bạn sẽ nhận được màn hình Mở khóa Jenkins, hiển thị vị trí
 
 Trong cửa sổ terminal, sử dụng lệnh **cat** để hiển thị mật khẩu:
 
-```nginx
+```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
@@ -228,7 +224,7 @@ https://github.com/akitectio/microk8s-series/tree/main/microservices
 
 trong thư mục build sẽ có 1 file Jenkinsfile mình viết trước có cấu trúc như sau
 
-```nginx
+```bash
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any

@@ -126,7 +126,7 @@ Then in the VM ssh interface, follow these steps:
 
 1. Check the name of the network card just added.
 
-```
+```bash
 ls /sys/class/net/
 ```
 
@@ -138,7 +138,7 @@ Here the name of the newly added network card is **enp0s8**.
 
 Use the command on the VM to set the IP.
 
-```
+```bash
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
@@ -148,7 +148,7 @@ Then add to the file as shown:
 
 {{< figure src="./0474bfbd-8efa-49cf-a602-3ce2e6d7a3d3.webp" >}}
 
-```
+```yml
 # This is the network config written by 'subiquity'
 network:
   ethernets:

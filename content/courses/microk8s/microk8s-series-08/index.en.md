@@ -27,7 +27,7 @@ weight: 8
 
 - Kong is a Microservice API Gateway. Kong provides a flexible layer to manage secure communication between clients and microservices through APIs. Also known as an API gateway, API middleware, or in some cases a service mesh. It was made available as an open-source project in 2015, with its core values being high performance and scalability.
 
-- Kong is a Lua application running within Nginx and implemented thanks to the lua-nginx-module.
+- Kong is a Lua application running within bash and implemented thanks to the lua-bash-module.
 
 ## Why do we use KONG?
 
@@ -84,85 +84,85 @@ Here I use DB-less-mode to save Kong configuration
 
 ### Step 1: Configure Kong Controller Ingress
 
-```
+```bash
 ssh ubuntu@192.168.56.2
 ```
 
 We proceed to apply Kong Controller Ingress, here I have researched many articles and provided a standard file below, you can run it directly or customize it according to your requirements. To perform, we use the following command.
 
-```
-microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/2b875c579a2ef53f68053e4e5af5b90b/raw/deef2792d33db7fb62c784421c447731f1d5808d/all-in-one-dbless.yaml
+```bash
+microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/2b875c579a2ef53f68053e4e5af5b90b/raw/deef2792d33db7fb62c784421c447731f1d5808d/all-in-one-dbless.yaml
 ```
 
 {{< figure src="./images/866cebdd-e19c-4b8a-a4a4-89e9908983a9.webp" >}}
 
 File contents **all-in-one-dbless.yaml**
 
-{{< gist tdduydev 2b875c579a2ef53f68053e4e5af5b90b >}}
+{{< gist akitectio 2b875c579a2ef53f68053e4e5af5b90b >}}
 
 Continue applying kong ingress configuration
 
-```nginx
-microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/1d8c8f270e28d022cd6cdfb06b6a4484/raw/02ba2bdc5c5c6ae0996a40340e6f3a0e6bc965c2/kong-ingress.yaml
+```bash
+microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/1d8c8f270e28d022cd6cdfb06b6a4484/raw/02ba2bdc5c5c6ae0996a40340e6f3a0e6bc965c2/kong-ingress.yaml
 ```
 
 {{< figure src="./images/63fdc794-1f9b-4308-8029-45d2e40f23a5.webp" >}}
 
 File contents **kong-ingress.yaml**
 
-{{< gist tdduydev 1d8c8f270e28d022cd6cdfb06b6a4484 >}}
+{{< gist akitectio 1d8c8f270e28d022cd6cdfb06b6a4484 >}}
 
 ### Step 2: Configure service01 and service02
 
 **Service01**
 
-```nginx
-microk8s kubectl apply -f  https://gist.githubusercontent.com/tdduydev/e1e50da183eff226f7b2fc5e39781d8c/raw/97eb61e0debbd76a9c42f61e01e47054653334c9/service01-deployment.yaml
+```bash
+microk8s kubectl apply -f  https://gist.githubusercontent.com/akitectio/e1e50da183eff226f7b2fc5e39781d8c/raw/97eb61e0debbd76a9c42f61e01e47054653334c9/service01-deployment.yaml
 ```
 
 {{< figure src="./images/bd8a95fc-8a48-4a39-bc12-2f0440091feb.webp" >}}
 
 File contents **service01-deployment.yaml**
 
-{{< gist tdduydev e1e50da183eff226f7b2fc5e39781d8c >}}
+{{< gist akitectio e1e50da183eff226f7b2fc5e39781d8c >}}
 
 **Service02**
 
-```nginx
-microk8s kubectl apply -f  https://gist.githubusercontent.com/tdduydev/e3b20b53d33302d654cd1b058a283562/raw/44553ddf0f142431fc1c394a25e89c8a4e513255/service02-deployment.yaml
+```bash
+microk8s kubectl apply -f  https://gist.githubusercontent.com/akitectio/e3b20b53d33302d654cd1b058a283562/raw/44553ddf0f142431fc1c394a25e89c8a4e513255/service02-deployment.yaml
 ```
 
 {{< figure src="./images/2f06a6d8-48a5-45bc-8ad3-5b7f36d85bdb.webp" >}}
 
 File contents **service02-deployment.yaml**
 
-{{< gist tdduydev e3b20b53d33302d654cd1b058a283562 >}}
+{{< gist akitectio e3b20b53d33302d654cd1b058a283562 >}}
 
 ### Step 3: Configure Kong ingress for Service01 and Service02
 
 **Service01**
 
-```
- microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/0f43b50aeed7d1a2cd51cc6dcf307ace/raw/f70bab1ac04d98280777e21821ca530690403285/kong-ingress-service01.yaml
+```bash
+ microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/0f43b50aeed7d1a2cd51cc6dcf307ace/raw/f70bab1ac04d98280777e21821ca530690403285/kong-ingress-service01.yaml
 ```
 
 {{< figure src="./images/78eb7dfc-2bc8-4221-ba95-843ae7495c93.webp" >}}
 
 File contents **kong-ingress-service01.yaml**
 
-{{< gist tdduydev 0f43b50aeed7d1a2cd51cc6dcf307ace >}}
+{{< gist akitectio 0f43b50aeed7d1a2cd51cc6dcf307ace >}}
 
 **Service02**
 
-```
- microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/6e366ab62b4d01e84352f3e616627201/raw/a49523cc901736875e7af33e0b54d633fc2c927c/kong-ingress-service02.yaml
+```bash
+ microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/6e366ab62b4d01e84352f3e616627201/raw/a49523cc901736875e7af33e0b54d633fc2c927c/kong-ingress-service02.yaml
 ```
 
 {{< figure src="./images/db441b0a-844e-409c-94b5-c6bcab88ea45.webp" >}}
 
 File contents **kong-ingress-service02.yaml**
 
-{{< gist tdduydev 6e366ab62b4d01e84352f3e616627201 >}}
+{{< gist akitectio 6e366ab62b4d01e84352f3e616627201 >}}
 
 After applying the configuration successfully, we check whether the configuration is correct or not by going to the link:
 
@@ -178,15 +178,15 @@ After applying the configuration successfully, we check whether the configuratio
 
 Here I increase the set `connect_timeout`, `read_timeout`, `write_timeout` so you can use the command
 
-```
-microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/61b2dce63558ccfed18b6095abc06ed6/raw/6cca022d014c919153ef66a8bd8eb5634c4cec28/timeout-kong-ingress.yaml
+```bash
+microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/61b2dce63558ccfed18b6095abc06ed6/raw/6cca022d014c919153ef66a8bd8eb5634c4cec28/timeout-kong-ingress.yaml
 ```
 
 {{< figure src="./images/25b93eaa-60f9-455a-ba7e-792f9e8d18e4.webp" >}}
 
 File contents **timeout-kong-ingress.yaml**
 
-{{< gist tdduydev 61b2dce63558ccfed18b6095abc06ed6 >}}
+{{< gist akitectio 61b2dce63558ccfed18b6095abc06ed6 >}}
 
 So I have successfully increased the timeout of ingress
 
@@ -225,15 +225,15 @@ Note that you need to install the zipkin server first, I have provided instructi
 
 We apply the Kong configuration with the following command:
 
-```nginx
- microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/c5af0e748628ca778740451da9e1d783/raw/62ca7641ebe3d939a93c53a91cceb734d8893c3e/kong-plugin-zipkin.yaml
+```bash
+ microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/c5af0e748628ca778740451da9e1d783/raw/62ca7641ebe3d939a93c53a91cceb734d8893c3e/kong-plugin-zipkin.yaml
 ```
 
 {{< figure src="./images/6adc3546-8021-4d63-ba6d-4d033832ec36.webp" >}}
 
 The content of the file **kong-plugin-zipkin.yaml**
 
-{{< gist tdduydev c5af0e748628ca778740451da9e1d783 >}}
+{{< gist akitectio c5af0e748628ca778740451da9e1d783 >}}
 
 So you have successfully configured the Kong zipkin plugin, now you can track all requests to the API through Kong.
 

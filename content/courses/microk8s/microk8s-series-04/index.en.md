@@ -92,13 +92,13 @@ sudo apt update && apt upgrade -y
 
 - Mở file: /etc/hosts
 
-```
+```bash
 nano /etc/hosts
 ```
 
 - Add at the end of the file:
 
-```
+```bash
 #master
 192.168.56.2  microk8s-master-01
 192.168.56.3  microk8s-master-02
@@ -121,13 +121,13 @@ nano /etc/hosts
 
 ### Step 4: Install MicroK8s
 
-```
+```bash
 sudo snap install microk8s --classic --channel=1.26
 ```
 
 MicroK8s creates a group to enable seamless use of commands that require root privileges. To add your current user to the group and have access to the Kube cache directory, run the following two commands:
 
-```
+```bash
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 su - $USER
@@ -145,7 +145,7 @@ As my system runs on the host machine using VirtualBox, I opened the firewall. Y
 
 Please execute the following command on all nodes:
 
-```
+```bash
 sudo ufw allow 16443/tcp
 sudo ufw allow 10250/tcp
 sudo ufw allow 10255/tcp
@@ -166,7 +166,7 @@ sudo ufw allow 1338/tcp
 
 - Create add-node token on **microk8s-master-01**:
 
-```
+```bash
 microk8s add-node --token-ttl 3600
 ```
 
@@ -179,13 +179,13 @@ I have 2 networks:
 
 - Join the master servers, here I execute the add command on the **microk8s-master-01** server, so I need to add 2 servers **microk8s-master-02** and **microk8s-master-03**
 
-```
+```bash
 microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b
 ```
 
 - Continue to join the workers to the nodes **microk8s-worker-1, microk8s-worker-2, microk8s-worker-3, microk8s-worker-4** with the same token above, and just add **_--worker_** at the end of the join command.
 
-```
+```bash
 microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b --worker
 ```
 
@@ -199,13 +199,13 @@ To check the master nodes, use the command `microk8s status` on the VM **microk8
 
 ### Step 6: Activate the dashboard, DNS, and storage addons.
 
-```
+```bash
 microk8s enable dns dashboard hostpath-storage
 ```
 
 After successful installation, use the command **microk8s dashboard-proxy** on the VM **microk8s-master-01** to open the dashboard.
 
-```
+```bash
 microk8s dashboard-proxy
 ```
 

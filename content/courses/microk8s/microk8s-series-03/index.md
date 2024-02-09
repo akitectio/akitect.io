@@ -54,7 +54,7 @@ Chúng ta vào trang chủ của vagrant để tải tiệp cài đặt về htt
 
 ### Bước 3: Sau khi cài đặt thành công ta tạo file Vagriantfile
 
-```
+```bash
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
   config.winrm.timeout = 1800 # 30 minutes
@@ -164,8 +164,8 @@ end
 
 Sau khi tạo xong thì chúng ta sử dụng lệnh **Vagrant up** để chạy môi trường ảo hoá lên
 
-```
-Vagrant up
+```bash
+vagrant up
 ```
 
 > Tuỳ theo mạng và cấu hình máy của bạn, bước này tầm 30 -> 60p
@@ -188,7 +188,7 @@ vagrant ssh microk8s_master_01
 
 Tiếp tục ta tạo token để kết nối vào cụm microk8s
 
-```
+```bash
 microk8s add-node
 ```
 
@@ -200,7 +200,7 @@ sau đó ta ssh vào các máy **microk8s-master-02** và **microk8s-master-03**
 
 Chunng ta sử dụng lệnh **microk8s join** để kết nối 2 máy vào cum master
 
-```
+```bash
 microk8s join 192.168.56.2:25000/f9b92e3f904dd17cba2332a88a3092da/a25a7c633d5c
 ```
 
@@ -210,7 +210,7 @@ microk8s join 192.168.56.2:25000/f9b92e3f904dd17cba2332a88a3092da/a25a7c633d5c
 
 Ta dùng lệnh **microk8s kubectl get no** để check xem 2 node master 01 vs master 02 đã join chưa
 
-```
+```bash
 microk8s kubectl get no
 ```
 
@@ -218,25 +218,25 @@ microk8s kubectl get no
 
 Như vậy cụm master đã join thành công, bây giờ ta thực hiện với cụm worker, sau đó ta ssh vào các máy **microk8s-worker-01**, **microk8s-worker-02**, **microk8s-worker-03**, **microk8s-worker-04** để join vào các máy worker
 
-```
+```bash
 vagrant ssh microk8s_worker_01
 ```
 
 {{< figure src="./d2b2744c-4192-456a-bbf4-070175392a4c.png" >}}
 
-```
+```bash
 vagrant ssh microk8s_worker_02
 ```
 
 {{< figure src="./c01e6c0e-e040-48c9-8d19-57ba610815eb.png" >}}
 
-```
+```bash
 vagrant ssh microk8s_worker_03
 ```
 
 {{< figure src="./d827a85c-afa0-4532-90e3-74c9ecc08250.png" >}}
 
-```
+```bash
 vagrant ssh microk8s_worker_04
 ```
 
@@ -244,7 +244,7 @@ vagrant ssh microk8s_worker_04
 
 Sau khi login vào các worker thành công ta vào con **microk8s-master-01** gõ lệnh **microk8s add-node **
 
-```
+```bash
 microk8s add-node
 ```
 
@@ -252,7 +252,7 @@ microk8s add-node
 
 Ta sử dụng token có ip là **192.168.56.2** và thêm **--worker** ở cuối, và áp dụng cho tất cả các máy **worker**
 
-```
+```bash
 microk8s join 192.168.56.2:25000/{toke} --worker
 ```
 

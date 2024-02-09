@@ -13,7 +13,7 @@ series:
   - microk8s-series
 tags:
   - microk8s
-  - Kubernetes
+  - kubernetes
   - k8s
   - ubuntu
   - virtualbox
@@ -74,13 +74,13 @@ Bằng cách đó, nhân viên có trình độ của bạn sẽ có thể dành
 
 ### Bước 1: Đầu tiên chúng ta kết nối vào vm **microk8s-master-01**
 
-```java
+```bash
 ssh ubuntu@192.168.56.2
 ```
 
 Sau khi ssh thành công ta kích hoạt **addons observability** bằng lệnh
 
-```markdown
+```bash
 microk8s enable observability
 ```
 
@@ -92,7 +92,7 @@ Khi apply thanh công dưới cùng thì sẽ có username vs password mặt đ�
 
 Để truy cập được service thì mình dùng port-forward bằng lệnh:
 
-```shell
+```bash
 microk8s kubectl port-forward -n observability service/kube-prom-stack-grafana --address 0.0.0.0 3000:80
 ```
 
@@ -120,7 +120,7 @@ Khi đăng nhập thành công thì ta vào phần dashboard: http://192.168.56.
 
 Bạn vui lòng tham khảo theo Series mình đã chia sẽ từ trước
 
-https://akitect.io/series/zabbix-tutorial
+https://akitect.io/courses/zabbix/
 
 ### Kích hoạt addons community fluentd (Elasticsearch, Fluentd and Kibana)
 
@@ -142,7 +142,7 @@ microk8s enable fluentd
 
 khi apply thành công thì ta đợi tầm 1p để up các service lên, tiếp tục ta dùng port forward để vào service kibana
 
-```
+```bash
 microk8s kubectl port-forward -n kube-system service/kibana-logging --address 0.0.0.0 8181:5601
 ```
 
@@ -158,8 +158,8 @@ Như vậy ta đã kích hoạt thành công **addons fluentd**
 
 Lưu ý phải kích hoạt trước **addons community fluentd** , chúng ta bắt đầu cài đặt **zipkin** bằng lệnh:
 
-```
-microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
+```bash
+microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
 ```
 
 {{< figure src="./36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
@@ -170,7 +170,7 @@ Nội dung tiệp **zipkin-all-in-one.yaml**
 
 Sau khi kích hoạt thành công ta dùng port forward để vào service:
 
-```
+```bash
  microk8s kubectl port-forward -n default service/zipkin --address 0.0.0.0 9411:9411
 ```
 

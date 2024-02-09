@@ -13,7 +13,7 @@ series:
   - microk8s-series
 tags:
   - microk8s
-  - Kubernetes
+  - kubernetes
   - k8s
   - ubuntu
   - virtualbox
@@ -97,13 +97,13 @@ Here, there is a list of pre-designed dashboard templates that can be used or cu
 
 Please refer to the series that I have shared before:
 
-https://akitect.io/series/zabbix
+https://akitect.io/courses/zabbix/
 
 ### Activate community addons fluentd (Elasticsearch, Fluentd and Kibana)
 
 First, enable the community using the command:
 
-```
+```bash
  microk8s enable community
 ```
 
@@ -111,7 +111,7 @@ First, enable the community using the command:
 
 After successfully enabling the community, activate the **fluentd addons** using the command:
 
-```
+```bash
 microk8s enable fluentd
 ```
 
@@ -119,7 +119,7 @@ microk8s enable fluentd
 
 After successful application, wait for about 1 minute for the services to be up. Then, use port forwarding to access the Kibana service:
 
-```
+```bash
 microk8s kubectl port-forward -n kube-system service/kibana-logging --address 0.0.0.0 8181:5601
 ```
 
@@ -135,19 +135,19 @@ Thus, we have successfully activated the **fluentd addons**.
 
 Note that we must activate the **fluentd community addons** before installing **Zipkin** using the following command:
 
-```
-microk8s kubectl apply -f https://gist.githubusercontent.com/tdduydev/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
+```bash
+microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
 ```
 
 {{< figure src="./36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
 
 Content of the file **zipkin-all-in-one.yaml**
 
-{@embed: https://gist.github.com/tdduydev/e979e6d36c7b03d6b41160b470ec70fa}
+{@embed: https://gist.github.com/akitectio/e979e6d36c7b03d6b41160b470ec70fa}
 
 After successful activation, use port forwarding to access the service:
 
-```
+```bash
  microk8s kubectl port-forward -n default service/zipkin --address 0.0.0.0 9411:9411
 ```
 

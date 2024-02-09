@@ -30,13 +30,13 @@ I ssh into the VM **microk8s-master-01 (192.168.56.2)** to perform the following
 
 After successfully logging into microk8s-master-01, I activate the registry using the command:
 
-```nginx
+```bash
 microk8s enable registry
 ```
 
 After activating the registry, the default persistent volume for storing images is 20G. However, you can allocate more space to fit your application needs using the command:
 
-```nginx
+```bash
 microk8s enable registry:size=40Gi
 ```
 
@@ -50,7 +50,7 @@ microk8s enable registry:size=40Gi
 
 - Uninstall the old version:
 
-```nginx
+```bash
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
@@ -60,21 +60,21 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 - Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 
-```nginx
+```bash
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg lsb-release
 ```
 
 - Add the official Docker GPG key:
 
-```nginx
+```bash
  sudo mkdir -p /etc/apt/keyrings
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
 - Use the following command to set up the repository:
 
-```nginx
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
@@ -85,19 +85,19 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 
 1. Update the apt packages:
 
-```nginx
+```bash
 sudo apt-get update
 ```
 
 2. Install Docker Engine, containerd, and Docker Compose:
 
-```nginx
+```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
 3. Add Docker permissions:
 
-```nginx
+```bash
 sudo gpasswd -a $USER docker
 newgrp docker
 sudo su $USER
@@ -109,13 +109,13 @@ sudo su $USER
 
 On the Docker build and push machines, we need to add configuration to the **/etc/docker/daemon.json** file.
 
-```nginx
+```bash
 sudo nano /etc/docker/daemon.json
 ```
 
 Add the following configuration:
 
-```nginx
+```bash
 {
   "insecure-registries" : ["192.168.56.2:32000"]
 }
@@ -125,7 +125,7 @@ Add the following configuration:
 
 Save the file and restart the Docker service:
 
-```nginx
+```bash
 sudo systemctl restart docker
 ```
 
@@ -133,7 +133,7 @@ Now, we can test the configuration with the following steps:
 
 1. Pull the Nginx image:
 
-```nginx
+```bash
 docker pull nginx
 ```
 
@@ -141,7 +141,7 @@ docker pull nginx
 
 2. Tag the nginx image file to 192.168.56.2:32000/duy-tran-nginx:
 
-```nginx
+```bash
 docker tag nginx 192.168.56.2:32000/duy-tran-nginx
 ```
 
@@ -149,7 +149,7 @@ docker tag nginx 192.168.56.2:32000/duy-tran-nginx
 
 4. Push the image 10.19.2.92:32000/duy-tran-nginx to the registry:
 
-```nginx
+```bash
 docker push 192.168.56.2:32000/duy-tran-nginx
 ```
 
@@ -161,7 +161,7 @@ Microk8s 1.23 and newer versions use separate server files for each image regist
 
 First, create the directory and file if they do not exist:
 
-```nginx
+```bash
 sudo mkdir -p /var/snap/microk8s/current/args/certs.d/192.168.56.2:32000
 sudo touch /var/snap/microk8s/current/args/certs.d/192.168.56.2:32000/hosts.toml
 ```
@@ -180,7 +180,7 @@ capabilities = ["pull", "resolve"]
 
 Save the file and restart the microk8s service:
 
-```nginx
+```bash
 microk8s stop
 microk8s start
 ```
@@ -189,7 +189,7 @@ microk8s start
 
 1. Create the file **duy-tran-nginx-all.yaml**.
 
-```yaml
+```yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -232,7 +232,7 @@ spec:
 
 2. Run file **duy-tran-nginx-all.yaml**
 
-```nginx
+```bash
  microk8s kubectl apply -f duy-tran-nginx-all.yaml
 ```
 
@@ -246,7 +246,7 @@ There are 2 ways to test:
 
 2. Run the dashboard to check:
 
-```nginx
+```bash
 microk8s dashboard-proxy
 ```
 

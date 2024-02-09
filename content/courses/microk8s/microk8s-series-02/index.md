@@ -126,7 +126,7 @@ sau đó vào giao diện ssh của vm ta làm theo từng bước sau:
 
 1. Kiểm tra tên card mạng vừa add vào
 
-```
+```bash
 ls /sys/class/net/
 ```
 
@@ -138,7 +138,7 @@ ls /sys/class/net/
 
 Ta sử dụng lệnh ở máy VM để set ip
 
-```
+```bash
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
@@ -148,7 +148,7 @@ sau đó thêm vào File theo như hình:
 
 {{< figure src="./0474bfbd-8efa-49cf-a602-3ce2e6d7a3d3.webp" >}}
 
-```
+```yml
 # This is the network config written by 'subiquity'
 network:
   ethernets:
