@@ -20,6 +20,7 @@
   <h2 class="text-center mb-4">Lessons</h2>
   <div class="row">
     {{ range .Pages }}
+    <meta property="og:see_also" content="{{ .Permalink }}" />
     <div class="col-md-4">
        <a href="{{ .Permalink }}" >
       <div class="card mb-4 shadow-sm">
@@ -60,6 +61,7 @@
   </p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     {{ range .Pages }}
+    
     <div class="col">
       <div class="card h-100">
         <a href="{{ .Permalink }}">
