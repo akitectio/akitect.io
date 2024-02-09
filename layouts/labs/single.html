@@ -38,21 +38,57 @@
           </a>
           {{ end }}
         </p>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
+     crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+          style="display:block; text-align:center;"
+          data-ad-layout="in-article"
+          data-ad-format="fluid"
+          data-ad-client="ca-pub-6342139522924885"
+          data-ad-slot="2211502811"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
         {{ with .Params.subtitle }}
         <h3 class="mb-4 text-muted">{{ . }}</h3>
         {{ end }}
-        <div class="content mb-5">{{ .Content }}</div>
+        {{/*  <div class="content mb-5">{{ .Content }}</div>  */}}
 
+        {{ $parts := split .Content "<!-- insert-ad-here -->" }}
+        <div class="content mb-5" v-html="safeHTML">
+          {{ index $parts 0 | safeHTML }}
+        </div>
+        
+        <!-- Insert your JavaScript ad code here -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
             crossorigin="anonymous"></script>
         <ins class="adsbygoogle"
             style="display:block"
             data-ad-format="autorelaxed"
             data-ad-client="ca-pub-6342139522924885"
-            data-ad-slot="4175305267"></ins>
+            data-ad-slot="1731360354"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+        <div class="content mb-5" v-html="safeHTML">
+          {{ if gt (len $parts) 1 }}
+            {{ index $parts 1 | safeHTML }}
+          {{ end }}
+        </div>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-6342139522924885"
+            data-ad-slot="4688109459"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+      
 
       </div>
     </div>
