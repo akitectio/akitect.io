@@ -32,6 +32,7 @@
     {{ end }}
     <!-- Repeat end -->
   </div>
+  {{ if eq (getenv "HUGO_ENV") "production" }}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -43,6 +44,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+{{ end }}
   <div class="justify-content-center">
     {{ template "_internal/pagination.html" . }}
   </nav>
