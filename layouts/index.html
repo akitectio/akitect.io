@@ -25,6 +25,9 @@
     color: black;
     margin: 0 10px;
   }
+  .card {
+    min-height: 400px;
+  }
 </style>
 <div class="container mt-4">
   <div class="row profile-section">
@@ -85,17 +88,19 @@
               <a class="link-a" href="{{ .Permalink }}">{{ .Title }} </a>
             </h5>
             <p class="card-text limited-text">{{ .Description }}</p>
-            {{ range first 2 .Params.tags }} {{ $tagPage := $.Site.GetPage
-            (printf "/tags/%s" .) }}
-            <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
-              <span
-                class="badge bg-secondary"
-                style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;"
-              >
-                #{{ . }}
-              </span>
-            </a>
-            {{ end }}
+            <div class="tag">
+              {{ range first 2 .Params.tags }} {{ $tagPage := $.Site.GetPage
+              (printf "/tags/%s" .) }}
+              <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
+                <span
+                  class="badge bg-secondary"
+                  style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;"
+                >
+                  #{{ . }}
+                </span>
+              </a>
+              {{ end }}
+            </div>
           </div>
         </div>
       </div>
