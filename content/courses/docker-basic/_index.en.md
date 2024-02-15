@@ -7,7 +7,7 @@ tags:
     - docker
     - container
 deprecated: true
-featuredImage: /series-banner/zabbix-tutorial.webp
+featuredImage: /courses/banner/docker-basic.webp
 lastmod: 2024-02-14T10:23:30-09:00
 author: DUY TRAN
 ---
