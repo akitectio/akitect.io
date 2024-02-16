@@ -7,11 +7,12 @@ license: <a rel="license external nofollow noopener noreffer" href="https://crea
 series:
   - docker-basic-series
 tags:
-  - microk8s
-title: Giới thiệu về Docker
+  - docker
+  - apple-silicon
+title: Cài đặt Docker trên Mac M1
 description:  Giới thiệu về Docker, một nền tảng mã nguồn mở giúp tự động hóa triển khai ứng dụng trong các container phần mềm.
 date: 2024-02-15T10:23:30-09:00
-weight: 1
+weight: 2
 ---
 
 
