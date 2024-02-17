@@ -16,21 +16,6 @@ author: DUY TRAN
 
 Docker là một nền tảng mã nguồn mở giúp tự động hóa triển khai ứng dụng trong các container phần mềm. Trong khóa học này, chúng ta sẽ tìm hiểu cách cài đặt và cấu hình Docker, cũng như cách xây dựng, chạy và quản lý các container.
 
-## Nội dung khóa học
-
-1. [Giới thiệu về Docker](/courses/docker-basic/introduction-to-docker)
-2. [Cài đặt Docker](/courses/docker-basic/install-docker)
-3. [Xây dựng Docker Image](/courses/docker-basic/build-docker-image)
-4. [Chạy Docker Container](/courses/docker-basic/run-docker-container)
-7. [Docker Networking](/courses/docker-basic/docker-networking)
-8. [Docker Storage](/courses/docker-basic/docker-storage)
-9. [Docker Compose](/courses/docker-basic/docker-compose)
-10. [Docker Swarm](/courses/docker-basic/docker-swarm)
-11. [Docker Monitoring](/courses/docker-basic/docker-monitoring)
-12. [Docker Troubleshooting](/courses/docker-basic/docker-troubleshooting)
-13. [Docker Best Practices](/courses/docker-basic/docker-best-practices)
-6. [Docker Security](/courses/docker-basic/docker-security)
-
 ## Mục tiêu
 
 Sau khi hoàn thành khóa học này, bạn sẽ có kiến thức cơ bản về Docker, cách cài đặt và cấu hình Docker, cách xây dựng, chạy và quản lý các container, cũng như các kỹ thuật an toàn và tối ưu hóa khi sử dụng Docker.
@@ -44,14 +29,3 @@ Khóa học này dành cho các lập trình viên, quản trị hệ thống, k
 - Kiến thức cơ bản về hệ điều hành Linux
 - Kiến thức cơ bản về lập trình và mạng máy tính
 - Máy tính cá nhân với hệ điều hành Linux, Windows, hoặc macOS
-
-## Tài liệu tham khảo
-
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Hub](https://hub.docker.com/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [Docker Swarm Documentation](https://docs.docker.com/engine/swarm/)
-- [Docker Security Documentation](https://docs.docker.com/engine/security/)
-- [Docker Networking Documentation](https://docs.docker.com/network/)
-- [Docker Storage Documentation](https://docs.docker.com/storage/)
-- [Docker Monitoring Documentation](https://docs.docker.com/config/daemon/monitoring/)

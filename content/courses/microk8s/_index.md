@@ -30,11 +30,3 @@ Microk8s là một cách nhanh chóng và dễ dàng để cài đặt một Kub
 - Những người quản trị hệ thống ứng dụng
 - Những người quản trị hệ thống giám sát
 
-## Nội dung
-
-- Giới thiệu về Microk8s
-- Cài đặt và cấu hình Microk8s
-- Triển khai ứng dụng trên Microk8s
-- Quản lý và vận hành Microk8s
-- Thực hành và bài tập
-- Tài liệu tham khảo
