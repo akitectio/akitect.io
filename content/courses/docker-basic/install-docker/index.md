@@ -9,7 +9,8 @@ series:
 tags:
   - docker
   - apple-m1-silicon
-title: Cài đặt Docker trên Mac M1
+  - mac-m1
+title: Lesson 2 - Cài đặt Docker trên Mac M1
 description:  Để cài đặt và sử dụng Docker trên Mac M1 một cách hiệu quả, bạn cần thực hiện các bước sau đây một cách cẩn thận và chi tiết. Mac M1 sử dụng kiến trúc ARM, vì vậy có một số điều cần lưu ý để đảm bảo Docker hoạt động ổn định.
 date: 2024-02-15T10:23:30-09:00
 weight: 2

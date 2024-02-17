@@ -22,15 +22,14 @@ Docker là một nền tảng mã nguồn mở giúp tự động hóa triển k
 2. [Cài đặt Docker](/courses/docker-basic/install-docker)
 3. [Xây dựng Docker Image](/courses/docker-basic/build-docker-image)
 4. [Chạy Docker Container](/courses/docker-basic/run-docker-container)
-5. [Quản lý Docker Container](/courses/docker-basic/manage-docker-container)
-6. [Docker Compose](/courses/docker-basic/docker-compose)
-7. [Docker Swarm](/courses/docker-basic/docker-swarm)
-8. [Docker Security](/courses/docker-basic/docker-security)
-9. [Docker Networking](/courses/docker-basic/docker-networking)
-10. [Docker Storage](/courses/docker-basic/docker-storage)
+7. [Docker Networking](/courses/docker-basic/docker-networking)
+8. [Docker Storage](/courses/docker-basic/docker-storage)
+9. [Docker Compose](/courses/docker-basic/docker-compose)
+10. [Docker Swarm](/courses/docker-basic/docker-swarm)
 11. [Docker Monitoring](/courses/docker-basic/docker-monitoring)
 12. [Docker Troubleshooting](/courses/docker-basic/docker-troubleshooting)
 13. [Docker Best Practices](/courses/docker-basic/docker-best-practices)
+6. [Docker Security](/courses/docker-basic/docker-security)
 
 ## Mục tiêu
 

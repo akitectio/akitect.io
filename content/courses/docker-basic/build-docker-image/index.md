@@ -1,15 +1,15 @@
 ---
 draft: false
-featuredImage: /courses/docker-basic/install-docker/featured-image.webp
+featuredImage: /courses/docker-basic/build-docker-image/featured-image.webp
 images:
-  - /courses/docker-basic/install-docker/featured-image.webp
+  - /courses/docker-basic/build-docker-image/featured-image.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
   - docker-basic-series
 tags:
   - docker
   - apple-m1-silicon
-title: Xây dựng Docker Image
+title: Lesson 3 - Xây dựng Docker Image
 description:  Để cài đặt và sử dụng Docker trên Mac M1 một cách hiệu quả, bạn cần thực hiện các bước sau đây một cách cẩn thận và chi tiết. Mac M1 sử dụng kiến trúc ARM, vì vậy có một số điều cần lưu ý để đảm bảo Docker hoạt động ổn định.
 date: 2024-02-15T10:23:30-09:00
 weight: 3
@@ -20,7 +20,6 @@ weight: 3
 ### Tạo Dockerfile:
 
 `Dockerfile` là một tập tin văn bản không có định dạng tên mở rộng, được sử dụng bởi Docker để tự động hóa quá trình xây dựng các hình ảnh Docker. Nó chứa một tập hợp các lệnh mà Docker sử dụng để thiết lập và cấu hình một hình ảnh. Khi bạn chạy lệnh docker build, Docker sẽ đọc các lệnh từ Dockerfile và thực thi chúng từng bước một để tạo ra một hình ảnh Docker mới.
-
 
 #### 1. Khởi tạo Dockerfile:
 - Tạo một thư mục mới trên máy tính của bạn và gọi tên nó theo dự án, ví dụ `my-docker-app`.
