@@ -34,7 +34,7 @@ graph TD
     G -.->|Đăng ký| H
 
     H -->|Định tuyến yêu cầu| I[Routing Mesh]
-    I -->|Cổng được công bố| J[Cổng trên Host]
+    I -->|Port được public| J[Port trên Host]
 
     classDef manager fill:#f9f,stroke:#333,stroke-width:4px;
     classDef worker fill:#bbf,stroke:#333,stroke-width:2px;

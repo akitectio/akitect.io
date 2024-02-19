@@ -93,6 +93,4 @@ Khi quyết định cách lưu trữ dữ liệu trong Docker, hãy xem xét nh�
 - **Dữ liệu có cần được quản lý bên ngoài Docker và dễ dàng truy cập từ host không?** Cân nhắc sử dụng Bind Mounts.
 - **Dữ liệu có chỉ là tạm thời và không cần lưu trữ sau khi container dừng không?** Tmpfs Mounts là sự lựa chọn tốt.
 
-Nhớ rằng, mỗi phương thức lưu tr
-
-ữ có những ưu và nhược điểm riêng, và việc lựa chọn phương thức phù hợp phụ thuộc vào yêu cầu cụ thể của ứng dụng và môi trường triển khai của bạn.
+Nhớ rằng, mỗi phương thức lưu trữ có những ưu và nhược điểm riêng, và việc lựa chọn phương thức phù hợp phụ thuộc vào yêu cầu cụ thể của ứng dụng và môi trường triển khai của bạn.
