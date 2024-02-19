@@ -1,7 +1,7 @@
 ---
 title: Docker Basic
 description: Docker is an open-source platform that automates the deployment of applications inside software containers. In this course, we will learn how to install and configure Docker, as well as how to build, run, and manage containers.
-weight: 1
+weight: 0
 type: courses_detail
 tags: 
     - docker

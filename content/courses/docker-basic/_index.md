@@ -1,7 +1,7 @@
 ---
 title: Docker Basic
 description: Docker là một nền tảng mã nguồn mở giúp tự động hóa triển khai ứng dụng trong các container phần mềm. Trong khóa học này, chúng ta sẽ tìm hiểu cách cài đặt và cấu hình Docker, cũng như cách xây dựng, chạy và quản lý các container.
-weight: 1
+weight: 0
 type: courses_detail
 tags: 
     - docker
