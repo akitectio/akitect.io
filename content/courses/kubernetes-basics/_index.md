@@ -3,13 +3,13 @@ title: Cơ bản về Kubernetes
 description: Kubernetes là một hệ thống mã nguồn mở để tự động hóa triển khai, quản lý và mở rộng các ứng dụng chứa. Trong khóa học này, chúng ta sẽ tìm hiểu về cách cài đặt và cấu hình Kubernetes, cũng như cách triển khai ứng dụng trên Kubernetes.
 weight: 0
 type: courses_detail
-free: true
 tags: 
     - kubernetes
 deprecated: true
 featuredImage: /courses/banner/kubernetes-basic.webp
 lastmod: 2024-02-19T10:23:30-09:00
 author: DUY TRAN
+draft: true
 ---
 ## Các bài học về Cơ bản về Kubernetes
 
