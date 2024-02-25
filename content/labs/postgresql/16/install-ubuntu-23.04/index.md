@@ -18,9 +18,10 @@ title: Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 23.04
 url: /cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2304
 ---
 
-# PostgreSQL 16 Package Repository
 
-```
+### Bước 1: Thêm Package Repository PostgreSQL 16
+
+```shell
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
@@ -28,7 +29,7 @@ wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt
 
 Để bắt đầu, hãy lấy phiên bản mới nhất của các gói. Chúng ta có thể đạt được điều này bằng cách sử dụng lệnh cập nhật apt như hình dưới đây:
 
-```
+```shell
 sudo apt update
 ```
 
@@ -38,13 +39,13 @@ sudo apt update
 
 Để cài đặt chúng ta sử dụng lệnh
 
-```
+```shell
  sudo apt install postgresql postgresql-client -y
 ```
 
 Sau khi chạy thành công ta kiểm tra PostgreSQL service có được start chưa:
 
-```
+```shell
  sudo systemctl status postgresql
 ```
 
@@ -52,7 +53,7 @@ Sau khi chạy thành công ta kiểm tra PostgreSQL service có được start 
 
 Như vậy ta đã cài đặt PostgreSQL thành công và kiểm tra phiên bản PostgreSQL bằng lệnh
 
-```
+```shell
  psql --version
 ```
 
@@ -64,7 +65,7 @@ Như vậy ta đã cài đặt PostgreSQL thành công và kiểm tra phiên b�
 
 Theo mặc định, chúng ta có thể kết nối với máy chủ PostgreSQL mà không cần sử dụng bất kỳ mật khẩu nào. Hãy xem điều này hoạt động bằng cách sử dụng tiện ích psql:
 
-```
+```shell
 sudo -u postgres psql
 ```
 
@@ -74,7 +75,7 @@ Trong đầu ra ở trên, lời nhắc **postgres=#** cho biết kết nối đ
 
 Tiếp tục chúng ta dùng lệnh để đổi password là **PassKhongChilaPasss**
 
-```
+```shell
 ALTER USER postgres PASSWORD 'PassKhongChilaPasss';
 ```
 
@@ -84,7 +85,7 @@ sau đó chúng ta thoát khỏi bằng lệnh `\q`
 
 Bây giờ, hãy kết nối lại với máy chủ cơ sở dữ liệu:
 
-```
+```shell
 psql -h localhost -U postgres
 ```
 
@@ -114,7 +115,7 @@ Tiếp theo, chỉnh sửa phần kết nối cục bộ IPv4 của tệp **pg_h
 
 Trong trường hợp, tường lửa Ubuntu đang chạy trên hệ thống của bạn thì hãy cho phép cổng PostgreSQL 5432 bằng lệnh sau,
 
-```
+```shell
 sudo ufw allow 5432/tcp
 ```
 
