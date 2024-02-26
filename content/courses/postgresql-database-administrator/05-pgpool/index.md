@@ -88,6 +88,8 @@ backend_application_name0 = 'postgresql-slave-02'
 load_balance_mode = on
 master_slave_mode = on 
 master_slave_sub_mode = 'stream'
+
+allow_sql_comments = true
 ```
 
 Trong đó: 
