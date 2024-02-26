@@ -73,7 +73,7 @@
     <!-- 5 bài viết mới nhất -->
     <div class="recent-posts row">
       <h2 class="text-center">Mới nhất</h2>
-      {{ range first 12 .Site.RegularPages }}
+      {{ range sort .Site.RegularPages "Date" "desc" }}
       <div class="col-md-3">
         <div class="card mb-4 shadow-sm">
           <div class="card-body">

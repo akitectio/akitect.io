@@ -3,7 +3,7 @@ categories:
   - database
 date: 2023-11-19T08:00:00+08:00
 description: PostgreSQL so với cơ sở dữ liệu khác như thế nào?
-draft: true
+draft: false
 series:
   - postgresql-dba-series
 featuredImage: /series/database/postgresql-dba-03-object-model-trong-postgresql.webp

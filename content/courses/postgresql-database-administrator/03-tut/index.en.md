@@ -3,7 +3,7 @@ categories:
   - database
 date: 2023-11-19T08:00:00+08:00
 description: PostgreSQL is an object-relational database management system (ORDBMS). This means it combines features of both relational databases (RDBMS) and object-oriented databases (OODBMS). The object model in PostgreSQL provides features such as user-defined data types, inheritance, and polymorphism, enhancing its capabilities beyond a typical SQL-based RDBMS.
-draft: true
+draft: false
 series:
   - postgresql-dba-series
 featuredImage: /series/database/postgresql-dba-03-object-model-trong-postgresql.webp

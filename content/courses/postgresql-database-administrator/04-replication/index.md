@@ -11,10 +11,10 @@ tags:
   - database
   - replication 
   - ubuntu
-title: PostgreSQL 16 Replication - Hướng chi tiết từng bước
+title: Lesson 4 - PostgreSQL 16 Replication 
 url: /thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc
 description : PostgreSQL có tính năng sao chép tầng, cho phép sao chép dữ liệu từ DB này sang DB khác, tạo nhiều bản sao dữ liệu. Tính năng này giúp phân phối dữ liệu, đảm bảo dữ liệu mới nhất và hỗ trợ thay thế máy chủ chính.
-weight: 1
+weight: 4
 ---
 
 ## PostgreSQL Replication (Sao Chép) là gì
