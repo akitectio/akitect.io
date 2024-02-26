@@ -2,23 +2,22 @@
 categories:
   - database
 date: 2023-03-01T08:00:00+08:00
-description: Cài đặt và bảo mật PostgreSQL 15 trên Ubuntu 23.04
+description: Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04
 draft: false
 featuredImage: /series/postgresql.png
 images:
-  - /cai-dat-va-bao-mat-postgresql-15-tren-ubuntu-2304/images/index.png
+  - /cai-dat-va-bao-mat-postgresql-15-tren-ubuntu-2204/images/index.png
   - /series/postgresql.png
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags:
-  - Database
-  - PostgreSQL
-  - Ubuntu
-  - PostgreSQL 15
-title: Cài đặt và bảo mật PostgreSQL 15 trên Ubuntu 23.04
-url: /cai-dat-va-bao-mat-postgresql-15-tren-ubuntu-2304
+  - database
+  - postgresql
+  - ubuntu
+title: Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04
+url: /cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2204
 ---
 
-# PostgreSQL 15 Package Repository
+# PostgreSQL 16 Package Repository
 
 ```shell
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -34,7 +33,7 @@ sudo apt update
 
 {{< figure src="./images/a0b112e0-aa5f-493a-ad99-693f029a2c3c.webp" >}}
 
-### Bước 2: Cài dặt PostgreSQL 15 Database Server và Client
+### Bước 2: Cài dặt PostgreSQL 16 Database Server và Client
 
 Để cài đặt chúng ta sử dụng lệnh
 
