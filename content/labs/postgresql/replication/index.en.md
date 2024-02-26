@@ -23,11 +23,11 @@ PostgreSQL is a flexible open-source relational database management system, know
 
 ## Installation Architecture
 
-{{< figure src="./images/postgresql-15-replication.jpeg" >}}
+{{< figure src="./images/postgresql-16-replication.jpeg" >}}
 
 ## Environment Preparation
 
-Before we start, we need to prepare 2 servers
+Before we start, we need to prepare 3 servers
 
 | IP           | Hostname             | vCPU   | RAM | DISK | OS           |
 | ------------ | -----------------    | ------ | --- | ---- | ------------ |

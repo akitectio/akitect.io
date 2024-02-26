@@ -11,7 +11,7 @@ tags:
   - database
   - replication 
   - ubuntu
-title: Thiết lập PostgreSQL 16 Replication - Hướng chi tiết từng bước
+title: PostgreSQL 16 Replication - Hướng chi tiết từng bước
 url: /thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc
 description : PostgreSQL có tính năng sao chép tầng, cho phép sao chép dữ liệu từ DB này sang DB khác, tạo nhiều bản sao dữ liệu. Tính năng này giúp phân phối dữ liệu, đảm bảo dữ liệu mới nhất và hỗ trợ thay thế máy chủ chính.
 weight: 1
@@ -23,11 +23,11 @@ PostgreSQL là một hệ thống quản lý cơ sở dữ liệu quan hệ mã 
 
 ## Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-15-replication.jpeg" >}}
+{{< figure src="./images/postgresql-16-replication.jpeg" >}}
 
 ## Chuẩn bị môi trường
 
-Trước khi bắt đầu ta cần chuẩn bị 2                                      máy chủ
+Trước khi bắt đầu ta cần chuẩn bị 3 máy chủ
 
 | IP           | Hostname             | vCPU   | RAM | DISK | OS           |
 | ------------ | -----------------    | ------ | --- | ---- | ------------ |
