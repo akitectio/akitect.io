@@ -1,7 +1,7 @@
 ---
 categories:
   - database
-date: 2024-02-24T08:00:00+08:00
+date: 2024-02-25T08:00:00+08:00
 draft: true
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
 images:
@@ -12,144 +12,16 @@ tags:
   - postgreSQL
   - ubuntu
   - pgpool
-title: Postgres Pgpool-II Ubuntu - Cấu hình từng bước
-url: /pgpool-ii-ubuntu-cau-hinh-tung-buoc
-description: PGpool-II là một giải pháp trung gian độc đáo, được thiết kế đặc biệt để tối ưu hóa và mở rộng khả năng của hệ quản trị cơ sở dữ liệu PostgreSQL. Nó mang lại nhiều lợi ích như việc tối ưu hóa kết nối, phân phối tải đều và thực hiện sao chép dữ liệu, biến PGpool-II thành công cụ không thể thiếu trong quản lý các triển khai PostgreSQL. Trong hướng dẫn chi tiết này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
+title: Lesson 6 - Pgpool Admin Ubuntu 
+url: /cai-dat-va-cau-hinh-pgpool-admin-tren-ubuntu
+description: Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-II, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool Admin trên hệ điều hành Ubuntu Linux, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu của mình.
 weight: 6
 ---
 
-# Pgpool-II là gì 
+## Pgpool Admin là gì
 
-PGpool-II là một giải pháp trung gian độc đáo, được thiết kế đặc biệt để tối ưu hóa và mở rộng khả năng của hệ quản trị cơ sở dữ liệu PostgreSQL. Nó mang lại nhiều lợi ích như việc tối ưu hóa kết nối, phân phối tải đều và thực hiện sao chép dữ liệu, biến PGpool-II thành công cụ không thể thiếu trong quản lý các triển khai PostgreSQL. Trong hướng dẫn chi tiết này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
+Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-II, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool Admin trên hệ điều hành Ubuntu Linux, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu của mình.
 
-# Kiến trúc cài đặt
-
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
-
-
-Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
-
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -------------------- | ------ | --- | ---- | ------------ |
-| 192.168.56.5 | pgpool2              | 2 core | 4G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-
-### Cài đặt PostgreSQL Replication 
-
-[Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) trên 3 máy chủ `postgresql-master` và `postgresql-slave-01`, `postgresql-slave-02`.
-
-### Cài đặt PGpool-II
-
-#### Bước 1: Cài đặt PGpool-II
-
-Đầu tiên, cài đặt PGpool-II trên máy chủ `pgpool2` bằng cách thực hiện các bước sau:
-
-```bash
-sudo apt update
-sudo apt install -y pgpool2
-```
-
-#### Bước 2: Cấu hình PGpool-II
-
-Sau khi cài đặt xong, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pgpool.conf`:
-
-```bash
-sudo nano /etc/pgpool2/pgpool.conf
-```
-
-Thêm cấu hình sau vào tệp:
-
-```bash
-listen_addresses = '*'
-port = 5432 
-
-# only write queries are load balanced
-backend_hostname0 = '192.168.56.2' 
-backend_port0 = 5432
-backend_weight0 = 2  
-backend_data_directory0 = '/var/lib/postgresql/16/main' 
-backend_application_name0 = 'postgresql-master'
-
-# only read queries are load balanced
-backend_hostname1 = '192.168.56.3'
-backend_port1 = 5432
-backend_weight1 = 1
-backend_data_directory1 = '/var/lib/postgresql/16/main' 
-backend_application_name0 = 'postgresql-slave-01'
-
-backend_hostname2 = '192.168.56.4'
-backend_port2 = 5432
-backend_weight2 = 1
-backend_data_directory2 = '/var/lib/postgresql/16/main'
-backend_application_name0 = 'postgresql-slave-02'
-
-load_balance_mode = on
-master_slave_mode = on 
-master_slave_sub_mode = 'stream'
-```
-
-Trong đó: 
-
-- `listen_addresses`: Địa chỉ IP mà PGpool-II sẽ lắng nghe các kết nối đến.
-- `port`: Cổng mà PGpool-II sẽ lắng nghe các kết nối đến.
-- `backend_hostname0`: Địa chỉ IP của máy chủ PostgreSQL master.
-- `backend_port0`: Cổng của máy chủ PostgreSQL master.
-- `backend_weight0`: Trọng số của máy chủ PostgreSQL master.
-- `backend_data_directory0`: Đường dẫn đến thư mục dữ liệu của máy chủ PostgreSQL master.
-- `backend_hostname1`: Địa chỉ IP của máy chủ PostgreSQL slave 1.
-- `backend_port1`: Cổng của máy chủ PostgreSQL slave 1.
-- `backend_weight1`: Trọng số của máy chủ PostgreSQL slave 1.
-- `backend_data_directory1`: Đường dẫn đến thư mục dữ liệu của máy chủ PostgreSQL slave 1.
-- `backend_hostname2`: Địa chỉ IP của máy chủ PostgreSQL slave 2.
-- `backend_port2`: Cổng của máy chủ PostgreSQL slave 2.
-- `backend_weight2`: Trọng số của máy chủ PostgreSQL slave 2.
-- `backend_data_directory2`: Đường dẫn đến thư mục dữ liệu của máy chủ PostgreSQL slave 2.
-- `load_balance_mode`: Chế độ phân phối tải đều.
-- `master_slave_mode`: Chế độ master/slave.
-- `master_slave_sub_mode`: Chế độ sao chép dữ liệu.
-
-#### Bước 3: Cấu hình quản lý kết nối
-
-Tiếp theo, chúng ta sẽ cấu hình quản lý kết nối bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pool_hba.conf`:
-
-```bash
-sudo nano /etc/pgpool2/pool_hba.conf
-```
-
-Thêm cấu hình sau vào tệp:
-
-```bash
-host    all         all         0.0.0.0/0          trust
-```
-
-#### Bước 4: Khởi động PGpool-II
-
-Cuối cùng, khởi động lại dịch vụ PGpool-II để áp dụng các thay đổi:
-
-```bash
-sudo systemctl restart pgpool2
-```
-
-Để đảm bảo PGpool-II tự động khởi động khi khởi động hệ thống, bạn có thể kích hoạt dịch vụ PGpool-II bằng lệnh sau:
-
-```bash
-sudo systemctl enable pgpool2
-```
-
-#### Bước 5: Test kết nối, ta dùng pgadmin để kết nối đến pgpool2
-
-Thông tin đăng nhập như sau:
-
-`Host`: 192.168.56.5
-`Port`: 5432
-`Username`: postgres
-`Password`: ở bước cài đặt PostgreSQL Replication
-
-{{< figure src="./images/pgpool-pgadmin.jpg" >}}
-
-Như vậy ta đã cài đặt và cấu hình PGpool-II thành công.
 
 ### Cài đặt PGpool Admin trên Ubuntu
 
@@ -176,8 +48,6 @@ php -v
 ```
 
 {{< figure src="./images/php-version.jpg" >}}
-
-
 
 #### Bước 2: Tải PGpool Admin 4.2.0
 
@@ -249,11 +119,9 @@ Cuối cùng, khởi động lại dịch vụ Apache2 để áp dụng các tha
 sudo systemctl restart apache2
 ```
 
-### Bước 4: Tạo 
-
 ### Bước 5: Truy cập PGpool Admin và cấu hình ban đầu
 
-Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ `http://192.168.56.5/pgpooladmin/install`:
+Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
 {{< figure src="./images/pgpooladmin-install.jpg" >}}
 
@@ -264,6 +132,7 @@ chọn ngôn ngữ và nhấn `Next`
 Tiếp tục thêm thông tin cấu hình kết nối đến pgpool2
 
 {{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+
 
 
 
