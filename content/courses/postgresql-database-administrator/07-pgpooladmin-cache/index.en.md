@@ -2,7 +2,7 @@
 categories:
   - database
 date: 2024-02-25T08:00:00+08:00
-draft: false
+draft: true
 featuredImage: /labs/postgresql/postgresql-pgpooladmin.jpeg
 images:
   - /labs/postgresql/postgresql-pgpooladmin.jpeg
