@@ -2,7 +2,7 @@
 categories:
   - database
 date: 2024-02-24T08:00:00+08:00
-draft: true
+draft: false
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
 images:
   - /labs/postgresql/postgresql-pgpool.jpeg
@@ -12,10 +12,10 @@ tags:
   - postgresql
   - ubuntu
   - pgpool
-title: Lesson 5 -  Postgres Pgpool-II Ubuntu 
+title: Lesson 1 -  Postgres Pgpool-II Ubuntu 
 url: /pgpool-ii-ubuntu-cau-hinh-tung-buoc
 description: PGpool-II là một giải pháp trung gian độc đáo, được thiết kế đặc biệt để tối ưu hóa và mở rộng khả năng của hệ quản trị cơ sở dữ liệu PostgreSQL. Nó mang lại nhiều lợi ích như việc tối ưu hóa kết nối, phân phối tải đều và thực hiện sao chép dữ liệu, biến PGpool-II thành công cụ không thể thiếu trong quản lý các triển khai PostgreSQL. Trong hướng dẫn chi tiết này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
-weight: 5
+weight: 1
 ---
 
 # Pgpool-II là gì 

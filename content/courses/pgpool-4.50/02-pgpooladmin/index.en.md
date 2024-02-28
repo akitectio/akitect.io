@@ -2,7 +2,7 @@
 categories:
   - database
 date: 2024-02-25T08:00:00+08:00
-draft: true
+draft: false
 featuredImage: /labs/postgresql/postgresql-pgpooladmin.jpeg
 images:
   - /labs/postgresql/postgresql-pgpooladmin.jpeg
@@ -12,10 +12,10 @@ tags:
   - postgreSQL
   - ubuntu
   - pgpool
-title: Lesson 6 - Pgpool-II Admin Ubuntu 
+title: Lesson 2 - Pgpool-II Admin Ubuntu 
 url: /install-and-configure-pgpool-ii-admin-on-ubuntu
 description: Pgpool Admin is a configuration management and monitoring tool for PGpool-II, helping you manage and monitor the performance of your PostgreSQL database. In this guide, we will go through the steps to install and configure Pgpool Admin on Ubuntu Linux, helping you manage and monitor the performance of your database.
-weight: 6
+weight: 2
 ---
 
 ## What is Pgpool Admin

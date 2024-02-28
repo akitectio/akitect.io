@@ -12,10 +12,10 @@ tags:
   - postgreSQL
   - ubuntu
   - pgpool
-title: Lesson 6 - Pgpool-II Admin Ubuntu 
+title: Lesson 2 - Pgpool-II Admin Ubuntu 
 url: /cai-dat-va-cau-hinh-pgpool-ii-admin-tren-ubuntu
 description: Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-II, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool Admin trên hệ điều hành Ubuntu Linux, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu của mình.
-weight: 6
+weight: 2
 ---
 
 ## Pgpool Admin là gì
@@ -40,8 +40,7 @@ sudo apt update
 Đầu tiên, cài đặt Apache2 và PHP trên máy chủ `pgpool2` bằng cách thực hiện các bước sau:
 
 ```bash
-sudo apt update
-sudo apt install -y apache2 php sudo apt install php7.4 libapache2-mod-php7.4 php7.4-cli php7.4-common php7.4-pgsql 
+sudo apt install -y apache2  php7.4 libapache2-mod-php7.4 php7.4-cli php7.4-common php7.4-pgsql 
 ```
 
 Sau khi cài đặt xong, kiểm tra phiên bản PHP:
