@@ -2,7 +2,7 @@
 categories:
   - database
 date: 2024-02-24T08:00:00+08:00
-draft: false
+draft: true
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
 images:
   - /labs/postgresql/postgresql-pgpool.jpeg
@@ -40,140 +40,18 @@ Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
 
 [Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) trên 3 máy chủ `postgresql-master` và `postgresql-slave-01`, `postgresql-slave-02`.
 
-### Cài đặt PGpool-II 4.5.0
+### Cài đặt PGpool-II
 
-#### Bước 1: Cài đặt PGpool-II 4.5.0
+#### Bước 1: Cài đặt PGpool-II
 
-##### Cài đặt make và gcc
-
-*** Cần có GNU tạo phiên bản 3.80 hoặc mới hơn; các chương trình tạo khác hoặc các phiên bản tạo GNU cũ hơn sẽ không hoạt động. (GNU make đôi khi được cài đặt dưới tên gmake.) Để kiểm tra GNU, hãy nhập:
+Đầu tiên, cài đặt PGpool-II trên máy chủ `pgpool2` bằng cách thực hiện các bước sau:
 
 ```bash
 sudo apt update
-sudo apt install -y make gcc libpq-dev
+sudo apt install -y pgpool2
 ```
 
-sau khi cài đặt kiểm tra phiên bản của `make`
-
-```bash
-make --version
-```
-
-{{< figure src="./images/make-version.jpg" >}}
-
-Phiên bản `make` hiện tại đang là `4.3`
-
-```bash
-gcc --version
-```
-
-{{< figure src="./images/gcc-version.jpg" >}}
-
-Phiên bản `gcc` hiện tại đang là `11.4.0`
-
-##### Tải gói cài đặt PGpool-II
-
-```bash
-wget https://www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.5.0.tar.gz -O pgpool-II-4.5.0.tar.gz
-```
-
-
-##### Giải nén và cài đặt
-
-```bash
-# giải nén
-tar -xvf pgpool-II-4.5.0.tar.gz
-cd pgpool-II-4.5.0
-```
-
-Tiếp tục ta cài đặt [memcached](/cai-dat-va-bao-mat-memcached-tren-ubuntu-22-04) và libmemcached-dev và libpq-dev
-
-```bash
-sudo apt install -y libmemcached-dev libpq-dev
-```
-
-Sau đó, chúng ta sẽ cấu hình và cài đặt PGpool-II bằng cách thực hiện các bước sau:
-
-```bash
-./configure --prefix=/home/pgpool2 --with-memcached=/usr/sbin/memcached 
-make && sudo make install
-```
-
-
-Bạn có thể tùy chỉnh quá trình xây dựng và cài đặt bằng cách cung cấp một hoặc nhiều tùy chọn dòng lệnh sau để định cấu hình:
-
-| Tùy chọn | Mô tả | Mặc định |
-|---|---|---|
-| `--prefix` | Đường dẫn cài đặt PGpool-II | `/usr/local` |
-| `--with-pgsql` | Thư mục cài đặt thư viện máy khách PostgreSQL | Cung cấp bởi `pg_config` |
-| `--with-openssl` | Hỗ trợ OpenSSL (mã hóa mật khẩu AES256) | Tắt |
-| `--enable-sequence-lock` | Khóa hàng trong bảng tuần tự (tương thích PGpool-II 3.0) | Tắt |
-| `--enable-table-lock` | Khóa bảng mục tiêu chèn (tương thích PGpool-II 2.2 & 2.3) | Tắt |
-| `--with-memcached=path` | Sử dụng memcached cho bộ đệm truy vấn bộ nhớ | Không sử dụng |
-| `--with-pam` | Hỗ trợ xác thực PAM | Tắt |
-
-
-Sau khi cấu hình xong, chúng ta tiền hành tạo ln -la để tạo liên kết đến thư `/usr/sbin` 
-
-```bash
-sudo ln -s /home/pgpool2/bin/* /usr/sbin
-```
-
-Tiếp tục kiểm tra phiên bản của `pgpool` sau khi cài đặt thành công bằng lệnh sau:
-
-```bash
-pgpool --version
-```
-
-{{< figure src="./images/pgpool-version.jpg" >}}
-
-#### Bước 2: Cài đặt `pgpool_recovery`
-
-`PGpool-II` yêu cầu bao gồm các chức năng `pgpool_recovery`, `pgpool_remote_start` và `pgpool_switch_xlog` khi sử dụng khôi phục trực tuyến như được giải thích sau. Hơn nữa, công cụ quản lý pgpoolAdmin còn hỗ trợ khả năng dừng, khởi động lại hoặc tải lại phiên bản PostgreSQL trên màn hình bằng cách sử dụng `pgpool_pgctl`. Việc cài đặt các chức năng này trong template1 ban đầu là đủ, không cần thiết phải cài đặt chúng trong tất cả các cơ sở dữ liệu.
-
-Trước tiên ta cần cài đặt `postgresql-server-dev-16`: 
-
-##### 2.1: Thêm key và repo của PostgreSQL 16
-
-```
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-apt update
-```
-
-##### 2.2: Cài đặt `postgresql-server-dev-16`
-
-```bash
-sudo apt install -y postgresql-server-dev-16 -y
-```
-
-##### 2.3: Cài đặt `pgpool_recovery`
-
-Tiếp theo, chúng ta sẽ cài đặt `pgpool_recovery` bằng cách thực hiện các bước sau:
-
-```bash
-# di chuyển đến thư mục pgpool-recovery
- cd pgpool-II-4.5.0/src/sql/pgpool-recovery
-
-# cài đặt
-make && sudo make install
-```
-
-##### 2.4: Cấu hình `pgpool_recovery`
-
-Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` bằng cách thực hiện các bước sau:
-
-```bash
-# di chuyển đến thư mục pgpool-recovery
-cd pgpool-II-4.5.0/src/sql/pgpool-recovery
-
-# cấu hình
-sudo -u postgres psql -c "CREATE EXTENSION pgpool_recovery" 
-
-# kiểm tra
-sudo -u postgres psql -c "SELECT * FROM pg_extension"
-```
-
+#### Bước 2: Cấu hình PGpool-II
 
 Sau khi cài đặt xong, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pgpool.conf`:
 
