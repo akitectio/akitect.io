@@ -63,11 +63,15 @@ listen_addresses = '*'
 wal_level = replica
 max_wal_senders = 10
 max_replication_slots = 10
+
+max_connections = 1000
 ```
 
 - `wal_level` is the level of the WAL (Write-Ahead Log) records that the master server will generate. This level needs to be set to `replica` to allow the master server to send WAL records to the slave server.
 
 - `max_replication_slots` is the maximum number of replication slots that the master server can create. Replication slots are a mechanism to keep copies of WAL records for the slave server. This level needs to be set to `10` to allow the master server to create up to 10 replication slots.
+
+- `max_connections` is the maximum number of client connections that the master server can accept. This level needs to be set to `1000` to allow the master server to accept up to 1000 client connections.
 
 After editing, save and exit the configuration file.
 

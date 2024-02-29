@@ -12,10 +12,10 @@ tags:
   - postgreSQL
   - ubuntu
   - pgpool
-title: Lesson 2 - Pgpool-II Admin Ubuntu 
+title: Lesson 3 - Pgpool-II Admin Ubuntu 
 url: /cai-dat-va-cau-hinh-pgpool-ii-admin-tren-ubuntu
 description: Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-II, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool Admin trên hệ điều hành Ubuntu Linux, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu của mình.
-weight: 2
+weight: 3
 ---
 
 ## Pgpool Admin là gì

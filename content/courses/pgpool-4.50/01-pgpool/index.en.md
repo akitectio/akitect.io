@@ -12,8 +12,8 @@ tags:
   - postgresql
   - ubuntu
   - pgpool
-title: Lesson 1 -  Postgres Pgpool-II Ubuntu 
-url: /pgpool-ii-ubuntu-step-by-step-configuration
+title: Lesson 1 -  Install Pgpool-II on Ubuntu 22.04
+url: /lesson-1-install-pgpool-ii-on-ubuntu-22-04
 description: PGpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It brings many benefits such as optimizing connections, load balancing, and performing data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure PGpool-II on the Ubuntu Linux operating system, helping you to maximize the performance and high availability of your database.
 weight: 1
 ---

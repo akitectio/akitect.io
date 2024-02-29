@@ -63,11 +63,15 @@ listen_addresses = '*'
 wal_level = replica
 max_wal_senders = 10
 max_replication_slots = 10
+
+max_connections = 1000
 ```
 
 - `wal_level` là mức độ của các bản ghi WAL (Write-Ahead Log) mà máy chủ chính sẽ tạo ra. Mức độ này cần được thiết lập thành `replica` để cho phép máy chủ chính gửi bản ghi WAL đến máy chủ phụ.
 
 - `max_replication_slots` là số lượng khe sao chép tối đa mà máy chủ chính có thể tạo ra. Khe sao chép là một cơ chế để giữ các bản sao của bản ghi WAL cho máy chủ phụ. Mức độ này cần được thiết lập thành `10` để cho phép máy chủ chính tạo ra tối đa 10 khe sao chép.
+
+- `max_connections` là số lượng kết nối client tối đa mà máy chủ chính có thể chấp nhận. Mức độ này cần được thiết lập thành `1000` để cho phép máy chủ chính chấp nhận tối đa `1000` kết nối client.
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
