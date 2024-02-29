@@ -42,7 +42,7 @@ Given the server configuration as follows:
 
 After successfully creating an Ubuntu server, I use the command
 
-```
+```shell
 sudo su
 df -h
 ```
@@ -59,7 +59,7 @@ So the total hard drive capacity is 100G, as we only received 50G, we need to ex
 
 ### 1. Check the current status of LVM partitions on the system with the following command:
 
-```
+```shell
 lvdisplay
 ```
 
@@ -69,7 +69,7 @@ This command will display a list of existing LVM partitions on your system.
 
 ### 2. Check the available capacity on the physical volume (PV) with the following command:
 
-```
+```shell
 pvdisplay
 ```
 
@@ -79,7 +79,7 @@ This command will display information about the available and used capacity on t
 
 ### 3. Check the location of the LVM partition you want to extend with the following command:
 
-```
+```shell
 df -h
 ```
 
@@ -89,13 +89,13 @@ This command will display a list of partitions on your system.
 
 Then, select the partition with the name:
 
-```
+```shell
 /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
 ### 4. So the LVM partition already exists, now I just need to add more logical volume capacity with the following command
 
-```
+```shell
 sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 ```
 
@@ -103,7 +103,7 @@ sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 
 Continue command
 
-```
+```shell
 sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
@@ -111,7 +111,7 @@ sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 
 After running successfully, we use the command **df -h** to check if the hard drive has been added
 
-```
+```shell
 df -h
 ```
 

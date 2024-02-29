@@ -42,7 +42,7 @@ Cho cấu hình máy chủ như sau
 
 sau khi tạo máy chủ ubuntu thành công thì mình dùng lệnh
 
-```
+```shell
 sudo su
 df -h
 ```
@@ -59,7 +59,7 @@ Như vậy tổng dung lượng ổ cứng của mình là 100G như chỉ mới
 
 ### 1. Kiểm tra tình trạng hiện tại của các phân vùng LVM trên hệ thống bằng lệnh sau
 
-```
+```shell
 lvdisplay
 ```
 
@@ -69,7 +69,7 @@ Lệnh này sẽ hiển thị danh sách các phân vùng LVM hiện có trên h
 
 ### 2. Kiểm tra dung lượng sẵn có trên phân vùng vật lý (PV) bằng lệnh sau
 
-```
+```shell
 pvdisplay
 ```
 
@@ -79,7 +79,7 @@ Lệnh này sẽ hiển thị thông tin về dung lượng sẵn có và sử d
 
 ### 3. Kiểm tra vị trí của phân vùng LVM muốn mở rộng bằng lệnh sau
 
-```
+```shell
 df -h
 ```
 
@@ -89,13 +89,13 @@ Lệnh này sẽ hiển thị danh sách các phân vùng trên hệ thống c�
 
 sau đó mình chọn phân vùng name có tên là
 
-```
+```shell
 /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
 ### 4.Như vậy phân vùng LVM đã có bây giờ mình chỉ cần thêm dung lượng logical volume bằng lệnh sau
 
-```
+```shell
 sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 ```
 
@@ -103,7 +103,7 @@ sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 
 Tiếp tục lệnh
 
-```
+```shell
 sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
@@ -111,7 +111,7 @@ sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 
 sau khi chạy thành công ta dùng lệnh **df -h** để kiểm tra xem ổ cững đã được thêm vào chưa
 
-```
+```shell
 df -h
 ```
 

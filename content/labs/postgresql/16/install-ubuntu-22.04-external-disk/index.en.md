@@ -3,7 +3,7 @@ categories:
   - database
 date: 2023-10-26T08:00:00+08:00
 description: Install and secure PostgreSQL 16 on Ubuntu 23.04
-draft: false
+draft: true
 featuredImage: /series/postgresql.png
 images:
   - /install-and-secure-postgresql-16-on-ubuntu-2304/images/index.en.png
@@ -14,13 +14,13 @@ tags:
   - PostgreSQL
   - Ubuntu
   - PostgreSQL 16
-title: Install and secure PostgreSQL 16 on Ubuntu 23.04
-url: /install-and-secure-postgresql-16-on-ubuntu-2304
+title: Install and secure PostgreSQL 16 on Ubuntu 23.04 (External Disk)
+url: /install-and-secure-postgresql-16-on-ubuntu-2304-external-disk
 ---
 
 # PostgreSQL 16 Package Repository
 
-```shell
+```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
@@ -28,7 +28,7 @@ wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt
 
 To begin, let's get the latest version of the packages. We can achieve this by using the apt update command as shown below:
 
-```shell
+```
 sudo apt update
 ```
 
@@ -38,13 +38,13 @@ sudo apt update
 
 To install, we use the command
 
-```shell
+```
  sudo apt install postgresql postgresql-client -y
 ```
 
 After running successfully, we check if the PostgreSQL service has been started:
 
-```shell
+```
  sudo systemctl status postgresql
 ```
 
@@ -52,7 +52,7 @@ After running successfully, we check if the PostgreSQL service has been started:
 
 So we have successfully installed PostgreSQL and check the PostgreSQL version with the command
 
-```shell
+```
  psql --version
 ```
 
@@ -64,7 +64,7 @@ Here, we can see that the PostgreSQL version is 16.
 
 By default, we can connect to the PostgreSQL server without using any password. Let's see this in action using the psql utility:
 
-```shell
+```
 sudo -u postgres psql
 ```
 
@@ -74,7 +74,7 @@ In the above output, the prompt **postgres=#** indicates that the connection is 
 
 Next, we use the command to change the password to **PassKhongChilaPasss**
 
-```shell
+```
 ALTER USER postgres PASSWORD 'PassKhongChilaPasss';
 ```
 
@@ -84,7 +84,7 @@ then we exit with the command `\q`
 
 Now, let's connect back to the database server:
 
-```shell
+```
 psql -h localhost -U postgres
 ```
 
@@ -114,7 +114,7 @@ Next, edit the IPv4 local connection section of the **pg_hba.conf** file to allo
 
 In case the Ubuntu firewall is running on your system, allow the PostgreSQL port 5432 with the following command,
 
-```shell
+```
 sudo ufw allow 5432/tcp
 ```
 
