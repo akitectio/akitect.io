@@ -70,7 +70,9 @@ sudo chown pgpool:pgpool /etc/pgpool2/pcp.conf
 sudo chmod 0600 /etc/pgpool2/pcp.conf
 ```
 
-#### Bước 3: Cấu hình `pgpool.conf`
+#### Bước 3: Cấu hình Load Balancing và Replication
+
+Bạn cần phải cấu hình Replication trước, nếu bạn chưa cấu hình thì tham khảo [Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc)
 
 Tiếp theo, cấu hình tệp `pgpool.conf` trên máy chủ `pgpool2`:
 
@@ -89,30 +91,38 @@ sudo nano /etc/pgpool2/pgpool.conf
 Thêm cấu hình sau vào tệp `pgpool.conf`:
 
 ```bash
-listen_addresses = '*'
-port = 5433
+listen_addresses = '*' 
+port = 9999 
 
 backend_hostname0 = '192.168.56.2'
 backend_port0 = 5432
-backend_weight0 = 1
-backend_data_directory0 = '/home/ubuntu/postgresql-master'
+backend_weight0 = 0
+backend_data_directory0 = '/home/ubuntu/postgresql/master'
 backend_flag0 = 'ALLOW_TO_FAILOVER'
 backend_application_name0 = 'postgresql-master'
 
 backend_hostname1 = '192.168.56.3'
 backend_port1 = 5432
 backend_weight1 = 1
-backend_data_directory1 = '/home/ubuntu/postgresql-slave-01'
+backend_data_directory1 = '/home/ubuntu/postgresql/slave-01'
 backend_flag1 = 'ALLOW_TO_FAILOVER'
 backend_application_name1 = 'postgresql-slave-01'
 
 backend_hostname2 = '192.168.56.4'
 backend_port2 = 5432
-backend_weight2 = 1
-backend_data_directory2 = '/home/ubuntu/postgresql-slave-02'
+backend_weight2 = 2
+backend_data_directory2 = '/home/ubuntu/postgresql/slave-02'
 backend_flag2 = 'ALLOW_TO_FAILOVER'
 backend_application_name2 = 'postgresql-slave-02'
 
+log_statement = on
+log_per_node_statement = on
+
+sr_check_user = 'replicator'
+health_check_user = 'replicator'
+health_check_period = 10
+
+pid_file_name = 'pgpool.pid'
 ```
 
 Trong đó `listen_addresses` là địa chỉ IP mà PGpool-II sẽ lắng nghe, `port` là cổng mà PGpool-II sẽ lắng nghe.
@@ -123,31 +133,211 @@ Trong đó `listen_addresses` là địa chỉ IP mà PGpool-II sẽ lắng nghe
 
 - `backend_hostname2`, `backend_port2`, `backend_weight2`, `backend_data_directory2`, `backend_flag2`, `backend_application_name2` là thông tin kết nối đến máy chủ `postgresql-slave-02`.
 
-Sau khi cấu hình xong, lưu và đóng tệp cấu hình.
+- `log_statement` và `log_per_node_statement` là cấu hình ghi log truy vấn.
 
-#### Bước 4: Cấu hình Load Balancing và Failover 
+- `sr_check_user` và `health_check_user` là tên người dùng kiểm tra sức khỏe của máy chủ cơ sở dữ liệu. `replicator` là user mà chúng ta đã tạo ở bước [Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc)
 
-- `Load Balancing` là một kỹ thuật phân phối tải giữa các máy chủ cơ sở dữ liệu, giúp tối ưu hóa hiệu suất và tăng cường khả năng chịu lỗi của hệ thống. 
 
-- `Failover` là quá trình tự động chuyển đổi từ máy chủ cơ sở dữ liệu chính sang máy chủ cơ sở dữ liệu dự phòng khi máy chủ cơ sở dữ liệu chính gặp sự cố.
 
-Để cấu hình `Load Balancing` và `Failover`, thêm cấu hình sau vào tệp `pgpool.conf`:
+#### Bước 4: Chạy kiểm tra cấu hình PGpool-II
 
-```bash
-load_balance_mode = on
-master_slave_mode = on
-```
-
-#### Bước 5: Cấu hình `pool_hba.conf`
-
-Tiếp theo, cấu hình quản lý kết nối bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pool_hba.conf`:
+Cuối cùng, chạy kiểm tra cấu hình PGpool-II:
 
 ```bash
-sudo nano /etc/pgpool2/pool_hba.conf
+sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-Thêm cấu hình sau vào tệp `pool_hba.conf`:
+{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+
+Sau khi cấu hình xong, bạn có thể kiểm tra trạng thái của PGpool-II bằng các truy cập vào bằng pg4admin : 
+
+{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+
+- `ip_address` là địa chỉ IP (192.168.56.5) của máy chủ `pgpool2`.
+- `username`  mặc định là `postgresql`.
+- `password` là mật khẩu của tài khoản `postgresql`.
+
+#### Bước 5: Tạo dữ liệu test 
+
+Ở đây mình sẽ tạo một cơ sở dữ liệu `student` và `10000` dữ liệu test :
 
 ```bash
-host    all             all
+
+# Tạo cơ sở dữ liệu student
+CREATE TABLE student (
+    student_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100),
+    date_of_birth DATE,
+    grade_level INT CHECK (grade_level BETWEEN 1 AND 12)
+);
+
+
+
+WITH generated_data AS (
+       SELECT 
+           substring(md5(random()::text) from 1 for 8) AS first_name,
+           substring(md5(random()::text) from 1 for 8) AS last_name,
+           concat(substring(md5(random()::text) from 1 for 6), '@example.com') AS email,
+           '1990-01-01'::date + random() * (age(now(), '1990-01-01'::date)) AS date_of_birth,
+           (random() * 11 + 1)::int AS grade_level
+       FROM generate_series(1,1000000) -- Generate 100 rows
+   )
+   INSERT INTO student (first_name, last_name, email, date_of_birth, grade_level)
+   SELECT * FROM generated_data; 
+  
 ```
+
+{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+
+Như ảnh ta thấy dữ liệu `INSERT` đã được thực hiện trên  máy chủ `postgresql-master`.
+
+Tiếp tục ta Query bằng lệnh `SELECT` trên PG4Admin:
+
+```bash
+SELECT * FROM student;
+```
+
+{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+
+Sau đó ta quay lại xem log của máy chủ `pgpool2` 
+
+{{< figure src="./images/pgpool-log.jpg" >}}
+
+Như ảnh ta thấy `SELECT` đã được thực hiện trên máy chủ `postgresql-slave-01` thông qua máy chủ `pgpool2`.
+
+
+#### Bước 6: Cấu hình PGpool cho PostgreSQL có tính sẵn sàng cao (High Availability)
+
+##### 6.1: Cấu hình `pgpool.conf` trên máy chủ `pgpool2`
+
+Sao chép  `failover.sh` trên máy chủ `pgpool2`:
+
+```bash
+sudo cp /home/pgpool2/etc/failover.sh.sample /etc/pgpool2/failover.sh
+```
+
+Sau đó, thêm quyền thực thi vào tệp `failover.sh`:
+
+```bash
+sudo chmod +x /etc/pgpool2/failover.sh
+```
+
+Sau đó mở tệp `pgpool.conf`:
+
+```bash
+sudo nano /etc/pgpool2/pgpool.conf
+```
+
+Thêm cấu hình sau vào tệp `pgpool.conf`:
+
+```bash
+failover_command = '/etc/pgpool2/failover.sh %d  /home/ubuntu/postgresql/master/down.trg'
+```
+
+##### 6.1: Cấu hình `postgresql.conf` trên máy chủ `postgresql-master`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+synchonous_commit = remote_apply
+```
+`synchonous_commit` bao gồm các giá trị sau: 
+
+- `on`: Đảm bảo rằng mỗi giao dịch đã được xác nhận trước khi kết thúc.
+<!-- 
+```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Ghi vào bộ nhớ đệm"
+    C->B: "Xác nhận ghi"
+    B->A: "Xác nhận"
+``` -->
+
+- `remote_write`: Đảm bảo rằng mỗi giao dịch đã được ghi vào bộ nhớ đệm của máy chủ phụ trước khi kết thúc.
+<!-- 
+```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Ghi vào bộ nhớ đệm"
+    C->B: "Xác nhận ghi"
+    B->A: "Xác nhận"
+``` -->
+
+- `remote_apply`: Đảm bảo rằng mỗi giao dịch đã được áp dụng trên máy chủ phụ trước khi kết thúc.
+
+<!-- ```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Áp dụng vào cơ sở dữ liệu"
+    C->B: "Xác nhận áp dụng"
+    B->A: "Xác nhận"
+```
+ -->
+
+
+##### 6.2:  Cấu hình  `postgresql.conf` trên máy chủ `postgresql-slave-01`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+promote_trigger_file = '/home/ubuntu/postgresql/master/down.trg'
+```
+
+Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgresql-slave-01`:
+
+```bash
+sudo systemctl restart postgresql
+```
+
+##### 6.3:  Cấu hình  `postgresql.conf` trên máy chủ `postgresql-slave-02`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+promote_trigger_file = '/home/ubuntu/postgresql/master/down.trg'
+```
+
+Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgresql-slave-02`:
+
+```bash
+sudo systemctl restart postgresql
+```
+
+#### Bước 7: Kiểm tra tính sẵn sàng cao của PGpool-II
+
+##### 7.1: Kiểm tra trạng thái PostgreSQL Master
+
+```bash
+sudo -u postgres psql
+```
+
+Kiểm tra trạng thái của máy chủ `postgresql-master`:
+
+```bash
+SELECT client_addr, state
+FROM pg_stat_replication;
+```
+
+{{< figure src="./images/pg_stat_replication.jpg" >}}
+
+Như vậy ta đã cấu hình thành công 2 máy `postgresql-slave-01` và `postgresql-slave-02` nhận dữ liệu từ máy `postgresql-master`.
