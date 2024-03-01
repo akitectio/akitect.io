@@ -323,21 +323,32 @@ Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgres
 sudo systemctl restart postgresql
 ```
 
-#### Bước 7: Kiểm tra tính sẵn sàng cao của PGpool-II
+#### Bước 7: Tạo Service PGpool-II
 
-##### 7.1: Kiểm tra trạng thái PostgreSQL Master
-
-```bash
-sudo -u postgres psql
-```
-
-Kiểm tra trạng thái của máy chủ `postgresql-master`:
+Tạo một tệp systemd service `pgpool2.service` trên máy chủ `pgpool2`:
 
 ```bash
-SELECT client_addr, state
-FROM pg_stat_replication;
+sudo nano /etc/systemd/system/pgpool2.service
 ```
 
-{{< figure src="./images/pg_stat_replication.jpg" >}}
+Thêm nội dung sau vào tệp `pgpool2.service`:
 
-Như vậy ta đã cấu hình thành công 2 máy `postgresql-slave-01` và `postgresql-slave-02` nhận dữ liệu từ máy `postgresql-master`.
+```bash
+Description=pgpool-II
+Documentation=man:pgpool(8)
+Wants=postgresql.service
+After=network.target
+
+[Service]
+User=postgres
+ExecStart=/usr/sbin/pgpool -n
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+StandardOutput=syslog
+SyslogFacility=local0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Như vậy chúng ta đã cấu hình xong PGpool-II cho PostgreSQL có tính sẵn sàng cao (High Availability).
