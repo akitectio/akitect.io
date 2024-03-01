@@ -341,7 +341,7 @@ After=network.target
 
 [Service]
 User=postgres
-ExecStart=/usr/sbin/pgpool -n
+ExecStart=/usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ExecReload=/bin/kill -HUP $MAINPID
 KillSignal=SIGINT
 StandardOutput=syslog
@@ -349,6 +349,14 @@ SyslogFacility=local0
 
 [Install]
 WantedBy=multi-user.target
+```
+
+Sau đó, khởi động lại dịch vụ PGpool-II:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start pgpool2
+sudo systemctl enable pgpool2
 ```
 
 Như vậy chúng ta đã cấu hình xong PGpool-II cho PostgreSQL có tính sẵn sàng cao (High Availability).
