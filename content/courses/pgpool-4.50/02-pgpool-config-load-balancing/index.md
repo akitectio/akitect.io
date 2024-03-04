@@ -12,12 +12,11 @@ tags:
   - postgresql
   - ubuntu
   - pgpool
-title: Lesson 2 - Cấu hình  Pgpool-II  
-url: /lesson-2-pgpool-ii-configuration
+title: Lesson 2 - Load balancing và Replication
+url: /lesson-2-pgpool-ii-configuration-load-balancing-and-replication
 description: PGpool-II là một giải pháp trung gian độc đáo, được thiết kế đặc biệt để tối ưu hóa và mở rộng khả năng của hệ quản trị cơ sở dữ liệu PostgreSQL. Nó mang lại nhiều lợi ích như việc tối ưu hóa kết nối, phân phối tải đều và thực hiện sao chép dữ liệu, biến PGpool-II thành công cụ không thể thiếu trong quản lý các triển khai PostgreSQL. Trong hướng dẫn chi tiết này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
 weight: 2
 ---
-
 
 Cấu hình PGpool-II là một bước quan trọng trong quá trình triển khai cụm cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
 
@@ -36,43 +35,18 @@ Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
 | 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
 | 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
 
-### Bước 1: Tài khoản người dùng PGpool-II
-
-Đầu tiên, tạo một tài khoản người dùng `pgpool` trên tất cả các máy chủ `pgpool2`, `postgresql-master`, `postgresql-slave-01`, `postgresql-slave-02`:
-
-```bash
-sudo useradd -m -s /bin/bash pgpool
-sudo passwd pgpool
-```
-
-Sau đó, thêm tài khoản người dùng `pgpool` vào nhóm `sudo`:
-
-```bash
-sudo usermod -aG sudo pgpool
-```
-
-
-#### Bước 2: Cấu hình `pcp.conf`
-
-Đầu tiên, tạo một tệp cấu hình `pcp.conf` trên máy chủ `pgpool2`:
-
-```bash
-password_hash=$(pg_md5 Ehi@123)
-echo "pgpool:$password_hash" >> /etc/pgpool2/pcp.conf
-```
-
-Trong đó `akitect@123` là mật khẩu của tài khoản `pgpool`, bạn có thể thay đổi mật khẩu theo ý muốn.
-
-Sau đó, thêm quyền truy cập vào tệp `pcp.conf`:
-
-```bash
-sudo chown pgpool:pgpool /etc/pgpool2/pcp.conf
-sudo chmod 0600 /etc/pgpool2/pcp.conf
-```
 
 #### Bước 3: Cấu hình Load Balancing và Replication
 
 Bạn cần phải cấu hình Replication trước, nếu bạn chưa cấu hình thì tham khảo [Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc)
+
+Thêm user `replicator` vào 
+
+Tạo tệp `pcp.conf`:
+
+```bash
+password_hash=$(pg_md5 PassKhongChilaPasss) && echo "postgre:$password_hash" >> /etc/pgpool2/pcp.conf
+```
 
 Tiếp theo, cấu hình tệp `pgpool.conf` trên máy chủ `pgpool2`:
 
@@ -81,12 +55,11 @@ sudo chown pgpool:pgpool /etc/pgpool2/pgpool.conf
 sudo chmod 0600 /etc/pgpool2/pgpool.conf
 ```
 
-Sau đó, mở tệp `pgpool.conf` bằng trình soạn thảo văn bản yêu thích của bạn:
+Sau đó, mở tệp `pgpool.conf` bằng trình soạn thảo văn bản `nano`:
 
 ```bash
 sudo nano /etc/pgpool2/pgpool.conf
 ```
-
 
 Thêm cấu hình sau vào tệp `pgpool.conf`:
 
@@ -122,7 +95,6 @@ sr_check_user = 'replicator'
 health_check_user = 'replicator'
 health_check_period = 10
 
-pid_file_name = 'pgpool.pid'
 ```
 
 Trong đó `listen_addresses` là địa chỉ IP mà PGpool-II sẽ lắng nghe, `port` là cổng mà PGpool-II sẽ lắng nghe.
@@ -323,40 +295,5 @@ Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgres
 sudo systemctl restart postgresql
 ```
 
-#### Bước 7: Tạo Service PGpool-II
-
-Tạo một tệp systemd service `pgpool2.service` trên máy chủ `pgpool2`:
-
-```bash
-sudo nano /etc/systemd/system/pgpool2.service
-```
-
-Thêm nội dung sau vào tệp `pgpool2.service`:
-
-```bash
-Description=pgpool-II
-Documentation=man:pgpool(8)
-Wants=postgresql.service
-After=network.target
-
-[Service]
-User=postgres
-ExecStart=/usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
-ExecReload=/bin/kill -HUP $MAINPID
-KillSignal=SIGINT
-StandardOutput=syslog
-SyslogFacility=local0
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Sau đó, khởi động lại dịch vụ PGpool-II:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start pgpool2
-sudo systemctl enable pgpool2
-```
 
 Như vậy chúng ta đã cấu hình xong PGpool-II cho PostgreSQL có tính sẵn sàng cao (High Availability).

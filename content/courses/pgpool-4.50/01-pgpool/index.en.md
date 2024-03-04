@@ -18,14 +18,13 @@ description: PGpool-II is a unique middleware solution, specially designed to op
 weight: 1
 ---
 
-# What is Pgpool-II 
+# What is Pgpool-II
 
-PGpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It brings many benefits such as optimizing connections, load balancing, and performing data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure PGpool-II on the Ubuntu Linux operating system, helping you to maximize the performance and high availability of your database.
+Pgpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It offers numerous benefits such as connection optimization, load balancing, and data replication, making Pgpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure Pgpool-II on the Ubuntu Linux operating system, helping you maximize the performance and high availability of your database.
 
 # Installation Architecture
 
 {{< figure src="./images/postgresql-pgpool.jpeg" >}}
-
 
 Before we start, we need to prepare 4 servers
 
@@ -38,7 +37,7 @@ Before we start, we need to prepare 4 servers
 
 ### Install PostgreSQL Replication 
 
-[Install PostgreSQL 16 Replication](/setting-up-postgresql-replication-step-by-step-guide) on 3 servers `postgresql-master` and `postgresql-slave-01`, `postgresql-slave-02`.
+[Install PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) on 3 servers `postgresql-master` and `postgresql-slave-01`, `postgresql-slave-02`.
 
 ### Install PGpool-II 4.5.0
 
@@ -53,7 +52,7 @@ sudo apt update
 sudo apt install -y make gcc libpq-dev
 ```
 
-after installing check the version of `make`
+After installation, check the version of `make`
 
 ```bash
 make --version
@@ -71,7 +70,7 @@ gcc --version
 
 The current version of `gcc` is `11.4.0`
 
-##### Download the PGpool-II installation package
+##### Download PGpool-II installation package
 
 ```bash
 wget https://www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.5.0.tar.gz -O pgpool-II-4.5.0.tar.gz
@@ -86,7 +85,7 @@ tar -xvf pgpool-II-4.5.0.tar.gz
 cd pgpool-II-4.5.0
 ```
 
-Next, we install [memcached](/install-and-secure-memcached-on-ubuntu-22-04) and libmemcached-dev and libpq-dev
+Next, we install [memcached](/cai-dat-va-bao-mat-memcached-tren-ubuntu-22-04) and libmemcached-dev and libpq-dev
 
 ```bash
 sudo apt install -y libmemcached-dev libpq-dev
@@ -105,10 +104,10 @@ You can customize the build and installation process by providing one or more of
 | Option | Description | Default |
 |---|---|---|
 | `--prefix` | PGpool-II installation path | `/usr/local` |
-| `--with-pgsql` | Directory of installed PostgreSQL client libraries | Provided by `pg_config` |
+| `--with-pgsql` | Directory where PostgreSQL client libraries are installed | Provided by `pg_config` |
 | `--with-openssl` | Support for OpenSSL (AES256 password encryption) | Off |
-| `--enable-sequence-lock` | Lock rows in the sequence table (compatible with PGpool-II 3.0) | Off |
-| `--enable-table-lock` | Lock the target insert table (compatible with PGpool-II 2.2 & 2.3) | Off |
+| `--enable-sequence-lock` | Lock rows in sequence table (compatible with PGpool-II 3.0) | Off |
+| `--enable-table-lock` | Lock target insert table (compatible with PGpool-II 2.2 & 2.3) | Off |
 | `--with-memcached=path` | Use memcached for memory query cache | Not used |
 | `--with-pam` | Support for PAM authentication | Off |
 
@@ -127,81 +126,7 @@ pgpool --version
 
 {{< figure src="./images/pgpool-version.jpg" >}}
 
-#### Step 2: Install `pgpool_recovery`
-
-`PGpool-II` requires including the functions `pgpool_recovery`, `pgpool_remote_start` and `pgpool_switch_xlog` when using online recovery as explained later. Moreover, the pgpoolAdmin management tool also supports the ability to stop, restart or reload PostgreSQL versions on the screen using `pgpool_pgctl`. Installing these functions in the initial template1 is enough, there is no need to install them in all databases.
-
-First we need to install `postgresql-server-dev-16`: 
-
-##### 2.1: Add key and repo of PostgreSQL 16
-
-```bash
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-apt update
-```
-
-##### 2.2: Install `postgresql-server-dev-16`
-
-```bash
-sudo apt install -y postgresql-server-dev-16 -y
-```
-
-##### 2.3: Install `pgpool_recovery`
-
-Next, we will install `pgpool_recovery` by performing the following steps:
-
-```bash
-# move to the pgpool-recovery directory
- cd pgpool-II-4.5.0/src/sql/pgpool-recovery
-
-# install
-make && sudo make install
-```
-
-After successful build we will have the file `pgpool_recovery.so` in the directory `pgpool-II-4.5.0/src/sql/pgpool-recovery`
-
-```bash
-ls -la
-```
-
-{{< figure src="./images/pgpool-recovery.jpg" >}}
-
-##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`: 
-
-Copy the `pgpool_recovery.so` and `pgpool_recovery.sql` files from the `pgpool2` server to the `postgresql-master` server using the `scp` command:
-
-  ```bash
-  scp pgpool-recovery.so ubuntu@192.168.56.2:/home/ubuntu 
-  scp pgpool-recovery.sql ubuntu@192.168.56.2:/home/ubuntu 
-  scp pgpool_recovery.control ubuntu@192.168.56.2:/home/ubuntu 
-  ```
-
-Continue to ssh into the `postgresql-master` server:
-
-```bash
-ssh ubuntu@192.168.56.2
-```
-
-Copy the `pgpool_recovery.so` and `pgpool_recovery.sql` files to the `/usr/lib/postgresql/16/lib` and `/usr/share/postgresql/16/extension` directories:
-
-```bash
-sudo mv pgpool-recovery.so /usr/lib/postgresql/16/lib
-sudo mv pgpool-recovery.sql /usr/share/postgresql/16/extension
-sudo mv pgpool_recovery.control /usr/share/postgresql/16/extension
-```
-
-After installation, we will configure `pgpool_recovery` on the `postgresql-master` server by performing the following steps:
-
-```bash
- sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
- ```
-
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
-
-Where `template1` is the sample database where we install `pgpool_recovery`
-
-#### Step 3: Configure PGpool-II
+#### Step 2: Configure PGpool-II
 
 Create a configuration directory for PGpool-II:
 
@@ -209,7 +134,7 @@ Create a configuration directory for PGpool-II:
 sudo mkdir /etc/pgpool2
 ```
 
-Copy from the sample config :
+Copy from sample config :
 
 ````bash
 sudo cp /home/pgpool2/etc/pgpool.conf.sample /etc/pgpool2/pgpool.conf 
@@ -217,7 +142,7 @@ sudo cp /home/pgpool2/etc/pool_hba.conf.sample /etc/pgpool2/pool_hba.conf
 sudo cp /home/pgpool2/etc/pcp.conf.sample /etc/pgpool2/pcp.conf
 ````
 
-#### Step 3: Configure connection management
+#### Step 3: Configure Connection Management
 
 Next, we will configure connection management by editing the configuration file `/etc/pgpool2/pool_hba.conf`:
 
@@ -235,12 +160,79 @@ host    all         all         0.0.0.0/0          trust
 
 #### Step 4: Start PGpool-II
 
+Create a directory to store the pid file:
+
+```bash
+sudo mkdir /var/run/pgpool
+```
+
 Finally, restart the PGpool-II service to apply the changes:
 
 ```bash
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
-
 {{< figure src="./images/pgpool-start.jpg" >}}
 
-Thus, we have installed and configured PGpool-II on the Ubuntu Linux operating system. By performing these steps, you can optimize and scale the capabilities of your PostgreSQL database, helping you to maximize the performance and high availability of your database.
+#### Step 5: Configure pcp.conf
+
+**Pgpool-II provides an interface for administrators to perform management operations, such as viewing the status of Pgpool-II or shutting down Pgpool-II processes remotely. `pcp.conf` is the file that contains the user/password used for authentication for this interface. All operating modes require the `pcp.conf` file to be set up.**
+
+Create the `pcp.conf` file:
+
+```bash
+password_hash=$(pg_md5 Ehi@123)
+echo "pgpool:$password_hash" >> /etc/pgpool2/pcp.conf
+```
+
+Where `Ehi@123` is the password for the `pgpool` account, you can change the password as desired.
+
+Then, add access permissions to the `pcp.conf` file:
+
+```bash
+sudo chown pgpool:pgpool /etc/pgpool2/pcp.conf
+sudo chmod 0600 /etc/pgpool2/pcp.conf
+```
+
+#### Step 6: Create PGpool-II Service
+
+Create a systemd service file `pgpool2.service` on the `pgpool2` server:
+
+```bash
+sudo nano /etc/systemd/system/pgpool2.service
+```
+
+Add the following content to the `pgpool2.service` file:
+
+```bash
+Description=pgpool-II
+Documentation=man:pgpool(8)
+Wants=postgresql.service
+After=network.target
+
+
+
+[Service]
+User=root
+ExecStart=/usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+StandardOutput=syslog
+SyslogFacility=local0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Automatically enable at system startup:
+
+```bash
+sudo systemctl enable pgpool2
+```
+
+Restart the PGpool-II service:
+
+```bash
+sudo systemctl start pgpool2
+```
+
+Thus, we have installed and configured PGpool-II on the Ubuntu Linux operating system. By performing these steps, you can optimize and expand the capabilities of your PostgreSQL database, helping you maximize the performance and high availability of your database.
