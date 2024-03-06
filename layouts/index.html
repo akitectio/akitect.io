@@ -89,8 +89,9 @@
             </h5>
             <p class="card-text limited-text">{{ .Description }}</p>
             <div class="tag">
-              {{ range first 2 .Params.tags }} {{ $tagPage := $.Site.GetPage
-              (printf "/tags/%s" .) }}
+              {{ if and (.Params.tags) (gt (len .Params.tags) 0) }} {{ range
+              first 2 .Params.tags }} {{ $tagPage := $.Site.GetPage (printf
+              "/tags/%s" .) }}
               <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
                 <span
                   class="badge bg-secondary"
@@ -99,7 +100,7 @@
                   #{{ . }}
                 </span>
               </a>
-              {{ end }}
+              {{ end }} {{ end }}
             </div>
           </div>
         </div>

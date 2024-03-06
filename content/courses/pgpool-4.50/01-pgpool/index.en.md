@@ -223,6 +223,16 @@ SyslogFacility=local0
 WantedBy=multi-user.target
 ```
 
+> `/usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf -m smart` trong đó : 
+
+- `-n` : Không chạy dưới dạng daemon
+- `-f` : Đường dẫn đến tệp cấu hình `pgpool.conf`
+- `-F` : Đường dẫn đến tệp cấu hình quản lý `pcp.conf`
+- `-m` : Chế độ hoạt động của Pgpool-II. Có 3 chế độ hoạt động:
+  - `fast` : Chế độ hoạt động nhanh
+  - `smart` : Chế độ hoạt động thông minh, mặc định
+
+
 Automatically enable at system startup:
 
 ```bash

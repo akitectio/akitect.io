@@ -72,3 +72,122 @@ Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` ở máy chủ
 {{< figure src="./images/pgpool-recovery-sql.jpg" >}}
 
 Trong đó `template1` là cơ sở dữ liệu mẫu mà chúng ta cài đặt `pgpool_recovery`
+
+
+#### Bước 6: Cấu hình PGpool cho PostgreSQL có tính sẵn sàng cao (High Availability)
+
+##### 6.1: Cấu hình `pgpool.conf` trên máy chủ `pgpool2`
+
+Sao chép  `failover.sh` trên máy chủ `pgpool2`:
+
+```bash
+sudo cp /home/pgpool2/etc/failover.sh.sample /etc/pgpool2/failover.sh
+```
+
+Sau đó, thêm quyền thực thi vào tệp `failover.sh`:
+
+```bash
+sudo chmod +x /etc/pgpool2/failover.sh
+```
+
+Sau đó mở tệp `pgpool.conf`:
+
+```bash
+sudo nano /etc/pgpool2/pgpool.conf
+```
+
+Thêm cấu hình sau vào tệp `pgpool.conf`:
+
+```bash
+failover_command = '/etc/pgpool2/failover.sh %d  /home/ubuntu/postgresql/master/down.trg'
+```
+
+##### 6.1: Cấu hình `postgresql.conf` trên máy chủ `postgresql-master`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+synchonous_commit = remote_apply
+```
+`synchonous_commit` bao gồm các giá trị sau: 
+
+- `on`: Đảm bảo rằng mỗi giao dịch đã được xác nhận trước khi kết thúc.
+<!-- 
+```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Ghi vào bộ nhớ đệm"
+    C->B: "Xác nhận ghi"
+    B->A: "Xác nhận"
+``` -->
+
+- `remote_write`: Đảm bảo rằng mỗi giao dịch đã được ghi vào bộ nhớ đệm của máy chủ phụ trước khi kết thúc.
+<!-- 
+```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Ghi vào bộ nhớ đệm"
+    C->B: "Xác nhận ghi"
+    B->A: "Xác nhận"
+``` -->
+
+- `remote_apply`: Đảm bảo rằng mỗi giao dịch đã được áp dụng trên máy chủ phụ trước khi kết thúc.
+
+<!-- ```mermaid
+sequenceDiagram
+    participant A as "Client"
+    participant B as "Primary"
+    participant C as "Standby"
+
+    A->B: "Bắt đầu giao dịch"
+    B->B: "Ghi vào WAL"
+    B->C: "Ghi vào WAL"
+    C->C: "Áp dụng vào cơ sở dữ liệu"
+    C->B: "Xác nhận áp dụng"
+    B->A: "Xác nhận"
+```
+ -->
+
+
+##### 6.2:  Cấu hình  `postgresql.conf` trên máy chủ `postgresql-slave-01`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+promote_trigger_file = '/home/ubuntu/postgresql/master/down.trg'
+```
+
+Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgresql-slave-01`:
+
+```bash
+sudo systemctl restart postgresql
+```
+
+##### 6.3:  Cấu hình  `postgresql.conf` trên máy chủ `postgresql-slave-02`
+
+Thêm cấu hình sau vào tệp `postgresql.conf`:
+
+```bash
+promote_trigger_file = '/home/ubuntu/postgresql/master/down.trg'
+```
+
+Sau đó, khởi động lại dịch vụ PostgreSQL trên máy chủ `postgresql-slave-02`:
+
+```bash
+sudo systemctl restart postgresql
+```
+
+
+Như vậy chúng ta đã cấu hình xong PGpool-II cho PostgreSQL có tính sẵn sàng cao (High Availability).
