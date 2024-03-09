@@ -95,6 +95,15 @@ sr_check_user = 'replicator'
 health_check_user = 'replicator'
 health_check_period = 10
 
+
+# Cấu hình quản lý process 
+process_management_mode = static
+process_management_strategy = lazy
+num_init_children = 320
+min_spare_children = 1000
+max_spare_children = 5000
+max_pool = 1000
+
 ```
 
 Trong đó `listen_addresses` là địa chỉ IP mà PGpool-II sẽ lắng nghe, `port` là cổng mà PGpool-II sẽ lắng nghe.
@@ -112,6 +121,18 @@ Trong đó `listen_addresses` là địa chỉ IP mà PGpool-II sẽ lắng nghe
 - `backend_flag` là cờ cho phép `FAILOVER` khi máy chủ `postgresql-master` bị lỗi, `ALLOW_TO_FAILOVER` là cờ cho phép `FAILOVER` khi máy chủ `postgresql-slave-01` và `postgresql-slave-02` bị lỗi. Các cờ khác: 
  - `DISALLOW_TO_FAILOVER` : không cho phép `FAILOVER`
  - `ALWAYS_MASTER` : luôn là máy chủ `postgresql-master`
+
+- `process_management_mode` là chế độ quản lý process, `static` là chế độ tĩnh, `dynamic` là chế độ động.
+  - `static` : Số lượng process sẽ được quản lý tĩnh, không thay đổi.
+  - `dynamic` : Số lượng process sẽ được quản lý động, tùy thuộc vào tải của hệ thống.
+- `process_management_strategy` là chiến lược quản lý process, `lazy` là chế độ lười biếng, `smart` là chế độ thông minh.
+  - `lazy` : Chỉ tạo process khi cần thiết.
+  - `smart` : Tạo process trước, tránh tình trạng chậm trễ khi cần thiết.
+- `num_init_children` là số lượng process ban đầu, nếu dưới sẽ tạo thêm process.
+- `min_spare_children` là số lượng process tối thiểu, nếu dưới sẽ tạo thêm process.
+- `max_spare_children` là số lượng process tối đa, nếu vượt quá sẽ bị kill.
+- `max_pool` là số lượng kết nối tối đa, nếu vượt quá sẽ bị từ chối kết nối.
+
 
 #### Bước 4: Chạy kiểm tra cấu hình PGpool-II
 
