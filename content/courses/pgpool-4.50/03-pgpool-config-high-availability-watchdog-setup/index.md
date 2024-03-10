@@ -2,7 +2,7 @@
 categories:
   - database
 date: 2024-02-24T08:00:00+08:00
-draft: false
+draft: true
 featuredImage: /courses/pgpool-ii/03-pgpool-config-watchdog.png
 images:
   - /labs/postgresql/postgresql-pgpool.jpeg
@@ -12,9 +12,9 @@ tags:
   - postgresql
   - ubuntu
   - pgpool
-title: Lesson 3 - Cấu hình High Availability 
-url: /lesson-3-pgpool-config-high-availability
-description: Cấu hình High Availability cho PGpool-II 
+title: Lesson 3 - Cấu hình High Availability (Watchdog)
+url: /lesson-3-cau-hinh-high-availability-voi-pgpool-ii-watchdog
+description: Cấu hình High Availability cho PGpool-II (Watchdog)
 weight: 3
 ---
 
@@ -78,3 +78,78 @@ Cài dặt PGpool-II trên máy chủ `server-01`, `server-02` và `server-03`,B
 | Online recovery		| /home/pgpool2/etc/health_check.sh.sample	| Run by [recovery_1st_stage_command](https://www.pgpool.net/docs/42/en/html/runtime-online-recovery.html#GUC-RECOVERY-1ST-STAGE-COMMAND) to recovery a Standby node |
 | Online recovery		| /home/pgpool2/etc/health_check.sh.sample	| Run after [recovery_1st_stage_command](https://www.pgpool.net/docs/42/en/html/runtime-online-recovery.html#GUC-RECOVERY-1ST-STAGE-COMMAND) to start the Standby node |
 | Watchdog	| /home/pgpool2/etc/health_check.sh.sample	| Run by [wd_escalation_command](https://www.pgpool.net/docs/42/en/html/runtime-watchdog-config.html#GUC-WD-ESCALATION-COMMAND) to switch the Active/Standby Pgpool-II safely |
+
+
+#### Bước 4: Cài đặt ban đầu cho PostgreSQL và tạo User
+
+##### 4.1: Cài đặt ban đầu cho PostgreSQL
+
+Trên 3 máy chủ `server-01`, `server-02` và `server-03`, Thiết lập sao chép phát trực tuyến PostgreSQL trên máy chủ chính. Trong ví dụ này, chúng tôi sử dụng tính năng lưu trữ WAL.
+
+```bash
+ su - postgres
+
+mkdir /var/lib/pgsql/archivedir
+
+```
+
+Khởi tạo `PostgreSQL` trên máy chủ `server-01`:
+
+
+```bash
+su - postgres
+/usr/pgsql-13/bin/initdb -D $PGDATA
+```
+
+Sau đó chúng ta chỉnh sửa file cấu hình `$PGDATA/postgresql.conf` trên server1 (chính) như sau. Bật `wal_log_hint` để sử dụng `pg_rewind`. Vì Sơ cấp có thể trở thành Dự phòng sau này nên chúng tôi đặt `hot_standby = on`.
+
+```bash
+listen_addresses = '*'
+archive_mode = on
+archive_command = 'cp "%p" "/var/lib/pgsql/archivedir/%f"'
+max_wal_senders = 10
+max_replication_slots = 10
+wal_level = replica
+hot_standby = on
+wal_log_hints = on
+```
+
+Sử dụng chức năng `khôi phục trực tuyến (recovery online)` của `PGpool-II` để thiết lập máy chủ dự phòng sau khi máy chủ chính được khởi động.
+
+Vì lý do bảo mật, Mình sẽ tạo một bản thay thế người dùng chỉ được sử dụng cho mục đích sao chép và một `pgpool` người dùng để kiểm tra độ trễ sao chép trực tuyến và kiểm tra tình trạng của `PGpool-II`.
+
+
+##### 4.2: Tạo User
+
+| Tên tài khoản  | Mật khẩu | Chi tiết |
+| -------------- | -------- | -------- |
+| repl_user	| repl_pass	| Người dùng sao chép PostgreSQL        |
+| pgpool		| pgpool	| Người dùng kiểm tra tình trạng PGpool-II (health_check_user) và kiểm tra độ trễ sao chép (sr_check_user)        |
+| postgres		| postgres	| Người dùng đang chạy khôi phục trực tuyến (recovery online)      |
+
+```bash
+psql -U postgres -p 5432
+SET password_encryption = 'scram-sha-256';
+CREATE ROLE pgpool WITH LOGIN;
+CREATE ROLE repl WITH REPLICATION LOGIN;
+\password pgpool
+\password repl
+\password postgres
+ ```
+
+ Nếu bạn muốn hiển thị cột `replication_state` và `replication_sync_state` trong kết quả lệnh `SHOW POOL NODES,` vai trò pgpool cần phải là siêu người dùng PostgreSQL hoặc hoặc trong nhóm `pg_monitor` (Pgpool-II 4.1 trở lên). Cấp `pg_monitor` cho `pgpool`:
+
+```bash 
+GRANT pg_monitor TO pgpool;
+```
+
+
+Lưu ý: Nếu bạn dự định sử dụng Detach_false_primary(Pgpool-II 4.0 trở lên), vai trò "pgpool" cần phải là siêu người dùng PostgreSQL hoặc hoặc trong nhóm "pg_monitor" để sử dụng tính năng này. Cấp "pg_monitor" cho "pgpool":
+
+Giả sử rằng tất cả các máy chủ PGpool-II và máy chủ PostgreSQL đều nằm trong cùng một mạng con và chỉnh sửa pg_hba.conf để kích hoạt phương thức xác thực `scram-sha-256`.
+
+```bash
+host    all             all             samenet                 scram-sha-256
+host    replication     all             samenet                 scram-sha-256
+```
+
