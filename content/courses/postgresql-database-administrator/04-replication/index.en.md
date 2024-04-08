@@ -31,9 +31,9 @@ Before we start, we need to prepare 3 servers
 
 | IP           | Hostname             | vCPU   | RAM | DISK | OS           |
 | ------------ | -----------------    | ------ | --- | ---- | ------------ |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 ## Installing PostgreSQL 16
 
@@ -84,8 +84,8 @@ sudo nano /etc/postgresql/16/main/pg_hba.conf
 Add the following lines to the end of the file:
 
 ```shell
-host    replication    replicator              192.168.56.3/32         md5
-host    replication    replicator              192.168.56.4/32         md5
+host    replication    replicator              192.168.56.12/32         md5
+host    replication    replicator              192.168.56.13/32         md5
 ```
 
 {{< figure src="./images/pg_hba.conf.jpg" >}}
@@ -146,7 +146,7 @@ On `postgresql-slave-01`, run the following command:
 ```shell
 export PGPASSWORD=71e1b930e5d53ea4c8f02ccfd255d7cc
 
-pg_basebackup -h 192.168.56.2 -U replicator -R -X stream -C -S replica_1 -v -R -W -D/var/lib/postgresql/16/main -w
+pg_basebackup -h 192.168.56.11 -U replicator -R -X stream -C -S replica_1 -v -R -W -D/var/lib/postgresql/16/main -w
 
 # Set permission
 chown -R postgres:postgres /var/lib/postgresql/16/main
@@ -157,7 +157,7 @@ chown -R postgres:postgres /var/lib/postgresql/16/main
 ```shell
 export PGPASSWORD=71e1b930e5d53ea4c8f02ccfd255d7cc
 
-pg_basebackup -h 192.168.56.2 -U replicator -R -X stream -C -S replica_2 -v -R -W -D/var/lib/postgresql/16/main -w
+pg_basebackup -h 192.168.56.11 -U replicator -R -X stream -C -S replica_2 -v -R -W -D/var/lib/postgresql/16/main -w
 
 # Set permission
 chown -R postgres:postgres /var/lib/postgresql/16/main
@@ -175,13 +175,13 @@ Add the following content to the `recovery.conf` file:
 
 ```shell
 standby_mode = 'on'
-primary_conninfo = 'host=192.168.56.2 port=5432 user=replicator password=71e1b930e5d53ea4c8f02ccfd255d7cc'
+primary_conninfo = 'host=192.168.56.11 port=5432 user=replicator password=71e1b930e5d53ea4c8f02ccfd255d7cc'
 ```
 
 After editing, save and exit the configuration file.
 
 `71e1b930e5d53ea4c8f02ccfd255d7cc` is the password you created in step 1.
-`192.168.56.2` is the IP address of the `postgresql-master` machine.
+`192.168.56.11` is the IP address of the `postgresql-master` machine.
 
 #### 2.4 : Start PostgreSQL service
 

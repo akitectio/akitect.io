@@ -28,12 +28,12 @@ Pgpool-II is a unique middleware solution, specially designed to optimize and sc
 
 Before we start, we need to prepare 4 servers
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -------------------- | ------ | --- | ---- | ------------ |
-| 192.168.56.5 | pgpool2              | 2 core | 4G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| IP            | Hostname     | vCPU   | RAM | DISK | OS           |
+| ------------  | ------------ | ------ | --- | ---- | ------------ |
+| 192.168.50.10 | pgpool2      | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 ### Install PostgreSQL Replication 
 

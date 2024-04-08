@@ -31,13 +31,13 @@ Trước khi bắt đầu ta cần chuẩn bị 3 máy chủ
 
 | IP           | Hostname             | vCPU   | RAM | DISK | OS           |
 | ------------ | -----------------    | ------ | --- | ---- | ------------ |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 ## Cài đặt PostgreSQL 16
 
-[Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04](/cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2204) trên 3 máy chủ `postgresql-master` và `postgresql-slave-01`, `postgresql-slave-02`.
+[Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04](/cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2204) trên 3 máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
 
 Kiểm tra phiên bản PostgreSQL
 
@@ -84,8 +84,8 @@ sudo nano /etc/postgresql/16/main/pg_hba.conf
 Thêm dòng sau vào cuối tệp:
 
 ```shell
-host    replication    replicator              192.168.56.3/32         md5
-host    replication    replicator              192.168.56.4/32         md5
+host    replication    replicator              192.168.56.12/32         md5
+host    replication    replicator              192.168.56.13/32         md5
 ```
 
 {{< figure src="./images/pg_hba.conf.jpg" >}}
@@ -93,7 +93,7 @@ host    replication    replicator              192.168.56.4/32         md5
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
 
-Tiếp theo, chúng ta sẽ tạo một user có quyền sao chép dữ liệu từ máy chủ `postgresql-master` sang máy chủ `postgresql-slave` . Đầu tiên, hãy đăng nhập vào máy chủ chính và mở `psql` console.
+Tiếp theo, chúng ta sẽ tạo một user có quyền sao chép dữ liệu từ máy chủ `pg-master` sang máy chủ `pg-slave` . Đầu tiên, hãy đăng nhập vào máy chủ chính và mở `psql` console.
 
 ```shell
 sudo -u postgres psql
@@ -140,23 +140,23 @@ sudo rm -rf /var/lib/postgresql/16/main
 ```
 #### 2.2 : Sao lưu dữ liệu từ máy chủ chính sang máy chủ phụ
 
-`postgresql-slave-01` gõ lệnh sau:
+`pg-slave-01` gõ lệnh sau:
 
 ```shell
 export PGPASSWORD=71e1b930e5d53ea4c8f02ccfd255d7cc
 
-pg_basebackup -h 192.168.56.2 -U replicator -R -X stream -C -S replica_1 -v -R -W -D/var/lib/postgresql/16/main -w
+pg_basebackup -h 192.168.56.11 -U replicator -R -X stream -C -S replica_1 -v -R -W -D/var/lib/postgresql/16/main -w
 
 # Set permission
 chown -R postgres:postgres /var/lib/postgresql/16/main
 ```
 
-`postgresql-slave-01` gõ lệnh sau:
+`pg-slave-01` gõ lệnh sau:
 
 ```shell
 export PGPASSWORD=71e1b930e5d53ea4c8f02ccfd255d7cc
 
-pg_basebackup -h 192.168.56.2 -U replicator -R -X stream -C -S replica_2 -v -R -W -D/var/lib/postgresql/16/main -w
+pg_basebackup -h 192.168.56.11 -U replicator -R -X stream -C -S replica_2 -v -R -W -D/var/lib/postgresql/16/main -w
 
 # Set permission
 chown -R postgres:postgres /var/lib/postgresql/16/main
@@ -164,7 +164,7 @@ chown -R postgres:postgres /var/lib/postgresql/16/main
 
 {{< figure src="./images/pg_basebackup.jpg" >}}
 
-#### 2.3 : Cấu hình file recovery.conf trên máy `postgresql-slave-01` và `postgresql-slave-02`
+#### 2.3 : Cấu hình file recovery.conf trên máy `pg-slave-01` và `pg-slave-02`
 
 ```shell
 sudo nano /var/lib/postgresql/16/main/recovery.conf
@@ -174,13 +174,13 @@ Thêm nội dung sau vào tệp `recovery.conf`:
 
 ```shell
 standby_mode = 'on'
-primary_conninfo = 'host=192.168.56.2 port=5432 user=replicator password=71e1b930e5d53ea4c8f02ccfd255d7cc'
+primary_conninfo = 'host=192.168.56.11 port=5432 user=replicator password=71e1b930e5d53ea4c8f02ccfd255d7cc'
 ```
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
 `71e1b930e5d53ea4c8f02ccfd255d7cc` là mật khẩu mà bạn đã tạo ở bước 1.
-`192.168.56.2` là địa chỉ IP của máy `postgresql-master`.
+`192.168.56.11` là địa chỉ IP của máy `pg-master`.
 
 #### 2.4 : Start PostgreSQL service
 
@@ -192,13 +192,13 @@ sudo systemctl start postgresql
 
 ### Bước 1: Kiểm tra trạng thái PostgreSQL Master
 
-Đầu tiên, hãy đăng nhập vào máy chủ `postgresql-master` và mở `psql` console.
+Đầu tiên, hãy đăng nhập vào máy chủ `pg-master` và mở `psql` console.
 
 ```shell
 sudo -u postgres psql
 ```
 
-Kiểm tra trạng thái của máy chủ `postgresql-master`:
+Kiểm tra trạng thái của máy chủ `pg-master`:
 
 ```shell
 SELECT client_addr, state
@@ -207,17 +207,17 @@ FROM pg_stat_replication;
 
 {{< figure src="./images/pg_stat_replication.jpg" >}}
 
-Như vậy ta đã cấu hình thành công 2 máy `postgresql-slave-01` và `postgresql-slave-02` nhận dữ liệu từ máy `postgresql-master`.
+Như vậy ta đã cấu hình thành công 2 máy `pg-slave-01` và `pg-slave-02` nhận dữ liệu từ máy `pg-master`.
 
 ### Bước 2: Kiểm tra trạng thái PostgreSQL Slave
 
-Đăng nhập vào máy chủ `postgresql-slave` và mở `psql` console.
+Đăng nhập vào máy chủ `pg-slave` và mở `psql` console.
 
 ```shell
 sudo -u postgres psql
 ```
 
-Kiểm tra trạng thái của máy chủ `postgresql-slave`:
+Kiểm tra trạng thái của máy chủ `pg-slave`:
 
 ```shell
 SELECT status, receive_start_lsn, sender_host  FROM pg_stat_wal_receiver;
@@ -229,7 +229,7 @@ SELECT status, receive_start_lsn, sender_host  FROM pg_stat_wal_receiver;
 
 Để kiểm tra xem sao chép dữ liệu có hoạt động hay không, hãy thêm một số dữ liệu vào máy chủ chính và kiểm tra xem dữ liệu có được sao chép sang máy chủ phụ không.
 
-### Bước 1: Thêm dữ liệu vào máy chủ `postgresql-master`
+### Bước 1: Thêm dữ liệu vào máy chủ `pg-master`
 
 ```shell
 sudo -u postgres psql
@@ -245,9 +245,9 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(100));
 INSERT INTO users (name) VALUES ('DUY TRAN - AKITECT.IO');
 ```
 
-{{< figure src="./images/check-replication-postgresql-master.jpg" >}}
+{{< figure src="./images/check-replication-pg-master.jpg" >}}
 
-### Bước 2: Kiểm tra dữ liệu trên máy chủ `postgresql-slave`
+### Bước 2: Kiểm tra dữ liệu trên máy chủ `pg-slave`
 
 ```shell
 sudo -u postgres psql
@@ -261,7 +261,7 @@ SELECT * FROM users;
 
 {{< figure src="./images/check-replication-slave.jpg" >}}
 
-Như vậy ta đã cấu hình thành công PostgreSQL 16 Replication giữ máy chủ `postgresql-master` và `postgresql-slave-01`, `postgresql-slave-02`.
+Như vậy ta đã cấu hình thành công PostgreSQL 16 Replication giữ máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
 
 ## Kết luận
 

@@ -29,16 +29,17 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -------------------- | ------ | --- | ---- | ------------ |
-| 192.168.56.5 | pgpool2              | 2 core | 4G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| IP            | Hostname     | vCPU   | RAM | DISK | OS           |
+| ------------  | ------------ | ------ | --- | ---- | ------------ |
+| 192.168.50.10 | pgpool2      | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+
 
 ### Cài đặt PostgreSQL Replication 
 
-[Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) trên 3 máy chủ `postgresql-master` và `postgresql-slave-01`, `postgresql-slave-02`.
+[Cài đặt PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) trên 3 máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
 
 ### Cài đặt PGpool-II 4.5.0
 

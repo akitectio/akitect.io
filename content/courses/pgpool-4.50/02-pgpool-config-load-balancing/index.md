@@ -28,12 +28,13 @@ Cấu hình PGpool-II là một bước quan trọng trong quá trình triển k
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -------------------- | ------ | --- | ---- | ------------ |
-| 192.168.56.5 | pgpool2              | 2 core | 4G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| IP            | Hostname     | vCPU   | RAM | DISK | OS           |
+| ------------  | ------------ | ------ | --- | ---- | ------------ |
+| 192.168.50.10 | pgpool2      | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+
 
 
 #### Bước 3: Cấu hình Load Balancing và Replication
@@ -67,21 +68,21 @@ Thêm cấu hình sau vào tệp `pgpool.conf`:
 listen_addresses = '*' 
 port = 9999 
 
-backend_hostname0 = '192.168.56.2'
+backend_hostname0 = '192.168.56.11'
 backend_port0 = 5432
 backend_weight0 = 0
 backend_data_directory0 = '/home/ubuntu/postgresql/master'
 backend_flag0 = 'ALLOW_TO_FAILOVER'
 backend_application_name0 = 'postgresql-master'
 
-backend_hostname1 = '192.168.56.3'
+backend_hostname1 = '192.168.56.12'
 backend_port1 = 5432
 backend_weight1 = 1
 backend_data_directory1 = '/home/ubuntu/postgresql/slave-01'
 backend_flag1 = 'ALLOW_TO_FAILOVER'
 backend_application_name1 = 'postgresql-slave-01'
 
-backend_hostname2 = '192.168.56.4'
+backend_hostname2 = '192.168.56.13'
 backend_port2 = 5432
 backend_weight2 = 2
 backend_data_directory2 = '/home/ubuntu/postgresql/slave-02'
