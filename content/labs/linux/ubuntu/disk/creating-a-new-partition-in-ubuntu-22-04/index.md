@@ -22,6 +22,8 @@ url: /tao-them-mot-phan-vung-moi-trong-ubuntu-22-04
 weight: 2
 ---
 
+{{< youtube 10Ox6s2DsZQ >}}
+
 ## Bước 1: Kiểm tra phân vùng ổ cứng
 
 ```shell

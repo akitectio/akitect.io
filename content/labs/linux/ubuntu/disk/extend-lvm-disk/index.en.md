@@ -20,6 +20,8 @@ url: /extend-lvm-disk-on-ubuntu-22-04
 weight: 1
 ---
 
+{{< youtube 10Ox6s2DsZQ >}}
+
 ## What is LVM?
 
 - LVM (Logical Volume Manager) is a tool on the Linux operating system that allows for more flexible management of disk drives and partitions. Instead of dividing the disk into fixed partitions, LVM allows for the creation of virtual partitions (logical volumes) that can change in size, creating smaller storage blocks to maximize unused space.

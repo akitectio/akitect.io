@@ -20,6 +20,8 @@ url: /extend-lvm-disk-tren-ubuntu-22-04
 weight: 1
 ---
 
+{{< youtube 10Ox6s2DsZQ >}}
+
 ## LVM là gì
 
 - LVM (Logical Volume Manager) là một công cụ trên hệ điều hành Linux cho phép quản lý ổ đĩa và phân vùng ổ đĩa một cách linh hoạt hơn. Thay vì phân chia ổ đĩa thành các phân vùng cố định, LVM cho phép tạo ra các phân vùng ảo (logical volume) có thể thay đổi kích thước, tạo ra nhiều khối lưu trữ nhỏ hơn để tận dụng tối đa không gian trống.
@@ -121,4 +123,3 @@ Như vậy ta đã Extend thêm 50G vào phân dùng LVM thành công
 
 Cảm ơn các bạn đã theo dõi bài viết của mình
 
-{{< youtube e1GJBgqs2lM >}}

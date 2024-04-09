@@ -22,6 +22,8 @@ url: /creating-a-new-partition-in-ubuntu-22-04
 weight: 2
 ---
 
+{{< youtube 10Ox6s2DsZQ >}}
+
 ## Step 1: Check the hard disk partition
 
 ```shell
