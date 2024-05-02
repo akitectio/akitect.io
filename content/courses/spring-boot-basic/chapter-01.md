@@ -1,11 +1,10 @@
 ---
 date: 2019-02-27T09:32:30-07:00
-draft: false
+draft: true
 title: 01. Giới thiệu về Spring Boot
 description: Spring là màu xuân, Boot là khởi động, nên chúng ta có thể gọi là Khởi động mùa xuân, nhưng mà theo mình nên gọi là Spring Boot
 video: https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/courses%2Fcloud-functions-master-course%2F3-authfun.mp4?alt=media&token=80a508fa-965b-4691-830d-3b240b2e0385
 weight: 1
-emoji: 👯
 ---
 Spring là màu xuân, Boot là khởi động, nên chúng ta có thể gọi là Khởi động mùa xuân, nhưng mà theo mình nên gọi là Spring Boot
 

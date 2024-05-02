@@ -19,19 +19,19 @@ url: /trien-khai-keycloak-phien-ban-2204-voi-docker-compose
 
 ## Bước 1: Chỉnh sữa file trên Linux và Mac `/etc/hosts`
 
-```
+```shell
 127.0.0.1 keycloak.localhost
 ```
 
 Trên Windows, đường dẫn file thường là:
 
-```
+```shell
 c:\Windows\System32\Drivers\etc\hosts
 ```
 
 ## Bước 2: Clone Code về
 
-```
+```shell
 git clone https://github.com/akitectio/keycloak-compose
 ```
 
@@ -108,37 +108,27 @@ volumes:
 
 ## Bước 3: Chạy lệnh docker compose
 
-```
+```shell
 docker compose build --no-cache keycloak
-```
-
-![](/images/keycloak/tut-01/01.png)
-
-```
 docker compose up -d
 ```
 
-![](/images/keycloak/tut-01/02.png)
 
 ## Bước 4: Kiểm tra các container đang chạy
 
-```
+```shell
 docker compose ps
 ```
 
-![](/images/keycloak/tut-01/04.png)
 
 Khi start thành công rồi thì ta vào đường dẫn http://keycloak.localhost:8180 để test
 
-![](/images/keycloak/tut-01/05.png)
 
 Đăng nhập vào bảng điều khiển dành cho quản trị viên bằng tên người dùng quản trị viên và mật khẩu.
 
 <b> Tên người dùng: </b> admin
 
 <b> Mật khẩu: </b>admin
-
-![](/images/keycloak/tut-01/06.png)
 
 Bằng cách làm theo các bước này, bạn sẽ có thể chạy Keycloak với cơ sở dữ liệu PostgreSQL bên ngoài cục bộ bằng Docker.
 
