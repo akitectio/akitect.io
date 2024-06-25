@@ -20,19 +20,19 @@ url: /deploy-keycloak-version-22-0-4-with-docker-compose
 
 ## Step 1: Edit the file on Linux and Mac `/etc/hosts`
 
-```
+```shell
 127.0.0.1 keycloak.localhost
 ```
 
 On Windows, the file path is usually:
 
-```
+```shell
 c:\Windows\System32\Drivers\etc\hosts
 ```
 
 ## Step 2: Clone the code
 
-```
+```shell
 git clone https://github.com/akitectio/keycloak-compose
 ```
 
@@ -109,36 +109,26 @@ volumes:
 
 ## Step 3: Run the docker compose command
 
-```
+```shell
 docker compose build --no-cache keycloak
-```
-{{< figure src="/images/keycloak/tut-01/01.png" >}}
 
-```
 docker compose up -d
 ```
-{{< figure src="/images/keycloak/tut-01/02.png" >}}
 
 
 ## Step 4: Check the running containers
 
-```
+```shell
 docker compose ps
 ```
 
-![](/images/keycloak/tut-01/04.png)
-
 Once it starts successfully, go to http://keycloak.localhost:8180 to test.
-
-![](/images/keycloak/tut-01/05.png)
 
 Log in to the admin console with the admin username and password.
 
 <b> Username: </b> admin
 
 <b> Password: </b>admin
-
-![](/images/keycloak/tut-01/06.png)
 
 By following these steps, you can run Keycloak with an external PostgreSQL database using Docker.
 

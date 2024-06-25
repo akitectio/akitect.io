@@ -1,0 +1,39 @@
+Khóa Học Vận Hành Cơ Bản Ubuntu Server bằng VirtualBox
+Bài 1: Giới Thiệu về Ubuntu Server và VirtualBox
+Tổng quan về Ubuntu và Ubuntu Server.
+Giới thiệu về VirtualBox và lý do sử dụng VirtualBox.
+Bài 2: Cài Đặt VirtualBox
+Tải xuống và cài đặt VirtualBox trên các hệ điều hành khác nhau (Windows, macOS, Linux).
+Cấu hình cơ bản trong VirtualBox.
+Bài 3: Tạo Máy Ảo trên VirtualBox
+Tạo máy ảo mới cho Ubuntu Server.
+Cấu hình máy ảo (RAM, CPU, ổ cứng ảo, mạng).
+Bài 4: Cài Đặt Ubuntu Server trên VirtualBox
+Tải xuống Ubuntu Server ISO.
+Cài đặt Ubuntu Server từ ISO.
+Thiết lập các cấu hình ban đầu (người dùng, mật khẩu, địa chỉ IP).
+Bài 5: Các Lệnh Cơ Bản của Linux
+Điều hướng thư mục: ls, cd, pwd.
+Quản lý tập tin và thư mục: cp, mv, rm, mkdir.
+Xem và chỉnh sửa tệp: cat, nano, vim.
+Bài 6: Quản Lý Người Dùng và Nhóm
+Tạo và quản lý người dùng: adduser, deluser, usermod.
+Quản lý nhóm: groupadd, groupdel, groupmod.
+Phân quyền và quyền truy cập: chmod, chown, chgrp.
+Bài 7: Quản Lý Dịch Vụ và Quy Trình
+Quản lý dịch vụ: systemctl, service.
+Quản lý quy trình: ps, top, htop, kill.
+Bài 8: Cấu Hình Mạng
+Thiết lập và cấu hình địa chỉ IP tĩnh.
+Kiểm tra kết nối mạng: ping, ifconfig, netstat, ss.
+Cấu hình SSH và bảo mật kết nối từ xa.
+Bài 9: Quản Lý Gói Phần Mềm với apt
+Cài đặt và cập nhật gói phần mềm: apt-get install, apt-get update, apt-get upgrade.
+Quản lý kho lưu trữ phần mềm.
+Bài 10: Sao Lưu và Khôi Phục
+Sử dụng tar và rsync để sao lưu dữ liệu.
+Thiết lập sao lưu tự động bằng cron.
+Khôi phục dữ liệu từ bản sao lưu.
+Bài 11: Tổng Kết Khóa Học
+Tóm tắt các kiến thức đã học.
+Hướng dẫn tài nguyên học tập thêm.
