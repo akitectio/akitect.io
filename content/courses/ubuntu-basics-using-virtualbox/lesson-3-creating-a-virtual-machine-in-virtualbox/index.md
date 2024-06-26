@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-3-creating-a-virtual-machine-in-virtualbox.webp
 images:
   - /courses/ubuntu-basics-using-virtualbox/lesson-3-creating-a-virtual-machine-in-virtualbox.webp
