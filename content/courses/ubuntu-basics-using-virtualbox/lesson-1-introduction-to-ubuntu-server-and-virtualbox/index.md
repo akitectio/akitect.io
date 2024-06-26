@@ -9,7 +9,7 @@ series:
 tags:
   - ubuntu-server
   - virtualbox
-title: Lesson 1 -  Giới Thiệu về Ubuntu Server và VirtualBox
+title: Lesson 1 - Ubuntu Server và VirtualBox
 description: Trong bài học này, bạn sẽ tìm hiểu về Ubuntu Server và VirtualBox, cũng như cách cài đặt chúng trên máy tính của bạn. Ubuntu Server là một hệ điều hành Linux dựa trên Debian, được thiết kế để chạy trên máy chủ và máy ảo. VirtualBox là một ứng dụng ảo hóa mã nguồn mở, cho phép bạn tạo và quản lý máy ảo trên máy tính cá nhân của mình.
 date: 2024-06-24T10:23:30-09:00
 weight: 1

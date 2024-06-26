@@ -1,8 +1,8 @@
 ---
 draft: false
-featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-1-introduction-to-ubuntu-server-and-virtualbox.webp
+featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-2-installing-virtualbox.webp
 images:
-  - /courses/ubuntu-basics-using-virtualbox/lesson-1-introduction-to-ubuntu-server-and-virtualbox.webp
+  - /courses/ubuntu-basics-using-virtualbox/lesson-2-installing-virtualbox.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
   - ubuntu-basics-using-virtualbox
@@ -10,13 +10,10 @@ tags:
   - ubuntu-server
   - virtualbox
 title: Lesson 2 - Cài đặt VirtualBox
-description: Bạn sẽ học cách cài đặt VirtualBox trên máy tính của mình để tạo máy ảo Ubuntu Server.
-# date: 2024-06-25T10:23:30-09:00
-date: 2024-06-24T10:23:30-09:00
-
+description: Bạn sẽ học cách cài đặt VirtualBox trên máy tính của mình để tạo máy ảo Ubuntu Server, từ đó học tập và thực hành Linux một cách hiệu quả, an toàn và thuận tiện.
+date: 2024-06-25T10:23:30-09:00
 weight: 2
 ---
-
 
 Trong bài viết này, chúng ta sẽ tìm hiểu cách cài đặt Oracle VM VirtualBox trên Windows.
 
@@ -38,45 +35,48 @@ Sau khi đã chuẩn bị đầy đủ, chúng ta sẽ tiến hành cài đặt 
 
 **Bước 1:** Mở file cài đặt đã tải về.
 
-![Step 1](link-to-your-image)
 
 - Nhấp đúp chuột vào file cài đặt để khởi chạy trình cài đặt của Oracle VM VirtualBox.
 
 **Bước 2:** Chào mừng đến với trình cài đặt Oracle VM VirtualBox.
 
-![Step 2](link-to-your-image)
+{{< figure src="./images/step-01.jpg" >}}
 
-- Một cửa sổ chào mừng sẽ xuất hiện. Nhấn "Next" để tiếp tục.
+- Một cửa sổ chào mừng sẽ xuất hiện. Nhấn "***Next***" để tiếp tục.
 
 **Bước 3:** Lựa chọn thành phần cài đặt.
 
-![Step 3](link-to-your-image)
+{{< figure src="./images/step-02.jpg" >}}
 
-- Trong cửa sổ này, bạn có thể chọn các thành phần bạn muốn cài đặt và thay đổi đường dẫn cài đặt nếu cần. Nhấn "Browse" để thay đổi đường dẫn cài đặt (nếu muốn), sau đó nhấn "Next" để tiếp tục.
+- Trong cửa sổ này, bạn có thể chọn các thành phần bạn muốn cài đặt và thay đổi đường dẫn cài đặt nếu cần. Nhấn "***Browse***" để thay đổi đường dẫn cài đặt (nếu muốn), sau đó nhấn "***Next***" để tiếp tục.
 
 **Bước 4:** Cảnh báo về mạng.
 
-![Step 4](link-to-your-image)
+{{< figure src="./images/step-03.jpg" >}}
 
-- Một cửa sổ cảnh báo về việc cài đặt các giao diện mạng ảo sẽ xuất hiện. Điều này có thể tạm thời làm gián đoạn kết nối mạng của bạn. Nhấn "Yes" để tiếp tục.
+
+- Một cửa sổ cảnh báo về việc cài đặt các giao diện mạng ảo sẽ xuất hiện. Điều này có thể tạm thời làm gián đoạn kết nối mạng của bạn. Nhấn "***Yes***" để tiếp tục.
 
 **Bước 5:** Bắt đầu cài đặt.
 
-![Step 5](link-to-your-image)
+{{< figure src="./images/step-04.jpg" >}}
 
-- Nhấn "Install" để bắt đầu quá trình cài đặt.
+
+- Nhấn "Yes" để bắt đầu quá trình cài đặt.
 
 **Bước 6:** Xác nhận cài đặt.
 
-![Step 6](link-to-your-image)
+{{< figure src="./images/step-05.jpg" >}}
 
-- Nếu có bất kỳ cửa sổ xác nhận nào xuất hiện (User Account Control), hãy nhấn "Yes" để đồng ý và tiếp tục cài đặt.
+
+- Nếu có bất kỳ cửa sổ xác nhận nào xuất hiện (User Account Control), hãy nhấn "***Install***" để đồng ý và tiếp tục cài đặt.
 
 **Bước 7:** Hoàn tất cài đặt.
 
-![Step 7](link-to-your-image)
+{{< figure src="./images/step-06.jpg" >}}
 
-- Khi quá trình cài đặt hoàn tất, nhấn "Finish" để kết thúc.
+
+- Khi quá trình cài đặt hoàn tất, nhấn "***Finish***" để kết thúc.
 
 
 ### 3. Lời kết
