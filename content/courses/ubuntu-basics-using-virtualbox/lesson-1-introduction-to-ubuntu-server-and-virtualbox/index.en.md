@@ -5,7 +5,7 @@ images:
   - /courses/ubuntu-basics-using-virtualbox/lesson-1-introduction-to-ubuntu-server-and-virtualbox.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
-  - docker-basic-series
+  - ubuntu-basics-using-virtualbox
 tags:
   - ubuntu-server
   - virtualbox
