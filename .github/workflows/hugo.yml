@@ -59,9 +59,9 @@ jobs:
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
+          HUGO_ENV: dev
         run: |
-          HUGO_ENV=production hugo \
+          HUGO_ENV=dev hugo \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
