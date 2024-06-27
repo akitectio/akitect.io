@@ -180,7 +180,7 @@ To set up your installation, access Jenkins on its default port, 8080, using you
 
 You will receive the Unlock Jenkins screen, displaying the location of the initial password:
 
-{{< figure src="./de4f0dc9-e268-483d-ae7e-f51b3ddcd132.webp" >}}
+{{< figure src="/de4f0dc9-e268-483d-ae7e-f51b3ddcd132.webp" >}}
 
 In the terminal window, use the **cat** command to display the password:
 
@@ -192,25 +192,25 @@ Copy the 32-character alphanumeric password from the terminal and paste it into 
 
 The next screen displays the option to install suggested plugins or to select specific plugins:
 
-{{< figure src="./8a198c4d-8b5e-4185-acc1-4e29b28eff05.webp" >}}
+{{< figure src="/8a198c4d-8b5e-4185-acc1-4e29b28eff05.webp" >}}
 
 Here, I recommend using **_Install suggested plugins_** to continue the installation process.
 
-{{< figure src="./e96dd023-2710-4916-a1e9-bc3d921e846f.webp" >}}
+{{< figure src="/e96dd023-2710-4916-a1e9-bc3d921e846f.webp" >}}
 
 Continue to wait for the installation process to complete.
 
 After the installation process is complete, the next step is to create an admin user.
 
-{{< figure src="./9a838a23-5d03-4058-a44a-c5083705f311.webp" >}}
+{{< figure src="/9a838a23-5d03-4058-a44a-c5083705f311.webp" >}}
 
 Continue by entering a username with a password.
 
-{{< figure src="./f00d8021-76eb-4d96-8aed-2895828271bb.webp" >}}
+{{< figure src="/f00d8021-76eb-4d96-8aed-2895828271bb.webp" >}}
 
 then click "**Save and Finish**" to complete the setup.
 
-{{< figure src="./7e5f7ff4-359e-4b0d-a28b-96e75ab6c303.webp" >}}
+{{< figure src="/7e5f7ff4-359e-4b0d-a28b-96e75ab6c303.webp" >}}
 
 So you have completed the installation and initial setup for Jenkins, next I will write the build for image service01 and service02.
 

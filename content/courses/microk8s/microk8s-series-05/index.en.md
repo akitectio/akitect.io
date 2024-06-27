@@ -53,7 +53,7 @@ Install Nginx
 sudo apt install nginx -y
 ```
 
-{{< figure src="./9483e7a2-849f-4e2d-82ab-c4f6fe4ce3af.webp" >}}
+{{< figure src="/9483e7a2-849f-4e2d-82ab-c4f6fe4ce3af.webp" >}}
 
 ### Step 2 – Authorize HTTP Firewall
 
@@ -65,7 +65,7 @@ sudo ufw allow 'Nginx HTTP'
 
 Kiểm tra service nginx có hoạt đông không?
 
-{{< figure src="./a1a7fe65-fc40-4b1b-a890-c5da04c2f000.webp" >}}
+{{< figure src="/a1a7fe65-fc40-4b1b-a890-c5da04c2f000.webp" >}}
 
 ## To facilitate code administration on the master machine and testing, I will install the code-server on the microk8s-master-01 machine
 
@@ -94,7 +94,7 @@ sudo service code-server@$USER restart
 
 ```
 
-{{< figure src="./0ca3f6fe-0d24-4e75-9747-2276cd33eee1.webp" >}}
+{{< figure src="/0ca3f6fe-0d24-4e75-9747-2276cd33eee1.webp" >}}
 
 ## Kích hoạt INGRESS
 
@@ -104,7 +104,7 @@ To enable [Inpress Controller](https://github.com/kubernetes/ingress-nginx) of M
 microk8s enable ingress
 ```
 
-{{< figure src="./ced428f0-7ad7-4adb-b358-42a8e14265b1.webp" >}}
+{{< figure src="/ced428f0-7ad7-4adb-b358-42a8e14265b1.webp" >}}
 
 After successful activation, we will try to create a dashboard ingress file: **ingress-dashboard.yaml**
 
@@ -132,11 +132,11 @@ spec:
 
 Run command `microk8s kubectl apply -f ingress-dashboard.yaml`
 
-{{< figure src="./ad42bee3-447b-4828-a6b5-00823dc94496.webp" >}}
+{{< figure src="/ad42bee3-447b-4828-a6b5-00823dc94496.webp" >}}
 
 When successful, go to https://10.19.2.92/ to check
 
-{{< figure src="./a7694569-fa42-4520-b53e-23a4a22e0bc9.webp" >}}
+{{< figure src="/a7694569-fa42-4520-b53e-23a4a22e0bc9.webp" >}}
 
 ## Configure nginx Reverse Proxy
 
@@ -152,7 +152,7 @@ MacOS & Linux Path: **/etc/hosts**
 127.0.0.1 microk8s-dashboard.localhost
 ```
 
-{{< figure src="./b3f5deb5-92d2-4d7f-8c07-5ba54fce5356.webp" >}}
+{{< figure src="/b3f5deb5-92d2-4d7f-8c07-5ba54fce5356.webp" >}}
 
 ### Step 2: Configure nginx
 
@@ -243,7 +243,7 @@ spec:
 
 Run the config again: `microk8s kubectl apply -f ingress-dashboard.yaml`
 
-{{< figure src="./37ac3dd4-92ec-4cbe-ab88-5bd82835b86c.webp" >}}
+{{< figure src="/37ac3dd4-92ec-4cbe-ab88-5bd82835b86c.webp" >}}
 
 If you find this sharing article interesting, please give me a like and subscribe to support me. Thank you so much ♥️♥️♥️♥️
 

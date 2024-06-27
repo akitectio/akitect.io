@@ -23,7 +23,7 @@ PostgreSQL là một hệ thống quản lý cơ sở dữ liệu quan hệ mã 
 
 ## Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-16-replication.jpeg" >}}
+{{< figure src="/images/postgresql-16-replication.jpeg" >}}
 
 ## Chuẩn bị môi trường
 
@@ -44,7 +44,7 @@ Kiểm tra phiên bản PostgreSQL
 ```shell
 psql --version
 ```
-{{< figure src="./images/check-version-postgresql.png" >}}
+{{< figure src="/images/check-version-postgresql.png" >}}
 
 ## Cấu hình PostgreSQL 16 Replication
 
@@ -88,7 +88,7 @@ host    replication    replicator              192.168.56.12/32         md5
 host    replication    replicator              192.168.56.13/32         md5
 ```
 
-{{< figure src="./images/pg_hba.conf.jpg" >}}
+{{< figure src="/images/pg_hba.conf.jpg" >}}
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
@@ -162,7 +162,7 @@ pg_basebackup -h 192.168.56.11 -U replicator -R -X stream -C -S replica_2 -v -R 
 chown -R postgres:postgres /var/lib/postgresql/16/main
 ```
 
-{{< figure src="./images/pg_basebackup.jpg" >}}
+{{< figure src="/images/pg_basebackup.jpg" >}}
 
 #### 2.3 : Cấu hình file recovery.conf trên máy `pg-slave-01` và `pg-slave-02`
 
@@ -205,7 +205,7 @@ SELECT client_addr, state
 FROM pg_stat_replication;
 ```
 
-{{< figure src="./images/pg_stat_replication.jpg" >}}
+{{< figure src="/images/pg_stat_replication.jpg" >}}
 
 Như vậy ta đã cấu hình thành công 2 máy `pg-slave-01` và `pg-slave-02` nhận dữ liệu từ máy `pg-master`.
 
@@ -223,7 +223,7 @@ Kiểm tra trạng thái của máy chủ `pg-slave`:
 SELECT status, receive_start_lsn, sender_host  FROM pg_stat_wal_receiver;
 ```
 
-{{< figure src="./images/pg_stat_wal_receiver.jpg" >}}
+{{< figure src="/images/pg_stat_wal_receiver.jpg" >}}
 
 ## Kiểm tra thiết lập sao chép dữ liệu
 
@@ -245,7 +245,7 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(100));
 INSERT INTO users (name) VALUES ('DUY TRAN - AKITECT.IO');
 ```
 
-{{< figure src="./images/check-replication-pg-master.jpg" >}}
+{{< figure src="/images/check-replication-postgresql-master.jpg" >}}
 
 ### Bước 2: Kiểm tra dữ liệu trên máy chủ `pg-slave`
 
@@ -259,7 +259,7 @@ sudo -u postgres psql
 SELECT * FROM users;
 ```
 
-{{< figure src="./images/check-replication-slave.jpg" >}}
+{{< figure src="/images/check-replication-slave.jpg" >}}
 
 Như vậy ta đã cấu hình thành công PostgreSQL 16 Replication giữ máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
 

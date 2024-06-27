@@ -50,7 +50,7 @@ Refer to the previous article.
 
 We go to the Vagrant homepage to download the installation file at https://developer.hashicorp.com/vagrant/downloads. Depending on the operating system, we will choose the appropriate installation file.
 
-{{< figure src="./edbe3216-d88f-4982-8607-486cc1958c1f.png" >}}
+{{< figure src="/edbe3216-d88f-4982-8607-486cc1958c1f.png" >}}
 
 ### Step 3: After successful installation, create a Vagrantfile.
 
@@ -151,7 +151,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-{{< figure src="./46a04e77-c66f-4b8a-94cf-ba43d01c7fc4.png" >}}
+{{< figure src="/46a04e77-c66f-4b8a-94cf-ba43d01c7fc4.png" >}}
 
 ### Step 4: Configure network
 
@@ -170,11 +170,11 @@ vagrant up
 
 > Depending on your network and machine configuration, this step may take 30 -> 60 minutes.
 
-{{< figure src="./6a303659-3afa-4291-a22d-4fd4d5cb1be9.png" >}}
+{{< figure src="/6a303659-3afa-4291-a22d-4fd4d5cb1be9.png" >}}
 
 Then you open **Oracle VM VirtualBox** and check if the virtual machines have been created and started.
 
-{{< figure src="./388b6633-8ff5-4d47-8552-c7ec30a86f72.png" >}}
+{{< figure src="/388b6633-8ff5-4d47-8552-c7ec30a86f72.png" >}}
 
 ### Step 5: Vagrant ssh and join nodes to the master
 
@@ -184,7 +184,7 @@ After successfully starting, we continue to ssh into the microk8s-master-01 mach
 vagrant ssh microk8s_master_01
 ```
 
-{{< figure src="./4923dfb0-1710-4068-b958-f6db06d5a823.png" >}}
+{{< figure src="/4923dfb0-1710-4068-b958-f6db06d5a823.png" >}}
 
 Next, we create a token to connect to the microk8s cluster.
 
@@ -192,11 +192,11 @@ Next, we create a token to connect to the microk8s cluster.
 microk8s add-node
 ```
 
-{{< figure src="./cd2e5200-4905-4ca7-82c1-6f4736f5be64.png" >}}
+{{< figure src="/cd2e5200-4905-4ca7-82c1-6f4736f5be64.png" >}}
 
 Then we ssh into the **microk8s-master-02** and **microk8s-master-03** machines to join them to the master nodes.
 
-{{< figure src="./5f13ea88-a045-488f-8d5f-d07fc1bc1421.png" >}}
+{{< figure src="/5f13ea88-a045-488f-8d5f-d07fc1bc1421.png" >}}
 
 We use the command **microk8s join** to connect the 2 machines to the master cluster.
 
@@ -204,9 +204,9 @@ We use the command **microk8s join** to connect the 2 machines to the master clu
 microk8s join 192.168.56.2:25000/f9b92e3f904dd17cba2332a88a3092da/a25a7c633d5c
 ```
 
-{{< figure src="./fe7179c0-9934-4b35-bece-f3761a956f4d.png" >}}
+{{< figure src="/fe7179c0-9934-4b35-bece-f3761a956f4d.png" >}}
 
-{{< figure src="./3945f334-da82-4782-9b36-8c59eac4a499.png" >}}
+{{< figure src="/3945f334-da82-4782-9b36-8c59eac4a499.png" >}}
 
 We use the command **microk8s kubectl get no** to check if the 2 master nodes have joined.
 
@@ -214,7 +214,7 @@ We use the command **microk8s kubectl get no** to check if the 2 master nodes ha
 microk8s kubectl get no
 ```
 
-{{< figure src="./8007393e-cbb0-4565-a9d4-9095f295683d.png" >}}
+{{< figure src="/8007393e-cbb0-4565-a9d4-9095f295683d.png" >}}
 
 So the master cluster has successfully joined, now we proceed with the worker cluster. Then we ssh into the **microk8s-worker-01**, **microk8s-worker-02**, **microk8s-worker-03**, **microk8s-worker-04** machines to join them to the worker nodes.
 
@@ -222,25 +222,25 @@ So the master cluster has successfully joined, now we proceed with the worker cl
 vagrant ssh microk8s_worker_01
 ```
 
-{{< figure src="./d2b2744c-4192-456a-bbf4-070175392a4c.png" >}}
+{{< figure src="/d2b2744c-4192-456a-bbf4-070175392a4c.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_02
 ```
 
-{{< figure src="./c01e6c0e-e040-48c9-8d19-57ba610815eb.png" >}}
+{{< figure src="/c01e6c0e-e040-48c9-8d19-57ba610815eb.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_03
 ```
 
-{{< figure src="./d827a85c-afa0-4532-90e3-74c9ecc08250.png" >}}
+{{< figure src="/d827a85c-afa0-4532-90e3-74c9ecc08250.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_04
 ```
 
-{{< figure src="./35623fc0-db5b-4c47-9266-812125831d00.png" >}}
+{{< figure src="/35623fc0-db5b-4c47-9266-812125831d00.png" >}}
 
 After successfully logging into the workers, ssh into the **microk8s-master-01** machine and run the command **microk8s add-node**.
 
@@ -248,7 +248,7 @@ After successfully logging into the workers, ssh into the **microk8s-master-01**
 microk8s add-node
 ```
 
-{{< figure src="./e4d809a4-7660-4b7c-8919-64f695894dbe.png" >}}
+{{< figure src="/e4d809a4-7660-4b7c-8919-64f695894dbe.png" >}}
 
 We use the token with the IP address of **192.168.56.2** and add **--worker** at the end, and apply it to all **worker** machines.
 
@@ -256,10 +256,10 @@ We use the token with the IP address of **192.168.56.2** and add **--worker** at
 microk8s join 192.168.56.2:25000/{toke} --worker
 ```
 
-{{< figure src="./844ec79a-ac53-4d78-8d59-517f08ffad37.png" >}}
+{{< figure src="/844ec79a-ac53-4d78-8d59-517f08ffad37.png" >}}
 
 We use the command **microk8s kubectl get no** on the **master 01** machine to check if the **worker nodes** have been connected.
 
-{{< figure src="./8e830ded-3564-42b0-b457-25ce61fa4b99.png" >}}
+{{< figure src="/8e830ded-3564-42b0-b457-25ce61fa4b99.png" >}}
 
 So we have successfully created virtual machines and connected **3 master** with **4 worker**.

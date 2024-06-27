@@ -33,7 +33,7 @@ Bạn tham khảo ở bài viết này: [Cài đặt và cấu hình PostgreSQL 
 sudo snap install --channel=3.4 maas
 ```
 
-{{<figure src="./images/maas-101-02-01.png" >}}
+{{<figure src="/images/maas-101-02-01.png" >}}
 
 {{< admonition warning "Một số lưu ý khi cài đặt" >}}
 Khi cài đặt MAAS trên Ubuntu, có thể có xung đột giữa máy khách NTP hiện tại, `systemd-timesyncd `và máy khách/máy chủ NTP do MAAS cung cấp, chrony. Điều này có thể dẫn đến sự cố đồng bộ hóa thời gian, đặc biệt nếu MAAS được định cấu hình với các máy chủ NTP ngược tuyến khác với các máy chủ được `systemd-timesyncd` sử dụng. Để tránh xung đột, người dùng có thể vô hiệu hóa và dừng `systemd-timesyncd` theo cách thủ công bằng lệnh sau:
@@ -43,7 +43,7 @@ sudo systemctl stop systemd-timesyncd
 sudo systemctl disable systemd-timesyncd
 ```
 
-{{< figure src="./images/maas-101-02-02.png" >}}
+{{< figure src="/images/maas-101-02-02.png" >}}
 
 {{< /admonition >}}
 
@@ -59,7 +59,7 @@ $HOSTNAME = "localhost"
 sudo maas init --mode all --database-uri "postgres://$MAAS_DBUSER:$MAAS_DBPASS@$HOSTNAME/$MAAS_DBNAME"
 ```
 
-{{< figure src="./images/maas-101-02-03.png" >}}
+{{< figure src="/images/maas-101-02-03.png" >}}
 
 {{< admonition warning "Một số lưu ý khi khởi tạo MAAS" >}}
 
@@ -73,7 +73,7 @@ Dùng lệnh kiểm tra trạng thái của MAAS
 sudo maas status
 ```
 
-{{< figure src="./images/maas-101-02-04.png" >}}
+{{< figure src="/images/maas-101-02-04.png" >}}
 
 ## Bước 6: Tạo tài khoản người dùng cho MAAS
 
@@ -88,7 +88,7 @@ sudo maas createadmin --username admin --password admin --email akitect.io@gmail
 - `--email` sẽ khai báo email cho MAAS
   {{< /admonition >}}
 
-{{< figure src="./images/maas-101-02-05.png" >}}
+{{< figure src="/images/maas-101-02-05.png" >}}
 
 ## Bước 7: Đăng nhập vào MAAS
 
@@ -101,7 +101,7 @@ Truy cập vào địa chỉ `http://10.86.140.147/MAAS` để đăng nhập và
 
 Màn hình wellcome của MAAS
 
-{{< figure src="./images/maas-101-02-06.png" >}}
+{{< figure src="/images/maas-101-02-06.png" >}}
 
 {{< admonition info "Các trường trên màn hình wellcome của MAAS" >}}
 
@@ -117,7 +117,7 @@ Màn hình wellcome của MAAS
 
 ## Bước 8: Chọn image Ubuntu để cài đặt
 
-{{< figure src="./images/maas-101-02-07.png" >}}
+{{< figure src="/images/maas-101-02-07.png" >}}
 
 {{< admonition info "Các trường trên màn hình chọn image Ubuntu để cài đặt" >}}
 
@@ -139,6 +139,6 @@ Màn hình wellcome của MAAS
 ## Bước 9: Hoài thành cài đặt MAAS
 
 Chọn `Finish Setup` để hoàn thành cài đặt MAAS
-{{< figure src="./images/maas-101-02-08.png" >}}
+{{< figure src="/images/maas-101-02-08.png" >}}
 
 Như vậy là bạn đã cài đặt và cấu hình MAAS thành công trên Ubuntu 22.04 LTS.

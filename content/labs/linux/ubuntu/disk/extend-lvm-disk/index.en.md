@@ -49,11 +49,11 @@ sudo su
 df -h
 ```
 
-{{< figure src="./images/6f66fe3b-f000-42b1-975b-96327eb4fa82.webp" >}}
+{{< figure src="/images/6f66fe3b-f000-42b1-975b-96327eb4fa82.webp" >}}
 
 Then we use the command **fdisk -l** to check the entire hard drive capacity.
 
-{{< figure src="./images/adc80763-6526-492d-9f9c-526d1c3fe083.webp" >}}
+{{< figure src="/images/adc80763-6526-492d-9f9c-526d1c3fe083.webp" >}}
 
 So the total hard drive capacity is 100G, as we only received 50G, we need to extend another 50G.
 
@@ -67,7 +67,7 @@ lvdisplay
 
 This command will display a list of existing LVM partitions on your system.
 
-{{< figure src="./images/135942a9-0278-45a7-b039-2c82dca1f9d6.webp" >}}
+{{< figure src="/images/135942a9-0278-45a7-b039-2c82dca1f9d6.webp" >}}
 
 ### 2. Check the available capacity on the physical volume (PV) with the following command:
 
@@ -77,7 +77,7 @@ pvdisplay
 
 This command will display information about the available and used capacity on the PV.
 
-{{< figure src="./images/78b7ccdb-65f6-4ecc-859d-4a60644df7e9.webp" >}}
+{{< figure src="/images/78b7ccdb-65f6-4ecc-859d-4a60644df7e9.webp" >}}
 
 ### 3. Check the location of the LVM partition you want to extend with the following command:
 
@@ -87,7 +87,7 @@ df -h
 
 This command will display a list of partitions on your system.
 
-{{< figure src="./images/b31cd305-1b32-4be8-98e8-236703c7affe.webp" >}}
+{{< figure src="/images/b31cd305-1b32-4be8-98e8-236703c7affe.webp" >}}
 
 Then, select the partition with the name:
 
@@ -101,7 +101,7 @@ Then, select the partition with the name:
 sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 ```
 
-{{< figure src="./images/c0d47f4b-f6d2-4ff9-b1e0-6cbacb1e5e6f.webp" >}}
+{{< figure src="/images/c0d47f4b-f6d2-4ff9-b1e0-6cbacb1e5e6f.webp" >}}
 
 Continue command
 
@@ -109,7 +109,7 @@ Continue command
 sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
-{{< figure src="./images/0326e82e-bca5-4a1c-b168-7451df7bc59f.webp" >}}
+{{< figure src="/images/0326e82e-bca5-4a1c-b168-7451df7bc59f.webp" >}}
 
 After running successfully, we use the command **df -h** to check if the hard drive has been added
 
@@ -117,7 +117,7 @@ After running successfully, we use the command **df -h** to check if the hard dr
 df -h
 ```
 
-{{< figure src="./images/50bd60c3-08a5-40e7-b987-e3d26925d174.webp" >}}
+{{< figure src="/images/50bd60c3-08a5-40e7-b987-e3d26925d174.webp" >}}
 
 So we have successfully extended 50G to the LVM partition
 

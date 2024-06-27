@@ -45,7 +45,7 @@ MAAS là một phần của hệ sinh thái OpenStack, nhưng nó cũng có th�
 
 ## Các thành phần của MAAS
 
-{{< figure src="./images/components-of-maas.png" >}}
+{{< figure src="/images/components-of-maas.png" >}}
 
 MAAS có 3 thành phần chính:
 

@@ -49,11 +49,11 @@ sudo su
 df -h
 ```
 
-{{< figure src="./images/6f66fe3b-f000-42b1-975b-96327eb4fa82.webp" >}}
+{{< figure src="/images/6f66fe3b-f000-42b1-975b-96327eb4fa82.webp" >}}
 
 sau đó ta dùng lệnh **fdisk -l** để kiểm tra toàn bộ dung lượng ổ cứng
 
-{{< figure src="./images/adc80763-6526-492d-9f9c-526d1c3fe083.webp" >}}
+{{< figure src="/images/adc80763-6526-492d-9f9c-526d1c3fe083.webp" >}}
 
 Như vậy tổng dung lượng ổ cứng của mình là 100G như chỉ mới nhận là 50G như vậy chúng ta cần Extend thêm 50G nữa
 
@@ -67,7 +67,7 @@ lvdisplay
 
 Lệnh này sẽ hiển thị danh sách các phân vùng LVM hiện có trên hệ thống của bạn.
 
-{{< figure src="./images/135942a9-0278-45a7-b039-2c82dca1f9d6.webp" >}}
+{{< figure src="/images/135942a9-0278-45a7-b039-2c82dca1f9d6.webp" >}}
 
 ### 2. Kiểm tra dung lượng sẵn có trên phân vùng vật lý (PV) bằng lệnh sau
 
@@ -77,7 +77,7 @@ pvdisplay
 
 Lệnh này sẽ hiển thị thông tin về dung lượng sẵn có và sử dụng trên PV.
 
-{{< figure src="./images/78b7ccdb-65f6-4ecc-859d-4a60644df7e9.webp" >}}
+{{< figure src="/images/78b7ccdb-65f6-4ecc-859d-4a60644df7e9.webp" >}}
 
 ### 3. Kiểm tra vị trí của phân vùng LVM muốn mở rộng bằng lệnh sau
 
@@ -87,7 +87,7 @@ df -h
 
 Lệnh này sẽ hiển thị danh sách các phân vùng trên hệ thống của bạn.
 
-{{< figure src="./images/b31cd305-1b32-4be8-98e8-236703c7affe.webp" >}}
+{{< figure src="/images/b31cd305-1b32-4be8-98e8-236703c7affe.webp" >}}
 
 sau đó mình chọn phân vùng name có tên là
 
@@ -101,7 +101,7 @@ sau đó mình chọn phân vùng name có tên là
 sudo lvm lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 ```
 
-{{< figure src="./images/c0d47f4b-f6d2-4ff9-b1e0-6cbacb1e5e6f.webp" >}}
+{{< figure src="/images/c0d47f4b-f6d2-4ff9-b1e0-6cbacb1e5e6f.webp" >}}
 
 Tiếp tục lệnh
 
@@ -109,7 +109,7 @@ Tiếp tục lệnh
 sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 
-{{< figure src="./images/0326e82e-bca5-4a1c-b168-7451df7bc59f.webp" >}}
+{{< figure src="/images/0326e82e-bca5-4a1c-b168-7451df7bc59f.webp" >}}
 
 sau khi chạy thành công ta dùng lệnh **df -h** để kiểm tra xem ổ cững đã được thêm vào chưa
 
@@ -117,7 +117,7 @@ sau khi chạy thành công ta dùng lệnh **df -h** để kiểm tra xem ổ c
 df -h
 ```
 
-{{< figure src="./images/50bd60c3-08a5-40e7-b987-e3d26925d174.webp" >}}
+{{< figure src="/images/50bd60c3-08a5-40e7-b987-e3d26925d174.webp" >}}
 
 Như vậy ta đã Extend thêm 50G vào phân dùng LVM thành công
 

@@ -72,7 +72,7 @@ Bước 2: đăng nhập vào zabbix và add vào hosts : http://10.19.2.1/zabbi
 
 Chọn theo như hình
 
-{{< figure src="./images/3d973b40-9232-4ba5-bd28-36ab5bb27a34.png" >}}
+{{< figure src="/images/3d973b40-9232-4ba5-bd28-36ab5bb27a34.png" >}}
 
 Bước 3: Cấu hình template **PostgreSQL by Zabbix agent 2**
 
@@ -97,6 +97,6 @@ GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_waldir() TO zbx_monitor;
 3. Đặt trong macro **{$PG.URI}** tên nguồn dữ liệu hệ thống của phiên bản PostgreSQL, chẳng hạn như **<protocol(host:port)>**
 4. Đặt tên người dùng và mật khẩu trong macro máy chủ **({$PG.USER}** và **{$PG.PASSWORD}**) nếu bạn muốn ghi đè các tham số từ tệp cấu hình tác nhân Zabbix
 
-{{< figure src="./images/003c2e76-a17a-4a8c-ab41-3c544e8a3417.png" >}}
+{{< figure src="/images/003c2e76-a17a-4a8c-ab41-3c544e8a3417.png" >}}
 
 Link tham khảo : https://www.zabbix.com/integrations/postgresql#postgresql_agent2

@@ -31,7 +31,7 @@ We update the packages with the apt command
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-{{<figure src="./images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
+{{<figure src="/images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
 
 ### Step 2: Find and record your IP 
 
@@ -42,7 +42,7 @@ ip a
 ip a show enp4s0
 ```
 
-{{<figure src="./images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
+{{<figure src="/images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
 
 
 ### Step 3: Download and run the ubuntu-22.04-lts-vpn-server.sh script
@@ -51,7 +51,7 @@ ip a show enp4s0
 wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh -O ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
+{{<figure src="/images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
 
 then we set permissions for the newly downloaded file with the command 
 
@@ -65,15 +65,15 @@ Run **ubuntu-22.04-lts-vpn-server.sh** to install OpenVPN Server
 sudo ./ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
-{{<figure src="./images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
+{{<figure src="/images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
+{{<figure src="/images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
 
 then we check the status of openVPN
 
 ```bash
 sudo systemctl status openvpn-server@server
 ```
-{{<figure src="./images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
+{{<figure src="/images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
 
 Then we download the **client.ovpn** file to the machine that needs to go into VPN 
 
@@ -93,7 +93,7 @@ Next, we install the Open VPN Client for the machine that needs to go into VPN
 
 Here I use Mac M1 and successfully connect
 
-{{<figure src="./images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
+{{<figure src="/images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
 
 ### Reference Links
 * https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/

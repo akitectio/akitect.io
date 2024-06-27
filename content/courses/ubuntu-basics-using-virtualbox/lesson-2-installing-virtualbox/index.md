@@ -40,40 +40,40 @@ Sau khi đã chuẩn bị đầy đủ, chúng ta sẽ tiến hành cài đặt 
 
 **Bước 2:** Chào mừng đến với trình cài đặt Oracle VM VirtualBox.
 
-{{< figure src="./images/step-01.jpg" >}}
+{{< figure src="/images/step-01.jpg" >}}
 
 - Một cửa sổ chào mừng sẽ xuất hiện. Nhấn "***Next***" để tiếp tục.
 
 **Bước 3:** Lựa chọn thành phần cài đặt.
 
-{{< figure src="./images/step-02.jpg" >}}
+{{< figure src="/images/step-02.jpg" >}}
 
 - Trong cửa sổ này, bạn có thể chọn các thành phần bạn muốn cài đặt và thay đổi đường dẫn cài đặt nếu cần. Nhấn "***Browse***" để thay đổi đường dẫn cài đặt (nếu muốn), sau đó nhấn "***Next***" để tiếp tục.
 
 **Bước 4:** Cảnh báo về mạng.
 
-{{< figure src="./images/step-03.jpg" >}}
+{{< figure src="/images/step-03.jpg" >}}
 
 
 - Một cửa sổ cảnh báo về việc cài đặt các giao diện mạng ảo sẽ xuất hiện. Điều này có thể tạm thời làm gián đoạn kết nối mạng của bạn. Nhấn "***Yes***" để tiếp tục.
 
 **Bước 5:** Bắt đầu cài đặt.
 
-{{< figure src="./images/step-04.jpg" >}}
+{{< figure src="/images/step-04.jpg" >}}
 
 
 - Nhấn "Yes" để bắt đầu quá trình cài đặt.
 
 **Bước 6:** Xác nhận cài đặt.
 
-{{< figure src="./images/step-05.jpg" >}}
+{{< figure src="/images/step-05.jpg" >}}
 
 
 - Nếu có bất kỳ cửa sổ xác nhận nào xuất hiện (User Account Control), hãy nhấn "***Install***" để đồng ý và tiếp tục cài đặt.
 
 **Bước 7:** Hoàn tất cài đặt.
 
-{{< figure src="./images/step-06.jpg" >}}
+{{< figure src="/images/step-06.jpg" >}}
 
 
 - Khi quá trình cài đặt hoàn tất, nhấn "***Finish***" để kết thúc.
