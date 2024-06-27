@@ -25,7 +25,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    sudo apt update
    ```
 
-   {{< figure src="/images/01.png" >}}
+   {{< figure src="./images/01.png" >}}
 
 2. Cài đặt PostgreSQL 14 bằng lệnh sau:
 
@@ -33,7 +33,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    sudo apt install postgresql-14 -y
    ```
 
-   {{< figure src="/images/02.png" >}}
+   {{< figure src="./images/02.png" >}}
 
 3. PostgreSQL sẽ tự động khởi động sau khi cài đặt. Bạn có thể kiểm tra trạng thái của nó bằng lệnh:
 
@@ -41,7 +41,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    sudo systemctl status postgresql
    ```
 
-   {{< figure src="/images/03.png" >}}
+   {{< figure src="./images/03.png" >}}
 
 ## Bước 2: Bảo mật PostgreSQL
 
@@ -51,7 +51,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    sudo passwd postgres
    ```
 
-   {{< figure src="/images/04.png" >}}
+   {{< figure src="./images/04.png" >}}
 
 2. Chuyển sang tài khoản "postgres" và mở shell PostgreSQL:
 
@@ -60,7 +60,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    psql
    ```
 
-   {{< figure src="/images/05.png" >}}
+   {{< figure src="./images/05.png" >}}
 
 3. Đặt mật khẩu cho tài khoản "postgres":
 
@@ -68,7 +68,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    \password postgres
    ```
 
-   {{< figure src="/images/06.png" >}}
+   {{< figure src="./images/06.png" >}}
 
    Nhập mật khẩu mới và xác nhận.
 
@@ -79,7 +79,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
    exit
    ```
 
-   {{< figure src="/images/07.png" >}}
+   {{< figure src="./images/07.png" >}}
 
 ## Bước 3: Tạo Cơ sở dữ liệu và Người dùng
 
@@ -126,7 +126,7 @@ url: /cai-dat-va-bao-mat-postgresql-14-tren-ubuntu-2404
 psql -h localhost -U myuser -d mydatabase
 ```
 
-{{< figure src="/images/08.png" >}}
+{{< figure src="./images/08.png" >}}
 
 ## Bước 5: Cấu hình bảo mật
 
@@ -136,7 +136,7 @@ psql -h localhost -U myuser -d mydatabase
    sudo nano /etc/postgresql/14/main/pg_hba.conf
    ```
 
-   {{< figure src="/images/09.png" >}}
+   {{< figure src="./images/09.png" >}}
 
 2. Thay đổi phương thức xác thực của tất cả các kết nối thành "md5":
 
@@ -145,7 +145,7 @@ psql -h localhost -U myuser -d mydatabase
    host    all             all
    ```
 
-   {{< figure src="/images/10.png" >}}
+   {{< figure src="./images/10.png" >}}
 
 3. Khởi động lại PostgreSQL:
 

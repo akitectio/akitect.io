@@ -53,11 +53,11 @@ Trong hướng dẫn giới thiệu này, chúng ta sẽ thảo luận về mộ
 
 PostgreSQL có thể được sử dụng cho nhiều ứng dụng khác nhau nhờ tính linh hoạt và khả năng mở rộng của nó. Một số trường hợp sử dụng phổ biến bao gồm:
 
-{{< figure src="/images/usecase.png" >}}
+{{< figure src="./images/usecase.png" >}}
 
 # Cơ sở dữ liệu quan hệ là gì?
 
-{{< figure src="/images/relationships.png" >}}
+{{< figure src="./images/relationships.png" >}}
 
 Cơ sở dữ liệu quan hệ là một loại hệ thống quản lý cơ sở dữ liệu (DBMS - Database Management System) lưu trữ và sắp xếp dữ liệu theo định dạng có cấu trúc được gọi là bảng (table). Các bảng này được tạo thành từ các hàng (record), còn được gọi là bản ghi hoặc bộ dữ liệu và các cột, còn được gọi là thuộc tính hoặc trường. Thuật ngữ "quan hệ" xuất phát từ thực tế là các bảng này có thể liên quan với nhau thông qua các khóa và mối quan hệ.
 

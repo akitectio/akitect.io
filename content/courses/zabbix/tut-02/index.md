@@ -72,7 +72,7 @@ Bước 2: đăng nhập vào zabbix và add vào hosts : http://10.19.2.1/zabbi
 
 Chọn theo như hình
 
-{{< figure src="/images/c1706075-2222-4358-b3bf-9b97e719b869.webp" >}}
+{{< figure src="./images/c1706075-2222-4358-b3bf-9b97e719b869.webp" >}}
 
 Bước 3: Cấu hình template **MongoDB node by Zabbix agent 2**
 
@@ -109,7 +109,7 @@ Mật khẩu cũng là ‘zabbix_mon
 
 2. Cấu hình Macros theo hình bên dưới
 
-{{< figure src="/images/2040661e-6603-4394-8e2e-d941b3104a3d.webp" >}}
+{{< figure src="./images/2040661e-6603-4394-8e2e-d941b3104a3d.webp" >}}
 
 - **{$MONGODB.PASSWORD}** –  tên người dùng MongoDB. Ví dụ của chúng tôi, chúng tôi sẽ đặt cái này thành zabbix_mon
 - **{$MONGODB.USER}** – mật khẩu MongoDB. Ví dụ của chúng tôi, chúng tôi sẽ đặt giá trị này thành zabbix_mon

@@ -25,13 +25,13 @@ Oracle VM VirtualBox is a powerful and flexible tool that allows us to easily cr
 
 ## Step 2: Start Creating a New Virtual Machine
 
-{{< figure src="/images/step-01.jpg" >}}
+{{< figure src="./images/step-01.jpg" >}}
 
 - Click the "New" button on the toolbar. The "Create Virtual Machine" window will appear.
 
 ## Step 3: Name and Choose the Operating System
 
-{{< figure src="/images/step-02.jpg" >}}
+{{< figure src="./images/step-02.jpg" >}}
 
 - In this window, enter a name for your virtual machine (e.g., "Ubuntu Server").
 - For "Type," select "Linux."
@@ -40,7 +40,7 @@ Oracle VM VirtualBox is a powerful and flexible tool that allows us to easily cr
 
 ### Configure RAM and CPU
 
-{{< figure src="/images/step-03.jpg" >}}
+{{< figure src="./images/step-03.jpg" >}}
 
 - In the "Base Memory" section, use the slider or directly enter the amount of RAM you want to allocate to the virtual machine (recommended at least 1024 MB), here we set it to 4096 MB.
 - In the "Processor" section, you can adjust the number of CPUs (recommended at least 1 CPU), here we set it to 2 CPUs.
@@ -70,7 +70,7 @@ $$
 
 ### Configure Virtual Hard Disk
 
-{{< figure src="/images/step-04.jpg" >}}
+{{< figure src="./images/step-04.jpg" >}}
 
 - Select "Create a virtual hard disk now."
 - Set the maximum size for the virtual hard disk (recommended at least 10 GB), here we set it to 50 GB. Click "Next" to finalize the virtual hard disk setup.
@@ -85,22 +85,22 @@ $$
 
 ### Confirm and Finish
 
-{{< figure src="/images/step-05.jpg" >}}
+{{< figure src="./images/step-05.jpg" >}}
 
 - Click "Finish" to create the new virtual machine with the selected settings.
 
-{{< figure src="/images/step-06.jpg" >}}
+{{< figure src="./images/step-06.jpg" >}}
 
 - The new virtual machine will appear in the list of virtual machines on the main interface of Oracle VM VirtualBox.
 
 ## Configure Network
 
-{{< figure src="/images/step-07.jpg" >}}
+{{< figure src="./images/step-07.jpg" >}}
 
 - In the "Settings" window, go to the "Network" section.
 - Select "Attached to: NAT" so the virtual machine can access the internet through the host's network.
 
-{{< figure src="/images/step-08.jpg" >}}
+{{< figure src="./images/step-08.jpg" >}}
 
 - Click "OK" to save the network settings.
 

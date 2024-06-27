@@ -45,7 +45,7 @@ MAAS is a part of the OpenStack ecosystem, but it can also be used independently
 
 ## Components of MAAS
 
-{{< figure src="/images/components-of-maas.png" >}}
+{{< figure src="./images/components-of-maas.png" >}}
 
 MAAS has 3 main components:
 

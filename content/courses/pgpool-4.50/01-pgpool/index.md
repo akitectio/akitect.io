@@ -24,7 +24,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="/images/postgresql-pgpool.jpeg" >}}
+{{< figure src="./images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -60,7 +60,7 @@ sau khi cài đặt kiểm tra phiên bản của `make`
 make --version
 ```
 
-{{< figure src="/images/make-version.jpg" >}}
+{{< figure src="./images/make-version.jpg" >}}
 
 Phiên bản `make` hiện tại đang là `4.3`
 
@@ -68,7 +68,7 @@ Phiên bản `make` hiện tại đang là `4.3`
 gcc --version
 ```
 
-{{< figure src="/images/gcc-version.jpg" >}}
+{{< figure src="./images/gcc-version.jpg" >}}
 
 Phiên bản `gcc` hiện tại đang là `11.4.0`
 
@@ -126,7 +126,7 @@ Tiếp tục kiểm tra phiên bản của `pgpool` sau khi cài đặt thành c
 pgpool --version
 ```
 
-{{< figure src="/images/pgpool-version.jpg" >}}
+{{< figure src="./images/pgpool-version.jpg" >}}
 
 #### Bước 2: Cấu hình PGpool-II
 
@@ -158,7 +158,7 @@ Thêm cấu hình sau vào tệp:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
 
 #### Bước 4: Khởi chạy PGpool-II
 
@@ -173,7 +173,7 @@ Cuối cùng, khởi chạy lại dịch vụ PGpool-II để áp dụng các th
 ```bash
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
-{{< figure src="/images/pgpool-start.jpg" >}}
+{{< figure src="./images/pgpool-start.jpg" >}}
 
 #### Bước 5: Cấu hình pcp.conf
 

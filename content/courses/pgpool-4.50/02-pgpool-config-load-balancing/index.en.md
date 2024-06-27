@@ -22,7 +22,7 @@ Configuring PGpool-II is a crucial step in deploying a PostgreSQL database clust
 
 # Installation Architecture
 
-{{< figure src="/images/postgresql-pgpool.jpeg" >}}
+{{< figure src="./images/postgresql-pgpool.jpeg" >}}
 
 Before we begin, we need to prepare 4 servers:
 
@@ -130,11 +130,11 @@ Finally, run the PGpool-II configuration check:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="/images/run-pgpool-configuration.jpg" >}}
+{{< figure src="./images/run-pgpool-configuration.jpg" >}}
 
 After configuration, you can check the status of PGpool-II by accessing it through pg4admin:
 
-{{< figure src="/images/pg4admin-pgpool.jpg" >}}
+{{< figure src="./images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` is the IP address (192.168.56.5) of the `pgpool2` server.
 - `username` is the default username `postgresql`.
@@ -168,7 +168,7 @@ WITH generated_data AS (
    SELECT * FROM generated_data; 
 ```
 
-{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
 
 As shown in the image, the `INSERT` statement has been executed on the `postgresql-master` server.
 
@@ -178,11 +178,11 @@ Next, we query with the `SELECT` statement on PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
 
 Then we check the log of the `pgpool2` server:
 
-{{< figure src="/images/pgpool-log.jpg" >}}
+{{< figure src="./images/pgpool-log.jpg" >}}
 
 As shown in the image, the `SELECT` statement has been executed on the `postgresql-slave-01` server through the `pgpool2` server.
 

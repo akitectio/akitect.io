@@ -113,23 +113,23 @@ systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 
 After successfully restarting the services, go to http://10.19.2.1/setup.php to perform the initial configuration. Follow the on-screen instructions to complete the setup.
 
-{{< figure src="/images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
+{{< figure src="./images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
 
 Click on Next Step to check the system installation requirements.
 
-{{< figure src="/images/fc27ce52-156f-4a4f-adbf-21897df87804.png" >}}
+{{< figure src="./images/fc27ce52-156f-4a4f-adbf-21897df87804.png" >}}
 
 Click on Next Step to configure the database connection.
 
-{{< figure src="/images/d3eab79b-53f6-4e22-beea-93c86f93a834.png" >}}
+{{< figure src="./images/d3eab79b-53f6-4e22-beea-93c86f93a834.png" >}}
 
 Click on Next Step to choose a theme or skip this step.
 
-{{< figure src="/images/2ea5c846-7a45-4f3b-8178-5406aa22ddbf.png" >}}
+{{< figure src="./images/2ea5c846-7a45-4f3b-8178-5406aa22ddbf.png" >}}
 
 Click on Next Step to complete the installation!
 
-{{< figure src="/images/69ead9a3-7652-4250-bbe8-7d7d670d5417.png" >}}
+{{< figure src="./images/69ead9a3-7652-4250-bbe8-7d7d670d5417.png" >}}
 
 Click on Finish to redirect to the default login page.
 
@@ -137,8 +137,8 @@ username: Admin
 
 password: zabbix
 
-{{< figure src="/images/50835f26-bca6-4fa8-847e-3591cb0fe516.png" >}}
+{{< figure src="./images/50835f26-bca6-4fa8-847e-3591cb0fe516.png" >}}
 
 Check the Zabbix dashboard as shown below.
 
-{{< figure src="/images/14ed06e7-6b5b-4602-9641-034ab141d806.png" >}}
+{{< figure src="./images/14ed06e7-6b5b-4602-9641-034ab141d806.png" >}}

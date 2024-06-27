@@ -57,7 +57,7 @@ After successfully ssh-ing, we activate **observability addons** using the comma
 microk8s enable observability
 ```
 
-{{< figure src="/c23304c3-1579-4e8e-a7e2-41aaf7484a45.webp" >}}
+{{< figure src="./c23304c3-1579-4e8e-a7e2-41aaf7484a45.webp" >}}
 
 When the application is successful, there will be a default username and password.
 
@@ -69,7 +69,7 @@ To access the service, we use port-forwarding with the following command:
 microk8s kubectl port-forward -n observability service/kube-prom-stack-grafana --address 0.0.0.0 3000:80
 ```
 
-{{< figure src="/8160b5a3-5d57-4e09-a5ec-fb3228897909.webp" >}}
+{{< figure src="./8160b5a3-5d57-4e09-a5ec-fb3228897909.webp" >}}
 
 This command forwards port 3000 on the local machine to port 80 on the Kubernetes service named `kube-prom-stack-grafana` in the `observability` namespace. This allows us to access the service through a web browser on the local machine by navigating to `http://localhost:3000`.
 
@@ -79,7 +79,7 @@ This command forwards port 3000 on the local machine to port 80 on the Kubernete
 
 Access the following URL: http://192.168.56.2:3000
 
-{{< figure src="/bb154f4c-473b-4814-87b1-7bd7244e72ea.webp" >}}
+{{< figure src="./bb154f4c-473b-4814-87b1-7bd7244e72ea.webp" >}}
 
 username: **admin**
 
@@ -87,11 +87,11 @@ password: **prom-operator**
 
 After successful login, go to the dashboard section: http://192.168.56.2:3000/dashboards
 
-{{< figure src="/849f7781-13ce-4729-8a03-ebe841a3f5a9.webp" >}}
+{{< figure src="./849f7781-13ce-4729-8a03-ebe841a3f5a9.webp" >}}
 
 Here, there is a list of pre-designed dashboard templates that can be used or customized as per the user's needs.
 
-{{< figure src="/974abdf2-3bbf-4b30-b95f-5f7e0b3179b7.webp" >}}
+{{< figure src="./974abdf2-3bbf-4b30-b95f-5f7e0b3179b7.webp" >}}
 
 ### Monitoring System with Zabbix 6.2
 
@@ -107,7 +107,7 @@ First, enable the community using the command:
  microk8s enable community
 ```
 
-{{< figure src="/8797a148-841f-4f82-9c8c-1886ccd25e2e.webp" >}}
+{{< figure src="./8797a148-841f-4f82-9c8c-1886ccd25e2e.webp" >}}
 
 After successfully enabling the community, activate the **fluentd addons** using the command:
 
@@ -115,7 +115,7 @@ After successfully enabling the community, activate the **fluentd addons** using
 microk8s enable fluentd
 ```
 
-{{< figure src="/580d8f45-21d8-4d47-99f8-7f1532d5524a.webp" >}}
+{{< figure src="./580d8f45-21d8-4d47-99f8-7f1532d5524a.webp" >}}
 
 After successful application, wait for about 1 minute for the services to be up. Then, use port forwarding to access the Kibana service:
 
@@ -123,11 +123,11 @@ After successful application, wait for about 1 minute for the services to be up.
 microk8s kubectl port-forward -n kube-system service/kibana-logging --address 0.0.0.0 8181:5601
 ```
 
-{{< figure src="/1c216157-8a40-40fa-9f12-c8fa399173fb.webp" >}}
+{{< figure src="./1c216157-8a40-40fa-9f12-c8fa399173fb.webp" >}}
 
 Access the URL: http://192.168.56.2:8181 to access Kibana.
 
-{{< figure src="/0317007a-870a-4911-9ecb-9229ba2574da.webp" >}}
+{{< figure src="./0317007a-870a-4911-9ecb-9229ba2574da.webp" >}}
 
 Thus, we have successfully activated the **fluentd addons**.
 
@@ -139,7 +139,7 @@ Note that we must activate the **fluentd community addons** before installing **
 microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
 ```
 
-{{< figure src="/36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
+{{< figure src="./36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
 
 Content of the file **zipkin-all-in-one.yaml**
 
@@ -153,7 +153,7 @@ After successful activation, use port forwarding to access the service:
 
 Access the URL: http://192.168.56.2:9411 to access Zipkin.
 
-{{< figure src="/70fcd036-8b16-4149-9f42-5e3fa6396668.webp" >}}
+{{< figure src="./70fcd036-8b16-4149-9f42-5e3fa6396668.webp" >}}
 
 Thus, you have successfully installed **Zipkin**.
 

@@ -24,7 +24,7 @@ PGpool-II is a unique middleware solution, specially designed to optimize and sc
 
 # Installation Architecture
 
-{{< figure src="/images/postgresql-pgpool.jpeg" >}}
+{{< figure src="./images/postgresql-pgpool.jpeg" >}}
 
 
 Before we start, we need to prepare 4 servers
@@ -59,7 +59,7 @@ after installing check the version of `make`
 make --version
 ```
 
-{{< figure src="/images/make-version.jpg" >}}
+{{< figure src="./images/make-version.jpg" >}}
 
 The current version of `make` is `4.3`
 
@@ -67,7 +67,7 @@ The current version of `make` is `4.3`
 gcc --version
 ```
 
-{{< figure src="/images/gcc-version.jpg" >}}
+{{< figure src="./images/gcc-version.jpg" >}}
 
 The current version of `gcc` is `11.4.0`
 
@@ -125,7 +125,7 @@ Continue to check the version of `pgpool` after successful installation with the
 pgpool --version
 ```
 
-{{< figure src="/images/pgpool-version.jpg" >}}
+{{< figure src="./images/pgpool-version.jpg" >}}
 
 #### Step 2: Install `pgpool_recovery`
 
@@ -165,7 +165,7 @@ After successful build we will have the file `pgpool_recovery.so` in the directo
 ls -la
 ```
 
-{{< figure src="/images/pgpool-recovery.jpg" >}}
+{{< figure src="./images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`: 
 
@@ -197,7 +197,7 @@ After installation, we will configure `pgpool_recovery` on the `postgresql-maste
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
 
 Where `template1` is the sample database where we install `pgpool_recovery`
 
@@ -231,7 +231,7 @@ Add the following configuration to the file:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
 
 #### Step 4: Start PGpool-II
 
@@ -241,6 +241,6 @@ Finally, restart the PGpool-II service to apply the changes:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="/images/pgpool-start.jpg" >}}
+{{< figure src="./images/pgpool-start.jpg" >}}
 
 Thus, we have installed and configured PGpool-II on the Ubuntu Linux operating system. By performing these steps, you can optimize and scale the capabilities of your PostgreSQL database, helping you to maximize the performance and high availability of your database.

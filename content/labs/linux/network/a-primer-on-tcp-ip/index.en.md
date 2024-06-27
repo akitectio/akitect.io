@@ -54,7 +54,7 @@ The history of computer networking is a fascinating journey, from the early step
 
 The OSI (Open Systems Interconnection) model is a reference model proposed by the International Organization for Standardization (ISO) in 1984. The OSI model is used to describe how a computer network operates. The OSI model is divided into 7 layers, each representing a set of related functions. These layers are arranged in order from the top layer to the bottom layer.
 
-{{< figure src="/images/osi-model.webp" >}}
+{{< figure src="./images/osi-model.webp" >}}
 
 ### 2.1. Layer 7: Application
 
@@ -88,7 +88,7 @@ The physical layer ensures data transmission between computers. Network protocol
 
 The TCP/IP (Transmission Control Protocol/Internet Protocol) model is a reference model developed by the United States Department of Defense (DoD) in 1982. The TCP/IP model is used to describe how a computer network operates. The TCP/IP model is divided into 4 layers, each representing a set of related functions. These layers are arranged in order from the top layer to the bottom layer.
 
-{{< figure src="/images/tcp-ip-model.webp" >}}
+{{< figure src="./images/tcp-ip-model.webp" >}}
 
 ### 3.1. Layer 4: Application
 

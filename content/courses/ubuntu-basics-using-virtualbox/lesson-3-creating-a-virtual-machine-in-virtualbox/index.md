@@ -25,13 +25,13 @@ Oracle VM VirtualBox là một công cụ mạnh mẽ và linh hoạt cho phép 
 
 ## Bước 2: Bắt Đầu Tạo Máy Ảo Mới
 
-{{< figure src="/images/step-01.jpg" >}}
+{{< figure src="./images/step-01.jpg" >}}
 
 - Nhấp vào nút "New" trên thanh công cụ. Cửa sổ "Create Virtual Machine" sẽ xuất hiện.
 
 ## Bước 3: Đặt Tên và Chọn Hệ Điều Hành
 
-{{< figure src="/images/step-02.jpg" >}}
+{{< figure src="./images/step-02.jpg" >}}
 
 - Trong cửa sổ này, nhập tên cho máy ảo của bạn (ví dụ: "Ubuntu Server").
 - Trong phần "Type," chọn "Linux."
@@ -40,7 +40,7 @@ Oracle VM VirtualBox là một công cụ mạnh mẽ và linh hoạt cho phép 
 
 ### Cấu Hình RAM và CPU
 
-{{< figure src="/images/step-03.jpg" >}}
+{{< figure src="./images/step-03.jpg" >}}
 
 - Trong phần "***Base Memory***" sử dụng thanh trượt hoặc nhập trực tiếp số RAM bạn muốn cấp phát cho máy ảo (khuyến nghị ít nhất 1024 MB), ở đây mình để ***4096 MB***.
 - Trong phần "***Processor***" bạn có thể điều chỉnh số lượng CPU (khuyến nghị ít nhất 1 CPU), ở đây mình để ***2 CPU***.
@@ -69,7 +69,7 @@ $$
 
 ### Cấu Hình Ổ Cứng Ảo
 
-  {{< figure src="/images/step-04.jpg" >}}
+  {{< figure src="./images/step-04.jpg" >}}
 
 - Chọn "Create a virtual hard disk now"
 - Đặt dung lượng tối đa cho ổ cứng ảo (khuyến nghị ít nhất 10 GB), ở đây mình để ***50 GB***. Nhấp "Next" để hoàn tất thiết lập ổ cứng ảo.
@@ -83,19 +83,19 @@ $$
 
 ### Xác Nhận và Hoàn Tất
 
-{{< figure src="/images/step-05.jpg" >}}
+{{< figure src="./images/step-05.jpg" >}}
 
 - Nhấp "Finish" để tạo máy ảo mới với các cài đặt đã chọn.
-  {{< figure src="/images/step-06.jpg" >}}
+  {{< figure src="./images/step-06.jpg" >}}
 - Máy ảo mới sẽ xuất hiện trong danh sách máy ảo trên giao diện chính của Oracle VM VirtualBox.
   
 ## Cấu Hình Mạng
 
-{{< figure src="/images/step-07.jpg" >}}
+{{< figure src="./images/step-07.jpg" >}}
 
 - Trong cửa sổ "Settings," vào phần "Network."
 - Chọn "Attached to: NAT" để máy ảo có thể truy cập internet thông qua mạng của máy chủ.
-{{< figure src="/images/step-08.jpg" >}}
+{{< figure src="./images/step-08.jpg" >}}
 - Nhấp "OK" để lưu cài đặt mạng.
 {{< admonition type="info" title="Các loại network trong Virtualbox" >}}
 

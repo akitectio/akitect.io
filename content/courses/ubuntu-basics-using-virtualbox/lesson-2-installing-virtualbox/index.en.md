@@ -38,37 +38,37 @@ After preparing everything, we will proceed to install Oracle VM VirtualBox. Bel
 
 **Step 2:** Welcome to the Oracle VM VirtualBox Setup.
 
-{{< figure src="/images/step-01.jpg" >}}
+{{< figure src="./images/step-01.jpg" >}}
 
 - A welcome window will appear. Press "***Next***" to continue.
 
 **Step 3:** Choose the components to install.
 
-{{< figure src="/images/step-02.jpg" >}}
+{{< figure src="./images/step-02.jpg" >}}
 
 - In this window, you can select the components you want to install and change the installation path if necessary. Press "***Browse***" to change the installation path (if desired), then press "***Next***" to continue.
 
 **Step 4:** Network warning.
 
-{{< figure src="/images/step-03.jpg" >}}
+{{< figure src="./images/step-03.jpg" >}}
 
 - A warning window about installing virtual network interfaces will appear. This may temporarily interrupt your network connection. Press "***Yes***" to continue.
 
 **Step 5:** Start the installation.
 
-{{< figure src="/images/step-04.jpg" >}}
+{{< figure src="./images/step-04.jpg" >}}
 
 - Press "Yes" to begin the installation process.
 
 **Step 6:** Confirm installation.
 
-{{< figure src="/images/step-05.jpg" >}}
+{{< figure src="./images/step-05.jpg" >}}
 
 - If any confirmation windows appear (User Account Control), press "***Install***" to agree and continue with the installation.
 
 **Step 7:** Complete the installation.
 
-{{< figure src="/images/step-06.jpg" >}}
+{{< figure src="./images/step-06.jpg" >}}
 
 - When the installation process is complete, press "***Finish***" to conclude.
 

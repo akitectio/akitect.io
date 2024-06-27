@@ -25,7 +25,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    sudo apt update
    ```
 
-   {{< figure src="/images/01.png" >}}
+   {{< figure src="./images/01.png" >}}
 
 2. Install PostgreSQL 14 with the following command:
 
@@ -33,7 +33,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    sudo apt install postgresql-14 -y
    ```
 
-   {{< figure src="/images/02.png" >}}
+   {{< figure src="./images/02.png" >}}
 
 3. PostgreSQL will automatically start after installation. You can check its status with the command:
 
@@ -41,7 +41,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    sudo systemctl status postgresql
    ```
 
-   {{< figure src="/images/03.png" >}}
+   {{< figure src="./images/03.png" >}}
 
 ## Step 2: Secure PostgreSQL
 
@@ -51,7 +51,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    sudo passwd postgres
    ```
 
-   {{< figure src="/images/04.png" >}}
+   {{< figure src="./images/04.png" >}}
 
 2. Switch to the "postgres" account and open the PostgreSQL shell:
 
@@ -60,7 +60,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    psql
    ```
 
-   {{< figure src="/images/05.png" >}}
+   {{< figure src="./images/05.png" >}}
 
 3. Set a password for the "postgres" account:
 
@@ -68,7 +68,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    \password postgres
    ```
 
-   {{< figure src="/images/06.png" >}}
+   {{< figure src="./images/06.png" >}}
 
    Enter the new password and confirm.
 
@@ -79,7 +79,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
    exit
    ```
 
-   {{< figure src="/images/07.png" >}}
+   {{< figure src="./images/07.png" >}}
 
 ## Step 3: Create Database and User
 
@@ -126,7 +126,7 @@ url: /install-and-secure-postgresql-14-on-ubuntu-2404
 psql -h localhost -U myuser -d mydatabase
 ```
 
-{{< figure src="/images/08.png" >}}
+{{< figure src="./images/08.png" >}}
 
 ## Step 5: Configure security
 
@@ -136,7 +136,7 @@ psql -h localhost -U myuser -d mydatabase
    sudo nano /etc/postgresql/14/main/pg_hba.conf
    ```
 
-   {{< figure src="/images/09.png" >}}
+   {{< figure src="./images/09.png" >}}
 
 2. Change the authentication method of all connections to "md5":
 
@@ -145,7 +145,7 @@ psql -h localhost -U myuser -d mydatabase
    host    all             all
    ```
 
-   {{< figure src="/images/10.png" >}}
+   {{< figure src="./images/10.png" >}}
 
 3. Restart PostgreSQL:
 

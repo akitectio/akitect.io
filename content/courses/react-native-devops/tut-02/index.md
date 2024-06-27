@@ -38,7 +38,7 @@ weight: 2
 npx react-native init ReactNativeDevOps
 ```
 
-{{< figure src="/images/0ae1addc-06f4-469c-9c78-72beb0e6fc00.png" >}}
+{{< figure src="./images/0ae1addc-06f4-469c-9c78-72beb0e6fc00.png" >}}
 
 ## Cài đặt và cấu hình react-native-config
 
@@ -48,7 +48,7 @@ Cài đặt **react-native-config**
 npm i react-native-config --save
 ```
 
-{{< figure src="/images/52905fe3-1fb1-45c8-857e-11972f7f2c70.png" >}}
+{{< figure src="./images/52905fe3-1fb1-45c8-857e-11972f7f2c70.png" >}}
 
 ### Cấu hình IOS
 
@@ -58,7 +58,7 @@ npm i react-native-config --save
 npx pod-install
 ```
 
-{{< figure src="/images/5d25c95e-2c45-41a4-bca1-9bf63faac813.png" >}}
+{{< figure src="./images/5d25c95e-2c45-41a4-bca1-9bf63faac813.png" >}}
 
 Ta mở xcode bằng lệnh
 
@@ -68,7 +68,7 @@ open ios/ReactNativeDevOps.xcworkspace
 
 sau đó mở file **AppDelegate.mm**
 
-{{< figure src="/images/b9c5e25a-4b2f-4c1a-84f3-ccbb0a75dc16.png" >}}
+{{< figure src="./images/b9c5e25a-4b2f-4c1a-84f3-ccbb0a75dc16.png" >}}
 
 ### Cấu hình Android
 
@@ -78,7 +78,7 @@ Ta vào file **android/app/build.gradle** thêm vào dòng số 2 đoạn code
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 ```
 
-{{< figure src="/images/ed317a4f-8085-40ec-955e-602a0926f3c0.png" >}}
+{{< figure src="./images/ed317a4f-8085-40ec-955e-602a0926f3c0.png" >}}
 
 trong file **android/app/proguard-rules.pro** ta thêm dòng
 
@@ -86,7 +86,7 @@ trong file **android/app/proguard-rules.pro** ta thêm dòng
 -keep class com.reactnativedevops.BuildConfig { *; }
 ```
 
-{{< figure src="/images/c804a7d5-0c7a-4566-b8a5-bc4ba305d0b9.png" >}}
+{{< figure src="./images/c804a7d5-0c7a-4566-b8a5-bc4ba305d0b9.png" >}}
 
 Tiếp theo ta tạo thêm 3 file ở thư mục root:
 
@@ -111,7 +111,7 @@ API_KEY=productKey
 API_URI=https://prod.com/api
 ```
 
-{{< figure src="/images/e9bec63a-b759-4801-9518-d6a87d040a49.png" >}}
+{{< figure src="./images/e9bec63a-b759-4801-9518-d6a87d040a49.png" >}}
 
 Sau đó ta sử dụng config bằng cách thêm vào scripts trong package.json
 
@@ -167,7 +167,7 @@ Sau khi cấu hình xong ta dùng lệnh để run test config
 npm run dev-ios
 ```
 
-{{< figure src="/images/9ffbfd3c-a5d4-4f1f-bfa6-8f8f2326f874.png" >}}
+{{< figure src="./images/9ffbfd3c-a5d4-4f1f-bfa6-8f8f2326f874.png" >}}
 
 2. stg
 
@@ -175,7 +175,7 @@ npm run dev-ios
 npm run stg-ios
 ```
 
-{{< figure src="/images/9e40289e-e501-45b9-9d5c-1233ab93fd1e.png" >}}
+{{< figure src="./images/9e40289e-e501-45b9-9d5c-1233ab93fd1e.png" >}}
 
 3. prod
 
@@ -183,6 +183,6 @@ npm run stg-ios
 npm run prod-ios
 ```
 
-{{< figure src="/images/55126fba-be2e-448b-a2c7-b85624a3ce4f.png" >}}
+{{< figure src="./images/55126fba-be2e-448b-a2c7-b85624a3ce4f.png" >}}
 
 Như vậy thì mình đã cấu hình thành công 3 môi trường dev-stg-prod

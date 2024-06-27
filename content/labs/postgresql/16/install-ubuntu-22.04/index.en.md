@@ -32,7 +32,7 @@ To begin, let's get the latest version of the packages. We can achieve this by u
 sudo apt update
 ```
 
-{{< figure src="/images/a0b112e0-aa5f-493a-ad99-693f029a2c3c.webp" >}}
+{{< figure src="./images/a0b112e0-aa5f-493a-ad99-693f029a2c3c.webp" >}}
 
 ### Step 2: Install PostgreSQL 16 Database Server and Client
 
@@ -48,7 +48,7 @@ After running successfully, we check if the PostgreSQL service has been started:
  sudo systemctl status postgresql
 ```
 
-{{< figure src="/images/7182fcd1-3e7f-4420-b3df-79eae97b8c08.webp" >}}
+{{< figure src="./images/7182fcd1-3e7f-4420-b3df-79eae97b8c08.webp" >}}
 
 So we have successfully installed PostgreSQL and check the PostgreSQL version with the command
 
@@ -56,7 +56,7 @@ So we have successfully installed PostgreSQL and check the PostgreSQL version wi
  psql --version
 ```
 
-{{< figure src="/images/e052ebdb-9948-4edd-aa8a-f54488fd2425.webp" >}}
+{{< figure src="./images/e052ebdb-9948-4edd-aa8a-f54488fd2425.webp" >}}
 
 Here, we can see that the PostgreSQL version is 16.
 
@@ -68,7 +68,7 @@ By default, we can connect to the PostgreSQL server without using any password. 
 sudo -u postgres psql
 ```
 
-{{< figure src="/images/485f7ad5-fc47-44d0-94c9-591625a85a45.webp" >}}
+{{< figure src="./images/485f7ad5-fc47-44d0-94c9-591625a85a45.webp" >}}
 
 In the above output, the prompt **postgres=#** indicates that the connection is working with the PostgreSQL server.
 
@@ -80,7 +80,7 @@ ALTER USER postgres PASSWORD 'PassKhongChilaPasss';
 
 then we exit with the command `\q`
 
-{{< figure src="/images/a1eb8fd0-13ee-4273-92b0-9f34b9780fcf.webp" >}}
+{{< figure src="./images/a1eb8fd0-13ee-4273-92b0-9f34b9780fcf.webp" >}}
 
 Now, let's connect back to the database server:
 
@@ -90,7 +90,7 @@ psql -h localhost -U postgres
 
 Enter the **PassKhongChilaPasss** string as the password and now we are connected to the database.
 
-{{< figure src="/images/7eb308fa-5c0e-4891-9ae1-b7c6b60bf5c0.webp" >}}
+{{< figure src="./images/7eb308fa-5c0e-4891-9ae1-b7c6b60bf5c0.webp" >}}
 
 So we have successfully set the password for the admin user **postgres**
 
@@ -100,17 +100,17 @@ By default, PostgreSQL only accepts connections from the local server. However, 
 
 PostgreSQL reads its configuration from the **postgresql.conf** file located in the **/etc/postgresql/16/main/** directory. Here, the version indicates the major version of PostgreSQL.
 
-{{< figure src="/images/89716e24-0d66-4873-8ab1-d5ebe405ea9c.webp" >}}
+{{< figure src="./images/89716e24-0d66-4873-8ab1-d5ebe405ea9c.webp" >}}
 
 Now, let's open the **postgresql.conf** file in a text editor, uncomment the line starting with **listen_addresses** and replace '**localhost**' with **'\*'**.
 
-{{< figure src="/images/6da30c3e-b236-433e-8577-625b736d6257.webp" >}}
+{{< figure src="./images/6da30c3e-b236-433e-8577-625b736d6257.webp" >}}
 
 Save and close the file.
 
 Next, edit the IPv4 local connection section of the **pg_hba.conf** file to allow **IPv4** connections from all clients. Please note that this file is also located in the **/etc/postgresql/16/main/** directory.
 
-{{< figure src="/images/77cb1ee8-37c7-459f-80ce-58493b8b8b47.webp" >}}
+{{< figure src="./images/77cb1ee8-37c7-459f-80ce-58493b8b8b47.webp" >}}
 
 In case the Ubuntu firewall is running on your system, allow the PostgreSQL port 5432 with the following command,
 
@@ -120,10 +120,10 @@ sudo ufw allow 5432/tcp
 
 Then we use the **PgAdmin** tool to connect, you can download it here https://www.pgadmin.org/download/
 
-{{< figure src="/images/7d35b81f-b04d-43e4-a16d-6e9da0382d4b.webp" >}}
+{{< figure src="./images/7d35b81f-b04d-43e4-a16d-6e9da0382d4b.webp" >}}
 
 We fill in the necessary information as shown in the image below and then click **Save**
 
-{{< figure src="/images/b64860e4-bd93-4fae-9a34-b407a1f57b14.webp" >}}
+{{< figure src="./images/b64860e4-bd93-4fae-9a34-b407a1f57b14.webp" >}}
 
 So we have successfully connected.

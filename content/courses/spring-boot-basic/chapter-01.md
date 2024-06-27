@@ -11,7 +11,7 @@ Spring là màu xuân, Boot là khởi động, nên chúng ta có thể gọi l
 Spring Boot là một dự án con trong hệ sinh thái lớn của Spring Framework, được thiết kế để giúp các nhà phát triển nhanh chóng tạo ra các ứng dụng Spring dựa trên Java mà không cần phải lo lắng về quá trình cấu hình ứng dụng một cách thủ công. Spring Boot được phát triển và duy trì bởi Pivotal Team (nay là một phần của VMware) và cộng đồng mở rộng, được phát hành lần đầu vào năm 2014.
 
 
-{{< figure src="/courses/spring-boot-basic/spring-boot-overview/spring-vmware-tanzu.png" >}}
+{{< figure src="./courses/spring-boot-basic/spring-boot-overview/spring-vmware-tanzu.png" >}}
 
 ```mermaid
 gantt

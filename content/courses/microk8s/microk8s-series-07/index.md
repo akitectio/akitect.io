@@ -180,7 +180,7 @@ Với việc cài đặt Jenkins và cấu hình tường lửa, bạn đã hoà
 
 Bạn sẽ nhận được màn hình Mở khóa Jenkins, hiển thị vị trí của mật khẩu ban đầu:
 
-{{< figure src="/de4f0dc9-e268-483d-ae7e-f51b3ddcd132.webp" >}}
+{{< figure src="./de4f0dc9-e268-483d-ae7e-f51b3ddcd132.webp" >}}
 
 Trong cửa sổ terminal, sử dụng lệnh **cat** để hiển thị mật khẩu:
 
@@ -192,25 +192,25 @@ Sao chép mật khẩu chữ và số 32 ký tự từ terminal và dán nó và
 
 Màn hình tiếp theo hiển thị tùy chọn cài đặt các plugin được đề xuất hoặc chọn các plugin cụ thể:
 
-{{< figure src="/8a198c4d-8b5e-4185-acc1-4e29b28eff05.webp" >}}
+{{< figure src="./8a198c4d-8b5e-4185-acc1-4e29b28eff05.webp" >}}
 
 Ở đây mình khuyên các bạn sử dụng **_Install suggested plugins_** để tiếp tục tiến trình cài đặt
 
-{{< figure src="/e96dd023-2710-4916-a1e9-bc3d921e846f.webp" >}}
+{{< figure src="./e96dd023-2710-4916-a1e9-bc3d921e846f.webp" >}}
 
 Tiếp tục chờ đợi tiến trình cài đặt
 
 Sau khi quá trình cài đặt hoàn tất, sẽ đến bước tạo user admin
 
-{{< figure src="/9a838a23-5d03-4058-a44a-c5083705f311.webp" >}}
+{{< figure src="./9a838a23-5d03-4058-a44a-c5083705f311.webp" >}}
 
 Tiếp tục nhập username với password
 
-{{< figure src="/f00d8021-76eb-4d96-8aed-2895828271bb.webp" >}}
+{{< figure src="./f00d8021-76eb-4d96-8aed-2895828271bb.webp" >}}
 
 sau đó nhấp vào "**Save and Finish**" để hoàn thành cài đặt
 
-{{< figure src="/7e5f7ff4-359e-4b0d-a28b-96e75ab6c303.webp" >}}
+{{< figure src="./7e5f7ff4-359e-4b0d-a28b-96e75ab6c303.webp" >}}
 
 Như vậy mình đã cài đặt và thiết lập ban đầu cho jenkins xong rồi, tiếp tục thì mình sẽ viết bộ build image service01 và service02
 

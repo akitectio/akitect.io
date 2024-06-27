@@ -54,7 +54,7 @@ Lịch sử của mạng máy tính là một hành trình thú vị, từ nhữ
 
 Mô hình OSI (Open Systems Interconnection) là một mô hình tham chiếu được đề xuất bởi Tổ chức Tiêu chuẩn Hóa Quốc tế (ISO) vào năm 1984. Mô hình OSI được sử dụng để mô tả cách thức một mạng máy tính hoạt động. Mô hình OSI được chia thành 7 lớp, mỗi lớp đại diện cho một tập hợp các chức năng có liên quan. Các lớp này được sắp xếp theo thứ tự từ lớp trên cùng đến lớp dưới cùng.
 
-{{< figure src="/images/osi-model.webp" >}}
+{{< figure src="./images/osi-model.webp" >}}
 
 ### 2.1. Lớp 7: Ứng dụng (Application)
 
@@ -88,7 +88,7 @@ Lớp vật lý đảm bảo việc truyền dữ liệu giữa các máy tính.
 
 Mô hình TCP/IP (Transmission Control Protocol/Internet Protocol) là một mô hình tham chiếu được phát triển bởi Bộ Quốc phòng Hoa Kỳ (DoD) vào năm 1982. Mô hình TCP/IP được sử dụng để mô tả cách thức một mạng máy tính hoạt động. Mô hình TCP/IP được chia thành 4 lớp, mỗi lớp đại diện cho một tập hợp các chức năng có liên quan. Các lớp này được sắp xếp theo thứ tự từ lớp trên cùng đến lớp dưới cùng.
 
-{{< figure src="/images/tcp-ip-model.webp" >}}
+{{< figure src="./images/tcp-ip-model.webp" >}}
 
 ### 3.1. Lớp 4: Ứng dụng (Application)
 

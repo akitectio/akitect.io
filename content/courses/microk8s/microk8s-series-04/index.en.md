@@ -63,7 +63,7 @@ You need to prepare 7 servers with the following configuration:
 
 \*_I will proceed with the installation according to the following model_
 
-{{< figure src="/4306a5e6-a54d-4d9b-8cd5-fcace72b60e8.jpg" >}}
+{{< figure src="./4306a5e6-a54d-4d9b-8cd5-fcace72b60e8.jpg" >}}
 
 As this is my first time drawing by hand, it may be a bit difficult to see, but I will try to make it look better in the next update <3
 
@@ -76,11 +76,11 @@ As this is my first time drawing by hand, it may be a bit difficult to see, but 
 
 * Master servers
 
-{{< figure src="/7d487a2e-cd78-472e-888e-7a8521183cf7.png" >}}
+{{< figure src="./7d487a2e-cd78-472e-888e-7a8521183cf7.png" >}}
 
 - Worker servers
 
-{{< figure src="/ff654f99-1af8-412d-b843-c8e80ecd6f60.png" >}}
+{{< figure src="./ff654f99-1af8-412d-b843-c8e80ecd6f60.png" >}}
 
 ### Step 2: Update and upgrade all nodes
 
@@ -113,11 +113,11 @@ nano /etc/hosts
 
 - Master nodes
 
-  {{< figure src="/a35e4a4a-d9c3-4ed8-832d-b687a1e3d7ce.png" >}}
+  {{< figure src="./a35e4a4a-d9c3-4ed8-832d-b687a1e3d7ce.png" >}}
 
 - Worker nodes
 
-  {{< figure src="/5548e489-d1b9-4656-b956-a96bd506665a.png" >}}
+  {{< figure src="./5548e489-d1b9-4656-b956-a96bd506665a.png" >}}
 
 ### Step 4: Install MicroK8s
 
@@ -137,7 +137,7 @@ Check the status of MicroK8s with the command `microk8s status --wait-ready`
 
 - Master servers
 
-  {{< figure src="/f5a0cde6-bec6-4cb1-ae58-d247e1e037db.png" >}}
+  {{< figure src="./f5a0cde6-bec6-4cb1-ae58-d247e1e037db.png" >}}
 
 ### Step 5: Add nodes to the cluster
 
@@ -170,7 +170,7 @@ sudo ufw allow 1338/tcp
 microk8s add-node --token-ttl 3600
 ```
 
-{{< figure src="/4a7b8e80-85bd-4a81-9862-947fed46027b.png" >}}
+{{< figure src="./4a7b8e80-85bd-4a81-9862-947fed46027b.png" >}}
 
 I have 2 networks:
 
@@ -191,11 +191,11 @@ microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b -
 
 After successfully joining, use the command `microk8s kubectl get no` on the VM **microk8s-master-01** to check if the nodes have joined as master and worker nodes.
 
-{{< figure src="/5b7291da-efb3-4e4f-ba93-f9be3646cc1d.png" >}}
+{{< figure src="./5b7291da-efb3-4e4f-ba93-f9be3646cc1d.png" >}}
 
 To check the master nodes, use the command `microk8s status` on the VM **microk8s-master-01**.
 
-{{< figure src="/abfe6089-285c-4111-91a2-658fa74f9bbc.png" >}}
+{{< figure src="./abfe6089-285c-4111-91a2-658fa74f9bbc.png" >}}
 
 ### Step 6: Activate the dashboard, DNS, and storage addons.
 
@@ -209,11 +209,11 @@ After successful installation, use the command **microk8s dashboard-proxy** on t
 microk8s dashboard-proxy
 ```
 
-{{< figure src="/959033c4-3f29-4284-a076-d6da2e730f95.png" >}}
+{{< figure src="./959033c4-3f29-4284-a076-d6da2e730f95.png" >}}
 
 Access the link https://192.168.56.2:10443 to enter the **Kubernetes Dashboard**.
 
-{{< figure src="/9773ef9c-0ada-4643-8e91-5988d4df4ba3.png" >}}
+{{< figure src="./9773ef9c-0ada-4643-8e91-5988d4df4ba3.png" >}}
 
 You can refer to the official website for more information: https://microk8s.io/docs/high-availability
 

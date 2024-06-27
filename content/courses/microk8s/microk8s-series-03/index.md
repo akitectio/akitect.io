@@ -50,7 +50,7 @@ Tham khảo lại bài trước
 
 Chúng ta vào trang chủ của vagrant để tải tiệp cài đặt về https://developer.hashicorp.com/vagrant/downloads tuỳ theo hệ điều hành thì chúng ta sẽ chọn tiệp cài đặt đó
 
-{{< figure src="/edbe3216-d88f-4982-8607-486cc1958c1f.png" >}}
+{{< figure src="./edbe3216-d88f-4982-8607-486cc1958c1f.png" >}}
 
 ### Bước 3: Sau khi cài đặt thành công ta tạo file Vagriantfile
 
@@ -151,7 +151,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-{{< figure src="/46a04e77-c66f-4b8a-94cf-ba43d01c7fc4.png" >}}
+{{< figure src="./46a04e77-c66f-4b8a-94cf-ba43d01c7fc4.png" >}}
 
 ### Bước 4: Cấu hình network
 
@@ -170,11 +170,11 @@ vagrant up
 
 > Tuỳ theo mạng và cấu hình máy của bạn, bước này tầm 30 -> 60p
 
-{{< figure src="/6a303659-3afa-4291-a22d-4fd4d5cb1be9.png" >}}
+{{< figure src="./6a303659-3afa-4291-a22d-4fd4d5cb1be9.png" >}}
 
 Sau đó bạn mở **Oracle VM VirtualBox** và xem các máy ảo đã tạo và start lên chưa
 
-{{< figure src="/388b6633-8ff5-4d47-8552-c7ec30a86f72.png" >}}
+{{< figure src="./388b6633-8ff5-4d47-8552-c7ec30a86f72.png" >}}
 
 ### Bước 5: Vagrant ssh và join các node vào master
 
@@ -184,7 +184,7 @@ Như vậy đã start thành công tiếp tục ta ssh vào máy microk8s-master
 vagrant ssh microk8s_master_01
 ```
 
-{{< figure src="/4923dfb0-1710-4068-b958-f6db06d5a823.png" >}}
+{{< figure src="./4923dfb0-1710-4068-b958-f6db06d5a823.png" >}}
 
 Tiếp tục ta tạo token để kết nối vào cụm microk8s
 
@@ -192,11 +192,11 @@ Tiếp tục ta tạo token để kết nối vào cụm microk8s
 microk8s add-node
 ```
 
-{{< figure src="/cd2e5200-4905-4ca7-82c1-6f4736f5be64.png" >}}
+{{< figure src="./cd2e5200-4905-4ca7-82c1-6f4736f5be64.png" >}}
 
 sau đó ta ssh vào các máy **microk8s-master-02** và **microk8s-master-03** để join vào các máy master
 
-{{< figure src="/5f13ea88-a045-488f-8d5f-d07fc1bc1421.png" >}}
+{{< figure src="./5f13ea88-a045-488f-8d5f-d07fc1bc1421.png" >}}
 
 Chunng ta sử dụng lệnh **microk8s join** để kết nối 2 máy vào cum master
 
@@ -204,9 +204,9 @@ Chunng ta sử dụng lệnh **microk8s join** để kết nối 2 máy vào cum
 microk8s join 192.168.56.2:25000/f9b92e3f904dd17cba2332a88a3092da/a25a7c633d5c
 ```
 
-{{< figure src="/fe7179c0-9934-4b35-bece-f3761a956f4d.png" >}}
+{{< figure src="./fe7179c0-9934-4b35-bece-f3761a956f4d.png" >}}
 
-{{< figure src="/3945f334-da82-4782-9b36-8c59eac4a499.png" >}}
+{{< figure src="./3945f334-da82-4782-9b36-8c59eac4a499.png" >}}
 
 Ta dùng lệnh **microk8s kubectl get no** để check xem 2 node master 01 vs master 02 đã join chưa
 
@@ -214,7 +214,7 @@ Ta dùng lệnh **microk8s kubectl get no** để check xem 2 node master 01 vs 
 microk8s kubectl get no
 ```
 
-{{< figure src="/8007393e-cbb0-4565-a9d4-9095f295683d.png" >}}
+{{< figure src="./8007393e-cbb0-4565-a9d4-9095f295683d.png" >}}
 
 Như vậy cụm master đã join thành công, bây giờ ta thực hiện với cụm worker, sau đó ta ssh vào các máy **microk8s-worker-01**, **microk8s-worker-02**, **microk8s-worker-03**, **microk8s-worker-04** để join vào các máy worker
 
@@ -222,25 +222,25 @@ Như vậy cụm master đã join thành công, bây giờ ta thực hiện vớ
 vagrant ssh microk8s_worker_01
 ```
 
-{{< figure src="/d2b2744c-4192-456a-bbf4-070175392a4c.png" >}}
+{{< figure src="./d2b2744c-4192-456a-bbf4-070175392a4c.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_02
 ```
 
-{{< figure src="/c01e6c0e-e040-48c9-8d19-57ba610815eb.png" >}}
+{{< figure src="./c01e6c0e-e040-48c9-8d19-57ba610815eb.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_03
 ```
 
-{{< figure src="/d827a85c-afa0-4532-90e3-74c9ecc08250.png" >}}
+{{< figure src="./d827a85c-afa0-4532-90e3-74c9ecc08250.png" >}}
 
 ```bash
 vagrant ssh microk8s_worker_04
 ```
 
-{{< figure src="/35623fc0-db5b-4c47-9266-812125831d00.png" >}}
+{{< figure src="./35623fc0-db5b-4c47-9266-812125831d00.png" >}}
 
 Sau khi login vào các worker thành công ta vào con **microk8s-master-01** gõ lệnh **microk8s add-node **
 
@@ -248,7 +248,7 @@ Sau khi login vào các worker thành công ta vào con **microk8s-master-01** g
 microk8s add-node
 ```
 
-{{< figure src="/e4d809a4-7660-4b7c-8919-64f695894dbe.png" >}}
+{{< figure src="./e4d809a4-7660-4b7c-8919-64f695894dbe.png" >}}
 
 Ta sử dụng token có ip là **192.168.56.2** và thêm **--worker** ở cuối, và áp dụng cho tất cả các máy **worker**
 
@@ -256,11 +256,11 @@ Ta sử dụng token có ip là **192.168.56.2** và thêm **--worker** ở cu�
 microk8s join 192.168.56.2:25000/{toke} --worker
 ```
 
-{{< figure src="/844ec79a-ac53-4d78-8d59-517f08ffad37.png" >}}
+{{< figure src="./844ec79a-ac53-4d78-8d59-517f08ffad37.png" >}}
 
 Ta dùng lệnh **microk8s kubectl get no** trên máy **master 01** để check xem các **node woker** đã kết nối được chưa
 
-{{< figure src="/8e830ded-3564-42b0-b457-25ce61fa4b99.png" >}}
+{{< figure src="./8e830ded-3564-42b0-b457-25ce61fa4b99.png" >}}
 
 Như vậy ta đã tạo máy ảo thành công và kết nối được **3 master** với **4 worker**
 

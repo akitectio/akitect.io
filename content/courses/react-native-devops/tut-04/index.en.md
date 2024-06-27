@@ -42,13 +42,13 @@ weight: 4
 
 #### Create an App Name for your Android project by clicking the Android icon on the Firebase dashboard
 
-{{< figure src="/images/09ee3dc3-6d2d-4463-a73e-876c44dbb431.png" >}}
+{{< figure src="./images/09ee3dc3-6d2d-4463-a73e-876c44dbb431.png" >}}
 
-{{< figure src="/images/f91c3223-74a8-41c3-b2da-806238fb2537.png" >}}
+{{< figure src="./images/f91c3223-74a8-41c3-b2da-806238fb2537.png" >}}
 
 - Enter Apple bundle ID and click "Register app"
 
-{{< figure src="/images/deb54c5b-a90d-43e6-92d4-b91ffc16592c.png" >}}
+{{< figure src="./images/deb54c5b-a90d-43e6-92d4-b91ffc16592c.png" >}}
 
 Download the file **GoogleService-Info.plist** and click "Next
 
@@ -58,31 +58,31 @@ After downloading, we open xcode with the command
 open ios/ReactNativeDevOps.xcworkspace
 ```
 
-{{< figure src="/images/deb54c5b-a90d-43e6-92d4-b91ffc16592c.png" >}}
+{{< figure src="./images/deb54c5b-a90d-43e6-92d4-b91ffc16592c.png" >}}
 
 Next we drag the downloaded file into xcode
 
-{{< figure src="/images/8e951631-2a3d-42bd-819f-391a279a74b3.png" >}}
+{{< figure src="./images/8e951631-2a3d-42bd-819f-391a279a74b3.png" >}}
 
 Next, select the image and select **OK**
 
-{{< figure src="/images/823ccdb4-14d0-4b46-a132-07d4b82143b2.png" >}}
+{{< figure src="./images/823ccdb4-14d0-4b46-a132-07d4b82143b2.png" >}}
 
 Next, select **Next**
 
-{{< figure src="/images/ed7468be-1bda-4814-8011-81eb5d94bfe0.png" >}}
+{{< figure src="./images/ed7468be-1bda-4814-8011-81eb5d94bfe0.png" >}}
 
 Next, select **Next**
 
-{{< figure src="/images/242b89f4-6729-4de6-8b74-a881bd0d9589.png" >}}
+{{< figure src="./images/242b89f4-6729-4de6-8b74-a881bd0d9589.png" >}}
 
 Continue to select **" Continue to console "**
 
-{{< figure src="/images/82fd2b24-f2be-4e52-8a57-af3dade3256b.png" >}}
+{{< figure src="./images/82fd2b24-f2be-4e52-8a57-af3dade3256b.png" >}}
 
 After successful registration, you will have the ios section on the dashboard page
 
-{{< figure src="/images/ba16a2fe-c936-4d02-b307-2f051938c930.png" >}}
+{{< figure src="./images/ba16a2fe-c936-4d02-b307-2f051938c930.png" >}}
 
 So I have successfully registered iOS on Firebase
 
@@ -90,14 +90,14 @@ So I have successfully registered iOS on Firebase
 
 We select Firebase Distribution in the right menu, then select IOS
 
-{{< figure src="/images/7b5e2cd7-d453-42d0-9da2-37b00243d911.png" >}}
+{{< figure src="./images/7b5e2cd7-d453-42d0-9da2-37b00243d911.png" >}}
 
 Next select **Get started**
-{{< figure src="/images/257a17c9-32ce-4841-af99-6ff53dad2adc.png" >}}
+{{< figure src="./images/257a17c9-32ce-4841-af99-6ff53dad2adc.png" >}}
 
 So we have successfully enabled Firebase Distribution
 
-{{< figure src="/images/d57b9358-5acd-4238-bbd1-5e52d6d8628d.png" >}}
+{{< figure src="./images/d57b9358-5acd-4238-bbd1-5e52d6d8628d.png" >}}
 
 #### Build .IPA
 
@@ -107,63 +107,63 @@ You need an Apple Developer Account to perform this step
 
 We access the link to create: https://developer.apple.com/account then select **Certificates**
 
-{{< figure src="/images/ffcddf8a-d551-4dc9-8400-44a9c4442d18.png" >}}
+{{< figure src="./images/ffcddf8a-d551-4dc9-8400-44a9c4442d18.png" >}}
 
 We open Keychain Access and select **Certificate Assistant -> Request a Certificate From a Certificate Authority..**
 
-{{< figure src="/images/77310c5d-5ab0-4a3c-845b-1b04ff0e62fb.png" >}}
+{{< figure src="./images/77310c5d-5ab0-4a3c-845b-1b04ff0e62fb.png" >}}
 
 Next, enter your email and select **Saved to disk**
 
-{{< figure src="/images/e4400680-3fa9-4182-9493-7c5346e976a4.png" >}}
+{{< figure src="./images/e4400680-3fa9-4182-9493-7c5346e976a4.png" >}}
 
 Select the newly created icon
 
-{{< figure src="/images/a970ae8d-78e8-407f-a44e-25ca254bdfc1.png" >}}
+{{< figure src="./images/a970ae8d-78e8-407f-a44e-25ca254bdfc1.png" >}}
 
 Next select **Apple Distribution** and click **Continue**
 
-{{< figure src="/images/7e27bf85-ca6d-4adc-a187-bfbe7f9bc629.png" >}}
+{{< figure src="./images/7e27bf85-ca6d-4adc-a187-bfbe7f9bc629.png" >}}
 
-{{< figure src="/images/12d932f7-13f9-4092-b9e4-0a08863575cc.png" >}}
+{{< figure src="./images/12d932f7-13f9-4092-b9e4-0a08863575cc.png" >}}
 
 Select the file **CertificateSigningRequest.certSigningRequest** just created above
 
-{{< figure src="/images/64223d18-9636-4198-9338-8f5e94186efe.png" >}}
+{{< figure src="./images/64223d18-9636-4198-9338-8f5e94186efe.png" >}}
 
 Click continue and download the created file
 
-{{< figure src="/images/abbb38db-0f23-4699-aad7-ea696d22c17c.png" >}}
+{{< figure src="./images/abbb38db-0f23-4699-aad7-ea696d22c17c.png" >}}
 
 Double click on the newly downloaded file and import it into keychain accounts and check if the file has been imported
 
-{{< figure src="/images/f520c374-9797-4556-bee1-ae8a1c2310d9.png" >}}
+{{< figure src="./images/f520c374-9797-4556-bee1-ae8a1c2310d9.png" >}}
 
 So the file has been imported, let's continue to create **Provisioning Profile Ad Hoc**
 
 We select the menu on the left **Profiles**
 
-{{< figure src="/images/70d6ad8e-ff7d-4011-a08d-6bb410ff6540.png" >}}
+{{< figure src="./images/70d6ad8e-ff7d-4011-a08d-6bb410ff6540.png" >}}
 
 Continue to select **Continue**
 
-{{< figure src="/images/9a8bdce1-4009-4cba-8a9b-59c3ca99570f.png" >}}
+{{< figure src="./images/9a8bdce1-4009-4cba-8a9b-59c3ca99570f.png" >}}
 
 Continue to select **Continue**
 
-{{< figure src="/images/22e64aaf-60c5-4094-8f16-c5a9d8021fb2.png" >}}
+{{< figure src="./images/22e64aaf-60c5-4094-8f16-c5a9d8021fb2.png" >}}
 
 We select the newly created Certificate and click **Continue**
 
-{{< figure src="/images/813e60d8-eba1-497b-b7a1-93eb317fba3a.png" >}}
+{{< figure src="./images/813e60d8-eba1-497b-b7a1-93eb317fba3a.png" >}}
 
 Select the device to be used, in this part we are building Ad Hoc so we need to add additional devices to the build
 
-{{< figure src="/images/7d170dfa-1f84-491e-80f8-7569b7230615.png" >}}
+{{< figure src="./images/7d170dfa-1f84-491e-80f8-7569b7230615.png" >}}
 
 Next, choose a name for the file and select **Generate** then download the file
 
-{{< figure src="/images/5980a74e-43a0-4699-94e0-a49d335d6de3.png" >}}
+{{< figure src="./images/5980a74e-43a0-4699-94e0-a49d335d6de3.png" >}}
 
 Double click on the newly downloaded file and import it into keychain accounts
 
@@ -173,11 +173,11 @@ Next we use the fastlane init command to add the iOS build kit
 fastlane init
 ```
 
-{{< figure src="/images/d3b2205f-6bce-42aa-a931-fc32cac6beb0.png" >}}
+{{< figure src="./images/d3b2205f-6bce-42aa-a931-fc32cac6beb0.png" >}}
 
 Next we choose number 4
 
-{{< figure src="/images/838d40c7-68d6-4883-a660-588572e5fd04.png" >}}
+{{< figure src="./images/838d40c7-68d6-4883-a660-588572e5fd04.png" >}}
 
 Next we add the firebase_app_distribution plugin
 
@@ -185,7 +185,7 @@ Next we add the firebase_app_distribution plugin
 fastlane add_plugin firebase_app_distribution
 ```
 
-{{< figure src="/images/7dbc58c6-9748-47ce-89d8-e6f141ab2257.png" >}}
+{{< figure src="./images/7dbc58c6-9748-47ce-89d8-e6f141ab2257.png" >}}
 
 Continue updating the file ios->fastlane->Fastfile
 
@@ -246,11 +246,11 @@ firebase_app_distribution part app vs firebase_cli_token, you can see in the pre
 fastlane firebase
 ```
 
-{{< figure src="/images/bbf7780a-c0d3-4e28-a8c9-6be3c60b3544.png" >}}
+{{< figure src="./images/bbf7780a-c0d3-4e28-a8c9-6be3c60b3544.png" >}}
 
 So you have successfully built and uploaded to firebase. Let's continue to log in to the firebase console to see if the file has been uploaded.
 
-{{< figure src="/images/756e709a-bd22-4f5e-a496-cfa1bc29db01.png" >}}
+{{< figure src="./images/756e709a-bd22-4f5e-a496-cfa1bc29db01.png" >}}
 
 So I have successfully built, and uploaded the build version 1 to Firebase Distribution
 
@@ -258,31 +258,31 @@ So I have successfully built, and uploaded the build version 1 to Firebase Distr
 
 #### Step 1: Create identifiers
 
-{{< figure src="/images/f351579a-c252-4aba-a7d5-dda07aeeec1c.png" >}}
+{{< figure src="./images/f351579a-c252-4aba-a7d5-dda07aeeec1c.png" >}}
 
 Continue selecting **Continue**
 
-{{< figure src="/images/9cab9629-9323-4f89-ae94-ebeff9d8e24a.png" >}}
+{{< figure src="./images/9cab9629-9323-4f89-ae94-ebeff9d8e24a.png" >}}
 
 Select App and click **Continue**
 
-{{< figure src="/images/0f471687-6cff-4220-b939-5c8443f0bbb1.png" >}}
+{{< figure src="./images/0f471687-6cff-4220-b939-5c8443f0bbb1.png" >}}
 
 Continue entering **Description** and **Bundle ID **
 
-{{< figure src="/images/9ed769fa-583e-4cc4-9328-f360d69365a5.png" >}}
+{{< figure src="./images/9ed769fa-583e-4cc4-9328-f360d69365a5.png" >}}
 
 So we have successfully created identifiers for the app with the package name com.reactnativedevops
 
-{{< figure src="/images/db945c18-f958-4e9c-82fc-2dc32073ddea.png" >}}
+{{< figure src="./images/db945c18-f958-4e9c-82fc-2dc32073ddea.png" >}}
 
 Continue to go to the appconnect home page to create a New App
 
-{{< figure src="/images/c53e5954-b425-4996-bac9-1fdbf0189cd9.png" >}}
+{{< figure src="./images/c53e5954-b425-4996-bac9-1fdbf0189cd9.png" >}}
 
 So we have successfully created **New App** with app name **React Native Devops**
 
-{{< figure src="/images/62054b25-8755-47b1-8f44-55de2c07233f.png" >}}
+{{< figure src="./images/62054b25-8755-47b1-8f44-55de2c07233f.png" >}}
 
 Continue updating the ios->fastlane->Fastfile file to add the new build config section
 

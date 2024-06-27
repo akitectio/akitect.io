@@ -84,7 +84,7 @@ Sau khi ssh thành công ta kích hoạt **addons observability** bằng lệnh
 microk8s enable observability
 ```
 
-{{< figure src="/c23304c3-1579-4e8e-a7e2-41aaf7484a45.webp" >}}
+{{< figure src="./c23304c3-1579-4e8e-a7e2-41aaf7484a45.webp" >}}
 
 Khi apply thanh công dưới cùng thì sẽ có username vs password mặt định
 
@@ -96,13 +96,13 @@ Khi apply thanh công dưới cùng thì sẽ có username vs password mặt đ�
 microk8s kubectl port-forward -n observability service/kube-prom-stack-grafana --address 0.0.0.0 3000:80
 ```
 
-{{< figure src="/8160b5a3-5d57-4e09-a5ec-fb3228897909.webp" >}}
+{{< figure src="./8160b5a3-5d57-4e09-a5ec-fb3228897909.webp" >}}
 
 ### Bước 3: Login vào admin của Grafana
 
 Truy cập vào đường dẫn : http://192.168.56.2:3000
 
-{{< figure src="/bb154f4c-473b-4814-87b1-7bd7244e72ea.webp" >}}
+{{< figure src="./bb154f4c-473b-4814-87b1-7bd7244e72ea.webp" >}}
 
 username: **admin**
 
@@ -110,11 +110,11 @@ password: **prom-operator**
 
 Khi đăng nhập thành công thì ta vào phần dashboard: http://192.168.56.2:3000/dashboards
 
-{{< figure src="/849f7781-13ce-4729-8a03-ebe841a3f5a9.webp" >}}
+{{< figure src="./849f7781-13ce-4729-8a03-ebe841a3f5a9.webp" >}}
 
 Ở đây có danh sách dashboard template đã được thiết kế sẳng, mình có thể sài luôn, hoặc có thể viết thêm theo nhu cầu của mình
 
-{{< figure src="/974abdf2-3bbf-4b30-b95f-5f7e0b3179b7.webp" >}}
+{{< figure src="./974abdf2-3bbf-4b30-b95f-5f7e0b3179b7.webp" >}}
 
 ### Monitoring System bằng Zabbix 6.2
 
@@ -130,7 +130,7 @@ https://akitect.io/courses/zabbix/
  microk8s enable community
 ```
 
-{{< figure src="/8797a148-841f-4f82-9c8c-1886ccd25e2e.webp" >}}
+{{< figure src="./8797a148-841f-4f82-9c8c-1886ccd25e2e.webp" >}}
 
 sau khi enable community thành công thì ta kích hoạt **addons fluentd** bằng lệnh
 
@@ -138,7 +138,7 @@ sau khi enable community thành công thì ta kích hoạt **addons fluentd** b�
 microk8s enable fluentd
 ```
 
-{{< figure src="/580d8f45-21d8-4d47-99f8-7f1532d5524a.webp" >}}
+{{< figure src="./580d8f45-21d8-4d47-99f8-7f1532d5524a.webp" >}}
 
 khi apply thành công thì ta đợi tầm 1p để up các service lên, tiếp tục ta dùng port forward để vào service kibana
 
@@ -146,11 +146,11 @@ khi apply thành công thì ta đợi tầm 1p để up các service lên, tiế
 microk8s kubectl port-forward -n kube-system service/kibana-logging --address 0.0.0.0 8181:5601
 ```
 
-{{< figure src="/1c216157-8a40-40fa-9f12-c8fa399173fb.webp" >}}
+{{< figure src="./1c216157-8a40-40fa-9f12-c8fa399173fb.webp" >}}
 
 Ta vào đường dẫn : http://192.168.56.2:8181 để vào kibana
 
-{{< figure src="/0317007a-870a-4911-9ecb-9229ba2574da.webp" >}}
+{{< figure src="./0317007a-870a-4911-9ecb-9229ba2574da.webp" >}}
 
 Như vậy ta đã kích hoạt thành công **addons fluentd**
 
@@ -162,7 +162,7 @@ Lưu ý phải kích hoạt trước **addons community fluentd** , chúng ta b�
 microk8s kubectl apply -f https://gist.githubusercontent.com/akitectio/e979e6d36c7b03d6b41160b470ec70fa/raw/e8e71b14cbb013204262409aaa46a899a29ab64e/zipkin-all-in-one.yaml
 ```
 
-{{< figure src="/36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
+{{< figure src="./36336ccc-8c97-4790-b5fe-4c976b8a6fb3.webp" >}}
 
 Nội dung tiệp **zipkin-all-in-one.yaml**
 
@@ -176,7 +176,7 @@ Sau khi kích hoạt thành công ta dùng port forward để vào service:
 
 Ta vào đường dẫn : http://192.168.56.2:9411 để vào zipkin
 
-{{< figure src="/70fcd036-8b16-4149-9f42-5e3fa6396668.webp" >}}
+{{< figure src="./70fcd036-8b16-4149-9f42-5e3fa6396668.webp" >}}
 
 Như vậy bạn đã cài đặt thành công **Zipkin**
 

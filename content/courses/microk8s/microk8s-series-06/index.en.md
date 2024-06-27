@@ -40,7 +40,7 @@ After activating the registry, the default persistent volume for storing images 
 microk8s enable registry:size=40Gi
 ```
 
-{{< figure src="/adadf521-dc7c-4a3b-9ced-3b7ba4dc5902.png" >}}
+{{< figure src="./adadf521-dc7c-4a3b-9ced-3b7ba4dc5902.png" >}}
 
 ## How to use Private Registry
 
@@ -54,7 +54,7 @@ microk8s enable registry:size=40Gi
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-{{< figure src="/90625428-54b1-4f12-a0af-275518928cf9.png" >}}
+{{< figure src="./90625428-54b1-4f12-a0af-275518928cf9.png" >}}
 
 ### Set up repository
 
@@ -79,7 +79,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-{{< figure src="/7c16258e-9349-45cd-8c43-b750dd4cce2b.webp" >}}
+{{< figure src="./7c16258e-9349-45cd-8c43-b750dd4cce2b.webp" >}}
 
 ### Install Docker Engine
 
@@ -103,7 +103,7 @@ newgrp docker
 sudo su $USER
 ```
 
-{{< figure src="/7ea474c3-8db9-463a-9a6c-cc5f42dabb01.png" >}}
+{{< figure src="./7ea474c3-8db9-463a-9a6c-cc5f42dabb01.png" >}}
 
 ### Configure Insecure registry (Allow pushing images without SSL)
 
@@ -121,7 +121,7 @@ Add the following configuration:
 }
 ```
 
-{{< figure src="/dd099e8f-6d2d-4537-9b8c-daf4a0949819.webp" >}}
+{{< figure src="./dd099e8f-6d2d-4537-9b8c-daf4a0949819.webp" >}}
 
 Save the file and restart the Docker service:
 
@@ -137,7 +137,7 @@ Now, we can test the configuration with the following steps:
 docker pull nginx
 ```
 
-{{< figure src="/8d58395e-78ad-4337-ac00-b3b428e65d1f.png" >}}
+{{< figure src="./8d58395e-78ad-4337-ac00-b3b428e65d1f.png" >}}
 
 2. Tag the nginx image file to 192.168.56.2:32000/duy-tran-nginx:
 
@@ -145,7 +145,7 @@ docker pull nginx
 docker tag nginx 192.168.56.2:32000/duy-tran-nginx
 ```
 
-{{< figure src="/e8de8112-11a3-46b7-8ef2-dab56a8dfa72.webp" >}}
+{{< figure src="./e8de8112-11a3-46b7-8ef2-dab56a8dfa72.webp" >}}
 
 4. Push the image 10.19.2.92:32000/duy-tran-nginx to the registry:
 
@@ -153,7 +153,7 @@ docker tag nginx 192.168.56.2:32000/duy-tran-nginx
 docker push 192.168.56.2:32000/duy-tran-nginx
 ```
 
-{{< figure src="/0c4d3201-daf1-4172-ad79-ba724f543d9a.webp" >}}
+{{< figure src="./0c4d3201-daf1-4172-ad79-ba724f543d9a.webp" >}}
 
 ### Configure microk8s
 
@@ -176,7 +176,7 @@ server = "http://192.168.56.2:32000"
 capabilities = ["pull", "resolve"]
 ```
 
-{{< figure src="/a8d81df1-f2d5-4c51-a2e8-680e3b487cbe.png" >}}
+{{< figure src="./a8d81df1-f2d5-4c51-a2e8-680e3b487cbe.png" >}}
 
 Save the file and restart the microk8s service:
 
@@ -236,13 +236,13 @@ spec:
  microk8s kubectl apply -f duy-tran-nginx-all.yaml
 ```
 
-{{< figure src="/92dfade4-1da8-4033-8233-bb6463997ba5.webp" >}}
+{{< figure src="./92dfade4-1da8-4033-8233-bb6463997ba5.webp" >}}
 
 There are 2 ways to test:
 
 1. Access port 30039 to check: http://192.168.56.2:30039
 
-{{< figure src="/6fda0347-2055-4c17-aa4d-7ca063cd074c.webp" >}}
+{{< figure src="./6fda0347-2055-4c17-aa4d-7ca063cd074c.webp" >}}
 
 2. Run the dashboard to check:
 
@@ -250,9 +250,9 @@ There are 2 ways to test:
 microk8s dashboard-proxy
 ```
 
-{{< figure src="/0c878dc2-ba78-4a92-9cbd-488fcd79e1fc.webp" >}}
+{{< figure src="./0c878dc2-ba78-4a92-9cbd-488fcd79e1fc.webp" >}}
 
-{{< figure src="/516a3f6a-8f07-420a-a4c6-c466d3e54e23.webp" >}}
+{{< figure src="./516a3f6a-8f07-420a-a4c6-c466d3e54e23.webp" >}}
 
 If you find this article helpful, please give it a like and subscribe to support me.
 Thank you very much ♥️♥️♥️♥️

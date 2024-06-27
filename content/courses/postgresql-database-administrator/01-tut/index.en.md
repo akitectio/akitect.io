@@ -53,11 +53,11 @@ In this introductory guide, we will discuss some of the important features and c
 
 PostgreSQL can be used for various applications thanks to its flexibility and scalability. Some common use cases include:
 
-{{< figure src="/images/usecase.png" >}}
+{{< figure src="./images/usecase.png" >}}
 
 # What is a relational database?
 
-{{< figure src="/images/relationships.png" >}}
+{{< figure src="./images/relationships.png" >}}
 
 A relational database is a type of database management system (DBMS) that stores and organizes data in a structured format called a table. These tables are made up of rows, also known as records or datasets, and columns, also known as attributes or fields. The term "relational" comes from the fact that these tables can be related to each other through keys and relationships.
 

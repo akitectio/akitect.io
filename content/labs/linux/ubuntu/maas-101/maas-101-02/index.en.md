@@ -43,7 +43,7 @@ sudo systemctl stop systemd-timesyncd
 sudo systemctl disable systemd-timesyncd
 ```
 
-{{< figure src="/images/maas-101-02-02.png" >}}
+{{< figure src="./images/maas-101-02-02.png" >}}
 
 {{< /admonition >}}
 
@@ -59,7 +59,7 @@ $HOSTNAME = "localhost"
 sudo maas init --mode all --database-uri "postgres://$MAAS_DBUSER:$MAAS_DBPASS@$HOSTNAME/$MAAS_DBNAME"
 ```
 
-{{< figure src="/images/maas-101-02-03.png" >}}
+{{< figure src="./images/maas-101-02-03.png" >}}
 
 {{< admonition warning "Some notes when initializing MAAS" >}}
 
@@ -73,7 +73,7 @@ Use the command to check the status of MAAS
 sudo maas status
 ```
 
-{{< figure src="/images/maas-101-02-04.png" >}}
+{{< figure src="./images/maas-101-02-04.png" >}}
 
 ## Step 6: Create a user account for MAAS
 
@@ -88,7 +88,7 @@ sudo maas createadmin --username admin --password admin --email akitect.io@gmail
 - `--email` will declare the email for MAAS
   {{< /admonition >}}
 
-{{< figure src="/images/maas-101-02-05.png" >}}
+{{< figure src="./images/maas-101-02-05.png" >}}
 
 ## Step 7: Log in to MAAS
 
@@ -101,7 +101,7 @@ To log in to MAAS, you need to use the user account that you created in step 6
 
 MAAS welcome screen
 
-{{< figure src="/images/maas-101-02-06.png" >}}
+{{< figure src="./images/maas-101-02-06.png" >}}
 
 {{< admonition info "Fields on the MAAS welcome screen" >}}
 
@@ -117,7 +117,7 @@ MAAS welcome screen
 
 ## Step 8: Select the Ubuntu image to install
 
-{{< figure src="/images/maas-101-02-07.png" >}}
+{{< figure src="./images/maas-101-02-07.png" >}}
 
 {{< admonition info "Fields on the Ubuntu image selection screen" >}}
 
@@ -139,6 +139,6 @@ MAAS welcome screen
 ## Step 9: Complete the MAAS installation
 
 Select `Finish Setup` to complete the MAAS installation
-{{< figure src="/images/maas-101-02-08.png" >}}
+{{< figure src="./images/maas-101-02-08.png" >}}
 
 So, you have successfully installed and configured MAAS on Ubuntu 22.04 LTS.

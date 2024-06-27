@@ -72,7 +72,7 @@ Step 2: Log in to Zabbix and add to hosts: http://10.19.2.1/zabbix/zabbix.php?ac
 
 Select as shown in the image
 
-{{< figure src="/images/3d973b40-9232-4ba5-bd28-36ab5bb27a34.png" >}}
+{{< figure src="./images/3d973b40-9232-4ba5-bd28-36ab5bb27a34.png" >}}
 
 Step 3: Configure the **PostgreSQL by Zabbix agent 2** template
 
@@ -97,6 +97,6 @@ For more information, please refer to the PostgreSQL documentation https://www.p
 3. Set the system data source name of the PostgreSQL version in the **{$PG.URI}** macro, such as **<protocol(host:port)>**
 4. Set the username and password in the server macro **({$PG.USER}** and **{$PG.PASSWORD}**) if you want to override the parameters from the Zabbix agent configuration file
 
-{{< figure src="/images/003c2e76-a17a-4a8c-ab41-3c544e8a3417.png" >}}
+{{< figure src="./images/003c2e76-a17a-4a8c-ab41-3c544e8a3417.png" >}}
 
 Reference link: https://www.zabbix.com/integrations/postgresql#postgresql_agent2

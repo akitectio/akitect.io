@@ -63,7 +63,7 @@ Bạn cần chuẩn bị 7 máy chủ cấu hình như sau:
 
 \*_Mình sẽ triển khi cài đặt theo mô hình như sau_
 
-{{< figure src="/4306a5e6-a54d-4d9b-8cd5-fcace72b60e8.jpg" >}}
+{{< figure src="./4306a5e6-a54d-4d9b-8cd5-fcace72b60e8.jpg" >}}
 
 Do lần đầu vẽ tay nên vẽ cũng hơi khó xem, mình sẽ cố đẹp hơn trong lần update sau <3
 
@@ -76,11 +76,11 @@ Do lần đầu vẽ tay nên vẽ cũng hơi khó xem, mình sẽ cố đẹp h
 
 * Các máy chủ Master
 
-{{< figure src="/7d487a2e-cd78-472e-888e-7a8521183cf7.png" >}}
+{{< figure src="./7d487a2e-cd78-472e-888e-7a8521183cf7.png" >}}
 
 - Các máy chủ Worker
 
-{{< figure src="/ff654f99-1af8-412d-b843-c8e80ecd6f60.png" >}}
+{{< figure src="./ff654f99-1af8-412d-b843-c8e80ecd6f60.png" >}}
 
 ### Bước 2: Update và upgrade tất cả các node
 
@@ -113,11 +113,11 @@ nano /etc/hosts
 
 - Các máy chủ Master
 
-  {{< figure src="/a35e4a4a-d9c3-4ed8-832d-b687a1e3d7ce.png" >}}
+  {{< figure src="./a35e4a4a-d9c3-4ed8-832d-b687a1e3d7ce.png" >}}
 
 - Các máy chủ Worker
 
-  {{< figure src="/5548e489-d1b9-4656-b956-a96bd506665a.png" >}}
+  {{< figure src="./5548e489-d1b9-4656-b956-a96bd506665a.png" >}}
 
 ### Bước 4: Cài đặt microk8s
 
@@ -136,7 +136,7 @@ su - $USER
 Kiểm tra trạng thái microk8s bằng lệnh `microk8s status --wait-ready`
 
 - Các máy chủ Master
-  {{< figure src="/f5a0cde6-bec6-4cb1-ae58-d247e1e037db.png" >}}
+  {{< figure src="./f5a0cde6-bec6-4cb1-ae58-d247e1e037db.png" >}}
 
 ### Bước 5: Thêm các node vào cụm
 
@@ -169,7 +169,7 @@ sudo ufw allow 1338/tcp
 microk8s add-node --token-ttl 3600
 ```
 
-{{< figure src="/4a7b8e80-85bd-4a81-9862-947fed46027b.png" >}}
+{{< figure src="./4a7b8e80-85bd-4a81-9862-947fed46027b.png" >}}
 
 Mình có 2 đường mạng:
 
@@ -190,11 +190,11 @@ microk8s join 192.168.56.2:25000/e523c2d3aef2e3679c3e5ccf605d97c2/dbc9df54be3b -
 
 Khi join thành công ta dùng lệnh `microk8s kubectl get no` ở VM **microk8s-master-01** để kiểm tra xem các node đã join vào làm master và worker chưa
 
-{{< figure src="/5b7291da-efb3-4e4f-ba93-f9be3646cc1d.png" >}}
+{{< figure src="./5b7291da-efb3-4e4f-ba93-f9be3646cc1d.png" >}}
 
 Còn để kiể tra các master node chúng ta dùng lệnh `microk8s status` ở VM **microk8s-master-01**
 
-{{< figure src="/abfe6089-285c-4111-91a2-658fa74f9bbc.png" >}}
+{{< figure src="./abfe6089-285c-4111-91a2-658fa74f9bbc.png" >}}
 
 ### Bước 6: Kích hoạt addon dashboard dns storage
 
@@ -208,11 +208,11 @@ sau khi thành công bạn dùng lệnh **microk8s dashboard-proxy** ở VM **mi
 microk8s dashboard-proxy
 ```
 
-{{< figure src="/959033c4-3f29-4284-a076-d6da2e730f95.png" >}}
+{{< figure src="./959033c4-3f29-4284-a076-d6da2e730f95.png" >}}
 
 Truy cập đường dẫn https://192.168.56.2:10443 để vào **Kubernetes Dashboard**
 
-{{< figure src="/9773ef9c-0ada-4643-8e91-5988d4df4ba3.png" >}}
+{{< figure src="./9773ef9c-0ada-4643-8e91-5988d4df4ba3.png" >}}
 
 Các bạn có thể tham khảo thêm ở trang chủ : https://microk8s.io/docs/high-availability
 
