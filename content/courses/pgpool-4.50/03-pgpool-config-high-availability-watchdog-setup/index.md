@@ -16,7 +16,7 @@ Trong bài học này, chúng ta sẽ cấu hình High Availability cho PGpool-I
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/pgpool2-watchdog.png" >}}
+{{< figure src="/images/pgpool2-watchdog.png" >}}
 
 Trước khi bắt đầu ta cần chuẩn bị 3 máy chủ
 

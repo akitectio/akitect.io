@@ -37,7 +37,7 @@ Sau khi build thành công ta sẽ có file `pgpool_recovery.so` trong thư mụ
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Cấu hình sao chép `pgpool_recovery` từ máy chủ `pgpool2` tới máy chủ `postgresql-master` bằng lệnh `scp`: 
 
@@ -69,7 +69,7 @@ Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` ở máy chủ
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Trong đó `template1` là cơ sở dữ liệu mẫu mà chúng ta cài đặt `pgpool_recovery`
 

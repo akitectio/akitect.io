@@ -47,7 +47,7 @@ After the installation is complete, check the PHP version:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Step 2: Download PGpool Admin 4.2.0
 
@@ -75,7 +75,7 @@ after extracting, we need to reconfigure the access rights for the `pgpooladmin`
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Step 3: Configure apache2
 
@@ -101,7 +101,7 @@ Add the following configuration to the file:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 After the configuration is complete, save and close the configuration file.
 
@@ -127,7 +127,7 @@ Create pgpooladmin password
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool2/pgpool.conf`:
 
@@ -135,7 +135,7 @@ Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 where `admin` is the user you want to use to log in to pgpooladmin, `md5` is the password you created above.
 
@@ -153,15 +153,15 @@ chmod -R 0600 /var/www/.pcppass
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 select the language and press `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Continue to add connection configuration information to `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` enter `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` enter `/etc/pgpool2/pcp.conf`
@@ -170,7 +170,7 @@ Continue to add connection configuration information to `pgpool2`
 
 Continue to press `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 So the initial setup is complete, we delete the `install` directory for better security.
 
@@ -178,20 +178,20 @@ So the initial setup is complete, we delete the `install` directory for better s
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Step 6: Log in to PGpool Admin
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 enter the login information created above and press `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- password created above
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 So we have successfully configured and logged in to PGpool Admin.
 

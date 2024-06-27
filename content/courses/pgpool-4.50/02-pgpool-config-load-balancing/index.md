@@ -23,7 +23,7 @@ Cấu hình PGpool-II là một bước quan trọng trong quá trình triển k
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -142,11 +142,11 @@ Cuối cùng, chạy kiểm tra cấu hình PGpool-II:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+{{< figure src="/images/run-pgpool-configuration.jpg" >}}
 
 Sau khi cấu hình xong, bạn có thể kiểm tra trạng thái của PGpool-II bằng các truy cập vào bằng pg4admin : 
 
-{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` là địa chỉ IP (192.168.56.5) của máy chủ `pgpool2`.
 - `username`  mặc định là `postgresql`.
@@ -184,7 +184,7 @@ WITH generated_data AS (
   
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
 
 Như ảnh ta thấy dữ liệu `INSERT` đã được thực hiện trên  máy chủ `postgresql-master`.
 
@@ -194,11 +194,11 @@ Tiếp tục ta Query bằng lệnh `SELECT` trên PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
 
 Sau đó ta quay lại xem log của máy chủ `pgpool2` 
 
-{{< figure src="./images/pgpool-log.jpg" >}}
+{{< figure src="/images/pgpool-log.jpg" >}}
 
 Như ảnh ta thấy `SELECT` đã được thực hiện trên máy chủ `postgresql-slave-01` thông qua máy chủ `pgpool2`.
 

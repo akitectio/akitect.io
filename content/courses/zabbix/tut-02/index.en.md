@@ -72,7 +72,7 @@ Step 2: Log in to Zabbix and add to hosts: http://10.19.2.1/zabbix/zabbix.php?ac
 
 Select as shown in the image
 
-{{< figure src="./images/c1706075-2222-4358-b3bf-9b97e719b869.webp" >}}
+{{< figure src="/images/c1706075-2222-4358-b3bf-9b97e719b869.webp" >}}
 
 Step 3: Configure the **MongoDB node by Zabbix agent 2** template
 
@@ -109,7 +109,7 @@ The password is also ‘zabbix_mon'
 
 2. Configure Macros as shown in the image below
 
-{{< figure src="./images/2040661e-6603-4394-8e2e-d941b3104a3d.webp" >}}
+{{< figure src="/images/2040661e-6603-4394-8e2e-d941b3104a3d.webp" >}}
 
 - **{$MONGODB.PASSWORD}** – MongoDB user name. In our example, we will set this to zabbix_mon
 - **{$MONGODB.USER}** – MongoDB password. In our example, we will set this value to zabbix_mon

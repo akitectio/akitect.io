@@ -31,7 +31,7 @@ sudo apt update
 sudo apt install memcached -y
 ```
 
-{{<figure src="./images/memcached-installation.png" alt="Cài đặt Memcached trên Ubuntu 22.04" caption="Cài đặt Memcached trên Ubuntu 22.04">}}
+{{<figure src="/images/memcached-installation.png" alt="Cài đặt Memcached trên Ubuntu 22.04" caption="Cài đặt Memcached trên Ubuntu 22.04">}}
 
 
 Sau khi cài đặt xong, bạn có thể kiểm tra trạng thái của Memcached bằng cách sử dụng lệnh sau:
@@ -40,7 +40,7 @@ Sau khi cài đặt xong, bạn có thể kiểm tra trạng thái của Memcach
 sudo systemctl status memcached
 ```
 
-{{<figure src="./images/memcached-status.png" alt="Kiểm tra trạng thái của Memcached" caption="Kiểm tra trạng thái của Memcached">}}
+{{<figure src="/images/memcached-status.png" alt="Kiểm tra trạng thái của Memcached" caption="Kiểm tra trạng thái của Memcached">}}
 
 ### Bảo mật Memcached
 
@@ -56,7 +56,7 @@ SASL (Simple Authentication and Security Layer) là một giao thức xác thự
 sudo apt install libmemcached-tools -y
 ```
 
-{{<figure src="./images/libmemcached-tools-installation.png" alt="Cài đặt libmemcached-tools" caption="Cài đặt libmemcached-tools">}}
+{{<figure src="/images/libmemcached-tools-installation.png" alt="Cài đặt libmemcached-tools" caption="Cài đặt libmemcached-tools">}}
 
 Cuối cùng, chúng ta sẽ khởi động lại Memcached để áp dụng các thay đổi:
 
@@ -72,7 +72,7 @@ Sau khi cài đặt xong, bạn có thể kiểm tra trạng thái của Memcach
 sudo systemctl status memcached
 ```
 
-{{<figure src="./images/memcached-status.png" alt="Kiểm tra trạng thái của Memcached" caption="Kiểm tra trạng thái của Memcached">}}
+{{<figure src="/images/memcached-status.png" alt="Kiểm tra trạng thái của Memcached" caption="Kiểm tra trạng thái của Memcached">}}
 
 #### Bật xác thực IP
 
@@ -98,7 +98,7 @@ Thay đổi `# Specify which IP address to listen on. The default is to listen o
 -l 0.0.0.0
 ```
 
-{{<figure src="./images/memcached-configuration.png" alt="Chỉnh sửa tệp tin cấu hình của Memcached" caption="Chỉnh sửa tệp tin cấu hình của Memcached">}}
+{{<figure src="/images/memcached-configuration.png" alt="Chỉnh sửa tệp tin cấu hình của Memcached" caption="Chỉnh sửa tệp tin cấu hình của Memcached">}}
 
 Cuối cùng, chúng ta sẽ khởi động lại Memcached để áp dụng các thay đổi:
 
@@ -106,7 +106,7 @@ Cuối cùng, chúng ta sẽ khởi động lại Memcached để áp dụng cá
 sudo systemctl restart memcached
 ```
 
-{{<figure src="./images/memcached-restart.png" alt="Khởi động lại Memcached" caption="Khởi động lại Memcached">}}
+{{<figure src="/images/memcached-restart.png" alt="Khởi động lại Memcached" caption="Khởi động lại Memcached">}}
 
 ### Kết luận
 

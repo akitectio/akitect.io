@@ -24,7 +24,7 @@ Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-I
 
 ## Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpooladmin.jpeg" >}}
+{{< figure src="/images/postgresql-pgpooladmin.jpeg" >}}
 
 ### Cài đặt PGpool Admin trên Ubuntu
 
@@ -49,7 +49,7 @@ Sau khi cài đặt xong, kiểm tra phiên bản PHP:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Bước 2: Tải PGpool Admin 4.2.0
 
@@ -77,7 +77,7 @@ sau khi giải nén xong, ta cần phải cấu hình lại quyền truy cập c
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Bước 3: Cấu hình apache2
 
@@ -103,7 +103,7 @@ Thêm cấu hình sau vào tệp:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 Sau khi cấu hình xong, lưu và đóng tệp cấu hình.
 
@@ -129,7 +129,7 @@ Tạo password pgpooladmin
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pgpool.conf`:
 
@@ -137,7 +137,7 @@ Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa t�
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 trong đó `admin` là user mà bạn muốn sử dụng để đăng nhập vào pgpooladmin, `md5` là mật khẩu mà bạn đã tạo ở trên.
 
@@ -155,15 +155,15 @@ chmod -R 0600 /var/www/.pcppass
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 chọn ngôn ngữ và nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` nhập `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` nhập `/etc/pgpool2/pcp.conf`
@@ -172,7 +172,7 @@ Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
 Tiếp tục nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo mật hơn.
 
@@ -180,20 +180,20 @@ Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo 
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Bước 6: Đăng nhập vào PGpool Admin
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 nhập thông tin đăng nhập đã tạo ở trên và nhấn `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- mật khẩu đã tạo ở trên
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 Như vậy ta đã cấu hình và đăng nhập thành công vào PGpool Admin.
 

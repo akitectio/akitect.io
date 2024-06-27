@@ -30,7 +30,7 @@ sudo apt update
 sudo apt install memcached -y
 ```
 
-{{<figure src="./images/memcached-installation.png" alt="Installing Memcached on Ubuntu 22.04" caption="Installing Memcached on Ubuntu 22.04">}}
+{{<figure src="/images/memcached-installation.png" alt="Installing Memcached on Ubuntu 22.04" caption="Installing Memcached on Ubuntu 22.04">}}
 
 
 After the installation, you can check the status of Memcached using the following command:
@@ -39,7 +39,7 @@ After the installation, you can check the status of Memcached using the followin
 sudo systemctl status memcached
 ```
 
-{{<figure src="./images/memcached-status.png" alt="Checking the status of Memcached" caption="Checking the status of Memcached">}}
+{{<figure src="/images/memcached-status.png" alt="Checking the status of Memcached" caption="Checking the status of Memcached">}}
 
 ### Secure Memcached
 
@@ -55,7 +55,7 @@ First, we need to install the `libmemcached-tools` package to use the `memcstat`
 sudo apt install libmemcached-tools -y
 ```
 
-{{<figure src="./images/libmemcached-tools-installation.png" alt="Installing libmemcached-tools" caption="Installing libmemcached-tools">}}
+{{<figure src="/images/libmemcached-tools-installation.png" alt="Installing libmemcached-tools" caption="Installing libmemcached-tools">}}
 
 Finally, we will restart Memcached to apply the changes:
 
@@ -71,7 +71,7 @@ After the installation, you can check the status of Memcached using the followin
 sudo systemctl status memcached
 ```
 
-{{<figure src="./images/memcached-status.png" alt="Checking the status of Memcached" caption="Checking the status of Memcached">}}
+{{<figure src="/images/memcached-status.png" alt="Checking the status of Memcached" caption="Checking the status of Memcached">}}
 
 #### Enable IP Authentication
 
@@ -97,7 +97,7 @@ Change `# Specify which IP address to listen on. The default is to listen on all
 -l 0.0.0.0
 ```
 
-{{<figure src="./images/memcached-configuration.png" alt="Editing the configuration file of Memcached" caption="Editing the configuration file of Memcached">}}
+{{<figure src="/images/memcached-configuration.png" alt="Editing the configuration file of Memcached" caption="Editing the configuration file of Memcached">}}
 
 Finally, we will restart Memcached to apply the changes:
 
@@ -105,7 +105,7 @@ Finally, we will restart Memcached to apply the changes:
 sudo systemctl restart memcached
 ```
 
-{{<figure src="./images/memcached-restart.png" alt="Restarting Memcached" caption="Restarting Memcached">}}
+{{<figure src="/images/memcached-restart.png" alt="Restarting Memcached" caption="Restarting Memcached">}}
 
 ### Conclusion
 

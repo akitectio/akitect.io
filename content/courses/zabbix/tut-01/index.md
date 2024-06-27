@@ -121,23 +121,23 @@ systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 
 Sau khi khởi động lại dịch vụ thành công ta vào đường dẫn http://10.19.2.1/setup.php để thực hiện cấu hình ban đầu
 
-{{< figure src="./images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
+{{< figure src="/images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
 
 Nhấp vào Bước tiếp theo để kiểm tra các điều kiện yêu cầu cài đặt của hệ thống
 
-{{< figure src="./images/fc27ce52-156f-4a4f-adbf-21897df87804.png" >}}
+{{< figure src="/images/fc27ce52-156f-4a4f-adbf-21897df87804.png" >}}
 
 Nhấp vào Bước tiếp theo để cấu hình kết nối database
 
-{{< figure src="./images/d3eab79b-53f6-4e22-beea-93c86f93a834.png" >}}
+{{< figure src="/images/d3eab79b-53f6-4e22-beea-93c86f93a834.png" >}}
 
 Nhấp vào bước tiếp theo để chọn chủ đề hoặc bỏ qua bước này.
 
-{{< figure src="./images/2ea5c846-7a45-4f3b-8178-5406aa22ddbf.png" >}}
+{{< figure src="/images/2ea5c846-7a45-4f3b-8178-5406aa22ddbf.png" >}}
 
 Nhấp vào bước tiếp theo để cài đặt xong!
 
-{{< figure src="./images/69ead9a3-7652-4250-bbe8-7d7d670d5417.png" >}}
+{{< figure src="/images/69ead9a3-7652-4250-bbe8-7d7d670d5417.png" >}}
 
 Nhấp vào Kết thúc để chuyển hướng đăng nhập mặc định
 
@@ -145,8 +145,8 @@ username: Admin
 
 password: zabbix
 
-{{< figure src="./images/50835f26-bca6-4fa8-847e-3591cb0fe516.png" >}}
+{{< figure src="/images/50835f26-bca6-4fa8-847e-3591cb0fe516.png" >}}
 
 Kiểm tra bảng điều khiển Zabbix như bên dưới
 
-{{< figure src="./images/14ed06e7-6b5b-4602-9641-034ab141d806.png" >}}
+{{< figure src="/images/14ed06e7-6b5b-4602-9641-034ab141d806.png" >}}

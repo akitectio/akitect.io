@@ -15,7 +15,7 @@ Ta thực hiện update các gói bằng lệnh apt
 ```shell
 sudo apt update && sudo apt upgrade -y
 ```
-{{<figure src="./images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
+{{<figure src="/images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
 
 ### Bước 2: Tìm và ghi nhận lại ip của bạn 
 
@@ -26,7 +26,7 @@ ip a
 ip a show enp4s0
 ```
 
-{{<figure src="./images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
+{{<figure src="/images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
 
 
 ### Bước 3: Tải và chạy file  ubuntu-22.04-lts-vpn-server.sh script
@@ -35,7 +35,7 @@ ip a show enp4s0
 wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh -O ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
+{{<figure src="/images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
 
 sau đó ta set quyền cho tiệp mới tải về bằng lệnh 
 
@@ -49,8 +49,8 @@ Chạy **ubuntu-22.04-lts-vpn-server.sh** để cài đặt  OpenVPN Server
 sudo ./ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
-{{<figure src="./images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
+{{<figure src="/images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
+{{<figure src="/images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
 
 
 sau đó ta kiểm tra trạng thái của openVPN
@@ -58,7 +58,7 @@ sau đó ta kiểm tra trạng thái của openVPN
 ```shell
 sudo systemctl status openvpn-server@server
 ```
-{{<figure src="./images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
+{{<figure src="/images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
 
 Sau đó ta tải tiệp **client.ovpn** về máy cần vô VPN 
 
@@ -78,7 +78,7 @@ Tiếp theo ta cài đặt Open VPN Client cho máy cần vào VPN
 
 Ở đây mình sử dụng Mac M1 và kết nối thành công
 
-{{<figure src="./images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
+{{<figure src="/images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
 
 ### Link tham khảo
 * https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/
@@ -101,7 +101,7 @@ We update the packages with the apt command
 ```shell
 sudo apt update && sudo apt upgrade -y
 ```
-{{<figure src="./images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
+{{<figure src="/images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
 
 ### Step 2: Find and record your IP 
 
@@ -112,7 +112,7 @@ ip a
 ip a show enp4s0
 ```
 
-{{<figure src="./images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
+{{<figure src="/images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
 
 
 ### Step 3: Download and run the ubuntu-22.04-lts-vpn-server.sh script
@@ -121,7 +121,7 @@ ip a show enp4s0
 wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh -O ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
+{{<figure src="/images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
 
 then we set permissions for the newly downloaded file with the command 
 
@@ -135,8 +135,8 @@ Run **ubuntu-22.04-lts-vpn-server.sh** to install OpenVPN Server
 sudo ./ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
-{{<figure src="./images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
+{{<figure src="/images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
+{{<figure src="/images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
 
 
 then we check the status of openVPN
@@ -144,7 +144,7 @@ then we check the status of openVPN
 ```shell
 sudo systemctl status openvpn-server@server
 ``}
-{{<figure src="./images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
+{{<figure src="/images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
 
 Then we download the **client.ovpn** file to the machine that needs to go into VPN 
 
@@ -164,7 +164,7 @@ Next, we install the Open VPN Client for the machine that needs to go into VPN
 
 Here I use Mac M1 and successfully connect
 
-{{<figure src="./images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
+{{<figure src="/images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
 
 ### Reference Links
 * https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/
@@ -176,7 +176,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -299,7 +299,7 @@ Thông tin đăng nhập như sau:
 `Username`: postgres
 `Password`: ở bước cài đặt PostgreSQL Replication
 
-{{< figure src="./images/pgpool-pgadmin.jpg" >}}
+{{< figure src="/images/pgpool-pgadmin.jpg" >}}
 
 Như vậy ta đã cài đặt và cấu hình PGpool-II thành công.
 
@@ -314,7 +314,7 @@ Pgpool-II is a unique middleware solution, specially designed to optimize and sc
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before starting, we need to prepare 4 servers
@@ -437,7 +437,7 @@ Login information as follows:
 `Username`: postgres
 `Password`: at the PostgreSQL Replication installation step
 
-{{< figure src="./images/pgpool-pgadmin.jpg" >}}
+{{< figure src="/images/pgpool-pgadmin.jpg" >}}
 
 So we have successfully installed and configured PGpool-II.
 
@@ -588,7 +588,7 @@ Sau khi cài đặt xong, kiểm tra phiên bản PHP:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Bước 2: Tải PGpool Admin 4.2.0
 
@@ -616,7 +616,7 @@ sau khi giải nén xong, ta cần phải cấu hình lại quyền truy cập c
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Bước 3: Cấu hình apache2
 
@@ -642,7 +642,7 @@ Thêm cấu hình sau vào tệp:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 Sau khi cấu hình xong, lưu và đóng tệp cấu hình.
 
@@ -668,7 +668,7 @@ Tạo password pgpooladmin
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pgpool.conf`:
 
@@ -676,7 +676,7 @@ Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa t�
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 trong đó `admin` là user mà bạn muốn sử dụng để đăng nhập vào pgpooladmin, `md5` là mật khẩu mà bạn đã tạo ở trên.
 
@@ -694,15 +694,15 @@ chmod -R 0600 /var/www/.pcppass
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 chọn ngôn ngữ và nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` nhập `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` nhập `/etc/pgpool2/pcp.conf`
@@ -711,7 +711,7 @@ Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
 Tiếp tục nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo mật hơn.
 
@@ -719,20 +719,20 @@ Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo 
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Bước 6: Đăng nhập vào PGpool Admin
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 nhập thông tin đăng nhập đã tạo ở trên và nhấn `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- mật khẩu đã tạo ở trên
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 Như vậy ta đã cấu hình và đăng nhập thành công vào PGpool Admin.
 
@@ -791,7 +791,7 @@ After the installation is complete, check the PHP version:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Step 2: Download PGpool Admin 4.2.0
 
@@ -819,7 +819,7 @@ after extracting, we need to reconfigure the access rights for the `pgpooladmin`
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Step 3: Configure apache2
 
@@ -845,7 +845,7 @@ Add the following configuration to the file:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 After the configuration is complete, save and close the configuration file.
 
@@ -871,7 +871,7 @@ Create pgpooladmin password
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool2/pgpool.conf`:
 
@@ -879,7 +879,7 @@ Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 where `admin` is the user you want to use to log in to pgpooladmin, `md5` is the password you created above.
 
@@ -897,15 +897,15 @@ chmod -R 0600 /var/www/.pcppass
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 select the language and press `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Continue to add connection configuration information to `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` enter `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` enter `/etc/pgpool2/pcp.conf`
@@ -914,7 +914,7 @@ Continue to add connection configuration information to `pgpool2`
 
 Continue to press `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 So the initial setup is complete, we delete the `install` directory for better security.
 
@@ -922,20 +922,20 @@ So the initial setup is complete, we delete the `install` directory for better s
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Step 6: Log in to PGpool Admin
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 enter the login information created above and press `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- password created above
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 So we have successfully configured and logged in to PGpool Admin.
 
@@ -968,7 +968,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -1003,7 +1003,7 @@ sau khi cài đặt kiểm tra phiên bản của `make`
 make --version
 ```
 
-{{< figure src="./images/make-version.jpg" >}}
+{{< figure src="/images/make-version.jpg" >}}
 
 Phiên bản `make` hiện tại đang là `4.3`
 
@@ -1011,7 +1011,7 @@ Phiên bản `make` hiện tại đang là `4.3`
 gcc --version
 ```
 
-{{< figure src="./images/gcc-version.jpg" >}}
+{{< figure src="/images/gcc-version.jpg" >}}
 
 Phiên bản `gcc` hiện tại đang là `11.4.0`
 
@@ -1069,7 +1069,7 @@ Tiếp tục kiểm tra phiên bản của `pgpool` sau khi cài đặt thành c
 pgpool --version
 ```
 
-{{< figure src="./images/pgpool-version.jpg" >}}
+{{< figure src="/images/pgpool-version.jpg" >}}
 
 #### Bước 2: Cài đặt `pgpool_recovery`
 
@@ -1109,7 +1109,7 @@ Sau khi build thành công ta sẽ có file `pgpool_recovery.so` trong thư mụ
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Cấu hình sao chép `pgpool_recovery` từ máy chủ `pgpool2` tới máy chủ `postgresql-master` bằng lệnh `scp`: 
 
@@ -1141,7 +1141,7 @@ Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` ở máy chủ
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Trong đó `template1` là cơ sở dữ liệu mẫu mà chúng ta cài đặt `pgpool_recovery`
 
@@ -1175,7 +1175,7 @@ Thêm cấu hình sau vào tệp:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
 
 #### Bước 4: Khởi chạy PGpool-II
 
@@ -1185,7 +1185,7 @@ Cuối cùng, khởi chạy lại dịch vụ PGpool-II để áp dụng các th
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-start.jpg" >}}
+{{< figure src="/images/pgpool-start.jpg" >}}
 
 Như vậy, chúng ta đã cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux. Bằng cách thực hiện các bước này, bạn có thể tối ưu hóa và mở rộng khả năng của cơ sở dữ liệu PostgreSQL, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
 
@@ -1217,7 +1217,7 @@ PGpool-II is a unique middleware solution, specially designed to optimize and sc
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before we start, we need to prepare 4 servers
@@ -1252,7 +1252,7 @@ after installing check the version of `make`
 make --version
 ```
 
-{{< figure src="./images/make-version.jpg" >}}
+{{< figure src="/images/make-version.jpg" >}}
 
 The current version of `make` is `4.3`
 
@@ -1260,7 +1260,7 @@ The current version of `make` is `4.3`
 gcc --version
 ```
 
-{{< figure src="./images/gcc-version.jpg" >}}
+{{< figure src="/images/gcc-version.jpg" >}}
 
 The current version of `gcc` is `11.4.0`
 
@@ -1318,7 +1318,7 @@ Continue to check the version of `pgpool` after successful installation with the
 pgpool --version
 ```
 
-{{< figure src="./images/pgpool-version.jpg" >}}
+{{< figure src="/images/pgpool-version.jpg" >}}
 
 #### Step 2: Install `pgpool_recovery`
 
@@ -1358,7 +1358,7 @@ After successful build we will have the file `pgpool_recovery.so` in the directo
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`: 
 
@@ -1390,7 +1390,7 @@ After installation, we will configure `pgpool_recovery` on the `postgresql-maste
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Where `template1` is the sample database where we install `pgpool_recovery`
 
@@ -1424,7 +1424,7 @@ Add the following configuration to the file:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
 
 #### Step 4: Start PGpool-II
 
@@ -1434,7 +1434,7 @@ Finally, restart the PGpool-II service to apply the changes:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-start.jpg" >}}
+{{< figure src="/images/pgpool-start.jpg" >}}
 
 Thus, we have installed and configured PGpool-II on the Ubuntu Linux operating system. By performing these steps, you can optimize and scale the capabilities of your PostgreSQL database, helping you to maximize the performance and high availability of your database.
 
@@ -1516,7 +1516,7 @@ Cấu hình PGpool-II là một bước quan trọng trong quá trình triển k
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -1614,11 +1614,11 @@ Cuối cùng, chạy kiểm tra cấu hình PGpool-II:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+{{< figure src="/images/run-pgpool-configuration.jpg" >}}
 
 Sau khi cấu hình xong, bạn có thể kiểm tra trạng thái của PGpool-II bằng các truy cập vào bằng pg4admin : 
 
-{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` là địa chỉ IP (192.168.56.5) của máy chủ `pgpool2`.
 - `username`  mặc định là `postgresql`.
@@ -1656,7 +1656,7 @@ WITH generated_data AS (
   
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
 
 Như ảnh ta thấy dữ liệu `INSERT` đã được thực hiện trên  máy chủ `postgresql-master`.
 
@@ -1666,11 +1666,11 @@ Tiếp tục ta Query bằng lệnh `SELECT` trên PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
 
 Sau đó ta quay lại xem log của máy chủ `pgpool2` 
 
-{{< figure src="./images/pgpool-log.jpg" >}}
+{{< figure src="/images/pgpool-log.jpg" >}}
 
 Như ảnh ta thấy `SELECT` đã được thực hiện trên máy chủ `postgresql-slave-01` thông qua máy chủ `pgpool2`.
 
@@ -1702,7 +1702,7 @@ Configuring PGpool-II is an important step in the process of deploying a Postgre
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before we start, we need to prepare 4 servers
@@ -1817,7 +1817,7 @@ Ta thực hiện update các gói bằng lệnh apt
 ```shell
 sudo apt update && sudo apt upgrade -y
 ```
-{{<figure src="./images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
+{{<figure src="/images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
 
 ### Bước 2: Tìm và ghi nhận lại ip của bạn 
 
@@ -1828,7 +1828,7 @@ ip a
 ip a show enp4s0
 ```
 
-{{<figure src="./images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
+{{<figure src="/images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
 
 
 ### Bước 3: Tải và chạy file  ubuntu-22.04-lts-vpn-server.sh script
@@ -1837,7 +1837,7 @@ ip a show enp4s0
 wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh -O ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
+{{<figure src="/images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
 
 sau đó ta set quyền cho tiệp mới tải về bằng lệnh 
 
@@ -1851,8 +1851,8 @@ Chạy **ubuntu-22.04-lts-vpn-server.sh** để cài đặt  OpenVPN Server
 sudo ./ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
-{{<figure src="./images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
+{{<figure src="/images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
+{{<figure src="/images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
 
 
 sau đó ta kiểm tra trạng thái của openVPN
@@ -1860,7 +1860,7 @@ sau đó ta kiểm tra trạng thái của openVPN
 ```shell
 sudo systemctl status openvpn-server@server
 ```
-{{<figure src="./images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
+{{<figure src="/images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
 
 Sau đó ta tải tiệp **client.ovpn** về máy cần vô VPN 
 
@@ -1880,7 +1880,7 @@ Tiếp theo ta cài đặt Open VPN Client cho máy cần vào VPN
 
 Ở đây mình sử dụng Mac M1 và kết nối thành công
 
-{{<figure src="./images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
+{{<figure src="/images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
 
 ### Link tham khảo
 * https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/
@@ -1903,7 +1903,7 @@ We update the packages with the apt command
 ```shell
 sudo apt update && sudo apt upgrade -y
 ```
-{{<figure src="./images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
+{{<figure src="/images/7f32aed5-2f3a-4396-8b09-3da3f714073f.webp" >}}
 
 ### Step 2: Find and record your IP 
 
@@ -1914,7 +1914,7 @@ ip a
 ip a show enp4s0
 ```
 
-{{<figure src="./images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
+{{<figure src="/images/e0f12e13-e3ca-4aae-9333-0720b8e56d2c.webp" >}}
 
 
 ### Step 3: Download and run the ubuntu-22.04-lts-vpn-server.sh script
@@ -1923,7 +1923,7 @@ ip a show enp4s0
 wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh -O ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
+{{<figure src="/images/78e79b5b-c865-4532-8f96-8148504edba2.webp" >}}
 
 then we set permissions for the newly downloaded file with the command 
 
@@ -1937,8 +1937,8 @@ Run **ubuntu-22.04-lts-vpn-server.sh** to install OpenVPN Server
 sudo ./ubuntu-22.04-lts-vpn-server.sh
 ```
 
-{{<figure src="./images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
-{{<figure src="./images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
+{{<figure src="/images/759f014d-721a-4a67-a41f-b0fce57005b3.webp" >}}
+{{<figure src="/images/5a573a80-35f2-411c-bbf8-fb1837822fa7.webp" >}}
 
 
 then we check the status of openVPN
@@ -1946,7 +1946,7 @@ then we check the status of openVPN
 ```shell
 sudo systemctl status openvpn-server@server
 ``}
-{{<figure src="./images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
+{{<figure src="/images/6f81e43a-4a69-41a8-b41c-6f4355e8e4f7.webp" >}}
 
 Then we download the **client.ovpn** file to the machine that needs to go into VPN 
 
@@ -1966,7 +1966,7 @@ Next, we install the Open VPN Client for the machine that needs to go into VPN
 
 Here I use Mac M1 and successfully connect
 
-{{<figure src="./images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
+{{<figure src="/images/ca0bfdb6-495f-4cb6-a333-2dbef13d098e.webp" >}}
 
 ### Reference Links
 * https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/
@@ -1978,7 +1978,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -2101,7 +2101,7 @@ Thông tin đăng nhập như sau:
 `Username`: postgres
 `Password`: ở bước cài đặt PostgreSQL Replication
 
-{{< figure src="./images/pgpool-pgadmin.jpg" >}}
+{{< figure src="/images/pgpool-pgadmin.jpg" >}}
 
 Như vậy ta đã cài đặt và cấu hình PGpool-II thành công.
 
@@ -2116,7 +2116,7 @@ Pgpool-II is a unique middleware solution, specially designed to optimize and sc
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before starting, we need to prepare 4 servers
@@ -2239,7 +2239,7 @@ Login information as follows:
 `Username`: postgres
 `Password`: at the PostgreSQL Replication installation step
 
-{{< figure src="./images/pgpool-pgadmin.jpg" >}}
+{{< figure src="/images/pgpool-pgadmin.jpg" >}}
 
 So we have successfully installed and configured PGpool-II.
 
@@ -2390,7 +2390,7 @@ Sau khi cài đặt xong, kiểm tra phiên bản PHP:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Bước 2: Tải PGpool Admin 4.2.0
 
@@ -2418,7 +2418,7 @@ sau khi giải nén xong, ta cần phải cấu hình lại quyền truy cập c
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Bước 3: Cấu hình apache2
 
@@ -2444,7 +2444,7 @@ Thêm cấu hình sau vào tệp:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 Sau khi cấu hình xong, lưu và đóng tệp cấu hình.
 
@@ -2470,7 +2470,7 @@ Tạo password pgpooladmin
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa tệp cấu hình `/etc/pgpool2/pgpool.conf`:
 
@@ -2478,7 +2478,7 @@ Tiếp theo, chúng ta sẽ cấu hình PGpool-II bằng cách chỉnh sửa t�
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 trong đó `admin` là user mà bạn muốn sử dụng để đăng nhập vào pgpooladmin, `md5` là mật khẩu mà bạn đã tạo ở trên.
 
@@ -2496,15 +2496,15 @@ chmod -R 0600 /var/www/.pcppass
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 chọn ngôn ngữ và nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` nhập `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` nhập `/etc/pgpool2/pcp.conf`
@@ -2513,7 +2513,7 @@ Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
 Tiếp tục nhấn `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo mật hơn.
 
@@ -2521,20 +2521,20 @@ Như vậy đã setup ban đầu xong, ta xoá thư mục `install` để bảo 
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Bước 6: Đăng nhập vào PGpool Admin
 
 Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 nhập thông tin đăng nhập đã tạo ở trên và nhấn `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- mật khẩu đã tạo ở trên
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 Như vậy ta đã cấu hình và đăng nhập thành công vào PGpool Admin.
 
@@ -2593,7 +2593,7 @@ After the installation is complete, check the PHP version:
 php -v
 ```
 
-{{< figure src="./images/php-version.jpg" >}}
+{{< figure src="/images/php-version.jpg" >}}
 
 #### Step 2: Download PGpool Admin 4.2.0
 
@@ -2621,7 +2621,7 @@ after extracting, we need to reconfigure the access rights for the `pgpooladmin`
 sudo chown -R www-data:www-data /var/www/html/pgpooladmin
 ```
 
-{{< figure src="./images/pgpooladmin-directory.jpg" >}}
+{{< figure src="/images/pgpooladmin-directory.jpg" >}}
 
 #### Step 3: Configure apache2
 
@@ -2647,7 +2647,7 @@ Add the following configuration to the file:
 </VirtualHost>
 ```
 
-{{< figure src="./images/pgpooladmin-apache2.jpg" >}}
+{{< figure src="/images/pgpooladmin-apache2.jpg" >}}
 
 After the configuration is complete, save and close the configuration file.
 
@@ -2673,7 +2673,7 @@ Create pgpooladmin password
 pg_md5 akitect@123
 ```
 
-{{< figure src="./images/pg_md5.jpg" >}}
+{{< figure src="/images/pg_md5.jpg" >}}
 
 Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool2/pgpool.conf`:
 
@@ -2681,7 +2681,7 @@ Next, we will configure PGpool-II by editing the configuration file `/etc/pgpool
 sudo nano /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-pcp.jpg" >}}
+{{< figure src="/images/pgpool-pcp.jpg" >}}
 
 where `admin` is the user you want to use to log in to pgpooladmin, `md5` is the password you created above.
 
@@ -2699,15 +2699,15 @@ chmod -R 0600 /var/www/.pcppass
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
 
-{{< figure src="./images/pgpooladmin-install.jpg" >}}
+{{< figure src="/images/pgpooladmin-install.jpg" >}}
 
 select the language and press `Next`
 
-{{< figure src="./images/pgpooladmin-install-2.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-2.jpg" >}}
 
 Continue to add connection configuration information to `pgpool2`
 
-{{< figure src="./images/pgpooladmin-install-3.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-3.jpg" >}}
 
 - `pgpool.conf` enter `/etc/pgpool2/pgpool.conf`
 - `pcp.conf` enter `/etc/pgpool2/pcp.conf`
@@ -2716,7 +2716,7 @@ Continue to add connection configuration information to `pgpool2`
 
 Continue to press `Next`
 
-{{< figure src="./images/pgpooladmin-install-4.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-4.jpg" >}}
 
 So the initial setup is complete, we delete the `install` directory for better security.
 
@@ -2724,20 +2724,20 @@ So the initial setup is complete, we delete the `install` directory for better s
 sudo rm -rf /var/www/html/pgpooladmin/install
 ```
 
-{{< figure src="./images/pgpooladmin-install-5.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-5.jpg" >}}
 
 ### Step 6: Log in to PGpool Admin
 
 After the installation is complete, access PGpool Admin by opening a web browser and accessing the IP address of the `pgpool2` server: [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
 
-{{< figure src="./images/pgpooladmin-install-6.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-6.jpg" >}}
 
 enter the login information created above and press `Login`
 
 - `Username`: admin
 - `Password`: akitect@123 <- password created above
 
-{{< figure src="./images/pgpooladmin-install-7.jpg" >}}
+{{< figure src="/images/pgpooladmin-install-7.jpg" >}}
 
 So we have successfully configured and logged in to PGpool Admin.
 
@@ -2770,7 +2770,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -2805,7 +2805,7 @@ sau khi cài đặt kiểm tra phiên bản của `make`
 make --version
 ```
 
-{{< figure src="./images/make-version.jpg" >}}
+{{< figure src="/images/make-version.jpg" >}}
 
 Phiên bản `make` hiện tại đang là `4.3`
 
@@ -2813,7 +2813,7 @@ Phiên bản `make` hiện tại đang là `4.3`
 gcc --version
 ```
 
-{{< figure src="./images/gcc-version.jpg" >}}
+{{< figure src="/images/gcc-version.jpg" >}}
 
 Phiên bản `gcc` hiện tại đang là `11.4.0`
 
@@ -2871,7 +2871,7 @@ Tiếp tục kiểm tra phiên bản của `pgpool` sau khi cài đặt thành c
 pgpool --version
 ```
 
-{{< figure src="./images/pgpool-version.jpg" >}}
+{{< figure src="/images/pgpool-version.jpg" >}}
 
 #### Bước 2: Cài đặt `pgpool_recovery`
 
@@ -2911,7 +2911,7 @@ Sau khi build thành công ta sẽ có file `pgpool_recovery.so` trong thư mụ
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Cấu hình sao chép `pgpool_recovery` từ máy chủ `pgpool2` tới máy chủ `postgresql-master` bằng lệnh `scp`: 
 
@@ -2943,7 +2943,7 @@ Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` ở máy chủ
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Trong đó `template1` là cơ sở dữ liệu mẫu mà chúng ta cài đặt `pgpool_recovery`
 
@@ -2977,7 +2977,7 @@ Thêm cấu hình sau vào tệp:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
 
 #### Bước 4: Khởi chạy PGpool-II
 
@@ -2987,7 +2987,7 @@ Cuối cùng, khởi chạy lại dịch vụ PGpool-II để áp dụng các th
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-start.jpg" >}}
+{{< figure src="/images/pgpool-start.jpg" >}}
 
 Như vậy, chúng ta đã cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux. Bằng cách thực hiện các bước này, bạn có thể tối ưu hóa và mở rộng khả năng của cơ sở dữ liệu PostgreSQL, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
 
@@ -3019,7 +3019,7 @@ PGpool-II is a unique middleware solution, specially designed to optimize and sc
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before we start, we need to prepare 4 servers
@@ -3054,7 +3054,7 @@ after installing check the version of `make`
 make --version
 ```
 
-{{< figure src="./images/make-version.jpg" >}}
+{{< figure src="/images/make-version.jpg" >}}
 
 The current version of `make` is `4.3`
 
@@ -3062,7 +3062,7 @@ The current version of `make` is `4.3`
 gcc --version
 ```
 
-{{< figure src="./images/gcc-version.jpg" >}}
+{{< figure src="/images/gcc-version.jpg" >}}
 
 The current version of `gcc` is `11.4.0`
 
@@ -3120,7 +3120,7 @@ Continue to check the version of `pgpool` after successful installation with the
 pgpool --version
 ```
 
-{{< figure src="./images/pgpool-version.jpg" >}}
+{{< figure src="/images/pgpool-version.jpg" >}}
 
 #### Step 2: Install `pgpool_recovery`
 
@@ -3160,7 +3160,7 @@ After successful build we will have the file `pgpool_recovery.so` in the directo
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`: 
 
@@ -3192,7 +3192,7 @@ After installation, we will configure `pgpool_recovery` on the `postgresql-maste
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Where `template1` is the sample database where we install `pgpool_recovery`
 
@@ -3226,7 +3226,7 @@ Add the following configuration to the file:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
 
 #### Step 4: Start PGpool-II
 
@@ -3236,7 +3236,7 @@ Finally, restart the PGpool-II service to apply the changes:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-start.jpg" >}}
+{{< figure src="/images/pgpool-start.jpg" >}}
 
 Thus, we have installed and configured PGpool-II on the Ubuntu Linux operating system. By performing these steps, you can optimize and scale the capabilities of your PostgreSQL database, helping you to maximize the performance and high availability of your database.
 
@@ -3318,7 +3318,7 @@ Cấu hình PGpool-II là một bước quan trọng trong quá trình triển k
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -3416,11 +3416,11 @@ Cuối cùng, chạy kiểm tra cấu hình PGpool-II:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+{{< figure src="/images/run-pgpool-configuration.jpg" >}}
 
 Sau khi cấu hình xong, bạn có thể kiểm tra trạng thái của PGpool-II bằng các truy cập vào bằng pg4admin : 
 
-{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` là địa chỉ IP (192.168.56.5) của máy chủ `pgpool2`.
 - `username`  mặc định là `postgresql`.
@@ -3458,7 +3458,7 @@ WITH generated_data AS (
   
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
 
 Như ảnh ta thấy dữ liệu `INSERT` đã được thực hiện trên  máy chủ `postgresql-master`.
 
@@ -3468,11 +3468,11 @@ Tiếp tục ta Query bằng lệnh `SELECT` trên PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
 
 Sau đó ta quay lại xem log của máy chủ `pgpool2` 
 
-{{< figure src="./images/pgpool-log.jpg" >}}
+{{< figure src="/images/pgpool-log.jpg" >}}
 
 Như ảnh ta thấy `SELECT` đã được thực hiện trên máy chủ `postgresql-slave-01` thông qua máy chủ `pgpool2`.
 
@@ -3504,7 +3504,7 @@ Configuring PGpool-II is an important step in the process of deploying a Postgre
 
 # Installation Architecture
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Before we start, we need to prepare 4 servers
@@ -3606,11 +3606,11 @@ Finally, run the PGpool-II configuration check:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+{{< figure src="/images/run-pgpool-configuration.jpg" >}}
 
 After the configuration is complete, you can check the status of PGpool-II by accessing it via pg4admin : 
 
-{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` is the IP address (192.168.56.5) of the `pgpool2` server.
 - `username`  default is `postgresql`.
@@ -3648,7 +3648,7 @@ WITH generated_data AS (
   
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
 
 As the image shows, the `INSERT` data has been executed on the `postgresql-master` server.
 
@@ -3658,11 +3658,11 @@ Continue to Query with the `SELECT` command on PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
 
 Then we go back to see the log of the `pgpool2` server 
 
-{{< figure src="./images/pgpool-log.jpg" >}}
+{{< figure src="/images/pgpool-log.jpg" >}}
 
 As
 
@@ -3712,11 +3712,11 @@ Finally, run the PGpool-II configuration check:
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/run-pgpool-configuration.jpg" >}}
+{{< figure src="/images/run-pgpool-configuration.jpg" >}}
 
 After the configuration is complete, you can check the status of PGpool-II by accessing it via pg4admin : 
 
-{{< figure src="./images/pg4admin-pgpool.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool.jpg" >}}
 
 - `ip_address` is the IP address (192.168.56.5) of the `pgpool2` server.
 - `username`  default is `postgresql`.
@@ -3754,7 +3754,7 @@ WITH generated_data AS (
   
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student.jpg" >}}
 
 As the image shows, the `INSERT` data has been executed on the `postgresql-master` server.
 
@@ -3764,11 +3764,11 @@ Continue to Query with the `SELECT` command on PG4Admin:
 SELECT * FROM student;
 ```
 
-{{< figure src="./images/pg4admin-pgpool-student-select.jpg" >}}
+{{< figure src="/images/pg4admin-pgpool-student-select.jpg" >}}
 
 Then we go back to see the log of the `pgpool2` server 
 
-{{< figure src="./images/pgpool-log.jpg" >}}
+{{< figure src="/images/pgpool-log.jpg" >}}
 
 As seen in the image, the `SELECT` operation was performed on the `postgresql-slave-01` server through the `pgpool2` server.
 

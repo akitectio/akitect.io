@@ -24,7 +24,7 @@ weight: 2
 #### Bước 1: Tải xuống Docker Desktop cho Mac
 - Truy cập trang web chính thức của Docker tại [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/) và tải xuống phiên bản dành cho chip Apple Silicon.
 
-{{< figure src="./images/download-docker.png" >}}
+{{< figure src="/images/download-docker.png" >}}
 
 - Đảm bảo rằng bạn đã chọn đúng phiên bản cho Mac M1, vì có phiên bản riêng biệt cho chip Intel và Apple Silicon.
 

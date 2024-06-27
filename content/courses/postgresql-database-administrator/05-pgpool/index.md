@@ -24,7 +24,7 @@ PGpool-II là một giải pháp trung gian độc đáo, được thiết kế 
 
 # Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
+{{< figure src="/images/postgresql-pgpool.jpeg" >}}
 
 
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
@@ -59,7 +59,7 @@ sau khi cài đặt kiểm tra phiên bản của `make`
 make --version
 ```
 
-{{< figure src="./images/make-version.jpg" >}}
+{{< figure src="/images/make-version.jpg" >}}
 
 Phiên bản `make` hiện tại đang là `4.3`
 
@@ -67,7 +67,7 @@ Phiên bản `make` hiện tại đang là `4.3`
 gcc --version
 ```
 
-{{< figure src="./images/gcc-version.jpg" >}}
+{{< figure src="/images/gcc-version.jpg" >}}
 
 Phiên bản `gcc` hiện tại đang là `11.4.0`
 
@@ -125,7 +125,7 @@ Tiếp tục kiểm tra phiên bản của `pgpool` sau khi cài đặt thành c
 pgpool --version
 ```
 
-{{< figure src="./images/pgpool-version.jpg" >}}
+{{< figure src="/images/pgpool-version.jpg" >}}
 
 #### Bước 2: Cài đặt `pgpool_recovery`
 
@@ -165,7 +165,7 @@ Sau khi build thành công ta sẽ có file `pgpool_recovery.so` trong thư mụ
 ls -la
 ```
 
-{{< figure src="./images/pgpool-recovery.jpg" >}}
+{{< figure src="/images/pgpool-recovery.jpg" >}}
 
 ##### 2.4: Cấu hình sao chép `pgpool_recovery` từ máy chủ `pgpool2` tới máy chủ `postgresql-master` bằng lệnh `scp`: 
 
@@ -197,7 +197,7 @@ Sau khi cài đặt, chúng ta sẽ cấu hình `pgpool_recovery` ở máy chủ
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
  ```
 
-{{< figure src="./images/pgpool-recovery-sql.jpg" >}}
+{{< figure src="/images/pgpool-recovery-sql.jpg" >}}
 
 Trong đó `template1` là cơ sở dữ liệu mẫu mà chúng ta cài đặt `pgpool_recovery`
 
@@ -231,7 +231,7 @@ Thêm cấu hình sau vào tệp:
 host    all         all         0.0.0.0/0          trust
 ```
 
-{{< figure src="./images/pgpool-pool-hba-config.jpg" >}}
+{{< figure src="/images/pgpool-pool-hba-config.jpg" >}}
 
 #### Bước 4: Khởi chạy PGpool-II
 
@@ -241,6 +241,6 @@ Cuối cùng, khởi chạy lại dịch vụ PGpool-II để áp dụng các th
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
 
-{{< figure src="./images/pgpool-start.jpg" >}}
+{{< figure src="/images/pgpool-start.jpg" >}}
 
 Như vậy, chúng ta đã cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux. Bằng cách thực hiện các bước này, bạn có thể tối ưu hóa và mở rộng khả năng của cơ sở dữ liệu PostgreSQL, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.

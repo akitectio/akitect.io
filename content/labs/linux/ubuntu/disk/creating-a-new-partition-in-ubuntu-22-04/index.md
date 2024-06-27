@@ -28,7 +28,7 @@ weight: 2
 sudo df -h
 ```
 
-{{<figure src="./images/extend-new-disk-01.png" >}}
+{{<figure src="/images/extend-new-disk-01.png" >}}
 
 Như vậy mình có ổ cứng là `/dev/sda` và dung lượng là 20G
 
@@ -40,7 +40,7 @@ Sử dụng lệnh `lsblk` hoặc sudo `fdisk -l` để liệt kê tất cả c�
 sudo fdisk -l
 ```
 
-{{<figure src="./images/extend-new-disk-02.png" >}}
+{{<figure src="/images/extend-new-disk-02.png" >}}
 
 Ở đây mình có ổ đĩa là `/dev/sdb` và dung lượng là 480G
 
@@ -54,27 +54,27 @@ sudo cfdisk /dev/sdb
 
 chọn "New" để tạo phân vùng mới
 
-{{<figure src="./images/extend-new-disk-03.png" >}}
+{{<figure src="/images/extend-new-disk-03.png" >}}
 
 Nhập số dung lượng cần tạo phân vùng mới, ở đây mình chọn `480G`
 
-{{<figure src="./images/extend-new-disk-04.png" >}}
+{{<figure src="/images/extend-new-disk-04.png" >}}
 
 Chọn "Write" để lưu lại
 
-{{<figure src="./images/extend-new-disk-05.png" >}}
+{{<figure src="/images/extend-new-disk-05.png" >}}
 
 Nhập `yes` để xác nhận
 
-{{<figure src="./images/extend-new-disk-06.png" >}}
+{{<figure src="/images/extend-new-disk-06.png" >}}
 
 sau đó chọn "Quit" để thoát
 
-{{<figure src="./images/extend-new-disk-07.png" >}}
+{{<figure src="/images/extend-new-disk-07.png" >}}
 
 Kiểm tra lại bằng lệnh `fdisk -l`
 
-{{<figure src="./images/extend-new-disk-08.png" >}}
+{{<figure src="/images/extend-new-disk-08.png" >}}
 
 Như vậy đã tạo thành công phân vùng mới là `/dev/sdb1`
 
@@ -86,11 +86,11 @@ Sử dụng lệnh `pvcreate` để tạo physical volume
 sudo pvcreate /dev/sdb1
 ```
 
-{{<figure src="./images/extend-new-disk-09.png" >}}
+{{<figure src="/images/extend-new-disk-09.png" >}}
 
 Kiểm tra lại bằng lệnh `pvdisplay`
 
-{{<figure src="./images/extend-new-disk-10.png" >}}
+{{<figure src="/images/extend-new-disk-10.png" >}}
 
 Như vậy đã tạo thành công physical volume là `/dev/sdb1`
 
@@ -103,7 +103,7 @@ mkdir /mnt/data
 mkdir /mnt/data
 ```
 
-{{<figure src="./images/extend-new-disk-09.png" >}}
+{{<figure src="/images/extend-new-disk-09.png" >}}
 
 # Bước 6: Kiểm tra Volume Group (VG)
 
@@ -113,7 +113,7 @@ Sử dụng lệnh `vgdisplay` để kiểm tra Volume Group
 sudo vgdisplay
 ```
 
-{{<figure src="./images/extend-new-disk-10.png" >}}
+{{<figure src="/images/extend-new-disk-10.png" >}}
 
 ở đây mình thấy có 1 Volume Group là `ubuntu-vg` có size 20G, còn sdb1 chưa được gắn kết, mình dùng lệnh kiểm tra `vgdisplay /dev/sdb1`
 
@@ -121,7 +121,7 @@ sudo vgdisplay
 vgdisplay /dev/sdb1
 ```
 
-{{<figure src="./images/extend-new-disk-11.png" >}}
+{{<figure src="/images/extend-new-disk-11.png" >}}
 
 Theo ta thấy thì `/dev/sdb1` chưa được gắn kết vào Volume Group nào cả, tiếp tục ta sẽ tạo Volume Group mới
 
@@ -129,7 +129,7 @@ Theo ta thấy thì `/dev/sdb1` chưa được gắn kết vào Volume Group nà
 sudo vgcreate soft-vg /dev/sdb1
 ```
 
-{{<figure src="./images/extend-new-disk-12.png" >}}
+{{<figure src="/images/extend-new-disk-12.png" >}}
 
 Như vậy đã tạo thành công Volume Group mới là `soft-vg`, dùng lệnh `vgdisplay` để kiểm tra lại
 
@@ -137,7 +137,7 @@ Như vậy đã tạo thành công Volume Group mới là `soft-vg`, dùng lện
 sudo vgdisplay
 ```
 
-{{<figure src="./images/extend-new-disk-13.png" >}}
+{{<figure src="/images/extend-new-disk-13.png" >}}
 
 Như vậy đã tạo thành công Volume Group mới là `soft-vg` và đã gắn kết vào `/dev/sdb1`
 
@@ -149,7 +149,7 @@ Sử dụng lệnh `lvcreate` để tạo Logical Volume
 sudo lvcreate -n soft-lv -l 100%FREE soft-vg
 ```
 
-{{<figure src="./images/extend-new-disk-14.png" >}}
+{{<figure src="/images/extend-new-disk-14.png" >}}
 
 Nhu vậy đã tạo thành công Logical Volume mới là `soft-lv` và đã gắn kết vào Volume Group `soft-vg`, kiểm tra lại bằng lệnh `lvdisplay`
 
@@ -157,7 +157,7 @@ Nhu vậy đã tạo thành công Logical Volume mới là `soft-lv` và đã g�
 sudo lvdisplay
 ```
 
-{{<figure src="./images/extend-new-disk-15.png" >}}
+{{<figure src="/images/extend-new-disk-15.png" >}}
 
 # Bước 8: Tạo File System
 
@@ -167,7 +167,7 @@ Sử dụng lệnh `mkfs.ext4` để tạo file system
 sudo mkfs.ext4 /dev/soft-vg/soft-lv
 ```
 
-{{<figure src="./images/extend-new-disk-16.png" >}}
+{{<figure src="/images/extend-new-disk-16.png" >}}
 
 # Bước 9: Gắn kết Logical Volume
 
@@ -177,7 +177,7 @@ Sử dụng lệnh `mount` để gắn kết Logical Volume
 sudo mount /dev/soft-vg/soft-lv /mnt/data
 ```
 
-{{<figure src="./images/extend-new-disk-17.png" >}}
+{{<figure src="/images/extend-new-disk-17.png" >}}
 
 Kiểm tra lại bằng lệnh `df -h`
 
@@ -185,7 +185,7 @@ Kiểm tra lại bằng lệnh `df -h`
 df -h
 ```
 
-{{<figure src="./images/extend-new-disk-18.png" >}}
+{{<figure src="/images/extend-new-disk-18.png" >}}
 
 Như vậy đã gắn kết thành công Logical Volume `soft-lv` vào `/mnt/data`
 
@@ -197,7 +197,7 @@ Sử dụng lệnh `blkid` để lấy UUID của Logical Volume
 sudo blkid
 ```
 
-{{<figure src="./images/extend-new-disk-19.png" >}}
+{{<figure src="/images/extend-new-disk-19.png" >}}
 
 Sau đó thêm vào file `/etc/fstab`
 
@@ -211,7 +211,7 @@ Thêm vào dòng sau
 UUID=e32fee80-371a-4c92-899a-c004d1d79060 /mnt/data ext4 defaults 0 2
 ```
 
-{{<figure src="./images/extend-new-disk-20.png" >}}
+{{<figure src="/images/extend-new-disk-20.png" >}}
 
 Như vậy đã cấu hình thành công, khởi động lại máy bằng lệnh `sudo reboot` và kiểm tra lại bằng lệnh `df -h`
 
@@ -219,4 +219,4 @@ Như vậy đã cấu hình thành công, khởi động lại máy bằng lện
 df -h
 ```
 
-{{<figure src="./images/extend-new-disk-21.png" >}}
+{{<figure src="/images/extend-new-disk-21.png" >}}
