@@ -1,8 +1,8 @@
 ---
 draft: false
-featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-4-installing-ubuntu-server-on-virtualbox.webp
+featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-5-basic-linux-commands.webp
 images:
-  - /courses/ubuntu-basics-using-virtualbox/lesson-4-installing-ubuntu-server-on-virtualbox.webp
+  - /courses/ubuntu-basics-using-virtualbox/lesson-5-basic-linux-commands.webp
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series:
   - ubuntu-basics-using-virtualbox
@@ -11,7 +11,7 @@ tags:
   - virtualbox
 title: Lesson 6 - Basic Linux Commands
 description: Learn how to use basic Linux commands to manage your system and interact with the operating system.
-date: 2024-06-28T10:23:30-09:00
+date: 2024-06-27T10:23:30-09:00
 weight: 5
 ---
 
