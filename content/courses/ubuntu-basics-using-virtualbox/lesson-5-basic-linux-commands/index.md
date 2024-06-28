@@ -11,7 +11,7 @@ tags:
   - virtualbox
 title: Lesson 5 - Các Lệnh Cơ Bản Trên Linux
 description: Học cách sử dụng các lệnh cơ bản trên Linux để quản lý hệ thống và tương tác với hệ điều hành.
-date: 2024-06-27T10:23:30-09:00
+date: 2024-06-28T10:24:30-09:00
 weight: 5
 ---
 

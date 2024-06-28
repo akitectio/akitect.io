@@ -11,7 +11,7 @@ tags:
   - virtualbox
 title: Lesson 6 - Basic Linux Commands
 description: Learn how to use basic Linux commands to manage your system and interact with the operating system.
-date: 2024-06-27T10:23:30-09:00
+date: 2024-06-28T10:24:30-09:00
 weight: 5
 ---
 
