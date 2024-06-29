@@ -1,23 +1,14 @@
 ---
-categories:
-  - devops
-  - zabbix
-date: 2023-03-01T08:00:00+08:00
+categories: [devops, zabbix]
+date: 2023-03-01T00:00:00.000Z
 description.en: A beautiful day after having breakfast, drinking coffee and going to the company, the boss called an urgent meeting and questions related to last night's incident, I didn't know what to say, because there were no logs, no tool monitoring system, and then I started researching and found out that Zabbix could do it, after a while I followed. follow, then the error is that the SAN array is out of memory.
 draft: false
 featuredImage: /series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp
-images:
-  - /series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp
-  - /monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix/images/index.en.png
+images: [/series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp, /monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix/images/index.en.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - zabbix-tutorial
-tags:
-  - zabbix-agent
-  - zabbix-server
-  - zabbix-agent-6.2
+series: [zabbix-tutorial]
+tags: [zabbix-agent, zabbix-server, zabbix-agent-6.2]
 title: Lesstion 1 - Monitoring the server and notifying when the server has problems has never been difficult with Zabbix
-url: /monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix
 weight: 1
 ---
 
@@ -111,7 +102,7 @@ systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
 
-After successfully restarting the services, go to http://10.19.2.1/setup.php to perform the initial configuration. Follow the on-screen instructions to complete the setup.
+After successfully restarting the services, go to <http://10.19.2.1/setup.php> to perform the initial configuration. Follow the on-screen instructions to complete the setup.
 
 {{< figure src="./images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
 

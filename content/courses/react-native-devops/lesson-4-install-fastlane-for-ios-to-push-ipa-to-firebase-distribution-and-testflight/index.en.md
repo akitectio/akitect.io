@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-04T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-04T00:00:00.000Z
 description: In this article, I will guide you to eat the broken apple 🍎 🫢
 draft: false
 featuredImage: /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp
-images:
-  - /lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight/images/index.en.png
-  - /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp
+images: [/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight/images/index.en.png, /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Lesson 4 - Install Fastlane for IOS to push IPA to Firebase Distribution and Testflight
-url: /lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight
 weight: 4
 ---
 
@@ -24,19 +16,19 @@ weight: 4
 
 ## The concept
 
-- **.IPA files** are iOS and iPados app archive files that store iOS/iPados apps. Each .IPA file consists of a binary and can only be installed on ARM-based iOS, iPados, or MacOS devices. Files with the .IPA extension can be uncompressed by changing the extension to .zip and unzipping. Most .ipa files cannot be installed on iPhone emulators because they do not contain binaries for x86, ARM ant of mobile phones and tablets. To run applications on the emulator, native project files can be opened using the Xcode SDK. However, some .ipa files can be opened on the emulator by extracting and copying over the .APP file found in the payload folder. Some simple applications can run on the emulator through this method.
-- **Apple Developer account** is one of the most important processes in IOS application development, when running, debugging, exporting .ipa installation files or uploading apps to Testflight. There are 2 types of accounts
+-   **.IPA files** are iOS and iPados app archive files that store iOS/iPados apps. Each .IPA file consists of a binary and can only be installed on ARM-based iOS, iPados, or MacOS devices. Files with the .IPA extension can be uncompressed by changing the extension to .zip and unzipping. Most .ipa files cannot be installed on iPhone emulators because they do not contain binaries for x86, ARM ant of mobile phones and tablets. To run applications on the emulator, native project files can be opened using the Xcode SDK. However, some .ipa files can be opened on the emulator by extracting and copying over the .APP file found in the payload folder. Some simple applications can run on the emulator through this method.
+-   **Apple Developer account** is one of the most important processes in IOS application development, when running, debugging, exporting .ipa installation files or uploading apps to Testflight. There are 2 types of accounts
 
-1. Apple Developer Program for Individuals ($99/Year): For individuals.
-2. Membership Program for Organizations ($299/Year): For organizations and companies.
+1.  Apple Developer Program for Individuals ($99/Year): For individuals.
+2.  Membership Program for Organizations ($299/Year): For organizations and companies.
 
-- **Apple Distribution Certificates** is a certificate that identifies whether the account has the authority to upload the app to the product's appstore. For a $99 account, a maximum of 3 certificates can only be created.
-- **Apple Development Certificates** are certificates used for development purposes only. Supports all devices, and can only create up to 12 certificates for a $99 account.
+-   **Apple Distribution Certificates** is a certificate that identifies whether the account has the authority to upload the app to the product's appstore. For a $99 account, a maximum of 3 certificates can only be created.
+-   **Apple Development Certificates** are certificates used for development purposes only. Supports all devices, and can only create up to 12 certificates for a $99 account.
 
 ## Instruct
 
-1. Configure Fastlane and push the IPA to Firebase Distribution
-2. Configure Fastlane and push Testflight
+1.  Configure Fastlane and push the IPA to Firebase Distribution
+2.  Configure Fastlane and push Testflight
 
 ### Configure Fastlane and push IPA to Firebase Distribution
 
@@ -46,7 +38,7 @@ weight: 4
 
 {{< figure src="./images/f91c3223-74a8-41c3-b2da-806238fb2537.png" >}}
 
-- Enter Apple bundle ID and click "Register app"
+-   Enter Apple bundle ID and click "Register app"
 
 {{< figure src="./images/deb54c5b-a90d-43e6-92d4-b91ffc16592c.png" >}}
 
@@ -103,9 +95,9 @@ So we have successfully enabled Firebase Distribution
 
 You need an Apple Developer Account to perform this step
 
-1. Create Certificates Distribution:
+1.  Create Certificates Distribution:
 
-We access the link to create: https://developer.apple.com/account then select **Certificates**
+We access the link to create: <https://developer.apple.com/account> then select **Certificates**
 
 {{< figure src="./images/ffcddf8a-d551-4dc9-8400-44a9c4442d18.png" >}}
 
@@ -181,9 +173,7 @@ Next we choose number 4
 
 Next we add the firebase_app_distribution plugin
 
-```
-fastlane add_plugin firebase_app_distribution
-```
+    fastlane add_plugin firebase_app_distribution
 
 {{< figure src="./images/7dbc58c6-9748-47ce-89d8-e6f141ab2257.png" >}}
 

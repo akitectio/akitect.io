@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-02T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-02T00:00:00.000Z
 description: Giảm thiểu lỗi khi đẩy lên môi trường production
 draft: false
 featuredImage: /series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp
-images:
-  - /series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp
-  - /bai-2-xay-dung-moi-truong-development-staging-production/images/index.png
+images: [/series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp, /bai-2-xay-dung-moi-truong-development-staging-production/images/index.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Bài 2 - Xây dựng môi trường DEVELOPMENT - STAGING - PRODUCTION
-url: /bai-2-xay-dung-moi-truong-development-staging-production
 weight: 2
 ---
 
@@ -24,9 +16,9 @@ weight: 2
 
 ## Khái niệm Environment files
 
-- Các Key,secrets và config thường được lưu trữ trong các tệp **.env** , với các tham số khác nhau tương ứng với các loại xây dựng cụ thể. Bạn có thể quen thuộc với các tệp .env tạo thành phương pháp [ứng dụng 12 yếu tố](https://12factor.net/). Các nguyên tắc 12 yếu tố được dành cho các ứng dụng phần mềm như một dịch vụ-phương pháp này không áp dụng hoàn hảo cho sự phát triển RN. Tuy nhiên, việc tiếp cận cấu hình xây dựng theo mô hình 12 yếu tố là một ý tưởng tốt.
+-   Các Key,secrets và config thường được lưu trữ trong các tệp **.env** , với các tham số khác nhau tương ứng với các loại xây dựng cụ thể. Bạn có thể quen thuộc với các tệp .env tạo thành phương pháp [ứng dụng 12 yếu tố](https://12factor.net/). Các nguyên tắc 12 yếu tố được dành cho các ứng dụng phần mềm như một dịch vụ-phương pháp này không áp dụng hoàn hảo cho sự phát triển RN. Tuy nhiên, việc tiếp cận cấu hình xây dựng theo mô hình 12 yếu tố là một ý tưởng tốt.
 
-- Để sử dụng các tiệp cấu hình .env trong các ứng dụng React Native (RN), ta phải thêm [react-native-config](https://www.npmjs.com/package/react-native-config) vào project của bạn. ở đây mình sẽ tạo ra 3 môi trường **DEVELOPMENT - STAGING - PRODUCTION**
+-   Để sử dụng các tiệp cấu hình .env trong các ứng dụng React Native (RN), ta phải thêm [react-native-config](https://www.npmjs.com/package/react-native-config) vào project của bạn. ở đây mình sẽ tạo ra 3 môi trường **DEVELOPMENT - STAGING - PRODUCTION**
 
 ## Hướng dẫn
 
@@ -52,7 +44,7 @@ npm i react-native-config --save
 
 ### Cấu hình IOS
 
-1. Chạy lện
+1.  Chạy lện
 
 ```bash
 npx pod-install
@@ -90,21 +82,21 @@ trong file **android/app/proguard-rules.pro** ta thêm dòng
 
 Tiếp theo ta tạo thêm 3 file ở thư mục root:
 
-1. DEVELOPMENT (.env)
+1.  DEVELOPMENT (.env)
 
 ```bash
 API_KEY=devKey
 API_URI=https://dev.com/api
 ```
 
-2. STAGING (.env.stg)
+2.  STAGING (.env.stg)
 
 ```bash
 API_KEY=stagingKey
 API_URI=https://staging.com/api
 ```
 
-3. PRODUCTION (.env.prod)
+3.  PRODUCTION (.env.prod)
 
 ```bash
 API_KEY=productKey
@@ -161,7 +153,7 @@ Sau đó ta sử dụng config bằng cách thêm vào scripts trong package.jso
 
 Sau khi cấu hình xong ta dùng lệnh để run test config
 
-1. dev
+1.  dev
 
 ```bash
 npm run dev-ios
@@ -169,7 +161,7 @@ npm run dev-ios
 
 {{< figure src="./images/9ffbfd3c-a5d4-4f1f-bfa6-8f8f2326f874.png" >}}
 
-2. stg
+2.  stg
 
 ```bash
 npm run stg-ios
@@ -177,7 +169,7 @@ npm run stg-ios
 
 {{< figure src="./images/9e40289e-e501-45b9-9d5c-1233ab93fd1e.png" >}}
 
-3. prod
+3.  prod
 
 ```bash
 npm run prod-ios

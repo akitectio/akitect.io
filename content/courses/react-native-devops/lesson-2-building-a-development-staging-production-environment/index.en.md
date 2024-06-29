@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-02T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-02T00:00:00.000Z
 description.en: Minimize errors when pushing to production environment
 draft: false
 featuredImage: /series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp
-images:
-  - /series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp
-  - /lesson-2-building-a-development-staging-production-environment/images/index.en.png
+images: [/series/react-native-devops/lesson-2-building-a-development-staging-production-environment.webp, /lesson-2-building-a-development-staging-production-environment/images/index.en.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Lesson 2 - Building a DEVELOPMENT - STAGING - PRODUCTION environment
-url: /lesson-2-building-a-development-staging-production-environment
 weight: 2
 ---
 
@@ -24,9 +16,9 @@ weight: 2
 
 ## Environment files concept
 
-- Keys, secrets, and configuration are often stored in **.env** files, with different parameters corresponding to specific build types. You may be familiar with .env files as part of the [12-factor app](https://12factor.net/) approach. The 12-factor principles are intended for software applications as a service - this method is not a perfect fit for RN development. However, approaching build configuration in a 12-factor model is a good idea.
+-   Keys, secrets, and configuration are often stored in **.env** files, with different parameters corresponding to specific build types. You may be familiar with .env files as part of the [12-factor app](https://12factor.net/) approach. The 12-factor principles are intended for software applications as a service - this method is not a perfect fit for RN development. However, approaching build configuration in a 12-factor model is a good idea.
 
-- To use .env configuration files in React Native (RN) applications, we need to add [react-native-config](https://www.npmjs.com/package/react-native-config) to your project. Here, I will create 3 environments **DEVELOPMENT - STAGING - PRODUCTION**
+-   To use .env configuration files in React Native (RN) applications, we need to add [react-native-config](https://www.npmjs.com/package/react-native-config) to your project. Here, I will create 3 environments **DEVELOPMENT - STAGING - PRODUCTION**
 
 ## Instructions
 
@@ -52,7 +44,7 @@ npm i react-native-config --save
 
 ### Configure IOS
 
-1. Run the command
+1.  Run the command
 
 ```bash
 npx pod-install
@@ -90,21 +82,21 @@ In the **android/app/proguard-rules.pro** file, add the line:
 
 Next, create 3 files in the root directory:
 
-1. DEVELOPMENT (.env)
+1.  DEVELOPMENT (.env)
 
 ```bash
 API_KEY=devKey
 API_URI=https://dev.com/api
 ```
 
-2. STAGING (.env.stg)
+2.  STAGING (.env.stg)
 
 ```bash
 API_KEY=stagingKey
 API_URI=https://staging.com/api
 ```
 
-3. PRODUCTION (.env.prod)
+3.  PRODUCTION (.env.prod)
 
 ```bash
 API_KEY=productKey
@@ -161,7 +153,7 @@ Then, use the config by adding to scripts in package.json
 
 After configuring, use the command to run the test config
 
-1. dev
+1.  dev
 
 ```bash
 npm run dev-ios
@@ -169,7 +161,7 @@ npm run dev-ios
 
 {{< figure src="./images/9ffbfd3c-a5d4-4f1f-bfa6-8f8f2326f874.png" >}}
 
-2. stg
+2.  stg
 
 ```bash
 npm run stg-ios
@@ -177,7 +169,7 @@ npm run stg-ios
 
 {{< figure src="./images/9e40289e-e501-45b9-9d5c-1233ab93fd1e.png" >}}
 
-3. prod
+3.  prod
 
 ```bash
 npm run prod-ios

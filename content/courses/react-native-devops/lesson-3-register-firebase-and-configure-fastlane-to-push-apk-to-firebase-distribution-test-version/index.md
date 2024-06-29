@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-03T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-03T00:00:00.000Z
 description: Để tiện cho đội tester test sản phẩm và tự động hơn nên chúng ta cần làm CI - CD
 draft: false
 featuredImage: /series/react-native-devops/lesson-3-register-firebase-and-configure-fastlane-to-push-apk-to-firebase-distribution-test-version.webp
-images:
-  - /series/react-native-devops/lesson-3-register-firebase-and-configure-fastlane-to-push-apk-to-firebase-distribution-test-version.webp
-  - /bai-3-dang-ky-firebase-va-cau-hinh-fastlane-day-apk-len-firebase-distribution-phien-ban-thu-nghiem/images/index.png
+images: [/series/react-native-devops/lesson-3-register-firebase-and-configure-fastlane-to-push-apk-to-firebase-distribution-test-version.webp, /bai-3-dang-ky-firebase-va-cau-hinh-fastlane-day-apk-len-firebase-distribution-phien-ban-thu-nghiem/images/index.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Bài 3 - Đăng ký Firebase và cấu hình Fastlane đẩy APK lên Firebase Distribution (Phiên bản thử nghiệm)
-url: /bai-3-dang-ky-firebase-va-cau-hinh-fastlane-day-apk-len-firebase-distribution-phien-ban-thu-nghiem
 weight: 3
 ---
 
@@ -24,17 +16,17 @@ weight: 3
 
 ## Các khái niệm
 
-- Firebase là một phần mềm phát triển ứng dụng do Google hỗ trợ cho phép các nhà phát triển phát triển các ứng dụng iOS, Android và web. Firebase cung cấp các công cụ để theo dõi các phân tích, báo cáo và sửa chữa các sự cố ứng dụng, tạo thử nghiệm tiếp thị và sản phẩm.
+-   Firebase là một phần mềm phát triển ứng dụng do Google hỗ trợ cho phép các nhà phát triển phát triển các ứng dụng iOS, Android và web. Firebase cung cấp các công cụ để theo dõi các phân tích, báo cáo và sửa chữa các sự cố ứng dụng, tạo thử nghiệm tiếp thị và sản phẩm.
 
-- APK là viết tắt của **Android Package** (đôi khi là **Android Package Kit** hoặc **Android Application Package** ). Đó là định dạng tệp mà Android sử dụng để phân phối và cài đặt ứng dụng. Do đó, APK chứa tất cả các yếu tố mà một ứng dụng cần cài đặt chính xác trên thiết bị của bạn.
+-   APK là viết tắt của **Android Package** (đôi khi là **Android Package Kit** hoặc **Android Application Package** ). Đó là định dạng tệp mà Android sử dụng để phân phối và cài đặt ứng dụng. Do đó, APK chứa tất cả các yếu tố mà một ứng dụng cần cài đặt chính xác trên thiết bị của bạn.
 
-- IPA là một tiện ích mở rộng cho tệp gói App Store iOS là tệp lưu trữ ứng dụng được sử dụng để phân phối các ứng dụng trên iOS. IPA chứa các tệp ở dạng không nén, chỉ có thể được cài đặt trên iOS.
+-   IPA là một tiện ích mở rộng cho tệp gói App Store iOS là tệp lưu trữ ứng dụng được sử dụng để phân phối các ứng dụng trên iOS. IPA chứa các tệp ở dạng không nén, chỉ có thể được cài đặt trên iOS.
 
 # Hướng dẫn
 
 ## Đăng ký Firebase
 
-- Chúng ta vào trang chủ của Firebase để đăng ký: https://console.firebase.google.com/u/0/
+-   Chúng ta vào trang chủ của Firebase để đăng ký: <https://console.firebase.google.com/u/0/>
 
 {{< figure src="./images/3da88c64-df98-4a25-89a9-3eff4b318e04.png" >}}
 
@@ -42,67 +34,67 @@ sau khi login thành công chúng ta cọn "**Add Project**"
 
 {{< figure src="./images/2228fac0-e13e-451d-b22a-ce8f10b0b88a.png" >}}
 
-- Nhập tên project, ở đây mình sẽ đặt tên là "**React Native DevOps**"
+-   Nhập tên project, ở đây mình sẽ đặt tên là "**React Native DevOps**"
 
 {{< figure src="./images/6a242cbc-ef9e-4bda-bab7-12d3e4b6e7b1.png" >}}
 
-- Tiếp tục nhấp vào **Continue**
+-   Tiếp tục nhấp vào **Continue**
 
 {{< figure src="./images/2c5ad938-c378-4836-b269-11c809ca075a.png" >}}
 
-- Tiếp tục nhấp vào **Continue**
+-   Tiếp tục nhấp vào **Continue**
 
 {{< figure src="./images/6fb20016-0e6e-457d-b13c-761cbd6b5eb6.png" >}}
 
-- Ở bước này chúng ta chọn account của GA or là tạo account mới cho GA, sau dó nhấp vào "Create project"
+-   Ở bước này chúng ta chọn account của GA or là tạo account mới cho GA, sau dó nhấp vào "Create project"
 
 {{< figure src="./images/daf6d2e6-4037-48e5-86e9-9278d0d84ca5.png" >}}
 
-- Tiếp tục nhấp vào **Continue**, Như vậy bạn đã tạo thành công project trên Firebase
+-   Tiếp tục nhấp vào **Continue**, Như vậy bạn đã tạo thành công project trên Firebase
 
 {{< figure src="./images/1ee79b99-1865-4450-bf1b-dcafc542bd5e.png" >}}
 
 ## Cấu hình Firebase cho Android
 
-- Tạo App Name cho project android bằng cách nhấp vào icon Android trên trang dashboard của Firebase
+-   Tạo App Name cho project android bằng cách nhấp vào icon Android trên trang dashboard của Firebase
 
 {{< figure src="./images/d7893857-82c0-4f58-b649-f59925f50119.png" >}}
 
-- Nhập **Android ackage name** và nhấp vào "**Register app**"
+-   Nhập **Android ackage name** và nhấp vào "**Register app**"
 
 {{< figure src="./images/dd9fc80f-997b-428e-bca1-7d6b4d90be15.png" >}}
 
-- Tải file **google-services.json** về và nhấp vào "**Next**"
+-   Tải file **google-services.json** về và nhấp vào "**Next**"
 
 {{< figure src="./images/467af0ce-2b39-480f-bde4-ad829e2dd5f2.png" >}}
 
-- Copy file vừa tải về vào thư mục **android/app**
+-   Copy file vừa tải về vào thư mục **android/app**
 
 {{< figure src="./images/864cba07-2105-4305-b0b7-b7eb84fbbdc9.png" >}}
 
-- Sau đó mở **Android studio** và chọn project của mình
+-   Sau đó mở **Android studio** và chọn project của mình
 
 {{< figure src="./images/37743f0e-fce6-4472-bce2-367a1c932459.png" >}}
 
-- Để cho các giá trị cấu hình google-services.json có thể truy cập được vào SDK Firebase, bạn cần có plugin Gradle dịch vụ của Google.
+-   Để cho các giá trị cấu hình google-services.json có thể truy cập được vào SDK Firebase, bạn cần có plugin Gradle dịch vụ của Google.
 
 {{< figure src="./images/b252478f-18a7-44e4-9b15-968035c2875c.png" >}}
 
-- Sau đó, trong tệp module (app-level) build.gradle , hãy thêm cả plugin dịch vụ google và bất kỳ SDK Firebase nào bạn muốn sử dụng trong ứng dụng của mình:
+-   Sau đó, trong tệp module (app-level) build.gradle , hãy thêm cả plugin dịch vụ google và bất kỳ SDK Firebase nào bạn muốn sử dụng trong ứng dụng của mình:
 
 {{< figure src="./images/0094549c-2839-4ef8-a12e-0a3cf89779b9.png" >}}
 
-- Tiếp tục quay lại trang web và nhấp vào "**Next**"
+-   Tiếp tục quay lại trang web và nhấp vào "**Next**"
 
 {{< figure src="./images/5b950f29-49a3-4330-ae39-9f1b4dde3900.png" >}}
 
-- Tiếp tục quay lại trang web và nhấp vào "**Continue console**"
+-   Tiếp tục quay lại trang web và nhấp vào "**Continue console**"
 
 {{< figure src="./images/01283676-e67e-4c84-a5e6-3dc15861c854.png" >}}
 
 {{< figure src="./images/8e111288-058f-4d62-9252-cea150e6ff4a.png" >}}
 
-- Như vậy mình đã tạo Firebase cho android thành công
+-   Như vậy mình đã tạo Firebase cho android thành công
 
 ## Cấu hình Fastlane cho Android
 
@@ -156,14 +148,14 @@ Tiếp tục mình sẽ lấy app-id
 
 Tiếp tục ta cập nhật "**Appfile**" , "**Fastfile**"
 
-- Appfile
+-   Appfile
 
 ```bash
 json_key_file("") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
 package_name("com.reactnativedevops") # e.g. com.krausefx.app
 ```
 
-- Fastfile
+-   Fastfile
 
 ```bash
 default_platform(:android)

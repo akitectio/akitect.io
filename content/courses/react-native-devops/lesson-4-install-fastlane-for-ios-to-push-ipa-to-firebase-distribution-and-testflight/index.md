@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-04T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-04T00:00:00.000Z
 description: Ở bài này mình sẽ hướng dẫn các bạn xơi trái táo cắn vỡ 🍎 🫢
 draft: false
 featuredImage: /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp
-images:
-  - /bai-4-cai-dat-fastlane-cho-ios-day-ipa-len-firebase-distribution-va-testflight/images/index.png
-  - /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp
+images: [/bai-4-cai-dat-fastlane-cho-ios-day-ipa-len-firebase-distribution-va-testflight/images/index.png, /series/react-native-devops/lesson-4-install-fastlane-for-ios-to-push-ipa-to-firebase-distribution-and-testflight.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Bài 4 - Cài đặt Fastlane cho IOS đẩy IPA lên Firebase Distribution và Testflight
-url: /bai-4-cai-dat-fastlane-cho-ios-day-ipa-len-firebase-distribution-va-testflight
 weight: 4
 ---
 
@@ -24,19 +16,19 @@ weight: 4
 
 ## Các khái niệm
 
-- **Tệp .IPA** là tệp lưu trữ ứng dụng iOS và iPados lưu trữ ứng dụng iOS/iPados. Mỗi tệp .IPA bao gồm một nhị phân và chỉ có thể được cài đặt trên thiết bị iOS, iPados hoặc MacOS dựa trên ARM. Các tệp có phần mở rộng .IPA có thể không bị nén bằng cách thay đổi tiện ích mở rộng thành .zip và giải nén. Hầu hết các tệp .ipa không thể được cài đặt trên trình giả lập iPhone vì chúng không chứa nhị phân cho kiến x86, ARM của điện thoại và máy tính bảng di động. Để chạy các ứng dụng trên trình giả lập, các tệp dự án gốc có thể được mở bằng cách sử dụng Xcode SDK. Tuy nhiên, một số tệp .ipa có thể được mở trên trình giả lập bằng cách trích xuất và sao chép qua tệp .APP được tìm thấy trong thư mục tải trọng. Một số ứng dụng đơn giản có thể chạy trên trình giả lập thông qua phương pháp này.
-- **Tài khoản Apple Developer** là một trong các quy trình quan trọng nhất trong phát triển ứng dụng IOS, khi run, debug, xuất ra tiệp cà đặt .ipa hay upload app lên Testflight. có 2 loại tài khoản
+-   **Tệp .IPA** là tệp lưu trữ ứng dụng iOS và iPados lưu trữ ứng dụng iOS/iPados. Mỗi tệp .IPA bao gồm một nhị phân và chỉ có thể được cài đặt trên thiết bị iOS, iPados hoặc MacOS dựa trên ARM. Các tệp có phần mở rộng .IPA có thể không bị nén bằng cách thay đổi tiện ích mở rộng thành .zip và giải nén. Hầu hết các tệp .ipa không thể được cài đặt trên trình giả lập iPhone vì chúng không chứa nhị phân cho kiến x86, ARM của điện thoại và máy tính bảng di động. Để chạy các ứng dụng trên trình giả lập, các tệp dự án gốc có thể được mở bằng cách sử dụng Xcode SDK. Tuy nhiên, một số tệp .ipa có thể được mở trên trình giả lập bằng cách trích xuất và sao chép qua tệp .APP được tìm thấy trong thư mục tải trọng. Một số ứng dụng đơn giản có thể chạy trên trình giả lập thông qua phương pháp này.
+-   **Tài khoản Apple Developer** là một trong các quy trình quan trọng nhất trong phát triển ứng dụng IOS, khi run, debug, xuất ra tiệp cà đặt .ipa hay upload app lên Testflight. có 2 loại tài khoản
 
 1.  Apple Developer Program for Individuals (99$/ Năm) : Đành cho cá nhân.
 2.  Membership Program for Organizations (299$/ Năm) : Dành cho tổ chức, công ty.
 
-- **Apple Distribution Certificates** là giấy chứng nhận định danh tài khoản có quyền hạn để tải app lên appstore của sản phẩm hay không, ở tài khoản 99$ chỉ tạo được max là 3 certificates.
-- **Apple Development Certificates** là giấy chứng nhận chỉ được sử dụng cho mục đích phát triển. Hổ trợ tất cả thiết bị, và chỉ tạo được tối da 12 certificates cho tài khoản $99.
+-   **Apple Distribution Certificates** là giấy chứng nhận định danh tài khoản có quyền hạn để tải app lên appstore của sản phẩm hay không, ở tài khoản 99$ chỉ tạo được max là 3 certificates.
+-   **Apple Development Certificates** là giấy chứng nhận chỉ được sử dụng cho mục đích phát triển. Hổ trợ tất cả thiết bị, và chỉ tạo được tối da 12 certificates cho tài khoản $99.
 
 ## Hướng dẫn
 
-1. Cấu hình Fastlane và đẩy IPA lên Firebase Distribution
-2. Cấu hình Fastlane và đẩy Testflight
+1.  Cấu hình Fastlane và đẩy IPA lên Firebase Distribution
+2.  Cấu hình Fastlane và đẩy Testflight
 
 ### Cấu hình Fastlane và đẩy IPA lên Firebase Distribution
 
@@ -46,7 +38,7 @@ weight: 4
 
 {{< figure src="./images/f91c3223-74a8-41c3-b2da-806238fb2537.png" >}}
 
-- Nhập Apple bundle ID và nhấp vào "Register app"
+-   Nhập Apple bundle ID và nhấp vào "Register app"
 
 {{< figure src="./images/58389774-3587-40d6-ab91-fccd10c12da7.png" >}}
 
@@ -104,9 +96,9 @@ Như vậy ta đã kích hoạt thành công Firebase Distribution
 
 Bạn cần một Account Apple Developer để thực hiện bước này
 
-1. Tạo Certificates Distribution:
+1.  Tạo Certificates Distribution:
 
-Ta truy cập vào đường dẫn để thực hiện tạo: https://developer.apple.com/account sau đó chọn **Certificates**
+Ta truy cập vào đường dẫn để thực hiện tạo: <https://developer.apple.com/account> sau đó chọn **Certificates**
 
 {{< figure src="./images/ffcddf8a-d551-4dc9-8400-44a9c4442d18.png" >}}
 

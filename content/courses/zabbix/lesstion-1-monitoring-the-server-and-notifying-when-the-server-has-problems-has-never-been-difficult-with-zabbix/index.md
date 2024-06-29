@@ -1,23 +1,14 @@
 ---
-categories:
-  - devops
-  - zabbix
-date: 2023-03-01T08:00:00+08:00
+categories: [devops, zabbix]
+date: 2023-03-01T00:00:00.000Z
 description: Một ngày đẹp trời sau khi đi ăn sáng uống cà phê và lên công ty, sếp triệu tập một cuộc họp urgent và các câu hỏi liên quan về sự cố tối qua, mình cũng không biết nói gì, vì không có logs, không có tool monitoring system, và sau đó mình đã bắt đầu nghiên cứu và tìm ra Zabbix có thể làm được, sau một thời gian mình theo dõi, thì lỗi là do dàn SAN bị tràn bộ nhớ.
 draft: false
 featuredImage: /series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp
-images:
-  - /series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp
-  - /giam-sat-may-chu-va-thong-bao-khi-may-chu-gap-su-co-chua-bao-gio-kho-voi-zabbix/images/index.png
+images: [/series/zabbix/lession-1-monitoring-the-server-and-notifying-when-the-server-has-problems-has-never-been-difficult-with-zabbix.webp, /giam-sat-may-chu-va-thong-bao-khi-may-chu-gap-su-co-chua-bao-gio-kho-voi-zabbix/images/index.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - zabbix-tutorial
-tags:
-  - zabbix-agent
-  - zabbix-server
-  - zabbix-agent-6.2
+series: [zabbix-tutorial]
+tags: [zabbix-agent, zabbix-server, zabbix-agent-6.2]
 title: Lesstion 1 - Giám sát máy chủ và thông báo khi máy chủ gặp sự cố chưa bao giờ khó với Zabbix
-url: /giam-sat-may-chu-va-thong-bao-khi-may-chu-gap-su-co-chua-bao-gio-kho-voi-zabbix
 weight: 1
 ---
 
@@ -29,7 +20,7 @@ weight: 1
 | Ubuntu 22.04 | 10.19.2.2 | mongodb       | 6 core | 12G | 100G SSD |
 | Cent OS 7    | 10.19.2.3 | postgresql    | 6 core | 12G | 100G SSD |
 
-Ở đay mình cài đặt zabbix server trên hệ điều hành ubuntu 22.04 bạn có thể tham khảo ở trang chủ qua đường dẫn: https://www.zabbix.com/download
+Ở đay mình cài đặt zabbix server trên hệ điều hành ubuntu 22.04 bạn có thể tham khảo ở trang chủ qua đường dẫn: <https://www.zabbix.com/download>
 
 Bước 1: Cài đặt zabbix 6.2
 
@@ -82,10 +73,8 @@ Bước 5: Tìm và thay đổi cấu hình zabbix
 
 Ta dùng lệnh để mở tiệp cấu hình zabbix
 
-```
-sudo su
-nano /etc/zabbix/zabbix_server.conf
-```
+    sudo su
+    nano /etc/zabbix/zabbix_server.conf
 
 Thềm vào dòng cuối cùng và lưu lại
 
@@ -119,7 +108,7 @@ systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
 
-Sau khi khởi động lại dịch vụ thành công ta vào đường dẫn http://10.19.2.1/setup.php để thực hiện cấu hình ban đầu
+Sau khi khởi động lại dịch vụ thành công ta vào đường dẫn <http://10.19.2.1/setup.php> để thực hiện cấu hình ban đầu
 
 {{< figure src="./images/7e7f508a-2cd5-4807-abaf-49ae0bfb57fb.png" >}}
 

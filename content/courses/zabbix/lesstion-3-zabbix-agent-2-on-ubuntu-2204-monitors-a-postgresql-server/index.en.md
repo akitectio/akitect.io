@@ -1,29 +1,20 @@
 ---
-categories:
-  - devops
-  - zabbix
-date: 2023-03-02T08:00:00+08:00
+categories: [devops, zabbix]
+date: 2023-03-02T00:00:00.000Z
 description: In this article I will guide you to install Zabbix Agent 2 on Ubuntu 22.04 to monitor PostgreSQL server
 draft: false
 featuredImage: /series/zabbix/zabbix-agent-2-on-centos-7-server-used-to-monitor-mongodb-replica-set.webp
-images:
-  - /series/zabbix/zabbix-agent-2-on-centos-7-server-used-to-monitor-mongodb-replica-set.webp
-  - /zabbix-agent-2-tren-ubuntu-2204-theo-doi-may-chu-postgresql/images/index.en.png
+images: [/series/zabbix/zabbix-agent-2-on-centos-7-server-used-to-monitor-mongodb-replica-set.webp, /zabbix-agent-2-tren-ubuntu-2204-theo-doi-may-chu-postgresql/images/index.en.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - zabbix-tutorial
-tags:
-  - zabbix-agent
-  - zabbix-server
-  - zabbix-agent-6.2
+series: [zabbix-tutorial]
+tags: [zabbix-agent, zabbix-server, zabbix-agent-6.2]
 title: Lesstion 3 - Zabbix Agent 2 on Ubuntu 22.04 monitors a PostgreSQL server
-url: /zabbix-agent-2-tren-ubuntu-2204-theo-doi-may-chu-postgresql
 weight: 3
 ---
 
 Step 1: Install Zabbix Agent 2
 
-- Install Zabbix repository
+-   Install Zabbix repository
 
 ```shell
 # wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-4%2Bubuntu22.04_all.deb
@@ -31,13 +22,13 @@ Step 1: Install Zabbix Agent 2
 # apt update
 ```
 
-- Install Zabbix Agent2
+-   Install Zabbix Agent2
 
 ```shell
  apt install zabbix-agent2 zabbix-agent2-plugin-*
 ```
 
-- Start Zabbix Agent2 process
+-   Start Zabbix Agent2 process
 
 ```shell
 # systemctl restart zabbix-agent2
@@ -68,7 +59,7 @@ Save and restart the service:
  systemctl restart zabbix-agent2
 ```
 
-Step 2: Log in to Zabbix and add to hosts: http://10.19.2.1/zabbix/zabbix.php?action=host.view
+Step 2: Log in to Zabbix and add to hosts: <http://10.19.2.1/zabbix/zabbix.php?action=host.view>
 
 Select as shown in the image
 
@@ -76,7 +67,7 @@ Select as shown in the image
 
 Step 3: Configure the **PostgreSQL by Zabbix agent 2** template
 
-1. Create a PostgreSQL user for monitoring (password here is set to **Password@123**):
+1.  Create a PostgreSQL user for monitoring (password here is set to **Password@123**):
 
 ```shell
 CREATE USER zbx_monitor WITH PASSWORD 'Password@123' INHERIT;
@@ -85,18 +76,18 @@ GRANT EXECUTE ON FUNCTION pg_catalog.pg_stat_file(text) TO zbx_monitor;
 GRANT EXECUTE ON FUNCTION pg_catalog.pg_ls_waldir() TO zbx_monitor;
 ```
 
-2. Edit pg_hba.conf to allow connections from Zabbix:
+2.  Edit pg_hba.conf to allow connections from Zabbix:
 
 ```shell
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
   host       all        zbx_monitor     localhost               md5
 ```
 
-For more information, please refer to the PostgreSQL documentation https://www.postgresql.org/docs/civerse/auth-pg-hba-conf.html
+For more information, please refer to the PostgreSQL documentation <https://www.postgresql.org/docs/civerse/auth-pg-hba-conf.html>
 
-3. Set the system data source name of the PostgreSQL version in the **{$PG.URI}** macro, such as **<protocol(host:port)>**
-4. Set the username and password in the server macro **({$PG.USER}** and **{$PG.PASSWORD}**) if you want to override the parameters from the Zabbix agent configuration file
+3.  Set the system data source name of the PostgreSQL version in the **{$PG.URI}** macro, such as **&lt;protocol(host:port)>**
+4.  Set the username and password in the server macro **({$PG.USER}** and **{$PG.PASSWORD}**) if you want to override the parameters from the Zabbix agent configuration file
 
 {{< figure src="./images/003c2e76-a17a-4a8c-ab41-3c544e8a3417.png" >}}
 
-Reference link: https://www.zabbix.com/integrations/postgresql#postgresql_agent2
+Reference link: <https://www.zabbix.com/integrations/postgresql#postgresql_agent2>
