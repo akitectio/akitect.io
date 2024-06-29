@@ -18,7 +18,6 @@ tags:
   - mysql
   - oracle
 title: Lesson 2 - PostgreSQL so với cơ sở dữ liệu khác
-url: /postgresql-dba-02-postgresql-so-voi-co-so-du-lieu-khac
 weight: 2
 ---
 

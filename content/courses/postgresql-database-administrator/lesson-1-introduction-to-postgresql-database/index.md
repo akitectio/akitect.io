@@ -17,7 +17,6 @@ tags:
   - ubuntu
   - database-administrator
 title: Lesson 1 - Giới thiệu về PostgreSQL Database
-url: /postgresql-dba-01-gioi-thieu-ve-postgresql-database
 weight: 1
 ---
 

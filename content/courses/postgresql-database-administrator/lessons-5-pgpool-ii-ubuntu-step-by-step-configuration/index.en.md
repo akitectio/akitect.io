@@ -1,24 +1,17 @@
 ---
-categories:
-  - database
-date: 2024-02-24T08:00:00+08:00
+categories: [database]
+date: 2024-02-24T00:00:00.000Z
 draft: true
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
-images:
-  - /labs/postgresql/postgresql-pgpool.jpeg
+images: [/labs/postgresql/postgresql-pgpool.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - postgresql
-  - ubuntu
-  - pgpool
-title: Lesson 5 -  Postgres Pgpool-II Ubuntu 
-url: /pgpool-ii-ubuntu-step-by-step-configuration
+tags: [database, postgresql, ubuntu, pgpool]
+title: Lesson 5 -  Postgres Pgpool-II Ubuntu
 description: PGpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It brings many benefits such as optimizing connections, load balancing, and performing data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure PGpool-II on the Ubuntu Linux operating system, helping you to maximize the performance and high availability of your database.
 weight: 5
 ---
 
-# What is Pgpool-II 
+# What is Pgpool-II
 
 PGpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It brings many benefits such as optimizing connections, load balancing, and performing data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure PGpool-II on the Ubuntu Linux operating system, helping you to maximize the performance and high availability of your database.
 
@@ -26,17 +19,16 @@ PGpool-II is a unique middleware solution, specially designed to optimize and sc
 
 {{< figure src="./images/postgresql-pgpool.jpeg" >}}
 
-
 Before we start, we need to prepare 4 servers
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -------------------- | ------ | --- | ---- | ------------ |
-| 192.168.56.5 | pgpool2              | 2 core | 4G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.2 | postgresql-master    | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.3 | postgresql-slave-01  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
-| 192.168.56.4 | postgresql-slave-02  | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| IP           | Hostname            | vCPU   | RAM | DISK | OS           |
+| ------------ | ------------------- | ------ | --- | ---- | ------------ |
+| 192.168.56.5 | pgpool2             | 2 core | 4G  | 50G  | Ubuntu 22.04 |
+| 192.168.56.2 | postgresql-master   | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| 192.168.56.3 | postgresql-slave-01 | 4 core | 8G  | 50G  | Ubuntu 22.04 |
+| 192.168.56.4 | postgresql-slave-02 | 4 core | 8G  | 50G  | Ubuntu 22.04 |
 
-### Install PostgreSQL Replication 
+### Install PostgreSQL Replication
 
 [Install PostgreSQL 16 Replication](/setting-up-postgresql-replication-step-by-step-guide) on 3 servers `postgresql-master` and `postgresql-slave-01`, `postgresql-slave-02`.
 
@@ -46,7 +38,7 @@ Before we start, we need to prepare 4 servers
 
 ##### Install make and gcc
 
-*** GNU make version 3.80 or newer is required; other make programs or older GNU make versions will not work. (GNU make is sometimes installed under the name gmake.) To check GNU, enter:
+\*\*\* GNU make version 3.80 or newer is required; other make programs or older GNU make versions will not work. (GNU make is sometimes installed under the name gmake.) To check GNU, enter:
 
 ```bash
 sudo apt update
@@ -77,7 +69,6 @@ The current version of `gcc` is `11.4.0`
 wget https://www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.5.0.tar.gz -O pgpool-II-4.5.0.tar.gz
 ```
 
-
 ##### Extract and install
 
 ```bash
@@ -99,19 +90,17 @@ Then, we will configure and install PGpool-II by performing the following steps:
 make && sudo make install
 ```
 
-
 You can customize the build and installation process by providing one or more of the following command line options to configure:
 
-| Option | Description | Default |
-|---|---|---|
-| `--prefix` | PGpool-II installation path | `/usr/local` |
-| `--with-pgsql` | Directory of installed PostgreSQL client libraries | Provided by `pg_config` |
-| `--with-openssl` | Support for OpenSSL (AES256 password encryption) | Off |
-| `--enable-sequence-lock` | Lock rows in the sequence table (compatible with PGpool-II 3.0) | Off |
-| `--enable-table-lock` | Lock the target insert table (compatible with PGpool-II 2.2 & 2.3) | Off |
-| `--with-memcached=path` | Use memcached for memory query cache | Not used |
-| `--with-pam` | Support for PAM authentication | Off |
-
+| Option                   | Description                                                        | Default                 |
+| ------------------------ | ------------------------------------------------------------------ | ----------------------- |
+| `--prefix`               | PGpool-II installation path                                        | `/usr/local`            |
+| `--with-pgsql`           | Directory of installed PostgreSQL client libraries                 | Provided by `pg_config` |
+| `--with-openssl`         | Support for OpenSSL (AES256 password encryption)                   | Off                     |
+| `--enable-sequence-lock` | Lock rows in the sequence table (compatible with PGpool-II 3.0)    | Off                     |
+| `--enable-table-lock`    | Lock the target insert table (compatible with PGpool-II 2.2 & 2.3) | Off                     |
+| `--with-memcached=path`  | Use memcached for memory query cache                               | Not used                |
+| `--with-pam`             | Support for PAM authentication                                     | Off                     |
 
 After configuring, we proceed to create ln -la to create a link to the `/usr/sbin` directory 
 
@@ -167,15 +156,15 @@ ls -la
 
 {{< figure src="./images/pgpool-recovery.jpg" >}}
 
-##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`: 
+##### 2.4: Configure `pgpool_recovery` replication from `pgpool2` server to `postgresql-master` server using `scp`:
 
 Copy the `pgpool_recovery.so` and `pgpool_recovery.sql` files from the `pgpool2` server to the `postgresql-master` server using the `scp` command:
 
-  ```bash
-  scp pgpool-recovery.so ubuntu@192.168.56.2:/home/ubuntu 
-  scp pgpool-recovery.sql ubuntu@192.168.56.2:/home/ubuntu 
-  scp pgpool_recovery.control ubuntu@192.168.56.2:/home/ubuntu 
-  ```
+```bash
+scp pgpool-recovery.so ubuntu@192.168.56.2:/home/ubuntu 
+scp pgpool-recovery.sql ubuntu@192.168.56.2:/home/ubuntu 
+scp pgpool_recovery.control ubuntu@192.168.56.2:/home/ubuntu 
+```
 
 Continue to ssh into the `postgresql-master` server:
 
@@ -195,7 +184,7 @@ After installation, we will configure `pgpool_recovery` on the `postgresql-maste
 
 ```bash
  sudo -u postgres psql -d template1 -f /usr/share/postgresql/16/extension/pgpool-recovery.sql 
- ```
+```
 
 {{< figure src="./images/pgpool-recovery-sql.jpg" >}}
 
@@ -211,11 +200,11 @@ sudo mkdir /etc/pgpool2
 
 Copy from the sample config :
 
-````bash
+```bash
 sudo cp /home/pgpool2/etc/pgpool.conf.sample /etc/pgpool2/pgpool.conf 
 sudo cp /home/pgpool2/etc/pool_hba.conf.sample /etc/pgpool2/pool_hba.conf 
 sudo cp /home/pgpool2/etc/pcp.conf.sample /etc/pgpool2/pcp.conf
-````
+```
 
 #### Step 3: Configure connection management
 

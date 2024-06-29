@@ -1,22 +1,14 @@
 ---
-categories:
-  - devops
-  - react-native
-date: 2023-02-01T08:00:00+08:00
+categories: [devops, react-native]
+date: 2023-02-01T00:00:00.000Z
 description: Hướng dẫn setup jenkins agent để bắt đầu build mobile bằng jenkins cho developer an tâm phát triển sản phẩm
 draft: false
 featuredImage: /series/react-native-devops/lesson-1-react-native-devops-basic-concepts-and-settings.webp
-images:
-  - /series/react-native-devops/lesson-1-react-native-devops-basic-concepts-and-settings.webp
-  - /bai-1-react-native-devops-cac-khai-niem-va-cac-cai-dat-can-ban/images/index.png
+images: [/series/react-native-devops/lesson-1-react-native-devops-basic-concepts-and-settings.webp, /bai-1-react-native-devops-cac-khai-niem-va-cac-cai-dat-can-ban/images/index.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - rn-devops
-tags:
-  - react-native
-  - jenkins-agent
+series: [rn-devops]
+tags: [react-native, jenkins-agent]
 title: Bài 1 - React Native DevOps các khái niệm và các cài đặt căn bản
-url: /bai-1-react-native-devops-cac-khai-niem-va-cac-cai-dat-can-ban
 weight: 1
 ---
 
@@ -24,17 +16,17 @@ weight: 1
 
 ## Các khái niệm
 
-- Yêu cầu phần cứng
-- Kiểm sót source code
-- Provisioning profiles ios
-- Môi trường build (environment)
+-   Yêu cầu phần cứng
+-   Kiểm sót source code
+-   Provisioning profiles ios
+-   Môi trường build (environment)
 
 ## Hướng dẫn
 
-- Thiết lập máy tính ban đầu
-- Cài đặt các ứng dụng
-- Thêm New node vào jenkins master
-- Chạy test job
+-   Thiết lập máy tính ban đầu
+-   Cài đặt các ứng dụng
+-   Thêm New node vào jenkins master
+-   Chạy test job
 
 # Các khái niệm
 
@@ -44,8 +36,8 @@ weight: 1
 
 ## Yêu cầu phần cứng
 
-- Ở đây mình sử dụng phần cứng là Mac Mini M1 2020 (3.2Ghz Apple M1 Chip With 8-CPU, 16G RAM, SSD 512), còn các bạn muốn sử dụng trên cloud thì có thể tham khảo máy chủ ở đây [macincloud.com](https://macincloud.com)
-- Máy Mac Mini mình sẽ để ở công ty vào chỉ build được ở mạng nội bộ của công ty qua địa chỉ IP của máy, còn các bạn có thể đưa ra network bằng cách NAT ip ra mạng hoặc sử dụng dịch vụ trên Mac Cloud
+-   Ở đây mình sử dụng phần cứng là Mac Mini M1 2020 (3.2Ghz Apple M1 Chip With 8-CPU, 16G RAM, SSD 512), còn các bạn muốn sử dụng trên cloud thì có thể tham khảo máy chủ ở đây [macincloud.com](https://macincloud.com)
+-   Máy Mac Mini mình sẽ để ở công ty vào chỉ build được ở mạng nội bộ của công ty qua địa chỉ IP của máy, còn các bạn có thể đưa ra network bằng cách NAT ip ra mạng hoặc sử dụng dịch vụ trên Mac Cloud
 
 ## Kiểm sót source code
 
@@ -53,16 +45,16 @@ Hướng dẫn này mình sẽ sử dụng Github để quản lý soucre code, 
 
 ## Provisioning profiles ios
 
-- Phần yêu thích nhất của tôi trong phát triển iOS là Provisioning profiles. Tôi thích phương pháp Android vì sự đơn giản của nó, đặc biệt là khi quản lý các loại build. Cách tiếp cận của Apple để xây dựng các điểm đến là hạn chế và yêu cầu thêm công việc từ nhà phát triển để kiểm tra tất cả các trường hợp.
-- Để sử được được Provisioning profiles thì ta dùng [Match](https://docs.fastlane.tools/actions/match/) , lưu trữ và cập nhật hồ sơ cung cấp iOS và chứng chỉ ký kết. Tất cả các tệp được tạo bởi khớp sau đó được lưu trữ trong kho lưu trữ Github được mã hóa, với khóa giải mã được chia sẻ bởi nhóm develop.
+-   Phần yêu thích nhất của tôi trong phát triển iOS là Provisioning profiles. Tôi thích phương pháp Android vì sự đơn giản của nó, đặc biệt là khi quản lý các loại build. Cách tiếp cận của Apple để xây dựng các điểm đến là hạn chế và yêu cầu thêm công việc từ nhà phát triển để kiểm tra tất cả các trường hợp.
+-   Để sử được được Provisioning profiles thì ta dùng [Match](https://docs.fastlane.tools/actions/match/) , lưu trữ và cập nhật hồ sơ cung cấp iOS và chứng chỉ ký kết. Tất cả các tệp được tạo bởi khớp sau đó được lưu trữ trong kho lưu trữ Github được mã hóa, với khóa giải mã được chia sẻ bởi nhóm develop.
 
 ## Môi trường build (environment)
 
-- Phát hành một dự án React Native (RN) để sản xuất đòi hỏi rất nhiều công cụ. Ở mức tối thiểu, một bản phát hành thành công sẽ sử dụng Node.js, NPM / Yarn, Xcode và Android Studio. Các dự án kết hợp SDK của bên thứ 3 thêm độ phức tạp và công cụ bổ sung vào các bản phát hành. Quản lý sự phức tạp này là rất quan trọng để tạo ra một quy trình build.
+-   Phát hành một dự án React Native (RN) để sản xuất đòi hỏi rất nhiều công cụ. Ở mức tối thiểu, một bản phát hành thành công sẽ sử dụng Node.js, NPM / Yarn, Xcode và Android Studio. Các dự án kết hợp SDK của bên thứ 3 thêm độ phức tạp và công cụ bổ sung vào các bản phát hành. Quản lý sự phức tạp này là rất quan trọng để tạo ra một quy trình build.
 
-- Điều rất quan trọng đối với tất cả các developer làm việc trong dự án là có cùng một môi trường. Tự động tăng version trong môi trường cho RN không đơn giản so với các nền tảng khác - có rất nhiều công cụ và rất nhiều nơi để phạm sai lầm nhỏ. Sự khác biệt nhỏ giữa máy phát triển và máy xây dựng có thể dẫn đến thời gian lãng phí thời gian của developer, và có khả năng ngồi bù đầu để tìm ra lỗi khi build.
+-   Điều rất quan trọng đối với tất cả các developer làm việc trong dự án là có cùng một môi trường. Tự động tăng version trong môi trường cho RN không đơn giản so với các nền tảng khác - có rất nhiều công cụ và rất nhiều nơi để phạm sai lầm nhỏ. Sự khác biệt nhỏ giữa máy phát triển và máy xây dựng có thể dẫn đến thời gian lãng phí thời gian của developer, và có khả năng ngồi bù đầu để tìm ra lỗi khi build.
 
-- Việc thiết lập và cài đặt Jenkins buộc phải chuẩn hóa môi trường xây dựng cho chính bạn và nhóm develope. Phát triển trong cùng một môi trường chạy các bản build của bạn.
+-   Việc thiết lập và cài đặt Jenkins buộc phải chuẩn hóa môi trường xây dựng cho chính bạn và nhóm develope. Phát triển trong cùng một môi trường chạy các bản build của bạn.
 
 # Hướng dẫn
 
@@ -72,19 +64,19 @@ Hướng dẫn này mình sẽ sử dụng Github để quản lý soucre code, 
 
 Để bộ build chạy mượt và đồng bộ môi trường với developer thì chúng ta cần update hệ thống bằng cách update hệ điều hành:
 
-1. Chọn biểu tượng trái táo {{< figure src="./images/ab0708e4-0038-42ac-9c7b-aa4b7d2a3755.png" >}}
-2. Chọn ‘Software Update’
-3. Cập nhật macOS
+1.  Chọn biểu tượng trái táo {{< figure src="./images/ab0708e4-0038-42ac-9c7b-aa4b7d2a3755.png" >}}
+2.  Chọn ‘Software Update'
+3.  Cập nhật macOS
 
 ### 2. Cài đặt Xcode
 
-1. Mở ứng dụng Appstore
-2. Tìm kiếm xcode
-   {{< figure src="./images/f8faa7ab-26ce-450d-830e-09617aec19e3.png" >}}
-3. Bấm vào tải về và cài đặt
-   {{< figure src="./images/7875a55d-538a-4f2b-8494-1e53c579811c.png" >}}
-4. Mở xcode hoàn thành các thiết lập ban đầu
-   {{< figure src="./images/c8e3de99-87df-438e-af14-da5c793a88d5.png" >}}
+1.  Mở ứng dụng Appstore
+2.  Tìm kiếm xcode
+    {{< figure src="./images/f8faa7ab-26ce-450d-830e-09617aec19e3.png" >}}
+3.  Bấm vào tải về và cài đặt
+    {{< figure src="./images/7875a55d-538a-4f2b-8494-1e53c579811c.png" >}}
+4.  Mở xcode hoàn thành các thiết lập ban đầu
+    {{< figure src="./images/c8e3de99-87df-438e-af14-da5c793a88d5.png" >}}
 
 Nhấp vào **_Agree_**
 
@@ -106,9 +98,7 @@ Hoàn thành thiết lập
 
 Mở termianl và gõ lệnh
 
-```
-xcode-select --install
-```
+    xcode-select --install
 
 {{< figure src="./images/7736cf30-961f-47e8-8791-1f3ce0a559a6.png" >}}
 
@@ -126,24 +116,20 @@ Cài đặt thành công
 
 Ta tiếp tục dùng lệnh
 
-```
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -license
-```
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+    sudo xcodebuild -license
 
 {{< figure src="./images/1a985e57-59c3-4d88-a780-8a9c02559ff5.png" >}}
 
 Bật chế độ nhà phát triển bằng lệnh
 
-```
-DevToolsSecurity -enable
-```
+    DevToolsSecurity -enable
 
 {{< figure src="./images/d8f424bc-3305-448b-9b53-01c51ef61075.png" >}}
 
 ### 4. Cài đặt Android Studio
 
-Vào trang chủ Android Studio để tải https://developer.android.com/studio
+Vào trang chủ Android Studio để tải <https://developer.android.com/studio>
 
 {{< figure src="./images/a86c6597-11a7-4423-991d-d3476fdc08fe.png" >}}
 
@@ -205,13 +191,13 @@ Nhấp vào **More Actions**, sau đó chọn **SDK Manager**, Tick theo trên h
 
 ### 6. Cài đặt phần miềm CLI
 
-1. Homebrew
+1.  Homebrew
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-2. JDK 11
+2.  JDK 11
 
 ```bash
 brew tap homebrew/cask-versions
@@ -268,7 +254,7 @@ brew services start jenkins-lt
 
 {{< figure src="./images/74e1ab55-c220-4f85-bdb3-c11a85dddf1a.png" >}}
 
-Sau đó ta vào đường dẫn http://127.0.0.1:8080/login?from=%2F để login vào hệ thống
+Sau đó ta vào đường dẫn <http://127.0.0.1:8080/login?from=%2F> để login vào hệ thống
 
 {{< figure src="./images/0c1d06e6-f8b4-4631-b854-a1f97d3f2485.png" >}}
 

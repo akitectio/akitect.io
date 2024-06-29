@@ -18,7 +18,6 @@ tags:
   - mysql
   - oracle
 title: Lesson 2 - PostgreSQL vs. Other Databases
-url: /postgresql-dba-02-postgresql-vs-other-databases
 weight: 2
 ---
 

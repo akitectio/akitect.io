@@ -17,7 +17,6 @@ tags:
   - ubuntu
   - database-administrator
 title: Lesson 1 - Introduction to PostgreSQL Database
-url: /postgresql-dba-01-introduction-to-postgresql-database
 weight: 1
 ---
 

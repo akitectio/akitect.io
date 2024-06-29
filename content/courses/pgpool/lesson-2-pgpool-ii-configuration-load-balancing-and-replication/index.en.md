@@ -1,19 +1,12 @@
 ---
-categories:
-  - database
-date: 2024-02-24T08:00:00+08:00
+categories: [database]
+date: 2024-02-24T00:00:00.000Z
 draft: false
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
-images:
-  - /labs/postgresql/postgresql-pgpool.jpeg
+images: [/labs/postgresql/postgresql-pgpool.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - postgresql
-  - ubuntu
-  - pgpool
+tags: [database, postgresql, ubuntu, pgpool]
 title: Lesson 2 - Load Balancing and Replication
-url: /lesson-2-pgpool-ii-configuration-load-balancing-and-replication
 description: PGpool-II is a unique middleware solution specifically designed to optimize and enhance the capabilities of the PostgreSQL database management system. It offers various benefits such as connection optimization, load distribution, and data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will walk through the steps to install and configure PGpool-II on an Ubuntu Linux operating system, helping you maximize the performance and high availability of your database.
 weight: 2
 ---
@@ -26,12 +19,12 @@ Configuring PGpool-II is a crucial step in deploying a PostgreSQL database clust
 
 Before we begin, we need to prepare 4 servers:
 
-| IP            | Hostname     | vCPU   | RAM | DISK | OS           |
-| ------------- | -------------| ------ | --- | ---- | ------------ |
-| 192.168.50.10 | pgpool2      | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| IP            | Hostname    | vCPU   | RAM | DISK | OS           |
+| ------------- | ----------- | ------ | --- | ---- | ------------ |
+| 192.168.50.10 | pgpool2     | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 #### Step 3: Configure Load Balancing and Replication
 
@@ -102,25 +95,26 @@ max_pool = 1000
 ```
 
 In this configuration:
-- `listen_addresses` is the IP address PGpool-II will listen on, `port` is the port PGpool-II will listen on.
-- `backend_hostname0`, `backend_port0`, `backend_weight0`, `backend_data_directory0`, `backend_flag0`, `backend_application_name0` are the connection details to the `postgresql-master` server.
-- `backend_hostname1`, `backend_port1`, `backend_weight1`, `backend_data_directory1`, `backend_flag1`, `backend_application_name1` are the connection details to the `postgresql-slave-01` server.
-- `backend_hostname2`, `backend_port2`, `backend_weight2`, `backend_data_directory2`, `backend_flag2`, `backend_application_name2` are the connection details to the `postgresql-slave-02` server.
-- `log_statement` and `log_per_node_statement` are the log query configurations.
-- `sr_check_user` and `health_check_user` are the usernames for database server health checks. `replicator` is the user we created in the step [Setting Up PostgreSQL 16 Replication](/setup-postgresql-replication-step-by-step-guide).
-- `backend_flag` is the flag that allows `FAILOVER` when the `postgresql-master` server fails, `ALLOW_TO_FAILOVER` is the flag that allows `FAILOVER` when the `postgresql-slave-01` and `postgresql-slave-02` servers fail. Other flags:
-  - `DISALLOW_TO_FAILOVER`: does not allow `FAILOVER`
-  - `ALWAYS_MASTER`: always the `postgresql-master` server
-- `process_management_mode` is the process management mode, `static` is the static mode, `dynamic` is the dynamic mode.
-  - `static`: The number of processes is statically managed and does not change.
-  - `dynamic`: The number of processes is dynamically managed depending on the system load.
-- `process_management_strategy` is the process management strategy, `lazy` is the lazy mode, `smart` is the smart mode.
-  - `lazy`: Only create processes when needed.
-  - `smart`: Create processes in advance to avoid delays when needed.
-- `num_init_children` is the initial number of processes, if below it will create more processes.
-- `min_spare_children` is the minimum number of processes, if below it will create more processes.
-- `max_spare_children` is the maximum number of processes, if exceeded they will be killed.
-- `max_pool` is the maximum number of connections, if exceeded connections will be rejected.
+
+-   `listen_addresses` is the IP address PGpool-II will listen on, `port` is the port PGpool-II will listen on.
+-   `backend_hostname0`, `backend_port0`, `backend_weight0`, `backend_data_directory0`, `backend_flag0`, `backend_application_name0` are the connection details to the `postgresql-master` server.
+-   `backend_hostname1`, `backend_port1`, `backend_weight1`, `backend_data_directory1`, `backend_flag1`, `backend_application_name1` are the connection details to the `postgresql-slave-01` server.
+-   `backend_hostname2`, `backend_port2`, `backend_weight2`, `backend_data_directory2`, `backend_flag2`, `backend_application_name2` are the connection details to the `postgresql-slave-02` server.
+-   `log_statement` and `log_per_node_statement` are the log query configurations.
+-   `sr_check_user` and `health_check_user` are the usernames for database server health checks. `replicator` is the user we created in the step [Setting Up PostgreSQL 16 Replication](/setup-postgresql-replication-step-by-step-guide).
+-   `backend_flag` is the flag that allows `FAILOVER` when the `postgresql-master` server fails, `ALLOW_TO_FAILOVER` is the flag that allows `FAILOVER` when the `postgresql-slave-01` and `postgresql-slave-02` servers fail. Other flags:
+    -   `DISALLOW_TO_FAILOVER`: does not allow `FAILOVER`
+    -   `ALWAYS_MASTER`: always the `postgresql-master` server
+-   `process_management_mode` is the process management mode, `static` is the static mode, `dynamic` is the dynamic mode.
+    -   `static`: The number of processes is statically managed and does not change.
+    -   `dynamic`: The number of processes is dynamically managed depending on the system load.
+-   `process_management_strategy` is the process management strategy, `lazy` is the lazy mode, `smart` is the smart mode.
+    -   `lazy`: Only create processes when needed.
+    -   `smart`: Create processes in advance to avoid delays when needed.
+-   `num_init_children` is the initial number of processes, if below it will create more processes.
+-   `min_spare_children` is the minimum number of processes, if below it will create more processes.
+-   `max_spare_children` is the maximum number of processes, if exceeded they will be killed.
+-   `max_pool` is the maximum number of connections, if exceeded connections will be rejected.
 
 #### Step 4: Run PGpool-II Configuration Check
 
@@ -136,9 +130,9 @@ After configuration, you can check the status of PGpool-II by accessing it throu
 
 {{< figure src="./images/pg4admin-pgpool.jpg" >}}
 
-- `ip_address` is the IP address (192.168.56.5) of the `pgpool2` server.
-- `username` is the default username `postgresql`.
-- `password` is the password for the `postgresql` account.
+-   `ip_address` is the IP address (192.168.56.5) of the `pgpool2` server.
+-   `username` is the default username `postgresql`.
+-   `password` is the password for the `postgresql` account.
 
 #### Step 5: Create Test Data
 

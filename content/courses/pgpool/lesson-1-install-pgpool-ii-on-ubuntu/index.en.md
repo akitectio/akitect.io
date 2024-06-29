@@ -1,19 +1,12 @@
 ---
-categories:
-  - database
-date: 2024-02-24T08:00:00+08:00
+categories: [database]
+date: 2024-02-24T00:00:00.000Z
 draft: false
 featuredImage: /labs/postgresql/postgresql-pgpool.jpeg
-images:
-  - /labs/postgresql/postgresql-pgpool.jpeg
+images: [/labs/postgresql/postgresql-pgpool.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - postgresql
-  - ubuntu
-  - pgpool
-title: Lesson 1 -  Install Pgpool-II on Ubuntu 22.04
-url: /lesson-1-install-pgpool-ii-on-ubuntu-22-04
+tags: [database, postgresql, ubuntu, pgpool]
+title: Lesson 1 -  Install Pgpool-II on Ubuntu
 description: PGpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It brings many benefits such as optimizing connections, load balancing, and performing data replication, making PGpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure PGpool-II on the Ubuntu Linux operating system, helping you to maximize the performance and high availability of your database.
 weight: 1
 ---
@@ -28,14 +21,14 @@ Pgpool-II is a unique middleware solution, specially designed to optimize and sc
 
 Before we start, we need to prepare 4 servers
 
-| IP            | Hostname     | vCPU   | RAM | DISK | OS           |
-| ------------  | ------------ | ------ | --- | ---- | ------------ |
-| 192.168.50.10 | pgpool2      | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| IP            | Hostname    | vCPU   | RAM | DISK | OS           |
+| ------------- | ----------- | ------ | --- | ---- | ------------ |
+| 192.168.50.10 | pgpool2     | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
-### Install PostgreSQL Replication 
+### Install PostgreSQL Replication
 
 [Install PostgreSQL 16 Replication](/thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc) on 3 servers `postgresql-master` and `postgresql-slave-01`, `postgresql-slave-02`.
 
@@ -45,7 +38,7 @@ Before we start, we need to prepare 4 servers
 
 ##### Install make and gcc
 
-*** GNU make version 3.80 or newer is required; other make programs or older GNU make versions will not work. (GNU make is sometimes installed under the name gmake.) To check GNU, enter:
+\*\*\* GNU make version 3.80 or newer is required; other make programs or older GNU make versions will not work. (GNU make is sometimes installed under the name gmake.) To check GNU, enter:
 
 ```bash
 sudo apt update
@@ -76,7 +69,6 @@ The current version of `gcc` is `11.4.0`
 wget https://www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.5.0.tar.gz -O pgpool-II-4.5.0.tar.gz
 ```
 
-
 ##### Extract and install
 
 ```bash
@@ -98,19 +90,17 @@ Then, we will configure and install PGpool-II by performing the following steps:
 make && sudo make install
 ```
 
-
 You can customize the build and installation process by providing one or more of the following command line options to configure:
 
-| Option | Description | Default |
-|---|---|---|
-| `--prefix` | PGpool-II installation path | `/usr/local` |
-| `--with-pgsql` | Directory where PostgreSQL client libraries are installed | Provided by `pg_config` |
-| `--with-openssl` | Support for OpenSSL (AES256 password encryption) | Off |
-| `--enable-sequence-lock` | Lock rows in sequence table (compatible with PGpool-II 3.0) | Off |
-| `--enable-table-lock` | Lock target insert table (compatible with PGpool-II 2.2 & 2.3) | Off |
-| `--with-memcached=path` | Use memcached for memory query cache | Not used |
-| `--with-pam` | Support for PAM authentication | Off |
-
+| Option                   | Description                                                    | Default                 |
+| ------------------------ | -------------------------------------------------------------- | ----------------------- |
+| `--prefix`               | PGpool-II installation path                                    | `/usr/local`            |
+| `--with-pgsql`           | Directory where PostgreSQL client libraries are installed      | Provided by `pg_config` |
+| `--with-openssl`         | Support for OpenSSL (AES256 password encryption)               | Off                     |
+| `--enable-sequence-lock` | Lock rows in sequence table (compatible with PGpool-II 3.0)    | Off                     |
+| `--enable-table-lock`    | Lock target insert table (compatible with PGpool-II 2.2 & 2.3) | Off                     |
+| `--with-memcached=path`  | Use memcached for memory query cache                           | Not used                |
+| `--with-pam`             | Support for PAM authentication                                 | Off                     |
 
 After configuring, we proceed to create ln -la to create a link to the `/usr/sbin` directory 
 
@@ -136,11 +126,11 @@ sudo mkdir /etc/pgpool2
 
 Copy from sample config :
 
-````bash
+```bash
 sudo cp /home/pgpool2/etc/pgpool.conf.sample /etc/pgpool2/pgpool.conf 
 sudo cp /home/pgpool2/etc/pool_hba.conf.sample /etc/pgpool2/pool_hba.conf 
 sudo cp /home/pgpool2/etc/pcp.conf.sample /etc/pgpool2/pcp.conf
-````
+```
 
 #### Step 3: Configure Connection Management
 
@@ -171,6 +161,7 @@ Finally, restart the PGpool-II service to apply the changes:
 ```bash
 sudo /usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf
 ```
+
 {{< figure src="./images/pgpool-start.jpg" >}}
 
 #### Step 5: Configure pcp.conf
@@ -225,13 +216,12 @@ WantedBy=multi-user.target
 
 > `/usr/sbin/pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf -m smart` trong đó : 
 
-- `-n` : Không chạy dưới dạng daemon
-- `-f` : Đường dẫn đến tệp cấu hình `pgpool.conf`
-- `-F` : Đường dẫn đến tệp cấu hình quản lý `pcp.conf`
-- `-m` : Chế độ hoạt động của Pgpool-II. Có 3 chế độ hoạt động:
-  - `fast` : Chế độ hoạt động nhanh
-  - `smart` : Chế độ hoạt động thông minh, mặc định
-
+-   `-n` : Không chạy dưới dạng daemon
+-   `-f` : Đường dẫn đến tệp cấu hình `pgpool.conf`
+-   `-F` : Đường dẫn đến tệp cấu hình quản lý `pcp.conf`
+-   `-m` : Chế độ hoạt động của Pgpool-II. Có 3 chế độ hoạt động:
+    -   `fast` : Chế độ hoạt động nhanh
+    -   `smart` : Chế độ hoạt động thông minh, mặc định
 
 Automatically enable at system startup:
 

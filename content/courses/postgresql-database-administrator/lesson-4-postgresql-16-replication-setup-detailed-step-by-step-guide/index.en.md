@@ -12,7 +12,6 @@ tags:
   - replication 
   - ubuntu
 title: Lesson 4 - PostgreSQL 16 Replication Setup
-url: /postgresql-16-replication-setup-detailed-step-by-step-guide
 description: PostgreSQL has a layer replication feature, allowing data to be copied from one DB to another, creating multiple copies of data. This feature helps distribute data, ensure the latest data, and support replacing the primary server.
 weight: 4
 ---
