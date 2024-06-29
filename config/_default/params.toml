@@ -19,30 +19,26 @@ anonymizeIP = true
 
 [[social]]
 href = "https://www.facebook.com/akitect.io"
-icon = "fa fa-facebook"
-
-[[social]]
-href = "https://www.instagram.com/akitectio"
-icon = "fa fa-instagram"
+icon = "fab fa-facebook"
 
 [[social]]
 href = "https://www.linkedin.com/in/akitect-io"
-icon = "fa fa-linkedin"
+icon = "fab fa-linkedin"
 
 [[social]]
 href = "https://youtube.com/@akitect"
-icon = "fa fa-youtube"
+icon = "fab fa-youtube"
 
 [[social]]
 href = "https://github.com/akitectio"
-icon = "fa fa-github"
+icon = "fab fa-github"
 
 [[social]]
 href = "https://t.me/+i45gRt8FGyRkOGY1"
-icon = "fa fa-telegram"
+icon = "fab fa-telegram"
 
 [home]
-avatar = "/avatar.webp"
+avatar = "/avatar.jpg"
 title = "Hello Everyone!"
 description = " I'm Duy, a lover of technology, programming,solution architect and everything related to IT."
 

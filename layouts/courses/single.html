@@ -24,7 +24,7 @@
       <article>
         <h1 class="course-detail-title mb-4">{{ .Title }}</h1>
         <p class="post-date">
-        <p><i class="fa fa-clock-o"></i> {{ .Date.Format "02/01/2006" }} - <i class="fa fa-book"></i> {{ math.Floor (add (div (float .WordCount) 200) 0.5) }} phút</p>      </p>
+        <p><i class="far fa-clock"></i> {{ .Date.Format "02/01/2006" }} - <i class="fas fa-book"></i> {{ math.Floor (add (div (float .WordCount) 200) 0.5) }} phút</p>      </p>
           <div>
             {{ range .Params.tags }} {{ $tagPage := $.Site.GetPage (printf
               "/tags/%s" .) }}
