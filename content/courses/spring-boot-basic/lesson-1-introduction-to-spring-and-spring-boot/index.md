@@ -5,8 +5,8 @@ images: [/courses/spring-boot-basic/lesson-1-introduction-to-spring-and-spring-b
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [spring-boot-basic]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 1 - Giới thiệu về Spring Framework
-description: Spring Framework là một trong những framework phổ biến nhất trong lập trình Java. Bài học này sẽ giới thiệu về Spring Framework và các thành phần chính của nó, cũng như cách sử dụng Spring Framework trong các ứng dụng Java.
+title: Lesson 1 - Giới thiệu về Spring Framework và Spring Boot
+description: Bài học này sẽ giới thiệu về Spring Framework và Spring Boot, hai công nghệ quan trọng trong lập trình Java. Bạn sẽ tìm hiểu về lịch sử phát triển của Spring Framework và Spring Boot, cũng như các tính năng chính của chúng.
 date: 2024-06-28T19:23:30.000Z
 weight: 1
 ---
