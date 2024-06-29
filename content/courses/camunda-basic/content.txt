@@ -1,0 +1,83 @@
+Dưới đây là danh sách khóa học chi tiết về Camunda BPM từ cơ bản đến nâng cao. Khóa học này sẽ giúp học viên hiểu và áp dụng Camunda BPM trong các dự án thực tế.
+
+### Khóa Học: Camunda BPM từ Cơ Bản đến Nâng Cao
+
+#### Bài 1: Giới Thiệu về Camunda BPM
+- **Mục tiêu**: Hiểu tổng quan về Camunda BPM và tầm quan trọng của nó trong quản lý quy trình nghiệp vụ.
+- **Nội dung chi tiết**:
+  - **Giới thiệu về Camunda BPM**: Lịch sử phát triển và các ứng dụng chính.
+  - **Các thành phần chính của Camunda BPM**: Process Engine, Cockpit, Tasklist, Modeler.
+  - **Lợi ích của việc sử dụng Camunda BPM**: Tự động hóa quy trình nghiệp vụ, tăng hiệu quả quản lý.
+
+#### Bài 2: Cài Đặt và Thiết Lập Môi Trường
+- **Mục tiêu**: Cài đặt và thiết lập môi trường phát triển với Camunda BPM.
+- **Nội dung chi tiết**:
+  - **Yêu cầu hệ thống**: Java, Database, Application Server.
+  - **Cài đặt Camunda BPM**: Hướng dẫn cài đặt trên các nền tảng khác nhau (Tomcat, Spring Boot).
+  - **Thiết lập Camunda Modeler**: Cài đặt và cấu hình Camunda Modeler.
+
+#### Bài 3: Giới Thiệu BPMN 2.0
+- **Mục tiêu**: Hiểu và sử dụng BPMN 2.0 để mô hình hóa quy trình nghiệp vụ.
+- **Nội dung chi tiết**:
+  - **Khái niệm BPMN 2.0**: Các yếu tố cơ bản trong BPMN 2.0 như Task, Event, Gateway.
+  - **Tạo mô hình quy trình cơ bản**: Sử dụng Camunda Modeler để tạo một quy trình đơn giản.
+  - **Xác thực và triển khai quy trình**: Cách xác thực và triển khai mô hình quy trình lên Camunda Engine.
+
+#### Bài 4: Quản Lý Quy Trình với Camunda Cockpit
+- **Mục tiêu**: Sử dụng Camunda Cockpit để giám sát và quản lý các quy trình đang chạy.
+- **Nội dung chi tiết**:
+  - **Giới thiệu về Camunda Cockpit**: Chức năng và giao diện.
+  - **Giám sát quy trình**: Theo dõi trạng thái và hiệu suất của quy trình.
+  - **Quản lý sự cố**: Xử lý các vấn đề và sự cố trong quy trình nghiệp vụ.
+
+#### Bài 5: Tạo và Quản Lý User Task
+- **Mục tiêu**: Tạo và quản lý User Task trong quy trình nghiệp vụ.
+- **Nội dung chi tiết**:
+  - **User Task là gì?**: Khái niệm và ứng dụng của User Task.
+  - **Tạo User Task**: Sử dụng Camunda Modeler để tạo và cấu hình User Task.
+  - **Quản lý User Task**: Sử dụng Camunda Tasklist để quản lý và thực hiện User Task.
+
+#### Bài 6: Tích Hợp Camunda với Spring Boot
+- **Mục tiêu**: Tích hợp Camunda BPM với ứng dụng Spring Boot.
+- **Nội dung chi tiết**:
+  - **Thiết lập dự án Spring Boot với Camunda**: Cài đặt và cấu hình Camunda trong dự án Spring Boot.
+  - **Triển khai quy trình nghiệp vụ trong Spring Boot**: Tạo và triển khai quy trình nghiệp vụ sử dụng Spring Boot.
+  - **Quản lý và giám sát quy trình**: Sử dụng Camunda Cockpit và Tasklist trong môi trường Spring Boot.
+
+#### Bài 7: Tích Hợp Camunda với Hệ Thống Khác
+- **Mục tiêu**: Tích hợp Camunda BPM với các hệ thống khác như REST API, SOAP.
+- **Nội dung chi tiết**:
+  - **Tích hợp với REST API**: Tạo và sử dụng REST API để tương tác với Camunda Engine.
+  - **Tích hợp với SOAP**: Sử dụng SOAP để tích hợp Camunda với các hệ thống khác.
+  - **Thực hành tích hợp**: Tạo một ví dụ tích hợp thực tế với REST API và SOAP.
+
+#### Bài 8: Sử Dụng DMN và CMMN trong Camunda
+- **Mục tiêu**: Hiểu và sử dụng DMN (Decision Model and Notation) và CMMN (Case Management Model and Notation) trong Camunda.
+- **Nội dung chi tiết**:
+  - **Giới thiệu DMN**: Khái niệm và ứng dụng của DMN trong quy trình nghiệp vụ.
+  - **Tạo và quản lý Decision Table**: Sử dụng Camunda Modeler để tạo Decision Table.
+  - **Giới thiệu CMMN**: Khái niệm và ứng dụng của CMMN trong quản lý trường hợp.
+  - **Tạo và quản lý Case**: Sử dụng Camunda Modeler để tạo và quản lý Case.
+
+#### Bài 9: Quản Lý Phiên Bản Quy Trình và Triển Khai
+- **Mục tiêu**: Quản lý phiên bản quy trình và triển khai quy trình trong môi trường thực tế.
+- **Nội dung chi tiết**:
+  - **Quản lý phiên bản quy trình**: Tạo và triển khai các phiên bản quy trình khác nhau.
+  - **Cập nhật và rollback phiên bản**: Cách cập nhật và rollback quy trình.
+  - **Triển khai quy trình**: Triển khai quy trình trong môi trường thực tế và quản lý các phiên bản triển khai.
+
+#### Bài 10: Bảo Mật và Quản Trị Trong Camunda
+- **Mục tiêu**: Hiểu và áp dụng các biện pháp bảo mật và quản trị trong Camunda BPM.
+- **Nội dung chi tiết**:
+  - **Bảo mật quy trình**: Cấu hình bảo mật cho quy trình và người dùng.
+  - **Quản lý người dùng và quyền hạn**: Sử dụng Camunda Admin để quản lý người dùng và quyền hạn.
+  - **Thực hành bảo mật**: Thiết lập bảo mật cho một ứng dụng thực tế.
+
+### Tổng Kết
+- **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.
+- **Nội dung chi tiết**:
+  - **Tóm tắt các khái niệm và kỹ năng đã học**: Ôn tập nhanh qua tất cả các bài học.
+  - **Dự án cuối khóa**: Thực hiện một dự án thực tế để áp dụng tất cả các kiến thức đã học.
+  - **Đánh giá và trả lời câu hỏi của học viên**: Thảo luận và giải đáp các thắc mắc của học viên.
+
+Khóa học này sẽ giúp học viên nắm vững các khái niệm cơ bản và kỹ năng thực hành cần thiết để làm việc với Camunda BPM, từ cài đặt và cấu hình đến triển khai và quản lý quy trình nghiệp vụ trong môi trường thực tế. Mỗi bài học sẽ kèm theo các bài tập thực hành để học viên có thể áp dụng kiến thức vào thực tế.

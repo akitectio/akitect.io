@@ -1,0 +1,84 @@
+Dưới đây là danh sách khóa học chi tiết về Keycloak từ cơ bản đến nâng cao, giúp học viên hiểu và áp dụng Keycloak trong các dự án thực tế.
+
+### Khóa Học: Keycloak từ Cơ Bản đến Nâng Cao
+
+#### Bài 1: Giới Thiệu về Keycloak
+- **Mục tiêu**: Hiểu tổng quan về Keycloak và tầm quan trọng của nó trong quản lý danh tính và truy cập.
+- **Nội dung chi tiết**:
+  - **Giới thiệu về Keycloak**: Lịch sử phát triển và các ứng dụng chính.
+  - **Các tính năng chính của Keycloak**: Single Sign-On (SSO), quản lý người dùng, quản lý quyền, tích hợp LDAP, hỗ trợ OpenID Connect và OAuth2.
+  - **Lợi ích của việc sử dụng Keycloak**: Tăng cường bảo mật, quản lý dễ dàng, tích hợp linh hoạt.
+
+#### Bài 2: Cài Đặt và Thiết Lập Môi Trường
+- **Mục tiêu**: Cài đặt và thiết lập môi trường phát triển với Keycloak.
+- **Nội dung chi tiết**:
+  - **Yêu cầu hệ thống**: Java, Database, Application Server.
+  - **Cài đặt Keycloak**: Hướng dẫn cài đặt trên các nền tảng khác nhau (Standalone, Docker).
+  - **Thiết lập Keycloak**: Cấu hình ban đầu và khởi động Keycloak.
+
+#### Bài 3: Quản Lý Realm, Client và User
+- **Mục tiêu**: Hiểu và quản lý các khái niệm cơ bản trong Keycloak.
+- **Nội dung chi tiết**:
+  - **Realm**: Giới thiệu về Realm và cách tạo, quản lý Realm.
+  - **Client**: Định nghĩa Client và cách cấu hình các ứng dụng trong Keycloak.
+  - **User**: Quản lý người dùng, tạo mới, cập nhật và xóa người dùng.
+
+#### Bài 4: Single Sign-On (SSO) với Keycloak
+- **Mục tiêu**: Thiết lập và quản lý Single Sign-On (SSO) với Keycloak.
+- **Nội dung chi tiết**:
+  - **Khái niệm SSO**: Giới thiệu về SSO và lợi ích của nó.
+  - **Thiết lập SSO**: Cấu hình Keycloak để hỗ trợ SSO.
+  - **Thực hành SSO**: Thiết lập SSO cho một ứng dụng web thực tế.
+
+#### Bài 5: Tích Hợp Keycloak với Ứng Dụng Web
+- **Mục tiêu**: Tích hợp Keycloak với các ứng dụng web.
+- **Nội dung chi tiết**:
+  - **Tích hợp với Spring Boot**: Cấu hình Spring Boot để sử dụng Keycloak cho xác thực và ủy quyền.
+  - **Tích hợp với Node.js**: Cấu hình Keycloak cho một ứng dụng Node.js.
+  - **Thực hành tích hợp**: Tạo một ví dụ tích hợp thực tế với Spring Boot và Node.js.
+
+#### Bài 6: Quản Lý Quyền và Vai Trò
+- **Mục tiêu**: Hiểu và quản lý quyền và vai trò trong Keycloak.
+- **Nội dung chi tiết**:
+  - **Quản lý quyền**: Tạo và quản lý quyền trong Keycloak.
+  - **Vai trò (Roles)**: Tạo và gán vai trò cho người dùng và nhóm.
+  - **Thực hành quản lý quyền**: Thiết lập và quản lý quyền và vai trò cho một ứng dụng thực tế.
+
+#### Bài 7: Tích Hợp Keycloak với LDAP và Active Directory
+- **Mục tiêu**: Tích hợp Keycloak với LDAP và Active Directory.
+- **Nội dung chi tiết**:
+  - **Khái niệm về LDAP và Active Directory**: Giới thiệu về LDAP và Active Directory.
+  - **Tích hợp với LDAP**: Cấu hình Keycloak để tích hợp với LDAP.
+  - **Tích hợp với Active Directory**: Cấu hình Keycloak để tích hợp với Active Directory.
+  - **Thực hành tích hợp**: Thiết lập tích hợp với một máy chủ LDAP thực tế.
+
+#### Bài 8: Sử Dụng OpenID Connect và OAuth2 trong Keycloak
+- **Mục tiêu**: Hiểu và sử dụng OpenID Connect và OAuth2 trong Keycloak.
+- **Nội dung chi tiết**:
+  - **Giới thiệu về OpenID Connect và OAuth2**: Khái niệm và ứng dụng.
+  - **Cấu hình OpenID Connect**: Cấu hình Keycloak để sử dụng OpenID Connect.
+  - **Cấu hình OAuth2**: Cấu hình Keycloak để sử dụng OAuth2.
+  - **Thực hành OpenID Connect và OAuth2**: Tạo và cấu hình ứng dụng sử dụng OpenID Connect và OAuth2.
+
+#### Bài 9: Quản Lý Sự Kiện và Ghi Nhận Log
+- **Mục tiêu**: Thiết lập giám sát và quản lý log trong Keycloak.
+- **Nội dung chi tiết**:
+  - **Quản lý sự kiện**: Giám sát các sự kiện trong Keycloak.
+  - **Ghi nhận log**: Cấu hình và quản lý log trong Keycloak.
+  - **Thực hành quản lý log**: Thiết lập hệ thống giám sát và ghi nhận log cho một ứng dụng thực tế.
+
+#### Bài 10: Bảo Mật và Quản Trị Trong Keycloak
+- **Mục tiêu**: Hiểu và áp dụng các biện pháp bảo mật và quản trị trong Keycloak.
+- **Nội dung chi tiết**:
+  - **Bảo mật Keycloak**: Cấu hình bảo mật cho Keycloak và các ứng dụng.
+  - **Quản trị người dùng và quyền hạn**: Sử dụng Keycloak Admin để quản lý người dùng và quyền hạn.
+  - **Thực hành bảo mật**: Thiết lập bảo mật cho một ứng dụng thực tế.
+
+### Tổng Kết
+- **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.
+- **Nội dung chi tiết**:
+  - **Tóm tắt các khái niệm và kỹ năng đã học**: Ôn tập nhanh qua tất cả các bài học.
+  - **Dự án cuối khóa**: Thực hiện một dự án thực tế để áp dụng tất cả các kiến thức đã học.
+  - **Đánh giá và trả lời câu hỏi của học viên**: Thảo luận và giải đáp các thắc mắc của học viên.
+
+Khóa học này sẽ giúp học viên nắm vững các khái niệm cơ bản và kỹ năng thực hành cần thiết để làm việc với Keycloak, từ cài đặt và cấu hình đến triển khai và quản lý bảo mật và truy cập trong môi trường thực tế. Mỗi bài học sẽ kèm theo các bài tập thực hành để học viên có thể áp dụng kiến thức vào thực tế.

@@ -1,0 +1,96 @@
+Dưới đây là danh sách khóa học cơ bản về Kubernetes, bao gồm các bài học từ cơ bản đến nâng cao để giúp học viên hiểu và làm việc với Kubernetes một cách hiệu quả.
+
+### Khóa Học: Kubernetes Basics
+
+#### Bài 1: Giới Thiệu về Kubernetes
+- **Mục tiêu**: Hiểu được khái niệm cơ bản về Kubernetes và tầm quan trọng của nó trong quản lý container.
+- **Nội dung**:
+  - Giới thiệu về Kubernetes: Lịch sử và phát triển.
+  - Các khái niệm cơ bản: Pod, Node, Cluster.
+  - Lợi ích của Kubernetes trong việc triển khai và quản lý ứng dụng.
+
+#### Bài 2: Kiến Trúc Kubernetes
+- **Mục tiêu**: Hiểu được kiến trúc tổng thể của Kubernetes.
+- **Nội dung**:
+  - Thành phần chính của Kubernetes: Master Node, Worker Node.
+  - Các dịch vụ quan trọng: API Server, Scheduler, Controller Manager, Kubelet, Kube-proxy.
+  - Networking trong Kubernetes.
+
+#### Bài 3: Cài Đặt Kubernetes
+- **Mục tiêu**: Thiết lập và cấu hình một cluster Kubernetes.
+- **Nội dung**:
+  - Các phương pháp cài đặt: Minikube, kubeadm, kops.
+  - Hướng dẫn cài đặt Kubernetes trên máy tính cá nhân với Minikube.
+  - Kiểm tra và xác minh cluster Kubernetes đã cài đặt.
+
+#### Bài 4: Làm Việc với Pods
+- **Mục tiêu**: Hiểu và làm việc với các Pods trong Kubernetes.
+- **Nội dung**:
+  - Định nghĩa Pod và vai trò của nó trong Kubernetes.
+  - Tạo và quản lý Pods bằng cách sử dụng kubectl.
+  - Thực hành tạo các Pods đơn giản.
+
+#### Bài 5: Deployments và ReplicaSets
+- **Mục tiêu**: Quản lý và triển khai ứng dụng với Deployments và ReplicaSets.
+- **Nội dung**:
+  - Giới thiệu về Deployments và ReplicaSets.
+  - Tạo và cập nhật Deployments.
+  - Quản lý số lượng bản sao của ứng dụng với ReplicaSets.
+
+#### Bài 6: Services và Networking
+- **Mục tiêu**: Hiểu về networking trong Kubernetes và cách cấu hình Services.
+- **Nội dung**:
+  - Giới thiệu về Services trong Kubernetes.
+  - Các loại Services: ClusterIP, NodePort, LoadBalancer.
+  - Tạo và quản lý Services để cung cấp mạng cho Pods.
+
+#### Bài 7: ConfigMaps và Secrets
+- **Mục tiêu**: Quản lý cấu hình và dữ liệu nhạy cảm trong Kubernetes.
+- **Nội dung**:
+  - Giới thiệu về ConfigMaps và Secrets.
+  - Tạo và sử dụng ConfigMaps để quản lý cấu hình ứng dụng.
+  - Bảo mật dữ liệu nhạy cảm với Secrets.
+
+#### Bài 8: Persistent Storage
+- **Mục tiêu**: Hiểu và cấu hình lưu trữ trong Kubernetes.
+- **Nội dung**:
+  - Giới thiệu về Persistent Volumes (PVs) và Persistent Volume Claims (PVCs).
+  - Cấu hình và sử dụng PV và PVC trong ứng dụng.
+  - Quản lý lưu trữ lâu dài cho các ứng dụng trong Kubernetes.
+
+#### Bài 9: Quản Lý Tài Nguyên và Autoscaling
+- **Mục tiêu**: Quản lý tài nguyên trong Kubernetes và cấu hình autoscaling.
+- **Nội dung**:
+  - Quản lý tài nguyên với Resource Quotas và Limits.
+  - Cấu hình Horizontal Pod Autoscaler (HPA) để tự động điều chỉnh số lượng Pods.
+  - Thực hành cấu hình autoscaling cho ứng dụng.
+
+#### Bài 10: Giám Sát và Ghi Nhận Log
+- **Mục tiêu**: Thiết lập giám sát và quản lý log trong Kubernetes.
+- **Nội dung**:
+  - Giới thiệu về các công cụ giám sát và log trong Kubernetes: Prometheus, Grafana, EFK stack (Elasticsearch, Fluentd, Kibana).
+  - Cấu hình giám sát và cảnh báo với Prometheus và Grafana.
+  - Quản lý và phân tích log với EFK stack.
+
+#### Bài 11: Bảo Mật trong Kubernetes
+- **Mục tiêu**: Hiểu và áp dụng các biện pháp bảo mật trong Kubernetes.
+- **Nội dung**:
+  - Bảo mật Cluster: Network Policies, Role-Based Access Control (RBAC).
+  - Bảo mật ứng dụng: Security Context, Pod Security Policies.
+  - Thực hành cấu hình bảo mật cho cluster và ứng dụng.
+
+#### Bài 12: CI/CD với Kubernetes
+- **Mục tiêu**: Triển khai tích hợp liên tục (CI) và phân phối liên tục (CD) với Kubernetes.
+- **Nội dung**:
+  - Giới thiệu về CI/CD và vai trò của Kubernetes.
+  - Cấu hình Jenkins, GitLab CI, hoặc các công cụ CI/CD khác với Kubernetes.
+  - Thực hành triển khai CI/CD pipeline cho ứng dụng.
+
+### Tổng Kết
+- **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.
+- **Nội dung**:
+  - Tóm tắt các khái niệm và kỹ năng đã học.
+  - Thực hành triển khai một dự án thực tế sử dụng Kubernetes.
+  - Đánh giá và trả lời câu hỏi của học viên.
+
+Khóa học này sẽ giúp học viên hiểu rõ các khái niệm cơ bản của Kubernetes, từ cài đặt và cấu hình đến triển khai và quản lý ứng dụng. Mỗi bài học sẽ kèm theo các bài tập thực hành để học viên có thể áp dụng kiến thức vào thực tế.
