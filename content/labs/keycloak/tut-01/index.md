@@ -1,20 +1,13 @@
 ---
-categories:
-  - keycloak
-date: 2019-12-01T21:57:40+08:00
+categories: [keycloak]
+date: 2019-12-01T13:57:40.000Z
 description: Run keycloak với docker compose
 draft: false
 featuredImage: /series/keycloak-docker.png
-images:
-  - /trien-khai-keycloak-phien-ban-2204-voi-docker-compose/images/index.png
-  - /series/keycloak-docker.png
+images: [/trien-khai-keycloak-phien-ban-2204-voi-docker-compose/images/index.png, /series/keycloak-docker.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - keycloak
-  - docker
-  - docker-compose
+tags: [keycloak, docker, docker-compose]
 title: Triển khai Keycloak phiên bản 22.0.4 với Docker Compose
-url: /trien-khai-keycloak-phien-ban-2204-voi-docker-compose
 ---
 
 ## Bước 1: Chỉnh sữa file trên Linux và Mac `/etc/hosts`
@@ -113,16 +106,13 @@ docker compose build --no-cache keycloak
 docker compose up -d
 ```
 
-
 ## Bước 4: Kiểm tra các container đang chạy
 
 ```shell
 docker compose ps
 ```
 
-
-Khi start thành công rồi thì ta vào đường dẫn http://keycloak.localhost:8180 để test
-
+Khi start thành công rồi thì ta vào đường dẫn <http://keycloak.localhost:8180> để test
 
 Đăng nhập vào bảng điều khiển dành cho quản trị viên bằng tên người dùng quản trị viên và mật khẩu.
 
@@ -134,4 +124,4 @@ Bằng cách làm theo các bước này, bạn sẽ có thể chạy Keycloak v
 
 <b> Tài liệu tham khảo </b>
 
-- https://medium.com/@ozbillwang/run-keycloak-locally-with-docker-compose-db9a9f2fb437
+-   <https://medium.com/@ozbillwang/run-keycloak-locally-with-docker-compose-db9a9f2fb437>

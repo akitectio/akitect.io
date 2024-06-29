@@ -1,35 +1,24 @@
 ---
-categories:
-  - database
-date: 2023-03-01T08:00:00+08:00
+categories: [database]
+date: 2023-03-01T00:00:00.000Z
 description: Install and secure PostgreSQL 16 on Ubuntu 22.04
 draft: false
 featuredImage: /series/postgresql.png
-images:
-  - /install-and-secure-postgresql-15-on-ubuntu-2204/images/index.en.png
-  - /series/postgresql.png
+images: [/install-and-secure-postgresql-15-on-ubuntu-2204/images/index.en.png, /series/postgresql.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - postgresql
-  - ubuntu
+tags: [database, postgresql, ubuntu]
 title: Install and secure PostgreSQL 16 on Ubuntu 22.04
-url: /install-and-secure-postgresql-15-on-ubuntu-2204
 ---
 
 # PostgreSQL 16 Package Repository
 
-```
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
-wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
-```
+    wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
 
 To begin, let's get the latest version of the packages. We can achieve this by using the apt update command as shown below:
 
-```
-sudo apt update
-```
+    sudo apt update
 
 {{< figure src="./images/a0b112e0-aa5f-493a-ad99-693f029a2c3c.webp" >}}
 
@@ -37,23 +26,17 @@ sudo apt update
 
 To install, we use the command
 
-```
- sudo apt install postgresql postgresql-client -y
-```
+     sudo apt install postgresql postgresql-client -y
 
 After running successfully, we check if the PostgreSQL service has been started:
 
-```
- sudo systemctl status postgresql
-```
+     sudo systemctl status postgresql
 
 {{< figure src="./images/7182fcd1-3e7f-4420-b3df-79eae97b8c08.webp" >}}
 
 So we have successfully installed PostgreSQL and check the PostgreSQL version with the command
 
-```
- psql --version
-```
+     psql --version
 
 {{< figure src="./images/e052ebdb-9948-4edd-aa8a-f54488fd2425.webp" >}}
 
@@ -63,9 +46,7 @@ Here, we can see that the PostgreSQL version is 15.
 
 By default, we can connect to the PostgreSQL server without using any password. Let's see this in action using the psql utility:
 
-```
-sudo -u postgres psql
-```
+    sudo -u postgres psql
 
 {{< figure src="./images/485f7ad5-fc47-44d0-94c9-591625a85a45.webp" >}}
 
@@ -73,9 +54,7 @@ In the above output, the prompt **postgres=#** indicates that the connection is 
 
 Next, we use the command to change the password to **PassKhongChilaPasss**
 
-```
-ALTER USER postgres PASSWORD 'PassKhongChilaPasss';
-```
+    ALTER USER postgres PASSWORD 'PassKhongChilaPasss';
 
 then we exit with the command `\q`
 
@@ -83,9 +62,7 @@ then we exit with the command `\q`
 
 Now, let's connect back to the database server:
 
-```
-psql -h localhost -U postgres
-```
+    psql -h localhost -U postgres
 
 Enter the **PassKhongChilaPasss** string as the password and now we are connected to the database.
 
@@ -113,11 +90,9 @@ Next, edit the IPv4 local connection section of the **pg_hba.conf** file to allo
 
 In case the Ubuntu firewall is running on your system, allow the PostgreSQL port 5432 with the following command,
 
-```
-sudo ufw allow 5432/tcp
-```
+    sudo ufw allow 5432/tcp
 
-Then we use the **PgAdmin** tool to connect, you can download it here https://www.pgadmin.org/download/
+Then we use the **PgAdmin** tool to connect, you can download it here <https://www.pgadmin.org/download/>
 
 {{< figure src="./images/7d35b81f-b04d-43e4-a16d-6e9da0382d4b.webp" >}}
 

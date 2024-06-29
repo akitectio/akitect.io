@@ -1,19 +1,13 @@
 ---
-categories:
-  - linux
-  - network
+categories: [linux, network]
 date: 2023-12-09T15:16:45+0700
 description: TCP/IP is the main network protocol suite behind the Internet, including TCP (Transmission Control Protocol) and IP (Internet Protocol), ensuring reliable and efficient data transmission.
 draft: false
 featuredImage: /series/network/so-luoc-ve-tcp-ip.webp
-images:
-  - /series/network/so-luoc-ve-tcp-ip.webp
+images: [/series/network/so-luoc-ve-tcp-ip.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - tcp-ip
-  - network-protocol
+tags: [tcp-ip, network-protocol]
 title: An Overview of TCP/IP
-url: /overview-of-tcp-ip
 weight: 1
 ---
 
@@ -23,32 +17,33 @@ The history of computer networking is a fascinating journey, from the early step
 
 ### Early Stage (Late 1950s to 1960s)
 
-- The field of computer networking began as part of research into telecommunications and computers. Researchers began to consider how to connect computers together.
+-   The field of computer networking began as part of research into telecommunications and computers. Researchers began to consider how to connect computers together.
 
 ### Stage 2 (Late 1960s to 1970s)
 
-- Researchers began to consider how to connect computer networks together. The first computer networks developed during this period were ARPANET and NPL.
+-   Researchers began to consider how to connect computer networks together. The first computer networks developed during this period were ARPANET and NPL.
 
-* ARPANET: Advanced Research Projects Agency Network was developed by the Advanced Research Projects Agency (ARPA) of the United States Department of Defense (DoD) in 1969. ARPANET was the first computer network to use the TCP/IP protocol.
-* NPL: The National Physical Laboratory of the UK developed the UK's first computer network in 1969. This network was called the NPL Network. The NPL Network was the first computer network to use the TCP/IP protocol.
+
+-   ARPANET: Advanced Research Projects Agency Network was developed by the Advanced Research Projects Agency (ARPA) of the United States Department of Defense (DoD) in 1969. ARPANET was the first computer network to use the TCP/IP protocol.
+-   NPL: The National Physical Laboratory of the UK developed the UK's first computer network in 1969. This network was called the NPL Network. The NPL Network was the first computer network to use the TCP/IP protocol.
 
 ### Development of LANs (1970s)
 
-- Local Area Networks (LANs) were developed during this period. The first LANs developed were Ethernet and Token Ring.
+-   Local Area Networks (LANs) were developed during this period. The first LANs developed were Ethernet and Token Ring.
 
 ### Birth of the Internet (1980s)
 
-- The computer networks developed during this period were NSFNET, CSNET, BITNET, FidoNet, and UUCP. These networks were interconnected to form the Internet.
+-   The computer networks developed during this period were NSFNET, CSNET, BITNET, FidoNet, and UUCP. These networks were interconnected to form the Internet.
 
 ### Development of the World Wide Web (1990s)
 
-- The World Wide Web (WWW) was developed during this period. The World Wide Web is an information system on the Internet that allows documents to be linked together by hyperlinks and accessed by web browsers.
+-   The World Wide Web (WWW) was developed during this period. The World Wide Web is an information system on the Internet that allows documents to be linked together by hyperlinks and accessed by web browsers.
 
 ### Modern Era (2000s and Beyond)
 
-- Internet Explosion: The Internet has become an indispensable part of daily life, with the development of online services, social networks, and e-commerce.
+-   Internet Explosion: The Internet has become an indispensable part of daily life, with the development of online services, social networks, and e-commerce.
 
-- New Network Technology: The development of wireless technology, such as Wi-Fi and 3G/4G/5G, along with the development of the Internet of Things (IoT), continues to drive the development of computer networking.
+-   New Network Technology: The development of wireless technology, such as Wi-Fi and 3G/4G/5G, along with the development of the Internet of Things (IoT), continues to drive the development of computer networking.
 
 ## 2. OSI Model
 

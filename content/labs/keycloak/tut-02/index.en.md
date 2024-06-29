@@ -1,21 +1,14 @@
 ---
-categories:
-  - keycloak
-date: 2023-10-01T08:00:00+08:00
+categories: [keycloak]
+date: 2023-10-01T00:00:00.000Z
 description: Deploy the latest version of Keycloak on Kubernetes
 draft: false
 featuredImage: /series/keycloak-k8s.png
-images:
-  - /keycloak-deploy-version-2204-on-microk8s/images/index.en.png
-  - /series/keycloak-k8s.png
+images: [/keycloak-deploy-version-2204-on-microk8s/images/index.en.png, /series/keycloak-k8s.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 lightgallery: true
-tags:
-  - keycloak
-  - kubernetes
-  - microk8s
+tags: [keycloak, kubernetes, microk8s]
 title: Deploy Keycloak version 22.0.4 on Microk8s
-url: /keycloak-deploy-version-2204-on-microk8s
 ---
 
 Here are the steps to deploy Keycloak on Kubernetes:

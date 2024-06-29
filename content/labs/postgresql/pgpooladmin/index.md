@@ -1,19 +1,12 @@
 ---
-categories:
-  - database
-date: 2024-02-25T08:00:00+08:00
+categories: [database]
+date: 2024-02-25T00:00:00.000Z
 draft: false
 featuredImage: /labs/postgresql/postgresql-pgpooladmin.jpeg
-images:
-  - /labs/postgresql/postgresql-pgpooladmin.jpeg
+images: [/labs/postgresql/postgresql-pgpooladmin.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - postgreSQL
-  - ubuntu
-  - pgpool
-title: Pgpool-II Admin Ubuntu 
-url: /cai-dat-va-cau-hinh-pgpool-ii-admin-tren-ubuntu
+tags: [database, postgreSQL, ubuntu, pgpool]
+title: Pgpool-II Admin Ubuntu
 description: Pgpool Admin là một công cụ quản lý cấu hình và giám sát PGpool-II, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu PostgreSQL. Trong hướng dẫn này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool Admin trên hệ điều hành Ubuntu Linux, giúp bạn quản lý và theo dõi hiệu suất của cơ sở dữ liệu của mình.
 weight: 1
 ---
@@ -153,7 +146,7 @@ chmod -R 0600 /var/www/.pcppass
 
 ### Bước 5: Truy cập PGpool Admin và cấu hình ban đầu
 
-Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin/install](http://192.168.56.5/pgpooladmin/install)
+Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : <http://192.168.56.5/pgpooladmin/install>
 
 {{< figure src="./images/pgpooladmin-install.jpg" >}}
 
@@ -165,10 +158,10 @@ Tiếp tục thêm thông tin cấu hình kết nối đến `pgpool2`
 
 {{< figure src="./images/pgpooladmin-install-3.jpg" >}}
 
-- `pgpool.conf` nhập `/etc/pgpool2/pgpool.conf`
-- `pcp.conf` nhập `/etc/pgpool2/pcp.conf`
-- `pgpool Command` nhập `/usr/sbin/pgpool`
-- `PCP directory` nhập `/usr/sbin`
+-   `pgpool.conf` nhập `/etc/pgpool2/pgpool.conf`
+-   `pcp.conf` nhập `/etc/pgpool2/pcp.conf`
+-   `pgpool Command` nhập `/usr/sbin/pgpool`
+-   `PCP directory` nhập `/usr/sbin`
 
 Tiếp tục nhấn `Next`
 
@@ -184,18 +177,19 @@ sudo rm -rf /var/www/html/pgpooladmin/install
 
 ### Bước 6: Đăng nhập vào PGpool Admin
 
-Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : [http://192.168.56.5/pgpooladmin](http://192.168.56.5/pgpooladmin)
+Sau khi cài đặt xong, truy cập PGpool Admin bằng cách mở trình duyệt web và truy cập địa chỉ IP của máy chủ `pgpool2` : <http://192.168.56.5/pgpooladmin>
 
 {{< figure src="./images/pgpooladmin-install-6.jpg" >}}
 
 nhập thông tin đăng nhập đã tạo ở trên và nhấn `Login`
 
-- `Username`: admin
-- `Password`: akitect@123 <- mật khẩu đã tạo ở trên
+-   `Username`: admin
+-   `Password`: akitect@123 &lt;- mật khẩu đã tạo ở trên
 
 {{< figure src="./images/pgpooladmin-install-7.jpg" >}}
 
 Như vậy ta đã cấu hình và đăng nhập thành công vào PGpool Admin.
 
 ### Kết luận
+
 Trong hướng dẫn này, chúng ta đã đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux. Bằng cách thực hiện các bước này, bạn có thể tối ưu hóa và mở rộng khả năng của cơ sở dữ liệu PostgreSQL, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.

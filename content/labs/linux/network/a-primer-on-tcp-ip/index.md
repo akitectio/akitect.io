@@ -1,19 +1,13 @@
 ---
-categories:
-  - linux
-  - network
+categories: [linux, network]
 date: 2023-12-09T15:16:45+0700
 description: TCP/IP là bộ giao thức mạng chính đứng sau Internet, bao gồm TCP (Transmission Control Protocol) và IP (Internet Protocol), đảm bảo truyền tải dữ liệu đáng tin cậy và hiệu quả.
 draft: false
 featuredImage: /series/network/so-luoc-ve-tcp-ip.webp
-images:
-  - /series/network/so-luoc-ve-tcp-ip.webp
+images: [/series/network/so-luoc-ve-tcp-ip.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - tcp-ip
-  - network-protocol
+tags: [tcp-ip, network-protocol]
 title: Sơ lược về TCP/IP
-url: /so-luoc-ve-tcp-ip
 weight: 1
 ---
 
@@ -23,32 +17,33 @@ Lịch sử của mạng máy tính là một hành trình thú vị, từ nhữ
 
 ### Giai đoạn Đầu (Cuối những năm 1950 đến 1960)
 
-- Lĩnh vực mạng máy tính bắt đầu như một phần của nghiên cứu về công nghệ viễn thông và máy tính. Các nhà nghiên cứu bắt đầu xem xét cách thức kết nối máy tính với nhau.
+-   Lĩnh vực mạng máy tính bắt đầu như một phần của nghiên cứu về công nghệ viễn thông và máy tính. Các nhà nghiên cứu bắt đầu xem xét cách thức kết nối máy tính với nhau.
 
 ### Giai đoạn 2 (Cuối những năm 1960 đến 1970)
 
-- Các nhà nghiên cứu bắt đầu xem xét cách thức kết nối các mạng máy tính với nhau. Các mạng máy tính đầu tiên được phát triển trong giai đoạn này là ARPANET và NPL.
+-   Các nhà nghiên cứu bắt đầu xem xét cách thức kết nối các mạng máy tính với nhau. Các mạng máy tính đầu tiên được phát triển trong giai đoạn này là ARPANET và NPL.
 
-* ARPANET : Advanced Research Projects Agency Network (Mạng Cơ quan Nghiên cứu Dự án Tiên tiến) được phát triển bởi Cơ quan Dự án Nghiên cứu Tiên tiến (ARPA) của Bộ Quốc phòng Hoa Kỳ (DoD) vào năm 1969. ARPANET là mạng máy tính đầu tiên sử dụng giao thức TCP/IP.
-* NPL : National Physical Laboratory (Viện Vật lý Quốc gia) của Anh đã phát triển mạng máy tính đầu tiên của Anh vào năm 1969. Mạng này được gọi là NPL Network. NPL Network là mạng máy tính đầu tiên sử dụng giao thức TCP/IP.
+
+-   ARPANET : Advanced Research Projects Agency Network (Mạng Cơ quan Nghiên cứu Dự án Tiên tiến) được phát triển bởi Cơ quan Dự án Nghiên cứu Tiên tiến (ARPA) của Bộ Quốc phòng Hoa Kỳ (DoD) vào năm 1969. ARPANET là mạng máy tính đầu tiên sử dụng giao thức TCP/IP.
+-   NPL : National Physical Laboratory (Viện Vật lý Quốc gia) của Anh đã phát triển mạng máy tính đầu tiên của Anh vào năm 1969. Mạng này được gọi là NPL Network. NPL Network là mạng máy tính đầu tiên sử dụng giao thức TCP/IP.
 
 ### Sự Phát Triển của Mạng LAN (1970s)
 
-- Các mạng LAN (Local Area Network - Mạng Cục bộ) được phát triển trong giai đoạn này. Các mạng LAN đầu tiên được phát triển là Ethernet và Token Ring.
+-   Các mạng LAN (Local Area Network - Mạng Cục bộ) được phát triển trong giai đoạn này. Các mạng LAN đầu tiên được phát triển là Ethernet và Token Ring.
 
 ### Sự Ra Đời của Internet (1980s)
 
-- Các mạng máy tính được phát triển trong giai đoạn này là NSFNET, CSNET, BITNET, FidoNet và UUCP. Các mạng này được kết nối với nhau để tạo thành Internet.
+-   Các mạng máy tính được phát triển trong giai đoạn này là NSFNET, CSNET, BITNET, FidoNet và UUCP. Các mạng này được kết nối với nhau để tạo thành Internet.
 
 ### Sự Phát Triển của World Wide Web (1990s)
 
-- World Wide Web (WWW) được phát triển trong giai đoạn này. World Wide Web là một hệ thống thông tin trên Internet cho phép các tài liệu được liên kết với nhau bằng các liên kết siêu văn bản và được truy cập bằng các trình duyệt web.
+-   World Wide Web (WWW) được phát triển trong giai đoạn này. World Wide Web là một hệ thống thông tin trên Internet cho phép các tài liệu được liên kết với nhau bằng các liên kết siêu văn bản và được truy cập bằng các trình duyệt web.
 
 ### Kỷ Nguyên Hiện Đại (2000s và Tiếp Theo)
 
-- Sự Bùng Nổ của Internet: Internet trở thành một phần không thể thiếu trong cuộc sống hàng ngày, với sự phát triển của các dịch vụ trực tuyến, mạng xã hội, và thương mại điện tử.
+-   Sự Bùng Nổ của Internet: Internet trở thành một phần không thể thiếu trong cuộc sống hàng ngày, với sự phát triển của các dịch vụ trực tuyến, mạng xã hội, và thương mại điện tử.
 
-- Công nghệ Mạng Mới: Sự phát triển của công nghệ không dây, như Wi-Fi và 3G/4G/5G, cùng với việc phát triển của Internet vạn vật (IoT), tiếp tục thúc đẩy sự phát triển của mạng máy tính.
+-   Công nghệ Mạng Mới: Sự phát triển của công nghệ không dây, như Wi-Fi và 3G/4G/5G, cùng với việc phát triển của Internet vạn vật (IoT), tiếp tục thúc đẩy sự phát triển của mạng máy tính.
 
 ## 2. Mô hình OSI
 

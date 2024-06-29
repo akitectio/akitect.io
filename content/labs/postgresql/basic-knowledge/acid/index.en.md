@@ -1,32 +1,26 @@
 ---
-categories:
-  - database
-date: 2023-11-20T08:00:00+08:00
+categories: [database]
+date: 2023-11-20T00:00:00.000Z
 description: ACID (an acronym for Atomicity, Consistency, Isolation, Durability) is a database concept that experts often look for when evaluating databases and application architectures. For a reliable database, all four properties need to be achieved.
 draft: false
 featuredImage: /series/database/what-is-acid.png
-images:
-  - /acid-la-gi/images/index.png
-  - /series/database/what-is-acid.png
+images: [/acid-la-gi/images/index.png, /series/database/what-is-acid.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - ACID
-  - What is ACID
+tags: [ACID, What is ACID]
 title: What is ACID?
-url: /what-is-acid
 ---
 
 # What is ACID?
 
 ACID is an acronym for four important properties in transaction management in database systems:
 
-1. **_Atomicity_**: Atomicity ensures that a transaction will be performed atomically. It means that the transaction will either complete or not complete, there is no intermediate state. If a part of the transaction fails, the entire transaction will be cancelled and the data will return to its original state.
+1.  **_Atomicity_**: Atomicity ensures that a transaction will be performed atomically. It means that the transaction will either complete or not complete, there is no intermediate state. If a part of the transaction fails, the entire transaction will be cancelled and the data will return to its original state.
 
-2. **_Consistency_**: Consistency ensures that a transaction will bring the database from one valid state to another valid state. It ensures that the data will always comply with the rules and constraints previously defined in the database.
+2.  **_Consistency_**: Consistency ensures that a transaction will bring the database from one valid state to another valid state. It ensures that the data will always comply with the rules and constraints previously defined in the database.
 
-3. **_Isolation_**: Isolation ensures that a transaction does not affect other transactions happening simultaneously. It prevents access to uncommitted data of a transaction by other transactions.
+3.  **_Isolation_**: Isolation ensures that a transaction does not affect other transactions happening simultaneously. It prevents access to uncommitted data of a transaction by other transactions.
 
-4. **_Durability_**: Durability ensures that once a transaction has been committed, the stored data will persist and will not be lost even in the event of system failures such as hardware errors or power outages.
+4.  **_Durability_**: Durability ensures that once a transaction has been committed, the stored data will persist and will not be lost even in the event of system failures such as hardware errors or power outages.
 
 # Example
 

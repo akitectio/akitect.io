@@ -1,38 +1,29 @@
 ---
-categories:
-  - Linux
-  - ubuntu
-date: 2023-10-26T08:00:00+08:00
+categories: [Linux, ubuntu]
+date: 2023-10-26T00:00:00.000Z
 description: LVM (Logical Volume Manager) is a tool on the Linux operating system that allows more flexible management of drives and drive partitions. Instead of dividing the drive into fixed partitions, LVM allows the creation of virtual volumes (logical volumes) that can be resized, creating many smaller storage blocks to make the most of free space.
 draft: false
 featuredImage: /series/ubuntu-lvm.png
-images:
-  - /extend-lvm-disk-on-ubuntu-22-04/images/index.en.png
-  - /series/ubuntu-lvm.png
+images: [/extend-lvm-disk-on-ubuntu-22-04/images/index.en.png, /series/ubuntu-lvm.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - extend-disk
-  - lvm-ubuntu
-  - extend-lvm
-  - linux-command
+tags: [extend-disk, lvm-ubuntu, extend-lvm, linux-command]
 title: Extend LVM Disk on Linux Ubuntu 22.04
-url: /extend-lvm-disk-on-ubuntu-22-04
 weight: 1
 ---
 
-{{< youtube 10Ox6s2DsZQ >}}
+{{< youtube "10Ox6s2DsZQ" >}}
 
 ## What is LVM?
 
-- LVM (Logical Volume Manager) is a tool on the Linux operating system that allows for more flexible management of disk drives and partitions. Instead of dividing the disk into fixed partitions, LVM allows for the creation of virtual partitions (logical volumes) that can change in size, creating smaller storage blocks to maximize unused space.
-- With LVM, you can perform operations such as creating new, resizing, or moving virtual partitions flexibly, without having to change or move files on that partition. This makes storage management on the system easier and more flexible.
-- LVM is widely used on server systems or large storage systems, where managing storage space is a major challenge.
+-   LVM (Logical Volume Manager) is a tool on the Linux operating system that allows for more flexible management of disk drives and partitions. Instead of dividing the disk into fixed partitions, LVM allows for the creation of virtual partitions (logical volumes) that can change in size, creating smaller storage blocks to maximize unused space.
+-   With LVM, you can perform operations such as creating new, resizing, or moving virtual partitions flexibly, without having to change or move files on that partition. This makes storage management on the system easier and more flexible.
+-   LVM is widely used on server systems or large storage systems, where managing storage space is a major challenge.
 
 ## Concepts
 
-- Physical Volumes (PVs): are physical partitions on the disk. PVs can be physical disks, partitions on the disk, or other storage devices.
-- Volume Groups (VGs): are a group of PVs that have been combined together. All PVs in that VG are managed as a unified whole. With VG, users can create virtual partitions (LVs) with flexible sizes by using storage space on PVs.
-- Logical Volumes (LVs): are virtual partitions created from the storage space of VG. LVs are managed like partitions on regular physical drives, can be created, deleted, resized, and formatted similar to regular partitions.
+-   Physical Volumes (PVs): are physical partitions on the disk. PVs can be physical disks, partitions on the disk, or other storage devices.
+-   Volume Groups (VGs): are a group of PVs that have been combined together. All PVs in that VG are managed as a unified whole. With VG, users can create virtual partitions (LVs) with flexible sizes by using storage space on PVs.
+-   Logical Volumes (LVs): are virtual partitions created from the storage space of VG. LVs are managed like partitions on regular physical drives, can be created, deleted, resized, and formatted similar to regular partitions.
 
 ## Practice
 
@@ -123,4 +114,4 @@ So we have successfully extended 50G to the LVM partition
 
 Thank you for following my article
 
-{{< youtube e1GJBgqs2lM >}}
+{{< youtube "e1GJBgqs2lM" >}}

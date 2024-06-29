@@ -1,23 +1,14 @@
 ---
-categories:
-  - database
-date: 2023-10-26T08:00:00+08:00
+categories: [database]
+date: 2023-10-26T00:00:00.000Z
 description: Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 23.04
 draft: false
 featuredImage: /series/postgresql.png
-images:
-  - /cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2304/images/index.png
-  - /series/postgresql.png
+images: [/cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2304/images/index.png, /series/postgresql.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - Database
-  - PostgreSQL
-  - Ubuntu
-  - PostgreSQL 16
+tags: [Database, PostgreSQL, Ubuntu, PostgreSQL 16]
 title: Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 23.04
-url: /cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2304
 ---
-
 
 ### Bước 1: Thêm Package Repository PostgreSQL 16
 
@@ -119,7 +110,7 @@ Trong trường hợp, tường lửa Ubuntu đang chạy trên hệ thống c�
 sudo ufw allow 5432/tcp
 ```
 
-Sau đó ta dùng công cụ **PgAdmin** để kết nối thử, bạn có thể tải ở đây https://www.pgadmin.org/download/
+Sau đó ta dùng công cụ **PgAdmin** để kết nối thử, bạn có thể tải ở đây <https://www.pgadmin.org/download/>
 
 {{< figure src="./images/7d35b81f-b04d-43e4-a16d-6e9da0382d4b.webp" >}}
 

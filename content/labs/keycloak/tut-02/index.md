@@ -1,21 +1,14 @@
 ---
-categories:
-  - keycloak
-date: 2023-10-01T08:00:00+08:00
+categories: [keycloak]
+date: 2023-10-01T00:00:00.000Z
 description: Keycloak Triển khai phiên bản mới nhất trên Kubernetes
 draft: false
 featuredImage: /series/keycloak-k8s.png
-images:
-  - /keycloak-trien-khai-phien-ban-2204-tren-microk8s/images/index.png
-  - /series/keycloak-k8s.png
+images: [/keycloak-trien-khai-phien-ban-2204-tren-microk8s/images/index.png, /series/keycloak-k8s.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 lightgallery: true
-tags:
-  - keycloak
-  - kubernetes
-  - microk8s
+tags: [keycloak, kubernetes, microk8s]
 title: Triển khai Keycloak phiên bản 22.0.4 trên Microk8s
-url: /keycloak-trien-khai-phien-ban-2204-tren-microk8s
 ---
 
 Dưới đây là các bước chúng ta cần thực hiện khi triển khai keycloak trên Kubernetes.

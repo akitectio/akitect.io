@@ -1,31 +1,14 @@
 ---
-categories:
-  - linux
-date: 2023-12-05T23:37:29+07:00
+categories: [linux]
+date: 2023-12-05T16:37:29.000Z
 description: MAAS (Metal as a Service) is a solution that provides direct hardware, enabling automation of operating system deployment on physical servers. It provides the ability to remotely manage hardware in a flexible and efficient way, supporting cloud and data center environments. MAAS helps optimize operations, reduce installation and configuration time, thereby improving performance and stability for IT infrastructure.
 draft: false
 featuredImage: /series/mass-101/introduction-to-maas-metal-as-a-service.webp
-images:
-  - /series/mass-101/introduction-to-maas-metal-as-a-service.webp
+images: [/series/mass-101/introduction-to-maas-metal-as-a-service.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - maas-101
-tags: [
- 'maas',
- 'ubuntu-22.04',
- 'cloud-computing',
- 'bare-metal-provisioning',
- 'infrastructure-management',
- 'server-automation',
- 'data-center-management',
- 'network-management',
- 'virtualization',
- 'virtual-machine',
- 'open-source-software',
- 'linux-administration'
- ]
+series: [maas-101]
+tags: [maas, ubuntu-22.04, cloud-computing, bare-metal-provisioning, infrastructure-management, server-automation, data-center-management, network-management, virtualization, virtual-machine, open-source-software, linux-administration]
 title: Introduction to MAAS (Metal as a Service)
-url: /introduction-to-maas-metal-as-a-service
 weight: 1
 ---
 
@@ -37,11 +20,11 @@ MAAS is a part of the OpenStack ecosystem, but it can also be used independently
 
 ## Key Features of MAAS
 
-- Cloud hardware management
-- Physical server management
-- Virtual machine management
-- Network device management
-- Infrastructure management
+-   Cloud hardware management
+-   Physical server management
+-   Virtual machine management
+-   Network device management
+-   Infrastructure management
 
 ## Components of MAAS
 
@@ -49,11 +32,11 @@ MAAS is a part of the OpenStack ecosystem, but it can also be used independently
 
 MAAS has 3 main components:
 
-- **MAAS Server**: This is the main server that contains the MAAS installation. It houses both the Region Controller and the Rack Controller.
+-   **MAAS Server**: This is the main server that contains the MAAS installation. It houses both the Region Controller and the Rack Controller.
 
-- **MAAS Region Controller**: This is the main component of MAAS. It provides the user interface, API, and it manages the provisioning and distribution of the operating system.
+-   **MAAS Region Controller**: This is the main component of MAAS. It provides the user interface, API, and it manages the provisioning and distribution of the operating system.
 
-- **MAAS Rack Controller**: The Rack Controller provides local network services (such as DHCP, TFTP, HTTP) to the physical servers. Each Rack Controller connects to a Region Controller and provides services to a specific "rack" of servers.
+-   **MAAS Rack Controller**: The Rack Controller provides local network services (such as DHCP, TFTP, HTTP) to the physical servers. Each Rack Controller connects to a Region Controller and provides services to a specific "rack" of servers.
 
 ## Comparison of MAAS, Cobbler, Foreman, and Razor
 

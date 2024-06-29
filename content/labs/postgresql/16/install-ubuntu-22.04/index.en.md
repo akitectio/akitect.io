@@ -1,21 +1,13 @@
 ---
-categories:
-  - database
-date: 2023-10-26T08:00:00+08:00
+categories: [database]
+date: 2023-10-26T00:00:00.000Z
 description: Install and secure PostgreSQL 16 on Ubuntu 23.04
 draft: false
 featuredImage: /series/postgresql.png
-images:
-  - /install-and-secure-postgresql-16-on-ubuntu-2304/images/index.en.png
-  - /series/postgresql.png
+images: [/install-and-secure-postgresql-16-on-ubuntu-2304/images/index.en.png, /series/postgresql.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - Database
-  - PostgreSQL
-  - Ubuntu
-  - PostgreSQL 16
+tags: [Database, PostgreSQL, Ubuntu, PostgreSQL 16]
 title: Install and secure PostgreSQL 16 on Ubuntu 23.04
-url: /install-and-secure-postgresql-16-on-ubuntu-2304
 ---
 
 # PostgreSQL 16 Package Repository
@@ -118,7 +110,7 @@ In case the Ubuntu firewall is running on your system, allow the PostgreSQL port
 sudo ufw allow 5432/tcp
 ```
 
-Then we use the **PgAdmin** tool to connect, you can download it here https://www.pgadmin.org/download/
+Then we use the **PgAdmin** tool to connect, you can download it here <https://www.pgadmin.org/download/>
 
 {{< figure src="./images/7d35b81f-b04d-43e4-a16d-6e9da0382d4b.webp" >}}
 

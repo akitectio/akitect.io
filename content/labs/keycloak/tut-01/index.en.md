@@ -1,21 +1,14 @@
 ---
-categories:
-  - keycloak
-date: 2023-09-04T08:00:00+08:00
+categories: [keycloak]
+date: 2023-09-04T00:00:00.000Z
 description: Deploy Keycloak version 22.0.4 with docker compose
 draft: false
 featuredImage: /series/keycloak-docker.png
-images:
-  - /deploy-keycloak-version-22-0-4-with-docker-compose/images/index.en.png
-  - /series/keycloak-docker.png
+images: [/deploy-keycloak-version-22-0-4-with-docker-compose/images/index.en.png, /series/keycloak-docker.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 lightgallery: false
-tags:
-  - keycloak
-  - docker
-  - docker-compose
+tags: [keycloak, docker, docker-compose]
 title: Deploy Keycloak version 22.0.4 with docker compose
-url: /deploy-keycloak-version-22-0-4-with-docker-compose
 ---
 
 ## Step 1: Edit the file on Linux and Mac `/etc/hosts`
@@ -115,14 +108,13 @@ docker compose build --no-cache keycloak
 docker compose up -d
 ```
 
-
 ## Step 4: Check the running containers
 
 ```shell
 docker compose ps
 ```
 
-Once it starts successfully, go to http://keycloak.localhost:8180 to test.
+Once it starts successfully, go to <http://keycloak.localhost:8180> to test.
 
 Log in to the admin console with the admin username and password.
 
@@ -134,4 +126,4 @@ By following these steps, you can run Keycloak with an external PostgreSQL datab
 
 <b> References </b>
 
-- https://medium.com/@ozbillwang/run-keycloak-locally-with-docker-compose-db9a9f2fb437
+-   <https://medium.com/@ozbillwang/run-keycloak-locally-with-docker-compose-db9a9f2fb437>

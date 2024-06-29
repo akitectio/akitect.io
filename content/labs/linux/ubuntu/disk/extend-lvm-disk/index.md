@@ -1,38 +1,29 @@
 ---
-categories:
-  - Linux
-  - ubuntu
-date: 2023-10-26T08:00:00+08:00
+categories: [Linux, ubuntu]
+date: 2023-10-26T00:00:00.000Z
 description: LVM (Logical Volume Manager) là một công cụ trên hệ điều hành Linux cho phép quản lý ổ đĩa và phân vùng ổ đĩa một cách linh hoạt hơn. Thay vì phân chia ổ đĩa thành các phân vùng cố định, LVM cho phép tạo ra các phân vùng ảo (logical volume) có thể thay đổi kích thước, tạo ra nhiều khối lưu trữ nhỏ hơn để tận dụng tối đa không gian trống.
 draft: false
 featuredImage: /series/ubuntu-lvm.png
-images:
-  - /extend-lvm-disk-tren-ubuntu-22-04/images/index.png
-  - /series/ubuntu-lvm.png
+images: [/extend-lvm-disk-tren-ubuntu-22-04/images/index.png, /series/ubuntu-lvm.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - extend-disk
-  - lvm-ubuntu
-  - extend-lvm
-  - linux-command
+tags: [extend-disk, lvm-ubuntu, extend-lvm, linux-command]
 title: Extend LVM Disk trên Linux Ubuntu 22.04
-url: /extend-lvm-disk-tren-ubuntu-22-04
 weight: 1
 ---
 
-{{< youtube 10Ox6s2DsZQ >}}
+{{< youtube "10Ox6s2DsZQ" >}}
 
 ## LVM là gì
 
-- LVM (Logical Volume Manager) là một công cụ trên hệ điều hành Linux cho phép quản lý ổ đĩa và phân vùng ổ đĩa một cách linh hoạt hơn. Thay vì phân chia ổ đĩa thành các phân vùng cố định, LVM cho phép tạo ra các phân vùng ảo (logical volume) có thể thay đổi kích thước, tạo ra nhiều khối lưu trữ nhỏ hơn để tận dụng tối đa không gian trống.
-- Với LVM, ta có thể thực hiện các thao tác như tạo mới, thay đổi kích thước hoặc di chuyển các phân vùng ảo một cách linh hoạt, mà không cần phải thay đổi hoặc di chuyển các tập tin trên phân vùng đó. Điều này giúp cho việc quản lý lưu trữ trên hệ thống dễ dàng và linh hoạt hơn.
-- LVM được sử dụng phổ biến trên các hệ thống máy chủ hoặc hệ thống lưu trữ lớn, trong đó việc quản lý không gian lưu trữ là một thách thức lớn.
+-   LVM (Logical Volume Manager) là một công cụ trên hệ điều hành Linux cho phép quản lý ổ đĩa và phân vùng ổ đĩa một cách linh hoạt hơn. Thay vì phân chia ổ đĩa thành các phân vùng cố định, LVM cho phép tạo ra các phân vùng ảo (logical volume) có thể thay đổi kích thước, tạo ra nhiều khối lưu trữ nhỏ hơn để tận dụng tối đa không gian trống.
+-   Với LVM, ta có thể thực hiện các thao tác như tạo mới, thay đổi kích thước hoặc di chuyển các phân vùng ảo một cách linh hoạt, mà không cần phải thay đổi hoặc di chuyển các tập tin trên phân vùng đó. Điều này giúp cho việc quản lý lưu trữ trên hệ thống dễ dàng và linh hoạt hơn.
+-   LVM được sử dụng phổ biến trên các hệ thống máy chủ hoặc hệ thống lưu trữ lớn, trong đó việc quản lý không gian lưu trữ là một thách thức lớn.
 
 ## Các khái niệm
 
-- Physical Volumes (PVs): là các phân vùng vật lý trên ổ đĩa. Các PVs có thể là các ổ đĩa vật lý, phân vùng trên ổ đĩa hoặc các thiết bị lưu trữ khác.
-- Volume Groups (VGs): là một nhóm các PVs đã được kết hợp lại với nhau. Tất cả các PVs trong VG đó được quản lý như một thể thống nhất. Với VG, người dùng có thể tạo ra các phân vùng ảo (LVs) với kích thước linh hoạt bằng cách sử dụng không gian lưu trữ trên các PVs.
-- Logical Volumes (LVs): là các phân vùng ảo được tạo ra từ không gian lưu trữ của VG. LVs được quản lý như các phân vùng trên các ổ đĩa vật lý thông thường, có thể tạo, xóa, sửa đổi kích thước và định dạng tương tự như phân vùng thông thường.
+-   Physical Volumes (PVs): là các phân vùng vật lý trên ổ đĩa. Các PVs có thể là các ổ đĩa vật lý, phân vùng trên ổ đĩa hoặc các thiết bị lưu trữ khác.
+-   Volume Groups (VGs): là một nhóm các PVs đã được kết hợp lại với nhau. Tất cả các PVs trong VG đó được quản lý như một thể thống nhất. Với VG, người dùng có thể tạo ra các phân vùng ảo (LVs) với kích thước linh hoạt bằng cách sử dụng không gian lưu trữ trên các PVs.
+-   Logical Volumes (LVs): là các phân vùng ảo được tạo ra từ không gian lưu trữ của VG. LVs được quản lý như các phân vùng trên các ổ đĩa vật lý thông thường, có thể tạo, xóa, sửa đổi kích thước và định dạng tương tự như phân vùng thông thường.
 
 ## Thực hành
 
@@ -122,4 +113,3 @@ df -h
 Như vậy ta đã Extend thêm 50G vào phân dùng LVM thành công
 
 Cảm ơn các bạn đã theo dõi bài viết của mình
-

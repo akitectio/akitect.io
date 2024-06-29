@@ -1,33 +1,26 @@
 ---
-categories:
-  - database
-date: 2023-11-20T08:00:00+08:00
+categories: [database]
+date: 2023-11-20T00:00:00.000Z
 description: ACID (viết tắt của Atomicity, Consistency, Isolation, Durability) là một khái niệm cơ sở dữ liệu mà các chuyên gia thường tìm kiếm khi đánh giá các cơ sở dữ liệu và kiến trúc ứng dụng. Đối với một cơ sở dữ liệu đáng tin cậy tất cả bốn thuộc tính cần đạt được.
 draft: false
 featuredImage: /series/database/what-is-acid.png
-images:
-  - /acid-la-gi/images/index.png
-  - /series/database/what-is-acid.png
+images: [/acid-la-gi/images/index.png, /series/database/what-is-acid.png]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - ACID
-  - ACID là gì
-  - what is ACID
+tags: [ACID, ACID là gì, what is ACID]
 title: ACID là gì?
-url: /acid-la-gi
 ---
 
 # ACID là gì?
 
 ACID là viết tắt của bốn thuộc tính quan trọng trong quản lý giao dịch trong hệ thống cơ sở dữ liệu:
 
-1. **_Atomicity (Nguyên tử hóa)_**: Atomicity đảm bảo rằng một giao dịch sẽ được thực hiện một cách nguyên tử. Nó có nghĩa là giao dịch sẽ hoàn thành hoặc không hoàn thành, không có trạng thái trung gian. Nếu một phần của giao dịch thất bại, toàn bộ giao dịch sẽ bị hủy và dữ liệu sẽ trở lại trạng thái ban đầu.
+1.  **_Atomicity (Nguyên tử hóa)_**: Atomicity đảm bảo rằng một giao dịch sẽ được thực hiện một cách nguyên tử. Nó có nghĩa là giao dịch sẽ hoàn thành hoặc không hoàn thành, không có trạng thái trung gian. Nếu một phần của giao dịch thất bại, toàn bộ giao dịch sẽ bị hủy và dữ liệu sẽ trở lại trạng thái ban đầu.
 
-2. **_Consistency (Nhất quán)_**: Consistency đảm bảo rằng một giao dịch sẽ đưa cơ sở dữ liệu từ một trạng thái hợp lệ đến một trạng thái hợp lệ khác. Nó đảm bảo rằng dữ liệu sẽ luôn tuân theo các quy tắc và ràng buộc được định nghĩa trước trong cơ sở dữ liệu.
+2.  **_Consistency (Nhất quán)_**: Consistency đảm bảo rằng một giao dịch sẽ đưa cơ sở dữ liệu từ một trạng thái hợp lệ đến một trạng thái hợp lệ khác. Nó đảm bảo rằng dữ liệu sẽ luôn tuân theo các quy tắc và ràng buộc được định nghĩa trước trong cơ sở dữ liệu.
 
-3. **_Isolation (Cô lập)_**: Isolation đảm bảo rằng một giao dịch không ảnh hưởng đến các giao dịch khác đang diễn ra đồng thời. Nó ngăn chặn việc truy cập dữ liệu chưa được commit của một giao dịch bởi các giao dịch khác.
+3.  **_Isolation (Cô lập)_**: Isolation đảm bảo rằng một giao dịch không ảnh hưởng đến các giao dịch khác đang diễn ra đồng thời. Nó ngăn chặn việc truy cập dữ liệu chưa được commit của một giao dịch bởi các giao dịch khác.
 
-4. **_Durability (Bền vững)_**: Durability đảm bảo rằng khi một giao dịch đã được commit, thì dữ liệu đã được lưu trữ sẽ tồn tại và không bị mất ngay cả khi có sự cố trong hệ thống như lỗi phần cứng hoặc mất điện.
+4.  **_Durability (Bền vững)_**: Durability đảm bảo rằng khi một giao dịch đã được commit, thì dữ liệu đã được lưu trữ sẽ tồn tại và không bị mất ngay cả khi có sự cố trong hệ thống như lỗi phần cứng hoặc mất điện.
 
 # Ví dụ
 

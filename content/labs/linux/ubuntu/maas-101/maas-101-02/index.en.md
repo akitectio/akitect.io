@@ -1,25 +1,14 @@
 ---
-categories:
-  - linux
-date: 2023-12-06T12:18:39+07:00
+categories: [linux]
+date: 2023-12-06T05:18:39.000Z
 description: Installing and configuring MAAS (Metal as a Service) on Ubuntu 22.04 LTS provides an efficient physical hardware management solution, with automation capabilities and easy scalability. This process optimizes server configuration and resource management, supporting cloud environments and data center operations
 draft: false
 featuredImage: /series/mass-101/installation-and-configuration-of-maas-metal-as-a-service-on-ubuntu-22-04-lts.webp
-images:
-  - /series/mass-101/installation-and-configuration-of-maas-metal-as-a-service-on-ubuntu-22-04-lts.webp
+images: [/series/mass-101/installation-and-configuration-of-maas-metal-as-a-service-on-ubuntu-22-04-lts.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-series:
-  - maas-101
-tags: [
- 'maas',
- 'ubuntu-22.04-lts',
- 'server-management',
- 'cloud-infrastructure',
- 'data-center-automation',
- 'bare-metal-provisioning'
- ]
+series: [maas-101]
+tags: [maas, ubuntu-22.04-lts, server-management, cloud-infrastructure, data-center-automation, bare-metal-provisioning]
 title: Installation and Configuration of MAAS (Metal as a Service) on Ubuntu 22.04 LTS
-url: /installation-and-configuration-of-maas-metal-as-a-service-on-ubuntu-22-04-lts
 weight: 2
 ---
 
@@ -33,7 +22,7 @@ You can refer to this post: [Install and configure PostgreSQL 14 on Ubuntu 22.04
 sudo snap install --channel=3.4 maas
 ```
 
-{{<figure src="/images/maas-101-02-01.png" >}}
+{{< figure src="/images/maas-101-02-01.png" >}}
 
 {{< admonition warning "Some notes when installing" >}}
 When installing MAAS on Ubuntu, there may be conflicts between the current NTP client, `systemd-timesyncd`, and the NTP client/server provided by MAAS, chrony. This can lead to time synchronization issues, especially if MAAS is configured with different upstream NTP servers than those used by `systemd-timesyncd`. To avoid conflicts, users can manually disable and stop `systemd-timesyncd` with the following command:
@@ -63,9 +52,9 @@ sudo maas init --mode all --database-uri "postgres://$MAAS_DBUSER:$MAAS_DBPASS@$
 
 {{< admonition warning "Some notes when initializing MAAS" >}}
 
-- `--mode all` will initialize MAAS with all services, including DHCP and DNS.
-- `--database-uri` will declare the path to the MAAS database. This path is in the form `postgres://<username>:<password>@<hostname>/<database_name>`
-  {{< /admonition >}}
+-   `--mode all` will initialize MAAS with all services, including DHCP and DNS.
+-   `--database-uri` will declare the path to the MAAS database. This path is in the form `postgres://<username>:<password>@<hostname>/<database_name>`
+    {{< /admonition >}}
 
 Use the command to check the status of MAAS
 
@@ -83,10 +72,10 @@ sudo maas createadmin --username admin --password admin --email akitect.io@gmail
 
 {{< admonition warning "Some notes when creating a user account for MAAS" >}}
 
-- `--username` will declare the username for MAAS
-- `--password` will declare the password for MAAS
-- `--email` will declare the email for MAAS
-  {{< /admonition >}}
+-   `--username` will declare the username for MAAS
+-   `--password` will declare the password for MAAS
+-   `--email` will declare the email for MAAS
+    {{< /admonition >}}
 
 {{< figure src="./images/maas-101-02-05.png" >}}
 
@@ -105,13 +94,15 @@ MAAS welcome screen
 
 {{< admonition info "Fields on the MAAS welcome screen" >}}
 
-- `Region name`: Name of the MAAS server (default is `maas`)
-- DNS Forwarding: IP address of the external DNS server that MAAS will use to query domain names
-- `Ubuntu archive`: IP address of the Ubuntu archive mirror that MAAS will use to install software packages
+-   `Region name`: Name of the MAAS server (default is `maas`)
 
-- `Ubuntu extra archive`: IP address of the Ubuntu extra archive mirror that MAAS will use to install software packages
+-   DNS Forwarding: IP address of the external DNS server that MAAS will use to query domain names
 
-- `APT & HTTP proxy`: IP address of the proxy server that MAAS will use to access the Ubuntu archive mirror and Ubuntu extra archive mirror
+-   `Ubuntu archive`: IP address of the Ubuntu archive mirror that MAAS will use to install software packages
+
+-   `Ubuntu extra archive`: IP address of the Ubuntu extra archive mirror that MAAS will use to install software packages
+
+-   `APT & HTTP proxy`: IP address of the proxy server that MAAS will use to access the Ubuntu archive mirror and Ubuntu extra archive mirror
 
 {{< /admonition >}}
 
@@ -121,20 +112,20 @@ MAAS welcome screen
 
 {{< admonition info "Fields on the Ubuntu image selection screen" >}}
 
-- `Ubuntu release`: The version of Ubuntu you want to install
-- `Architecture`: The architecture of the server you want to install
-- `Sub-architecture`: The sub-architecture of the server you want to install
-- `Release`: The version of Ubuntu you want to install
-- `Image`: The image of Ubuntu you want to install
-- `Sync now`: Synchronize the image of Ubuntu you want to install
-- `Download`: Download the image of Ubuntu you want to install
-- `Delete`: Delete the image of Ubuntu you want to install
-- `Edit`: Edit the image of Ubuntu you want to install
-- `Add`: Add the image of Ubuntu you want to install
-- `Save`: Save the image of Ubuntu you want to install
-- `Cancel`: Cancel the image of Ubuntu you want to install
-- `Update selection`: Update the image of Ubuntu you want to install
-  {{< /admonition >}}
+-   `Ubuntu release`: The version of Ubuntu you want to install
+-   `Architecture`: The architecture of the server you want to install
+-   `Sub-architecture`: The sub-architecture of the server you want to install
+-   `Release`: The version of Ubuntu you want to install
+-   `Image`: The image of Ubuntu you want to install
+-   `Sync now`: Synchronize the image of Ubuntu you want to install
+-   `Download`: Download the image of Ubuntu you want to install
+-   `Delete`: Delete the image of Ubuntu you want to install
+-   `Edit`: Edit the image of Ubuntu you want to install
+-   `Add`: Add the image of Ubuntu you want to install
+-   `Save`: Save the image of Ubuntu you want to install
+-   `Cancel`: Cancel the image of Ubuntu you want to install
+-   `Update selection`: Update the image of Ubuntu you want to install
+    {{< /admonition >}}
 
 ## Step 9: Complete the MAAS installation
 
