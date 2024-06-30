@@ -4,7 +4,7 @@ featuredImage: /courses/spring-boot-basic/lesson-1-introduction-to-spring-and-sp
 images: [/courses/spring-boot-basic/lesson-1-introduction-to-spring-and-spring-boot.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [spring-boot-basic]
-tags: [ubuntu-server, virtualbox]
+tags: [spring-boot, spring-framework, spring-boot-features, spring-boot-history]
 title: Lesson 1 - Introduction to Spring and Spring Boot
 description: This lesson will introduce Spring Framework and Spring Boot, two important technologies in Java programming. You will learn about the development history of Spring Framework and Spring Boot, as well as their key features.
 date: 2024-06-28T19:23:30.000Z

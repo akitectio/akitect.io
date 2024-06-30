@@ -1,5 +1,3 @@
-Dưới đây là danh sách khóa học cơ bản về Kubernetes, bao gồm các bài học từ cơ bản đến nâng cao để giúp học viên hiểu và làm việc với Kubernetes một cách hiệu quả.
-
 ### Khóa Học: Kubernetes Basics
 
 #### Bài 1: Giới Thiệu về Kubernetes
@@ -85,6 +83,14 @@ Dưới đây là danh sách khóa học cơ bản về Kubernetes, bao gồm c�
   - Giới thiệu về CI/CD và vai trò của Kubernetes.
   - Cấu hình Jenkins, GitLab CI, hoặc các công cụ CI/CD khác với Kubernetes.
   - Thực hành triển khai CI/CD pipeline cho ứng dụng.
+
+#### Bài 13: API Gateway trong Kubernetes
+- **Mục tiêu**: Hiểu và cấu hình API Gateway trong Kubernetes để quản lý và điều phối lưu lượng truy cập.
+- **Nội dung**:
+  - Giới thiệu về API Gateway: Khái niệm và vai trò trong hệ thống Kubernetes.
+  - Các tùy chọn API Gateway phổ biến: NGINX, Traefik, Istio.
+  - Cấu hình và triển khai một API Gateway trong Kubernetes.
+  - Thực hành cấu hình API Gateway để điều phối lưu lượng truy cập đến các dịch vụ backend.
 
 ### Tổng Kết
 - **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.

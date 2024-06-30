@@ -12,7 +12,7 @@
 #### Bài 2: Cài đặt và Thiết lập Môi trường Phát triển
 - **Mục tiêu**: Cài đặt môi trường phát triển và tạo dự án Spring Boot đầu tiên.
 - **Nội dung**:
-  - Hướng dẫn cài đặt Java Development Kit (JDK), một Integrated Development Environment (IDE) như IntelliJ IDEA hoặc Eclipse, và Maven/Gradle.
+  - Hướng dẫn cài đặt Java Development Kit (JDK), một Integrated Development Environment (IDE) như VSCode và Maven/Gradle.
   - Sử dụng Spring Initializr để tạo một dự án mới và giải thích các tùy chọn có thể chọn như dependencies và project metadata.
 - **Bài tập**: Tạo một dự án mới với các dependencies cần thiết cho một ứng dụng web đơn giản và khám phá cấu trúc dự án được tạo.
 
