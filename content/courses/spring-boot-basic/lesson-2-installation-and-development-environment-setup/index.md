@@ -1,7 +1,7 @@
 ---
 draft: false
-featuredImage: /courses/spring-boot-basic/lesson-1-introduction-to-spring-and-spring-boot.webp
-images: [/courses/spring-boot-basic/lesson-1-introduction-to-spring-and-spring-boot.webp]
+featuredImage: /courses/spring-boot-basic/lesson-2-installation-and-development-environment-setup.webp
+images: [/courses/spring-boot-basic/lesson-2-installation-and-development-environment-setup.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [spring-boot-basic]
 tags: [spring-boot, spring-framework, spring-boot-features, spring-boot-history]
