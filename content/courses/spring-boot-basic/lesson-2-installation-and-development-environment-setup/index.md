@@ -31,8 +31,8 @@ weight: 2
         4.  Lưu và tải lại file cấu hình bằng lệnh: `source ~/.zshrc` hoặc `source ~/.bash_profile`.
     -   **Linux**:
         1.  Sử dụng package manager của hệ điều hành để cài đặt OpenJDK:
-            -   Ubuntu: `sudo apt update && sudo apt install openjdk-11-jdk`
-            -   CentOS: `sudo yum install java-11-openjdk-devel`
+            -   Ubuntu: `sudo apt update && sudo apt install openjdk-21-jdk`
+            -   CentOS: `sudo yum install java-21-openjdk-devel`
         2.  Xác nhận cài đặt bằng lệnh `java -version`.
 
 ##### 2. Cài đặt một Integrated Development Environment (IDE)
@@ -97,23 +97,12 @@ weight: 2
     -   **src/test/java**: Chứa các bài kiểm thử cho ứng dụng.
     -   **pom.xml** hoặc **build.gradle**: File cấu hình Maven hoặc Gradle, chứa thông tin về dependencies và các plugin cần thiết cho dự án.
 
--   **Giải thích các thành phần chính**:
+-   **Các thành phần chính**:
     -   **Application class**: Lớp chính để khởi động ứng dụng Spring Boot (annotated with `@SpringBootApplication`).
     -   **Controller class**: Các lớp xử lý yêu cầu HTTP.
     -   **Repository class**: Các lớp làm việc với cơ sở dữ liệu.
 
-#### Bài tập
-
--   **Tạo một dự án mới**:
-    1.  Sử dụng Spring Initializr để tạo một dự án Spring Boot với các dependencies cần thiết cho một ứng dụng web đơn giản (Spring Web, Spring Data JPA, H2 Database).
-    2.  Mở dự án trong IDE (VSCode).
-    3.  Khám phá cấu trúc dự án và giải thích các thành phần chính.
-    4.  Thực hiện một số thao tác cơ bản với dự án:
-        -   **Chạy ứng dụng**: Sử dụng lệnh `mvn spring-boot:run` hoặc `./gradlew bootRun`.
-        -   **Kiểm tra các endpoints**: Tạo một lớp Controller đơn giản và kiểm tra bằng cách sử dụng trình duyệt hoặc Postman.
-        -   **Kiểm thử kết nối cơ sở dữ liệu**: Cấu hình H2 Database và tạo một lớp Repository để thao tác với dữ liệu.
-
-##### Ví dụ cụ thể
+##### Ví dụ
 
 -   **Application class**:
 

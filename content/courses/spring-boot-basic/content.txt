@@ -1,4 +1,4 @@
-Để cung cấp một khóa học Spring Boot cơ bản chi tiết hơn, ta có thể mở rộng nội dung của mỗi bài học, bao gồm các mục tiêu cụ thể, giải thích chi tiết về công nghệ, và thêm các bài tập thực hành phức tạp hơn. Dưới đây là đề cương chi tiết và cụ thể hơn cho mỗi bài học:
+Để cung cấp một khóa học Spring Boot cơ bản chi tiết hơn, ta có thể mở rộng nội dung của mỗi bài học, bao gồm các mục tiêu cụ thể, giải thích chi tiết về công nghệ, và thêm các Ví Dụ thực hành phức tạp hơn. Dưới đây là đề cương chi tiết và cụ thể hơn cho mỗi bài học:
 
 ### Khóa Học: Phát Triển Ứng Dụng với Spring Boot
 
@@ -7,58 +7,58 @@
 - **Nội dung**:
   - Giới thiệu về Spring Framework: Mục đích của Spring, sự tiến hóa qua các phiên bản, và giới thiệu về Spring Boot như một bước tiến.
   - Các tính năng chính của Spring Boot như auto-configuration, standalone applications, và embedded servlet containers.
-- **Bài tập**: Lập trình một HelloWorld sử dụng Spring Boot để hiểu về cơ bản của auto-configuration và embedded servers.
+- **Ví Dụ**: Lập trình một HelloWorld sử dụng Spring Boot để hiểu về cơ bản của auto-configuration và embedded servers.
 
 #### Bài 2: Cài đặt và Thiết lập Môi trường Phát triển
 - **Mục tiêu**: Cài đặt môi trường phát triển và tạo dự án Spring Boot đầu tiên.
 - **Nội dung**:
   - Hướng dẫn cài đặt Java Development Kit (JDK), một Integrated Development Environment (IDE) như VSCode và Maven/Gradle.
   - Sử dụng Spring Initializr để tạo một dự án mới và giải thích các tùy chọn có thể chọn như dependencies và project metadata.
-- **Bài tập**: Tạo một dự án mới với các dependencies cần thiết cho một ứng dụng web đơn giản và khám phá cấu trúc dự án được tạo.
+- **Ví Dụ**: Tạo một dự án mới với các dependencies cần thiết cho một ứng dụng web đơn giản và khám phá cấu trúc dự án được tạo.
 
 #### Bài 3: Khám phá Cấu trúc Dự án và Quản lý Phụ thuộc
 - **Mục tiêu**: Hiểu cấu trúc thư mục của một dự án Spring Boot và cách quản lý phụ thuộc.
 - **Nội dung**:
   - Các thành phần chính của dự án như `src`, `pom.xml`/`build.gradle`.
   - Thảo luận về cách Spring Boot sử dụng Maven hoặc Gradle để quản lý phụ thuộc và tự động cấu hình các bean.
-- **Bài tập**: Thêm và cấu hình một dependency không được tự động cấu hình như `spring-boot-starter-data-jpa` và `spring-boot-starter-web`.
+- **Ví dụ**: Thêm và cấu hình một dependency không được tự động cấu hình như `spring-boot-starter-data-jpa` và `spring-boot-starter-web`.
 
 #### Bài 4: Xây dựng và Thử nghiệm RESTful API Đầu Tiên
 - **Mục tiêu**: Phát triển và thử nghiệm RESTful API sử dụng Spring Boot.
 - **Nội dung**:
   - Tạo các controller sử dụng `@RestController` và xác định các route với `@RequestMapping`.
   - Sử dụng Postman hoặc curl để thử nghiệm API.
-- **Bài tập**: Xây dựng một RESTful API để quản lý thông tin người dùng, bao gồm các phương thức GET, POST, PUT và DELETE.
+- **Ví Dụ**: Xây dựng một RESTful API để quản lý thông tin người dùng, bao gồm các phương thức GET, POST, PUT và DELETE.
 
 #### Bài 5: Truy cập Dữ liệu sử dụng Spring Data JPA
 - **Mục tiêu**: Sử dụng Spring Data JPA để tương tác với cơ sở dữ liệu.
 - **Nội dung**:
   - Cấu hình một cơ sở dữ liệu nhúng như H2.
   - Tạo các entity và repository để thao tác với cơ sở dữ liệu.
-- **Bài tập**: Xây dựng các chức năng tạo mới, đọc, cập nhật, và xóa thông tin người dùng trong cơ sở dữ liệu sử dụng Spring Data JPA.
+- **Ví Dụ**: Xây dựng các chức năng tạo mới, đọc, cập nhật, và xóa thông tin người dùng trong cơ sở dữ liệu sử dụng Spring Data JPA.
 
 #### Bài 6: Quản lý Bean và Dependency Injection
 - **Mục tiêu**: Thấu hiểu và áp dụng các khái niệm về quản lý bean và dependency injection.
 - **Nội dung**:
   - Tạo bean và quản lý lifecycle của bean trong Spring.
   - Các loại dependency injection trong Spring (constructor injection, setter injection) và cách sử dụng `@Autowired`.
-- **Bài tập**: Thiết kế và triển khai một service đơn giản trong Spring để thực hiện các nghiệp vụ logic.
+- **Ví Dụ**: Thiết kế và triển khai một service đơn giản trong Spring để thực hiện các nghiệp vụ logic.
 
 #### Bài 7: Kiểm thử và Gỡ lỗi
 - **Mục tiêu**: Nắm bắt các kỹ thuật kiểm thử và gỡ lỗi cho ứng dụng Spring Boot.
 - **Nội dung**:
   - Kiểm thử đơn vị với JUnit và Spring Boot Test.
   - Sử dụng các công cụ IDE và logging để gỡ lỗi ứng dụng.
-- **Bài tập**: Viết các bài kiểm thử đơn vị cho các thành phần của ứng dụng và sử dụng logging để theo dõi luồng xử lý.
+- **Ví Dụ**: Viết các bài kiểm thử đơn vị cho các thành phần của ứng dụng và sử dụng logging để theo dõi luồng xử lý.
 
 #### Bài 8: Gói gọn và Triển khai Ứng dụng
 - **Mục tiêu**: Gói gọn và triển khai ứng dụng Spring Boot.
 - **Nội dung**:
   - Sử dụng Maven hoặc Gradle để gói gọn ứng dụng thành JAR hoặc WAR.
   - Các lựa chọn triển khai ứng dụng và cấu hình sản phẩm.
-- **Bài tập**: Triển khai ứng dụng lên một máy chủ web như Tomcat hoặc sử dụng Heroku.
+- **Ví Dụ**: Triển khai ứng dụng lên một máy chủ web như Tomcat hoặc sử dụng Heroku.
 
-Bài tập cuối mỗi bài học sẽ là một phần thực hành giúp học viên áp dụng kiến thức đã học vào việc phát triển thực tế, qua đó củng cố và mở rộng hiểu biết.
+Ví Dụ cuối mỗi bài học sẽ là một phần thực hành giúp học viên áp dụng kiến thức đã học vào việc phát triển thực tế, qua đó củng cố và mở rộng hiểu biết.
 
 Lesson 1: Introduction to Spring and Spring Boot
 Lesson 2: Installation and Development Environment Setup
