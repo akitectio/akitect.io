@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-5-basic-linux-commands.w
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 5 - Các Lệnh Cơ Bản Trên Linux
+title: Lesson 5 - Các Lệnh Cơ Bản Trên Linux Ubuntu
 description: Học cách sử dụng các lệnh cơ bản trên Linux để quản lý hệ thống và tương tác với hệ điều hành, bao gồm điều hướng thư mục, quản lý tập tin và thư mục, xem và chỉnh sửa tệp.
 date: 2024-06-28T19:24:30.000Z
 weight: 5

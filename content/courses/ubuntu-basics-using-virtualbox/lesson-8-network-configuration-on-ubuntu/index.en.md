@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-8-network-configuration.
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 8 - Network Configuration
+title: Lesson 8 - Network Configuration on Ubuntu
 description: Learn how to configure network settings on Ubuntu Server to connect to the internet and other devices on the network.
 date: 2024-06-28T19:24:30.000Z
 weight: 8

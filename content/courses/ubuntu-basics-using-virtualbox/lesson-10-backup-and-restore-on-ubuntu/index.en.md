@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-10-backup-and-restore.we
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 10 - Backup and Restore
+title: Lesson 10 - Backup and Restore on Ubuntu
 description: In this lesson, we will learn how to back up and restore data on an Ubuntu Server. Data backup is an essential part of protecting your critical data from loss and corruption, while helping you recover data quickly when needed, using tools like `tar` and `rsync`, setting up automated backups with `cron`, and restoring data from a backup.
 date: 2024-06-29T02:24:30.000Z
 weight: 10

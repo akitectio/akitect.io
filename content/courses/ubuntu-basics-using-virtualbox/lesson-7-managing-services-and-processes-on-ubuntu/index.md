@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-7-managing-services-and-
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 7 - Quản Lý Services và Processes
+title: Lesson 7 - Quản Lý Services và Processes trên Ubuntu
 description: Học cách quản lý dịch vụ và tiến trình trên Ubuntu Server để khởi động, dừng, và quản lý các dịch vụ, cũng như xem và quản lý các tiến trình đang chạy trên hệ thống.
 date: 2024-06-28T19:24:30.000Z
 weight: 7

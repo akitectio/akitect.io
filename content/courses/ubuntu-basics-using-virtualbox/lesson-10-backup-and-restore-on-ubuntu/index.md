@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-10-backup-and-restore.we
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 10 - Sao Lưu và Phục Hồi
+title: Lesson 10 - Sao Lưu và Phục Hồi trên Ubuntu
 description: Trong bài học này, chúng ta sẽ tìm hiểu cách sao lưu và phục hồi dữ liệu trên Ubuntu Server. Việc sao lưu dữ liệu là một phần quan trọng trong việc bảo vệ dữ liệu quan trọng của bạn khỏi mất mát và hỏng hóc, đồng thời giúp bạn phục hồi dữ liệu nhanh chóng khi cần thiết.
 date: 2024-06-29T02:24:30.000Z
 weight: 10

@@ -1,84 +1,224 @@
-Dưới đây là danh sách khóa học chi tiết về Keycloak từ cơ bản đến nâng cao, giúp học viên hiểu và áp dụng Keycloak trong các dự án thực tế.
 
-### Khóa Học: Keycloak từ Cơ Bản đến Nâng Cao
+1. **Tổng quan về Keycloak**
+   - Keycloak là gì?
+     - Khái niệm và mục đích của Keycloak
+     - Các trường hợp sử dụng Keycloak
+   - Tại sao sử dụng Keycloak?
+     - Lợi ích của việc sử dụng Keycloak
+     - So sánh Keycloak với các giải pháp SSO khác
+   - Các tính năng chính của Keycloak
+     - Xác thực (Authentication)
+     - Ủy quyền (Authorization)
+     - Identity Brokering và Social Login
+     - Quản lý phiên (Session Management)
+     - Federation và User Storage
 
-#### Bài 1: Giới Thiệu về Keycloak
-- **Mục tiêu**: Hiểu tổng quan về Keycloak và tầm quan trọng của nó trong quản lý danh tính và truy cập.
-- **Nội dung chi tiết**:
-  - **Giới thiệu về Keycloak**: Lịch sử phát triển và các ứng dụng chính.
-  - **Các tính năng chính của Keycloak**: Single Sign-On (SSO), quản lý người dùng, quản lý quyền, tích hợp LDAP, hỗ trợ OpenID Connect và OAuth2.
-  - **Lợi ích của việc sử dụng Keycloak**: Tăng cường bảo mật, quản lý dễ dàng, tích hợp linh hoạt.
+2. **Cài đặt Keycloak**
+   - Cài đặt Keycloak trên các hệ điều hành khác nhau
+     - Cài đặt trên Windows
+     - Cài đặt trên Linux
+     - Cài đặt trên macOS
+   - Cấu hình ban đầu cho Keycloak
+     - Cấu hình cơ bản trong file `standalone.xml`
+     - Cấu hình cơ bản trong file `standalone-ha.xml`
+   - Tạo người dùng quản trị
+     - Lệnh tạo người dùng admin bằng CLI
+     - Đăng nhập vào Admin Console
 
-#### Bài 2: Cài Đặt và Thiết Lập Môi Trường
-- **Mục tiêu**: Cài đặt và thiết lập môi trường phát triển với Keycloak.
-- **Nội dung chi tiết**:
-  - **Yêu cầu hệ thống**: Java, Database, Application Server.
-  - **Cài đặt Keycloak**: Hướng dẫn cài đặt trên các nền tảng khác nhau (Standalone, Docker).
-  - **Thiết lập Keycloak**: Cấu hình ban đầu và khởi động Keycloak.
+3. **Người Dùng (Users)**
+   - Tạo và quản lý người dùng
+     - Thêm người dùng mới
+     - Quản lý thông tin người dùng
+   - Thiết lập thông tin cá nhân và mật khẩu
+     - Cập nhật thông tin cá nhân
+     - Đặt và thay đổi mật khẩu
+   - Các thuộc tính tùy chỉnh của người dùng
+     - Thêm và quản lý các thuộc tính người dùng
 
-#### Bài 3: Quản Lý Realm, Client và User
-- **Mục tiêu**: Hiểu và quản lý các khái niệm cơ bản trong Keycloak.
-- **Nội dung chi tiết**:
-  - **Realm**: Giới thiệu về Realm và cách tạo, quản lý Realm.
-  - **Client**: Định nghĩa Client và cách cấu hình các ứng dụng trong Keycloak.
-  - **User**: Quản lý người dùng, tạo mới, cập nhật và xóa người dùng.
+4. **Nhóm (Groups)**
+   - Tạo và quản lý nhóm
+     - Tạo nhóm mới
+     - Quản lý nhóm và thành viên
+   - Phân quyền nhóm
+     - Gán vai trò cho nhóm
+     - Xác định quyền của nhóm
+   - Quản lý thành viên nhóm
+     - Thêm và xóa thành viên nhóm
+     - Xem các thành viên của nhóm
 
-#### Bài 4: Single Sign-On (SSO) với Keycloak
-- **Mục tiêu**: Thiết lập và quản lý Single Sign-On (SSO) với Keycloak.
-- **Nội dung chi tiết**:
-  - **Khái niệm SSO**: Giới thiệu về SSO và lợi ích của nó.
-  - **Thiết lập SSO**: Cấu hình Keycloak để hỗ trợ SSO.
-  - **Thực hành SSO**: Thiết lập SSO cho một ứng dụng web thực tế.
+5. **Vai Trò (Roles)**
+   - Tạo và quản lý vai trò
+     - Tạo vai trò mới
+     - Quản lý vai trò
+   - Gán vai trò cho người dùng và nhóm
+     - Gán vai trò trực tiếp cho người dùng
+     - Gán vai trò cho nhóm
+   - Vai trò toàn cầu và vai trò ứng dụng
+     - Phân biệt giữa vai trò toàn cầu và vai trò ứng dụng
+     - Cấu hình vai trò cho từng ứng dụng cụ thể
 
-#### Bài 5: Tích Hợp Keycloak với Ứng Dụng Web
-- **Mục tiêu**: Tích hợp Keycloak với các ứng dụng web.
-- **Nội dung chi tiết**:
-  - **Tích hợp với Spring Boot**: Cấu hình Spring Boot để sử dụng Keycloak cho xác thực và ủy quyền.
-  - **Tích hợp với Node.js**: Cấu hình Keycloak cho một ứng dụng Node.js.
-  - **Thực hành tích hợp**: Tạo một ví dụ tích hợp thực tế với Spring Boot và Node.js.
+6. **Quản lý Ứng Dụng (Clients)**
+   - Tạo và cấu hình ứng dụng
+     - Thêm ứng dụng mới
+     - Cấu hình chi tiết ứng dụng
+   - Loại ứng dụng: public, confidential, bearer-only
+     - Định nghĩa và sử dụng loại ứng dụng phù hợp
+   - Cấu hình URL chuyển hướng và các endpoint
+     - Thiết lập URL chuyển hướng cho ứng dụng
+     - Cấu hình các endpoint bảo mật
 
-#### Bài 6: Quản Lý Quyền và Vai Trò
-- **Mục tiêu**: Hiểu và quản lý quyền và vai trò trong Keycloak.
-- **Nội dung chi tiết**:
-  - **Quản lý quyền**: Tạo và quản lý quyền trong Keycloak.
-  - **Vai trò (Roles)**: Tạo và gán vai trò cho người dùng và nhóm.
-  - **Thực hành quản lý quyền**: Thiết lập và quản lý quyền và vai trò cho một ứng dụng thực tế.
+7. **Protocol Mappers**
+   - Tạo và cấu hình protocol mappers
+     - Thêm mới protocol mappers
+     - Cấu hình các thuộc tính của protocol mappers
+   - Mappers thông tin người dùng và vai trò
+     - Mappers thông tin người dùng
+     - Mappers vai trò
 
-#### Bài 7: Tích Hợp Keycloak với LDAP và Active Directory
-- **Mục tiêu**: Tích hợp Keycloak với LDAP và Active Directory.
-- **Nội dung chi tiết**:
-  - **Khái niệm về LDAP và Active Directory**: Giới thiệu về LDAP và Active Directory.
-  - **Tích hợp với LDAP**: Cấu hình Keycloak để tích hợp với LDAP.
-  - **Tích hợp với Active Directory**: Cấu hình Keycloak để tích hợp với Active Directory.
-  - **Thực hành tích hợp**: Thiết lập tích hợp với một máy chủ LDAP thực tế.
+8. **Xác Thực (Authentication)**
+   - Xác thực nhiều yếu tố (MFA)
+     - Cấu hình MFA cho người dùng
+     - Các phương thức MFA: OTP, SMS, Email
+   - Flows xác thực và luồng xác thực tùy chỉnh
+     - Tạo và chỉnh sửa flows xác thực
+     - Sử dụng và cấu hình luồng xác thực tùy chỉnh
+   - Chính sách mật khẩu và khóa tài khoản
+     - Thiết lập chính sách mật khẩu
+     - Cấu hình khóa tài khoản và reset mật khẩu
 
-#### Bài 8: Sử Dụng OpenID Connect và OAuth2 trong Keycloak
-- **Mục tiêu**: Hiểu và sử dụng OpenID Connect và OAuth2 trong Keycloak.
-- **Nội dung chi tiết**:
-  - **Giới thiệu về OpenID Connect và OAuth2**: Khái niệm và ứng dụng.
-  - **Cấu hình OpenID Connect**: Cấu hình Keycloak để sử dụng OpenID Connect.
-  - **Cấu hình OAuth2**: Cấu hình Keycloak để sử dụng OAuth2.
-  - **Thực hành OpenID Connect và OAuth2**: Tạo và cấu hình ứng dụng sử dụng OpenID Connect và OAuth2.
+9. **Ủy Quyền (Authorization)**
+   - Giới thiệu về ủy quyền
+     - Khái niệm và mục đích của ủy quyền
+     - Các loại chính sách ủy quyền
+   - Cấu hình Resource và Permission
+     - Tạo và quản lý Resource
+     - Thiết lập Permission cho Resource
+   - Các chính sách ủy quyền
+     - Cấu hình chính sách dựa trên vai trò
+     - Chính sách dựa trên thời gian
+     - Chính sách dựa trên thuộc tính người dùng
 
-#### Bài 9: Quản Lý Sự Kiện và Ghi Nhận Log
-- **Mục tiêu**: Thiết lập giám sát và quản lý log trong Keycloak.
-- **Nội dung chi tiết**:
-  - **Quản lý sự kiện**: Giám sát các sự kiện trong Keycloak.
-  - **Ghi nhận log**: Cấu hình và quản lý log trong Keycloak.
-  - **Thực hành quản lý log**: Thiết lập hệ thống giám sát và ghi nhận log cho một ứng dụng thực tế.
+10. **Tích hợp Keycloak với ứng dụng**
+    - **Tích hợp với các ứng dụng Java (Spring Boot)**
+        - Cấu hình Keycloak trong Spring Boot
+            - Thêm dependency `keycloak-spring-boot-starter`
+            - Thêm các cấu hình cần thiết trong `application.properties`
+        - Cấu hình bảo mật với Keycloak Adapter
+            - Tạo lớp cấu hình bảo mật
+            - Áp dụng cấu hình bảo mật cho các endpoint
+        - Quản lý người dùng và vai trò trong ứng dụng Spring Boot
+            - Sử dụng annotation `@RolesAllowed` để quản lý truy cập
+        - Ví dụ cụ thể: Tạo một ứng dụng Spring Boot tích hợp Keycloak
+            - Tạo dự án Spring Boot cơ bản
+            - Thêm Keycloak dependency và cấu hình
+            - Bảo mật các endpoint và kiểm thử
 
-#### Bài 10: Bảo Mật và Quản Trị Trong Keycloak
-- **Mục tiêu**: Hiểu và áp dụng các biện pháp bảo mật và quản trị trong Keycloak.
-- **Nội dung chi tiết**:
-  - **Bảo mật Keycloak**: Cấu hình bảo mật cho Keycloak và các ứng dụng.
-  - **Quản trị người dùng và quyền hạn**: Sử dụng Keycloak Admin để quản lý người dùng và quyền hạn.
-  - **Thực hành bảo mật**: Thiết lập bảo mật cho một ứng dụng thực tế.
+    - Tích hợp với ứng dụng Node.js
+      - Cài đặt và cấu hình `keycloak-connect`
+      - Tạo middleware bảo mật với Keycloak
+    - Tích hợp với ứng dụng Angular và React
+      - Sử dụng `keycloak-angular` cho Angular
+      - Sử dụng `react-keycloak` cho React
 
-### Tổng Kết
-- **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.
-- **Nội dung chi tiết**:
-  - **Tóm tắt các khái niệm và kỹ năng đã học**: Ôn tập nhanh qua tất cả các bài học.
-  - **Dự án cuối khóa**: Thực hiện một dự án thực tế để áp dụng tất cả các kiến thức đã học.
-  - **Đánh giá và trả lời câu hỏi của học viên**: Thảo luận và giải đáp các thắc mắc của học viên.
+11. **Liên Kết Nhận Diện (Identity Brokering)**
+    - Cấu hình Identity Providers (Google, Facebook, etc.)
+      - Thêm và cấu hình Identity Provider
+      - Cấu hình liên kết nhận diện
+    - SSO và liên kết nhận diện
+      - Cấu hình SSO
+      - Quản lý liên kết tài khoản
 
-Khóa học này sẽ giúp học viên nắm vững các khái niệm cơ bản và kỹ năng thực hành cần thiết để làm việc với Keycloak, từ cài đặt và cấu hình đến triển khai và quản lý bảo mật và truy cập trong môi trường thực tế. Mỗi bài học sẽ kèm theo các bài tập thực hành để học viên có thể áp dụng kiến thức vào thực tế.
+12. **Bảo Mật (Security)**
+    - Cấu hình HTTPS và SSL/TLS
+      - Cài đặt chứng chỉ SSL
+      - Cấu hình Keycloak sử dụng HTTPS
+    - Cấu hình tường lửa và bảo vệ dịch vụ
+      - Thiết lập tường lửa cho Keycloak
+      - Cấu hình bảo mật cho các dịch vụ Keycloak
+    - Audit Logging và giám sát bảo mật
+      - Kích hoạt và cấu hình Audit Logging
+      - Theo dõi và giám sát sự kiện bảo mật
+
+13. **Quản Lý Keycloak (Administration)**
+    - Sử dụng Admin Console
+      - Điều hướng và sử dụng Admin Console
+      - Quản lý cấu hình hệ thống qua Admin Console
+    - Sử dụng Keycloak Admin CLI
+      - Cài đặt và sử dụng Keycloak Admin CLI
+      - Thực hiện các lệnh quản trị qua CLI
+    - Sử dụng Keycloak Admin REST API
+      - Giới thiệu về REST API của Keycloak
+      - Sử dụng REST API để quản lý Keycloak
+
+14. **Triển Khai Keycloak**
+    - Triển khai Keycloak trên Docker
+      - Cài đặt và chạy Keycloak với Docker
+      - Cấu hình Docker Compose cho Keycloak
+    - Triển khai Keycloak trên Kubernetes
+      - Cài đặt và cấu hình Keycloak trên Kubernetes
+      - Sử dụng Helm để triển khai Keycloak
+    - Cấu hình clustering và High Availability
+      - Thiết lập Keycloak clustering
+      - Cấu hình High Availability cho Keycloak
+
+15. **Mở Rộng Keycloak**
+    - Tạo và cấu hình Themes
+      - Tạo custom theme cho Keycloak
+      - Áp dụng và cấu hình theme
+    - Phát triển và tích hợp Providers
+      - Tạo custom providers cho Keycloak
+      - Đăng ký và sử dụng custom providers
+    - Cấu hình SPI và mở rộng chức năng
+      - Giới thiệu về SPI (Service Provider Interface)
+      - Cấu hình và sử dụng SPI để mở rộng Keycloak
+
+16. **Bài Tập Thực Hành**
+    - Cấu hình người dùng và nhóm
+      - Tạo người dùng và gán vai trò
+      - Tạo và quản lý nhóm
+    - Tích hợp ứng dụng với Keycloak
+      - Tích hợp Keycloak vào ứng dụng Spring Boot
+      - Tích hợp Keycloak vào ứng dụng Node.js
+    - Cấu hình MFA và Identity Brokering
+      - Thiết lập MFA
+      - Cấu hình Identity Provider
+
+Lesson 1 - Overview of Keycloak
+Lesson 2 - Installing Keycloak
+Lesson 3 - Realms of Keycloak
+Lesson 4 - Users of Keycloak
+Lesson 5 - Groups of Keycloak
+Lesson 6 - Roles of Keycloak
+Lesson 7 - Client Management of Keycloak
+Lesson 8 - Protocol Mappers of Keycloak
+Lesson 9 - Authentication of Keycloak
+Lesson 10 - Authorization of Keycloak
+Lesson 11 - Integrating Keycloak with Java Spring Boot
+Lesson 12 - Integrating Keycloak with Node.js
+Lesson 13 - Identity Brokering of Keycloak
+Lesson 14 - Security of Keycloak
+Lesson 15 - Keycloak Administration 
+Lesson 16 - Custom Themes and Providers of Keycloak
+Lesson 17 - Keycloak Deployment Practices
+Lesson 18 - Extending Keycloak
+
+
+mkdir -p content/courses/keycloak-basic/lesson-1-overview-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-2-installing-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-3-realms-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-4-users-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-5-groups-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-6-roles-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-7-client-management-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-8-protocol-mappers-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-9-authentication-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-10-authorization-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-11-integrating-keycloak-with-java-spring-boot
+mkdir -p content/courses/keycloak-basic/lesson-12-integrating-keycloak-with-nodejs
+mkdir -p content/courses/keycloak-basic/lesson-13-identity-brokering-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-14-security-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-15-keycloak-administration
+mkdir -p content/courses/keycloak-basic/lesson-16-custom-themes-and-providers-of-keycloak
+mkdir -p content/courses/keycloak-basic/lesson-17-keycloak-deployment-practices
+mkdir -p content/courses/keycloak-basic/lesson-18-extending-keycloak
+

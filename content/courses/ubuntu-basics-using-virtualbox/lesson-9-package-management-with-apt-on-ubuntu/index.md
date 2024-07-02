@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-9-package-management-wit
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 9 - Quản lý Packages với APT
+title: Lesson 9 - Quản lý Packages với APT trên Ubuntu
 description: Trong bài học này, chúng ta sẽ tìm hiểu cách quản lý các gói phần mềm trên Ubuntu Server bằng APT, một công cụ quản lý gói phổ biến trên các hệ điều hành dựa trên Debian, bao gồm Ubuntu.
 date: 2024-06-29T01:24:30.000Z
 weight: 9

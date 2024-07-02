@@ -9,7 +9,7 @@ series:
 tags:
   - ubuntu-server
   - virtualbox
-title: Lesson 6 - Quản Lý Người Dùng và Nhóm
+title: Lesson 6 - Quản Lý Người Dùng và Nhóm trên Ubuntu
 description: Học cách quản lý người dùng và nhóm trên Ubuntu Server để tạo, sửa đổi và xóa người dùng, cũng như gán quyền truy cập cho người dùng trong hệ thống.
 date: 2024-06-28T10:24:30-09:00
 weight: 6

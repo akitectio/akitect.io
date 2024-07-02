@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-7-managing-services-and-
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 7 - Managing Services and Processes
+title: Lesson 7 - Managing Services and Processes on Ubuntu
 description: Learn how to manage services and processes on Ubuntu Server to start, stop, and manage services, as well as view and manage running processes on the system.
 date: 2024-06-28T19:24:30.000Z
 weight: 7

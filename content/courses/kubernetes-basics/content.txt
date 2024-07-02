@@ -1,102 +1,187 @@
-### Khóa Học: Kubernetes Basics
+## **Khóa học cơ bản về Kubernetes**
 
-#### Bài 1: Giới Thiệu về Kubernetes
-- **Mục tiêu**: Hiểu được khái niệm cơ bản về Kubernetes và tầm quan trọng của nó trong quản lý container.
-- **Nội dung**:
-  - Giới thiệu về Kubernetes: Lịch sử và phát triển.
-  - Các khái niệm cơ bản: Pod, Node, Cluster.
-  - Lợi ích của Kubernetes trong việc triển khai và quản lý ứng dụng.
+### **Phần 1: Giới thiệu về Kubernetes**
 
-#### Bài 2: Kiến Trúc Kubernetes
-- **Mục tiêu**: Hiểu được kiến trúc tổng thể của Kubernetes.
-- **Nội dung**:
-  - Thành phần chính của Kubernetes: Master Node, Worker Node.
-  - Các dịch vụ quan trọng: API Server, Scheduler, Controller Manager, Kubelet, Kube-proxy.
-  - Networking trong Kubernetes.
+#### **Bài 1: Kubernetes là gì?**
+- **Định nghĩa và Mục đích:**
+  - Kubernetes là một hệ thống mã nguồn mở để tự động triển khai, mở rộng và quản lý các ứng dụng container.
+- **Lịch sử và Sự phát triển:**
+  - Được phát triển bởi Google, hiện tại được duy trì bởi Cloud Native Computing Foundation (CNCF).
 
-#### Bài 3: Cài Đặt Kubernetes
-- **Mục tiêu**: Thiết lập và cấu hình một cluster Kubernetes.
-- **Nội dung**:
-  - Các phương pháp cài đặt: Minikube, kubeadm, kops.
-  - Hướng dẫn cài đặt Kubernetes trên máy tính cá nhân với Minikube.
-  - Kiểm tra và xác minh cluster Kubernetes đã cài đặt.
+#### **Bài 2: Lợi ích của việc sử dụng Kubernetes**
+- **Khả năng mở rộng:**
+  - Tự động mở rộng số lượng container theo nhu cầu tải.
+- **Khả năng sẵn sàng cao:**
+  - Đảm bảo ứng dụng luôn sẵn sàng ngay cả khi một số container hoặc node bị lỗi.
+- **Hiệu quả tài nguyên:**
+  - Sử dụng tài nguyên máy chủ một cách tối ưu thông qua việc đóng gói và triển khai container.
 
-#### Bài 4: Làm Việc với Pods
-- **Mục tiêu**: Hiểu và làm việc với các Pods trong Kubernetes.
-- **Nội dung**:
-  - Định nghĩa Pod và vai trò của nó trong Kubernetes.
-  - Tạo và quản lý Pods bằng cách sử dụng kubectl.
-  - Thực hành tạo các Pods đơn giản.
+### **Phần 2: Kiến trúc Kubernetes**
 
-#### Bài 5: Deployments và ReplicaSets
-- **Mục tiêu**: Quản lý và triển khai ứng dụng với Deployments và ReplicaSets.
-- **Nội dung**:
-  - Giới thiệu về Deployments và ReplicaSets.
-  - Tạo và cập nhật Deployments.
-  - Quản lý số lượng bản sao của ứng dụng với ReplicaSets.
+#### **Bài 3: Các khái niệm cơ bản**
+- **Nodes:**
+  - Máy chủ chạy các container.
+- **Clusters:**
+  - Tập hợp các node, bao gồm master node và worker node.
 
-#### Bài 6: Services và Networking
-- **Mục tiêu**: Hiểu về networking trong Kubernetes và cách cấu hình Services.
-- **Nội dung**:
-  - Giới thiệu về Services trong Kubernetes.
-  - Các loại Services: ClusterIP, NodePort, LoadBalancer.
-  - Tạo và quản lý Services để cung cấp mạng cho Pods.
+#### **Bài 4: Các thành phần của Kubernetes**
+- **Thành phần Master:**
+  - API Server: Giao tiếp với các thành phần khác và xử lý các yêu cầu API.
+  - etcd: Lưu trữ dữ liệu cấu hình và trạng thái của cluster.
+  - Controller Manager: Giám sát trạng thái của các node và pods.
+  - Scheduler: Chọn node phù hợp để chạy các pods.
+- **Thành phần Node:**
+  - Kubelet: Quản lý các pods trên node.
+  - Kube-proxy: Quản lý mạng giữa các pods.
+  - Container Runtime: Chạy các container (ví dụ: Docker, containerd).
 
-#### Bài 7: ConfigMaps và Secrets
-- **Mục tiêu**: Quản lý cấu hình và dữ liệu nhạy cảm trong Kubernetes.
-- **Nội dung**:
-  - Giới thiệu về ConfigMaps và Secrets.
-  - Tạo và sử dụng ConfigMaps để quản lý cấu hình ứng dụng.
-  - Bảo mật dữ liệu nhạy cảm với Secrets.
+#### **Bài 5: Hiểu về Pods**
+- **Định nghĩa:**
+  - Đơn vị triển khai nhỏ nhất trong Kubernetes.
+- **Vòng đời:**
+  - Từ khi tạo đến khi bị xóa.
+- **Mẫu Pod:**
+  - Định nghĩa cấu hình cho pods, bao gồm container image, volume, v.v.
 
-#### Bài 8: Persistent Storage
-- **Mục tiêu**: Hiểu và cấu hình lưu trữ trong Kubernetes.
-- **Nội dung**:
-  - Giới thiệu về Persistent Volumes (PVs) và Persistent Volume Claims (PVCs).
-  - Cấu hình và sử dụng PV và PVC trong ứng dụng.
-  - Quản lý lưu trữ lâu dài cho các ứng dụng trong Kubernetes.
+### **Phần 3: Cài đặt Kubernetes**
 
-#### Bài 9: Quản Lý Tài Nguyên và Autoscaling
-- **Mục tiêu**: Quản lý tài nguyên trong Kubernetes và cấu hình autoscaling.
-- **Nội dung**:
-  - Quản lý tài nguyên với Resource Quotas và Limits.
-  - Cấu hình Horizontal Pod Autoscaler (HPA) để tự động điều chỉnh số lượng Pods.
-  - Thực hành cấu hình autoscaling cho ứng dụng.
+#### **Bài 6: Cài đặt Minikube**
+- **Các bước cài đặt cho các hệ điều hành khác nhau:**
+  - Windows, macOS, Linux.
+- **Thực hành:**
+  - Tải về và cài đặt Minikube.
+  - Khởi động Minikube và chạy cluster đầu tiên.
 
-#### Bài 10: Giám Sát và Ghi Nhận Log
-- **Mục tiêu**: Thiết lập giám sát và quản lý log trong Kubernetes.
-- **Nội dung**:
-  - Giới thiệu về các công cụ giám sát và log trong Kubernetes: Prometheus, Grafana, EFK stack (Elasticsearch, Fluentd, Kibana).
-  - Cấu hình giám sát và cảnh báo với Prometheus và Grafana.
-  - Quản lý và phân tích log với EFK stack.
+#### **Bài 7: Thiết lập Cluster Kubernetes**
+- **Sử dụng kubeadm:**
+  - Cài đặt kubeadm, kubelet và kubectl.
+  - Khởi tạo cluster bằng kubeadm.
+- **Các nhà cung cấp đám mây (GKE, EKS, AKS):**
+  - Thiết lập cluster trên Google Kubernetes Engine (GKE).
+  - Thiết lập cluster trên Amazon Elastic Kubernetes Service (EKS).
+  - Thiết lập cluster trên Azure Kubernetes Service (AKS).
 
-#### Bài 11: Bảo Mật trong Kubernetes
-- **Mục tiêu**: Hiểu và áp dụng các biện pháp bảo mật trong Kubernetes.
-- **Nội dung**:
-  - Bảo mật Cluster: Network Policies, Role-Based Access Control (RBAC).
-  - Bảo mật ứng dụng: Security Context, Pod Security Policies.
-  - Thực hành cấu hình bảo mật cho cluster và ứng dụng.
+#### **Bài 8: Kubernetes CLI (kubectl)**
+- **Các lệnh cơ bản:**
+  - `kubectl get`, `kubectl describe`, `kubectl create`, `kubectl apply`, `kubectl delete`.
+- **Cấu hình:**
+  - Thiết lập file cấu hình `kubeconfig`.
+  - Quản lý nhiều cluster với kubectl.
 
-#### Bài 12: CI/CD với Kubernetes
-- **Mục tiêu**: Triển khai tích hợp liên tục (CI) và phân phối liên tục (CD) với Kubernetes.
-- **Nội dung**:
-  - Giới thiệu về CI/CD và vai trò của Kubernetes.
-  - Cấu hình Jenkins, GitLab CI, hoặc các công cụ CI/CD khác với Kubernetes.
-  - Thực hành triển khai CI/CD pipeline cho ứng dụng.
+### **Phần 4: Làm việc với các tài nguyên Kubernetes**
 
-#### Bài 13: API Gateway trong Kubernetes
-- **Mục tiêu**: Hiểu và cấu hình API Gateway trong Kubernetes để quản lý và điều phối lưu lượng truy cập.
-- **Nội dung**:
-  - Giới thiệu về API Gateway: Khái niệm và vai trò trong hệ thống Kubernetes.
-  - Các tùy chọn API Gateway phổ biến: NGINX, Traefik, Istio.
-  - Cấu hình và triển khai một API Gateway trong Kubernetes.
-  - Thực hành cấu hình API Gateway để điều phối lưu lượng truy cập đến các dịch vụ backend.
+#### **Bài 9: Deployments**
+- **Tạo và Quản lý Deployments:**
+  - Tạo Deployment từ file YAML.
+  - Cập nhật Deployment và thay đổi phiên bản container.
+- **Cập nhật và Khôi phục:**
+  - Thực hiện rolling updates.
+  - Khôi phục phiên bản trước.
 
-### Tổng Kết
-- **Mục tiêu**: Ôn tập và củng cố kiến thức đã học trong khóa học.
-- **Nội dung**:
-  - Tóm tắt các khái niệm và kỹ năng đã học.
-  - Thực hành triển khai một dự án thực tế sử dụng Kubernetes.
-  - Đánh giá và trả lời câu hỏi của học viên.
+#### **Bài 10: Services**
+- **Các loại Service:**
+  - ClusterIP: Giao tiếp nội bộ trong cluster.
+  - NodePort: Mở cổng trên mỗi node để truy cập từ bên ngoài.
+  - LoadBalancer: Tự động cấu hình load balancer (dùng cho các cloud providers).
+- **Khám phá Service:**
+  - Sử dụng DNS để tìm và truy cập các services.
 
-Khóa học này sẽ giúp học viên hiểu rõ các khái niệm cơ bản của Kubernetes, từ cài đặt và cấu hình đến triển khai và quản lý ứng dụng. Mỗi bài học sẽ kèm theo các bài tập thực hành để học viên có thể áp dụng kiến thức vào thực tế.
+#### **Bài 11: ConfigMaps và Secrets**
+- **Quản lý cấu hình:**
+  - Tạo và sử dụng ConfigMap để lưu trữ cấu hình không nhạy cảm.
+- **Lưu trữ an toàn dữ liệu nhạy cảm:**
+  - Tạo và sử dụng Secrets để lưu trữ dữ liệu nhạy cảm như mật khẩu, keys.
+
+### **Phần 5: Mở rộng và Giám sát**
+
+#### **Bài 12: Mở rộng ứng dụng**
+- **Tự động mở rộng Pod ngang:**
+  - Cấu hình Horizontal Pod Autoscaler (HPA).
+- **Mở rộng thủ công:**
+  - Sử dụng `kubectl scale`.
+
+#### **Bài 13: Giám sát và Ghi log**
+- **Prometheus:**
+  - Thiết lập Prometheus để giám sát.
+- **Grafana:**
+  - Cấu hình Grafana để hiển thị dữ liệu từ Prometheus.
+- **EFK Stack (Elasticsearch, Fluentd, Kibana):**
+  - Thiết lập EFK để ghi và tìm kiếm log.
+
+### **Phần 6: Mạng trong Kubernetes**
+
+#### **Bài 14: Mô hình mạng của Kubernetes**
+- **Giao tiếp giữa các Pod:**
+  - Cấu hình mạng để các pod có thể giao tiếp với nhau.
+- **Giao tiếp giữa các Service:**
+  - Sử dụng ClusterIP và DNS để tìm và giao tiếp với services khác.
+
+#### **Bài 15: Chính sách mạng**
+- **Tạo và Áp dụng Chính sách mạng:**
+  - Định nghĩa và áp dụng Network Policy để kiểm soát lưu lượng mạng giữa các pod.
+
+### **Phần 7: Lưu trữ trong Kubernetes**
+
+#### **Bài 16: Persistent Volumes (PVs) và Persistent Volume Claims (PVCs)**
+- **Cấp phát động và Cấp phát tĩnh:**
+  - Tạo và quản lý PV và PVC.
+- **Thực hành:**
+  - Tạo Persistent Volume và Persistent Volume Claim.
+  - Sử dụng PVC trong Pod.
+
+#### **Bài 17: Storage Classes**
+- **Quản lý các loại lưu trữ khác nhau:**
+  - Định nghĩa và sử dụng Storage Classes để quản lý loại lưu trữ động.
+
+### **Phần 8: Các chủ đề nâng cao**
+
+#### **Bài 18: Helm**
+- **Giới thiệu về Helm:**
+  - Công cụ quản lý gói cho Kubernetes.
+- **Quản lý gói với Helm Charts:**
+  - Cài đặt và sử dụng Helm.
+  - Tạo và quản lý Helm Charts.
+
+#### **Bài 19: RBAC (Kiểm soát truy cập dựa trên vai trò)**
+- **Tạo Vai trò và Ràng buộc vai trò:**
+  - Định nghĩa và áp dụng các role và role binding.
+
+#### **Bài 20: Custom Resource Definitions (CRDs)**
+- **Mở rộng API của Kubernetes:**
+  - Tạo và quản lý Custom Resources.
+
+### **Phần 9: Thực hành**
+
+#### **Bài 21: Triển khai một ứng dụng mẫu**
+- **Hướng dẫn từng bước:**
+  - Tạo file YAML cho Deployment, Service và ConfigMap.
+  - Triển khai ứng dụng trên Kubernetes.
+
+#### **Bài 22: Quản lý Deployments**
+- **Mở rộng và cập nhật ứng dụng:**
+  - Thực hiện các thao tác mở rộng và cập nhật Deployment.
+  - Khôi phục phiên bản trước khi có lỗi.
+
+#### **Bài 23: Thiết lập Giám sát và Cảnh báo**
+- **Sử dụng Prometheus và Grafana:**
+  - Thiết lập và cấu hình giám sát và cảnh báo cho ứng dụng.
+
+### **Phần 10: Dự án cuối khóa**
+
+#### **Bài 24: Kịch bản thực tế**
+- **Học viên thiết lập và quản lý một cluster Kubernetes:**
+  - Xây dựng từ đầu một hệ thống ứng dụng phức tạp trên Kubernetes.
+  - Đảm bảo hệ thống hoạt động ổn định và có khả năng mở rộng.
+
+#### **Bài 25: Trình bày Dự án**
+- **Thể hiện Hiểu biết và Triển khai:**
+  - Học viên trình bày về dự án, giải thích các quyết định kỹ thuật và bài học kinh nghiệm.
+
+### **Tài nguyên bổ sung**
+- **Tài liệu và Sách:**
+  - Kubernetes Documentation, Kubernetes Up and Running, Kubernetes in Action.
+- **Khóa học và Hướng dẫn trực tuyến:**
+  - Kubernetes Academy, Udemy, Coursera.
+- **Cộng đồng và Hỗ trợ:**
+  - Stack Overflow, Kubernetes Slack Channel, CNCF Kubernetes Community.
+

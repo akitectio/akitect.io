@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-8-network-configuration.
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 8 - Cấu Hình Mạng
+title: Lesson 8 - Cấu Hình Mạng trên Ubuntu
 description: Học cách cấu hình mạng trên Ubuntu Server để kết nối máy ảo với mạng nội bộ và Internet. Chúng ta sẽ tìm hiểu cách cấu hình IP tĩnh và động, cấu hình DNS, và kiểm tra kết nối mạng.
 date: 2024-06-28T19:24:30.000Z
 weight: 8

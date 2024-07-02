@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-6-user-and-group-managem
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 6 - User and Group Management
+title: Lesson 6 - User and Group Management on Ubuntu
 description: In this lesson, we will learn how to manage users and groups in the Linux system. Managing users and groups is an important part of ensuring security and organization in the system. We will learn how to create and manage users, manage groups, and set access permissions using basic commands such as `adduser`, `deluser`, `usermod`, `groupadd`, `groupdel`, `groupmod`, `chmod`, `chown`, and `chgrp`.
 date: 2024-06-28T19:24:30.000Z
 weight: 6

@@ -5,7 +5,7 @@ images: [/courses/ubuntu-basics-using-virtualbox/lesson-9-package-management-wit
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 series: [ubuntu-basics-using-virtualbox]
 tags: [ubuntu-server, virtualbox]
-title: Lesson 9 - Managing Packages with APT
+title: Lesson 9 - Managing Packages with APT on Ubuntu
 description: In this lesson, we will learn how to manage software packages on an Ubuntu Server using APT, a popular package management tool on Debian-based operating systems, including Ubuntu, that helps you install, update, and remove software efficiently.
 date: 2024-06-29T01:24:30.000Z
 weight: 9
