@@ -202,6 +202,8 @@ Lesson 16 - Custom Themes and Providers of Keycloak
 Lesson 17 - Keycloak Deployment Practices
 Lesson 18 - Extending Keycloak
 
+vẽ hình banner 
+Lesson 6 - Roles of Keycloak
 
 mkdir -p content/courses/keycloak-basic/lesson-1-overview-of-keycloak
 mkdir -p content/courses/keycloak-basic/lesson-2-installing-keycloak
