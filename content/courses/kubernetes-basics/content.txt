@@ -185,3 +185,5 @@
 - **Cộng đồng và Hỗ trợ:**
   - Stack Overflow, Kubernetes Slack Channel, CNCF Kubernetes Community.
 
+
+lesson-01-what-is-kubernetes.md
