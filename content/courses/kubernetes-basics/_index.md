@@ -8,7 +8,7 @@ deprecated: true
 featuredImage: /courses/banner/kubernetes-basic.webp
 lastmod: 2024-07-08T19:23:30.000Z
 author: DUY TRAN
-draft: false
+draft: true
 ---
 
 ## Các bài học về Cơ bản về Kubernetes
