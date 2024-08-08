@@ -18,11 +18,11 @@ anonymizeIP = true
 
 
 [[social]]
-href = "https://www.facebook.com/akitect.io"
+href = "https://www.facebook.com/duydev"
 icon = "fab fa-facebook"
 
 [[social]]
-href = "https://www.linkedin.com/in/akitect-io"
+href = "https://www.linkedin.com/in/duydev"
 icon = "fab fa-linkedin"
 
 [[social]]
@@ -33,9 +33,9 @@ icon = "fab fa-youtube"
 href = "https://github.com/akitectio"
 icon = "fab fa-github"
 
-[[social]]
-href = "https://t.me/+i45gRt8FGyRkOGY1"
-icon = "fab fa-telegram"
+# [[social]]
+# href = "https://t.me/+i45gRt8FGyRkOGY1"
+# icon = "fab fa-telegram"
 
 [home]
 avatar = "/avatar.jpg"
