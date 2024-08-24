@@ -1,6 +1,10 @@
+[nav]
+logo="/logo.webp"
+text="Akitect.io"
+
 [google_adsense]
-# url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
-url = ""
+url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342139522924885"
+# url = ""
 
 [google_new]
 hide = false
@@ -33,14 +37,14 @@ icon = "fab fa-youtube"
 href = "https://github.com/akitectio"
 icon = "fab fa-github"
 
-# [[social]]
-# href = "https://t.me/+i45gRt8FGyRkOGY1"
-# icon = "fab fa-telegram"
+[[social]]
+href = "https://t.me/+i45gRt8FGyRkOGY1"
+icon = "fab fa-telegram"
 
 [home]
 avatar = "/avatar.jpg"
-title = "Hello Everyone!"
-description = " I'm Duy, a lover of technology, programming,solution architect and everything related to IT."
+name = "DUY TRAN"
+description = "Hello Everyone! I'm Duy, a lover of technology, programming,solution architect and everything related to IT."
 
 [courses]
 seo_image = "/courses.webp"

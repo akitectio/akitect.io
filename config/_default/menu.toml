@@ -13,3 +13,8 @@ weight = 2
 name = "Thực chiến"
 pageRef = "/courses"
 weight = 3
+
+# [[main]]
+# name = "AI"
+# pageRef = "/ai"
+# weight = 4
