@@ -10,11 +10,12 @@ pageRef = "/labs"
 weight = 2
 
 [[main]]
-name = "Courses"
-pageRef = "/courses"
+name = "AI"
+pageRef = "/ai"
 weight = 3
 
-# [[main]]
-# name = "AI"
-# pageRef = "/ai"
-# weight = 4
+[[main]]
+name = "Courses"
+pageRef = "/courses"
+weight = 4
+

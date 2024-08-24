@@ -6,3 +6,7 @@ description = "A collection of experiments and prototypes."
 [courses]
 title = "Courses"
 description = "A place to share practical knowledge and experience"
+
+[ai]
+title = "AI - Artificial Intelligence"
+description = "The blog category provides updated information and practical applications of AI."

@@ -10,10 +10,4 @@ lastmod: 2024-06-30T19:23:30.000Z
 author: DUY TRAN
 ---
 
-Keycloak is an open-source solution for managing and authenticating users. In this course, we will learn about Keycloak, how to install and configure Keycloak on Ubuntu Linux, helping you manage and authenticate users easily and effectively.
 
-## Objectives
-
--   Understand Keycloak and how to use it to manage and authenticate users
--   Know how to install and configure Keycloak on Ubuntu Linux
--   Understand OAuth 2.0 and OpenID Connect
