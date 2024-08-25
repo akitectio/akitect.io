@@ -3,8 +3,8 @@ categories: [llamaindex]
 date: 2024-08-21T23:52:11+0700
 description: Trong bài học này, bạn sẽ khám phá cách tích hợp các Mô hình Ngôn ngữ Lớn (LLM) trong LlamaIndex. Bạn sẽ học cách tận dụng LLM cho các tác vụ như hoàn thành văn bản và AI trò chuyện, cùng với cách sử dụng LLM như các mô-đun độc lập hoặc tích hợp vào các thành phần khác của LlamaIndex như lập chỉ mục và truy vấn. Bài học cũng bao gồm các khái niệm quan trọng như mã hóa token và cung cấp các ví dụ chi tiết, giúp bạn khai thác tối đa tiềm năng của LLM trong các ứng dụng của mình.
 draft: false
-featuredImage: /ai/llamaindex-from-basics-to-advanced/lesson-2-models-in-lamaIndex.webp
-images: [/ai/llamaindex-from-basics-to-advanced/lesson-2-models-in-lamaIndex.webp]
+featuredImage: /ai/llamaindex-from-basics-to-advanced/lesson-2-llm-in-lamaIndex.webp
+images: [/ai/llamaindex-from-basics-to-advanced/lesson-2-llm-in-lamaIndex.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags: [LlamaIndex]
 title: Lesson 2 - LLM Trong LLamaIndex
