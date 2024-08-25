@@ -7,7 +7,7 @@ featuredImage: /ai/llamaindex-from-basics-to-advanced/lesson-3-embeddings-in-lam
 images: [/ai/llamaindex-from-basics-to-advanced/lesson-3-embeddings-in-lamaIndex.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags: [LlamaIndex, embeddings]
-title: lesson 3 - Embeddings trong LLamaIndex
+title: Lesson 3 - Embeddings trong LLamaIndex
 weight: 3
 ---
 

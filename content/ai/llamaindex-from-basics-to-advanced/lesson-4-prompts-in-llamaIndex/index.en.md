@@ -1,6 +1,6 @@
 ---
 categories: [llamaindex]
-date: 2024-08-22T23:52:11+0700
+date: 2024-08-23T23:52:11+0700
 description: Prompts in LlamaIndex explores how prompts guide Large Language Models (LLMs) in tasks like indexing, querying, and response generation. This lesson teaches you how to customize prompts to enhance the precision and flexibility of your LLM applications.
 draft: false
 featuredImage: /ai/llamaindex-from-basics-to-advanced/lesson-4-prompts-in-llamaIndex.webp

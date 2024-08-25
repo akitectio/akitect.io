@@ -1,6 +1,6 @@
 ---
 categories: [llamaindex]
-date: 2024-08-22T23:52:11+0700
+date: 2024-08-23T23:52:11+0700
 description: Prompts trong LlamaIndex tìm hiểu cách prompts hướng dẫn các Mô hình Ngôn ngữ Lớn (LLM) trong các tác vụ như lập chỉ mục, truy vấn và tạo phản hồi. Bài học này dạy bạn cách tùy chỉnh prompts để nâng cao độ chính xác và tính linh hoạt của ứng dụng LLM.
 draft: false
 featuredImage: /ai/llamaindex-from-basics-to-advanced/lesson-4-prompts-in-llamaIndex.webp
