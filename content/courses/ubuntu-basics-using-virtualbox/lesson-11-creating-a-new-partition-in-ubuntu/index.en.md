@@ -1,17 +1,15 @@
 ---
 categories: [Linux]
-date: 2023-12-04T00:00:00.000Z
-description: This post guides you on how to create a new partition in Ubuntu 22.04. The post includes steps from checking the hard disk partition, identifying the disk, creating a new partition, creating a Physical Volume, creating a mount point, checking the Volume Group (VG), creating a Logical Volume (LV), creating a File System, and finally mounting the Logical Volume. Each step is detailed with necessary commands and illustrative images.
+date: 2023-08-26T00:00:00.000Z
+description: This post guides you on how to create a new partition in Ubuntu . The post includes steps from checking the hard disk partition, identifying the disk, creating a new partition, creating a Physical Volume, creating a mount point, checking the Volume Group (VG), creating a Logical Volume (LV), creating a File System, and finally mounting the Logical Volume. Each step is detailed with necessary commands and illustrative images.
 draft: false
-featuredImage: /series/linux/disk/ubuntu/creating-a-new-partition-in-ubuntu-22-04.png
-images: [/series/linux/disk/ubuntu/creating-a-new-partition-in-ubuntu-22-04.png]
+featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-11-creating-a-new-partition-in-ubuntu.webp
+images: [/courses/ubuntu-basics-using-virtualbox/lesson-11-creating-a-new-partition-in-ubuntu.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags: [Ubuntu, hard-disk-partitioning, logical-volume, file-system, volume-group, physical-volume]
-title: Creating a new partition in Ubuntu 22.04
-weight: 2
+title: Lesson 11 - Creating a new partition in Ubuntu
+weight: 11
 ---
-
-{{< youtube "10Ox6s2DsZQ" >}}
 
 ## Step 1: Check the hard disk partition
 

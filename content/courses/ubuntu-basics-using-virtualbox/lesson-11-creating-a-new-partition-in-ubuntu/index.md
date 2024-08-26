@@ -1,17 +1,15 @@
 ---
 categories: [Linux]
-date: 2023-12-04T00:00:00.000Z
+date: 2023-08-26T00:00:00.000Z
 description: Bài viết này hướng dẫn cách tạo thêm một phân vùng mới trong Ubuntu 22.04. Bài viết bao gồm các bước từ việc kiểm tra phân vùng ổ cứng, xác định ổ đĩa, tạo phân vùng mới, tạo Physical Volume, tạo điểm gắn kết, kiểm tra Volume Group (VG), tạo Logical Volume (LV), tạo File System, và cuối cùng là gắn kết Logical Volume. Mỗi bước đều được hướng dẫn chi tiết kèm theo các lệnh cần thiết và hình ảnh minh họa.
 draft: false
-featuredImage: /series/linux/disk/ubuntu/creating-a-new-partition-in-ubuntu-22-04.png
-images: [/series/linux/disk/ubuntu/creating-a-new-partition-in-ubuntu-22-04.png]
+featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-11-creating-a-new-partition-in-ubuntu.webp
+images: [/courses/ubuntu-basics-using-virtualbox/lesson-11-creating-a-new-partition-in-ubuntu.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags: [Ubuntu, hard-disk-partitioning, logical-volume, file-system, volume-group, physical-volume]
-title: Tạo thêm một phân vùng mới trong Ubuntu 22.04
-weight: 2
+title: Lesson 11 - Tạo thêm một phân vùng mới trong Ubuntu
+weight: 11
 ---
-
-{{< youtube "10Ox6s2DsZQ" >}}
 
 ## Bước 1: Kiểm tra phân vùng ổ cứng
 

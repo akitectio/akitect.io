@@ -1,17 +1,15 @@
 ---
 categories: [Linux, ubuntu]
-date: 2023-10-26T00:00:00.000Z
+date: 2023-08-26T00:00:00.000Z
 description: LVM (Logical Volume Manager) là một công cụ trên hệ điều hành Linux cho phép quản lý ổ đĩa và phân vùng ổ đĩa một cách linh hoạt hơn. Thay vì phân chia ổ đĩa thành các phân vùng cố định, LVM cho phép tạo ra các phân vùng ảo (logical volume) có thể thay đổi kích thước, tạo ra nhiều khối lưu trữ nhỏ hơn để tận dụng tối đa không gian trống.
 draft: false
-featuredImage: /series/ubuntu-lvm.png
-images: [/extend-lvm-disk-tren-ubuntu-22-04/images/index.png, /series/ubuntu-lvm.png]
+featuredImage: /courses/ubuntu-basics-using-virtualbox/lesson-12-extend-lvm-disk.webp
+images: [/courses/ubuntu-basics-using-virtualbox/lesson-12-extend-lvm-disk.webp]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 tags: [extend-disk, lvm-ubuntu, extend-lvm, linux-command]
-title: Extend LVM Disk trên Linux Ubuntu 22.04
-weight: 1
+title: Lesson 12 - Extend LVM Disk trên Linux Ubuntu
+weight: 12
 ---
-
-{{< youtube "10Ox6s2DsZQ" >}}
 
 ## LVM là gì
 
