@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head" . }}
+  </head>
+  <body>
+
+    {{/* partial "header" . */}} {{ partial "navbar" . }}
+    <main>
+      {{if .Site.Params.google_adsense.url }}
+      <script
+        async
+        src="{{.Site.Params.google_adsense.url }}"
+        crossorigin="anonymous"
+      ></script>
+      <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-6342139522924885"
+      data-ad-slot="1533448916"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+      {{end}}
+      {{ block "main" . }}{{ end }}
+    
+    </main>
+    {{ partial "footer" . }}
+  </body>
+</html>

@@ -5,4 +5,4 @@ defaultContentLanguage = "vi"
 enableRobotsTXT = true
 
 # theme
-theme = "gohugo-courses"
+# theme = "gohugo-courses"

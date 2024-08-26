@@ -1,0 +1,212 @@
+{{ define "main" }}
+<style>
+  .search-bar {
+    width: 100%;
+    max-width: 580px;
+  }
+  .search-bar input[type="text"] {
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+  }
+
+  .profile-section {
+    background-color: #f8f9fa; /* Màu nền của phần profile */
+    padding: 20px; /* Đệm bên trong phần profile */
+    border-radius: 8px; /* Bo tròn các góc */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  }
+
+  .profile-image {
+    max-width: 200px; /* Hình ảnh profile tối đa chiều rộng */
+    border-radius: 2%; /* Bo tròn ảnh profile */
+  }
+
+  .social-icons a {
+    color: #333; /* Màu chữ của các icon xã hội */
+    font-size: 1.5rem; /* Cỡ chữ */
+  }
+
+  .social-icons a:hover {
+    color: #007bff; /* Màu chữ khi di chuột qua */
+  }
+
+  .tag {
+    margin-top: 10px; /* Khoảng cách giữa các tag */
+  }
+
+  .tag .badge {
+    background-color: #6c757d; /* Màu nền của tag */
+    color: #fff; /* Màu chữ của tag */
+    border: 1px solid #6c757d; /* Viền của tag */
+    padding: 5px 10px; /* Đệm bên trong tag */
+    margin-right: 5px; /* Khoảng cách giữa các tag */
+    border-radius: 4px; /* Bo tròn các góc của tag */
+  }
+
+  .tag .badge:hover {
+    background-color: #343a40; /* Màu nền của tag khi di chuột qua */
+    border-color: #343a40; /* Màu viền của tag khi di chuột qua */
+  }
+
+  .latest-articles {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+.job-listings {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    height: 400px;
+    overflow-y: scroll;
+}
+.profile-card {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+.text-new {
+  color: #49c486;
+}
+</style>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="latest-articles">
+          <h3>{{ i18n "latest" }} <span class="text-new">{{ i18n "articles" }}</span>.</h3>
+        <ul class="list-unstyled">
+            {{ $pages := sort .Site.RegularPages "Date" "desc" }}
+            {{ range first 8 $pages }}
+                  <li><a href="{{ .Permalink }}" class="text-decoration-none">{{ .Title }}</a><span class="text-muted small"> - {{ .Date | time.Format ":date_full" }}</span></li>
+              {{ end }}
+          </ul>
+      </div>
+  </div>
+    <div class="col-md-4">
+        <div class="profile-card mb-4">
+          <div class="d-flex align-items-center">
+            <img src="{{ .Site.Params.home.avatar }}" alt="Profile Image" class="rounded-circle m-3" width="50">
+              <h5 class="pl-1">{{ .Site.Params.home.name }}</h5>
+            </div> 
+            <p>{{ .Site.Params.home.description }}</p>
+            <div class="social-icons mt-3">
+              <!-- Use icons from a library such as Font Awesome or similar -->
+              {{ range .Site.Params.social }}
+              <a href="{{ .href }}" class="me-3">
+                <i class="{{ .icon }}"></i>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="container mt-0">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row align-items-center">
+        {{ range .Pages }}
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <a href="{{ .Permalink }}">
+              <img
+                src="{{ .Params.featuredImage }}"
+                class="img-fluid rounded"
+                alt="{{ .Title }}"
+              />
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a href="{{ .Permalink }}"  class="text-decoration-none text-dark"><h2>{{ .Title }} <small class="text-muted">({{ len .Pages }})</small></h2></a> 
+            <ul class="list-unstyled">
+              {{ range first 6 .Pages }}
+              <li><a href="{{ .Permalink }}" class="text-decoration-none">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+            <!-- Add "See more..." link if there are more than 6 child pages -->
+            {{ if gt (len .Pages) 6 }}
+            <a href="{{ .Permalink }}" class="text-decoration-none">
+              <span class="fw-bold text-primary">{{ i18n "seeMore" }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- content -->
+      <!-- <div class="row row-cols-1 row-cols-md-3 mt-4 ">
+      <div class="search-bar">
+        <div class="mb-3">
+          <input
+            type="text"
+            id="search-query"
+            class="form-control"
+            placeholder="Bạn cần giúp đỡ gì?"
+          />
+        </div>
+      </div>
+    </div> 
+    <div id="search-results" class="row"></div>
+    -->
+
+    
+    <!-- <div id="recent-posts">
+      <div class="recent-posts row">
+        {{ range sort .Site.RegularPages "Date" "desc" }}
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <a href="{{ .Permalink }}">
+                <img
+                  src="{{ .Params.featuredImage }}"
+                  class="card-img-top-home"
+                  alt="{{ .Title }}"
+                />
+              </a>
+              <h5 class="card-title mt-1">
+                <a class="link-a" href="{{ .Permalink }}">{{ .Title }} </a>
+              </h5>
+              <p class="card-text limited-text">{{ .Description }}</p>
+              <div class="tag">
+                {{ if and (.Params.tags) (gt (len .Params.tags) 0) }} {{ range
+                first 2 .Params.tags }} {{ $tagPage := $.Site.GetPage (printf
+                "/tags/%s" .) }}
+                <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
+                  <span
+                    class="badge bg-secondary"
+                    style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;"
+                  >
+                    #{{ . }}
+                  </span>
+                </a>
+                {{ end }} {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div> -->
+            
+  
+  
+        <!-- content -->
+      </div>
+  
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+
+
+  
+
+
+</div>
+{{ end }}

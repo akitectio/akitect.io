@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="container mt-4">
+  <!-- Check if the current page is a detailed course page -->
+  {{ if eq .Type "courses_detail" }}
+  <!-- Display the course title and description -->
+  <h1 class="text-center mb-4">{{ .Title }}</h1>
+  <div class="course-detail">{{ .Content }}</div>
+  <!-- Check for sub-pages and list them if any -->
+  {{ if .Pages }}
+  <h2 class="text-center mb-4">Lessons</h2>
+  <div class="row">
+    {{ range .Pages }}
+    <div class="col-md-4">
+       <a href="{{ .Permalink }}" >
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <a href="{{ .Permalink }}">
+            <img
+              src="{{ .Params.featuredImage }}"
+              class="card-img-top"
+              alt="{{ .Title }}"
+            />
+          </a>
+          {{ $titleParts := split .Title " - " }}
+          <h5 class="card-title mt-1">
+          <a class="link-a" href="{{ .Permalink }}">
+              <span class="highlighted-title">{{ index $titleParts 0 }}</span> - {{ index $titleParts 1 }} 
+          </a>
+          </h5>
+          <p class="card-text limited-text">{{ .Description }}</p>
+          {{ range .Params.tags }}
+          {{ $tagPage := $.Site.GetPage (printf "/tags/%s" .) }}
+          <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
+            <span class="badge bg-secondary" style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;">
+            #{{ . }}
+            </span>
+          </a>
+        {{ end }}
+        </a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }} {{ else }}
+  <!-- The existing code for the generic course listing -->
+  <h1 class="text-center mb-4">{{ .Site.Params.ai.Title }}</h1>
+  <p class="text-center text-muted mb-5">
+    {{ .Site.Params.ai.Description }}
+  </p>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{ range .Pages }}
+    <div class="col">
+      <div class="card h-100">
+        <a href="{{ .Permalink }}">
+          <img
+            src="{{ .Params.featuredImage }}"
+            class="card-img-top"
+            alt="{{ .Title }}"
+          />
+        </a>
+        <div class="card-body">
+          <a href="{{ .Permalink }}">
+            <h5 class="card-title">{{ .Title }}</h5>
+          </a> 
+          <p class="card-text">{{ .Description }}</p>
+          <p class="card-text">
+            <small class="text-muted">
+              {{ range .Params.tags }}
+              {{ $tagPage := $.Site.GetPage (printf "/tags/%s" .) }}
+              <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
+                <span class="badge bg-secondary" style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;">
+                #{{ . }}
+                </span>
+              </a>
+            {{ end }}
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,43 @@
+{{- $inner := .Inner | .Page.RenderString -}}
+
+{{- $iconMap := dict "note" "fas fa-pencil-alt fa-fw" -}}
+{{- $iconMap  = dict "abstract" "fas fa-list-ul fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "info" "fas fa-info-circle fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "tip" "fas fa-lightbulb fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "success" "fas fa-check-circle fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "question" "fas fa-question-circle fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "warning" "fas fa-exclamation-triangle fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "failure" "fas fa-times-circle fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "danger" "fas fa-skull-crossbones fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "bug" "fas fa-bug fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "example" "fas fa-list-ol fa-fw" | merge $iconMap -}}
+{{- $iconMap  = dict "quote" "fas fa-quote-right fa-fw" | merge $iconMap -}}
+
+
+{{- $type := "note" -}}
+{{- $title := "Note" -}}
+{{- $collapseId := "" -}}
+{{- $isOpen := true -}} 
+{{- if .IsNamedParams -}}
+    {{- $type = .Get "type" | default "note" -}}
+    {{- $title = .Get "title" | default (T $type) -}}
+    {{- $collapseId = printf "%s-%s" $type (sha1 (.Page.File.Path)) -}}
+    {{- $isOpen = .Get "open" | default true -}}  
+{{- else -}}
+    {{- $type = .Get 0 | default "note" -}}
+    {{- $title = .Get 1 | default (T $type) -}}
+    {{- $collapseId = printf "%s-%s" $type (sha1 (.Page.File.Path)) -}}
+{{- end -}}
+
+<div class="alert alert-{{ $type }} mb-3 admonition-block" role="alert">
+    <div class="admonition-header" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}" aria-expanded="true" aria-controls="{{ $collapseId }}">
+        <i class="{{ index $iconMap $type | default (index $iconMap "note") }}"></i>
+        <strong>{{ $title }}</strong>
+        <button class="btn btn-link text-decoration-none collapse-toggle">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <div id="{{ $collapseId }}" class="collapse {{ if $isOpen }} show {{ end }}">
+        {{ $inner }}
+    </div>
+</div>

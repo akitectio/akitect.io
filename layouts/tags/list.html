@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="container">
+  <h2 class="mb-4 mt-4 col-md-4" >
+    <span style="border: 1px solid;border-radius: 5px;padding: 5px;color: {{ .Params.color }}!important; background-color: {{ .Params.background }}!important;">{{ .Title }} </span>
+  </h2>
+  <p class="text-muted mb-5">
+    {{ .Description }}
+  </p>
+  <div class="row">
+    {{ range .Paginator.Pages }}
+    <div class="col-md-4">
+      <a href="{{ .Permalink }}" >
+     <div class="card mb-4 shadow-sm">
+       <div class="card-body">
+         <a href="{{ .Permalink }}">
+           <img
+             src="{{ .Params.featuredImage }}"
+             class="card-img-top"
+             alt="{{ .Title }}"
+           />
+         </a>
+         {{ $titleParts := split .Title " - " }}
+         <h5 class="card-title mt-1">
+         <a class="link-a" href="{{ .Permalink }}">
+             <span class="highlighted-title">{{ index $titleParts 0 }}</span> - {{ index $titleParts 1 }} 
+         </a>
+         </h5>
+         <p class="card-text limited-text">{{ .Description }}</p>
+         {{ range .Params.tags }}
+         {{ $tagPage := $.Site.GetPage (printf "/tags/%s" .) }}
+         <a href="{{ $.Page.Site.BaseURL }}tags/{{ . }}">
+           <span class="badge bg-secondary" style="border: 1px solid;color: {{ $tagPage.Params.color }}!important; background-color: {{ $tagPage.Params.background }}!important;">
+           #{{ . }}
+           </span>
+         </a>
+       {{ end }}
+       </a>
+       </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}" class="btn btn-primary">&larr; Newer</a>
+  {{ end }} {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}" class="btn btn-primary">Older &rarr;</a>
+  {{ end }}
+</div>
+{{ end }}
