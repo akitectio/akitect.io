@@ -30,7 +30,7 @@ Và có Virtual IP: `192.168.56.10`
 
 #### Bước 3: Cài đặt PostSgreSQL 16
 
-Trước khi cài đặt PGpool-II, bạn cần cài đặt PostgreSQL 16 trên tất cả các máy chủ. Bạn có thể tham khảo hướng dẫn sau: [Cài đặt PostgreSQL 16](/cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2204)
+Trước khi cài đặt PGpool-II, bạn cần cài đặt PostgreSQL 16 trên tất cả các máy chủ. Bạn có thể tham khảo hướng dẫn sau: [Cài đặt PostgreSQL 16](/labs/postgresql/16/install-ubuntu-22.04)
 
 Cài dặt PGpool-II trên máy chủ `server-01`, `server-02` và `server-03`,Bạn tham khảo hướng dẫn sau: [Cài đặt PGpool-II](/lesson-1-cai-dat-pgpool-ii-tren-ubuntu-22-04)
 

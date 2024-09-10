@@ -1,21 +1,18 @@
 ---
-categories:
-  - database
-date: 2024-02-22T08:00:00+08:00
+categories: [database]
+date: 2024-02-22T00:00:00.000Z
 draft: false
 featuredImage: /labs/postgresql/postgresql-16-replication.jpeg
-images:
-  - /labs/postgresql/postgresql-16-replication.jpeg
+images: [/labs/postgresql/postgresql-16-replication.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - replication 
-  - ubuntu
-title: Lesson 4 - PostgreSQL 16 Replication 
+tags: [database, replication, ubuntu]
+title: Lesson 4 - PostgreSQL 16 Replication
 url: /thiet-lap-postgresql-replication-huong-chi-tiet-tung-buoc
-description : PostgreSQL có tính năng sao chép tầng, cho phép sao chép dữ liệu từ DB này sang DB khác, tạo nhiều bản sao dữ liệu. Tính năng này giúp phân phối dữ liệu, đảm bảo dữ liệu mới nhất và hỗ trợ thay thế máy chủ chính.
+description: PostgreSQL có tính năng sao chép tầng, cho phép sao chép dữ liệu từ DB này sang DB khác, tạo nhiều bản sao dữ liệu. Tính năng này giúp phân phối dữ liệu, đảm bảo dữ liệu mới nhất và hỗ trợ thay thế máy chủ chính.
 weight: 4
 ---
+
+{{< youtube "BmXE69rMgT8" >}}
 
 ## PostgreSQL Replication (Sao Chép) là gì
 
@@ -23,27 +20,28 @@ PostgreSQL là một hệ thống quản lý cơ sở dữ liệu quan hệ mã 
 
 ## Kiến trúc cài đặt
 
-{{< figure src="./images/postgresql-16-replication.jpeg" >}}
+{{< figure src="./images/postgresql-16-replication.svg" >}}
 
 ## Chuẩn bị môi trường
 
 Trước khi bắt đầu ta cần chuẩn bị 3 máy chủ
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -----------------    | ------ | --- | ---- | ------------ |
-| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| IP            | Hostname    | vCPU   | RAM | DISK | OS           |
+| ------------- | ----------- | ------ | --- | ---- | ------------ |
+| 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 ## Cài đặt PostgreSQL 16
 
-[Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04](/cai-dat-va-bao-mat-postgresql-16-tren-ubuntu-2204) trên 3 máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
+[Cài đặt và bảo mật PostgreSQL 16 trên Ubuntu 22.04](/labs/postgresql/16/install-ubuntu-22.04) trên 3 máy chủ `pg-master` và `pg-slave-01`, `pg-slave-02`.
 
 Kiểm tra phiên bản PostgreSQL
 
 ```shell
 psql --version
 ```
+
 {{< figure src="./images/check-version-postgresql.png" >}}
 
 ## Cấu hình PostgreSQL 16 Replication
@@ -67,11 +65,11 @@ max_replication_slots = 10
 max_connections = 1000
 ```
 
-- `wal_level` là mức độ của các bản ghi WAL (Write-Ahead Log) mà máy chủ chính sẽ tạo ra. Mức độ này cần được thiết lập thành `replica` để cho phép máy chủ chính gửi bản ghi WAL đến máy chủ phụ.
+-   `wal_level` là mức độ của các bản ghi WAL (Write-Ahead Log) mà máy chủ chính sẽ tạo ra. Mức độ này cần được thiết lập thành `replica` để cho phép máy chủ chính gửi bản ghi WAL đến máy chủ phụ.
 
-- `max_replication_slots` là số lượng khe sao chép tối đa mà máy chủ chính có thể tạo ra. Khe sao chép là một cơ chế để giữ các bản sao của bản ghi WAL cho máy chủ phụ. Mức độ này cần được thiết lập thành `10` để cho phép máy chủ chính tạo ra tối đa 10 khe sao chép.
+-   `max_replication_slots` là số lượng khe sao chép tối đa mà máy chủ chính có thể tạo ra. Khe sao chép là một cơ chế để giữ các bản sao của bản ghi WAL cho máy chủ phụ. Mức độ này cần được thiết lập thành `10` để cho phép máy chủ chính tạo ra tối đa 10 khe sao chép.
 
-- `max_connections` là số lượng kết nối client tối đa mà máy chủ chính có thể chấp nhận. Mức độ này cần được thiết lập thành `1000` để cho phép máy chủ chính chấp nhận tối đa `1000` kết nối client.
+-   `max_connections` là số lượng kết nối client tối đa mà máy chủ chính có thể chấp nhận. Mức độ này cần được thiết lập thành `1000` để cho phép máy chủ chính chấp nhận tối đa `1000` kết nối client.
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
@@ -84,14 +82,13 @@ sudo nano /etc/postgresql/16/main/pg_hba.conf
 Thêm dòng sau vào cuối tệp:
 
 ```shell
-host    replication    replicator              192.168.56.12/32         md5
-host    replication    replicator              192.168.56.13/32         md5
+host    replication    replicator              192.168.50.12/32         md5
+host    replication    replicator              192.168.50.13/32         md5
 ```
 
 {{< figure src="./images/pg_hba.conf.jpg" >}}
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
-
 
 Tiếp theo, chúng ta sẽ tạo một user có quyền sao chép dữ liệu từ máy chủ `pg-master` sang máy chủ `pg-slave` . Đầu tiên, hãy đăng nhập vào máy chủ chính và mở `psql` console.
 
@@ -127,17 +124,18 @@ hot_standby = on
 
 Sau khi sửa xong, lưu và thoát tệp cấu hình.
 
-
 #### 2.1 : Stop PostgreSQL service
 
 ```shell
 sudo systemctl stop postgresql
 ```
+
 #### 2.2 : Xóa dữ liệu hiện tại của PostgreSQL
 
 ```shell
 sudo rm -rf /var/lib/postgresql/16/main
 ```
+
 #### 2.2 : Sao lưu dữ liệu từ máy chủ chính sang máy chủ phụ
 
 `pg-slave-01` gõ lệnh sau:

@@ -1,20 +1,17 @@
 ---
-categories:
-  - database
-date: 2024-02-22T08:00:00+08:00
+categories: [database]
+date: 2024-02-22T00:00:00.000Z
 draft: false
 featuredImage: /labs/postgresql/postgresql-16-replication.jpeg
-images:
-  - /labs/postgresql/postgresql-16-replication.jpeg
+images: [/labs/postgresql/postgresql-16-replication.jpeg]
 license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-tags:
-  - database
-  - replication 
-  - ubuntu
+tags: [database, replication, ubuntu]
 title: Lesson 4 - PostgreSQL 16 Replication Setup
 description: PostgreSQL has a layer replication feature, allowing data to be copied from one DB to another, creating multiple copies of data. This feature helps distribute data, ensure the latest data, and support replacing the primary server.
 weight: 4
 ---
+
+{{< youtube "BmXE69rMgT8" >}}
 
 ## What is PostgreSQL Replication
 
@@ -22,17 +19,17 @@ PostgreSQL is a flexible open-source relational database management system, know
 
 ## Installation Architecture
 
-{{< figure src="./images/postgresql-16-replication.jpeg" >}}
+{{< figure src="./images/postgresql-16-replication.svg" >}}
 
 ## Environment Preparation
 
 Before we start, we need to prepare 3 servers
 
-| IP           | Hostname             | vCPU   | RAM | DISK | OS           |
-| ------------ | -----------------    | ------ | --- | ---- | ------------ |
-| 192.168.50.11 | pg-master    | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.12 | pg-slave-01  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
-| 192.168.50.13 | pg-slave-02  | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| IP            | Hostname    | vCPU   | RAM | DISK | OS           |
+| ------------- | ----------- | ------ | --- | ---- | ------------ |
+| 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 
 ## Installing PostgreSQL 16
 
@@ -43,6 +40,7 @@ Check the PostgreSQL version
 ```shell
 psql --version
 ```
+
 {{< figure src="./images/check-version-postgresql.png" >}}
 
 ## Configuring PostgreSQL 16 Replication
@@ -66,11 +64,11 @@ max_replication_slots = 10
 max_connections = 1000
 ```
 
-- `wal_level` is the level of the WAL (Write-Ahead Log) records that the master server will generate. This level needs to be set to `replica` to allow the master server to send WAL records to the slave server.
+-   `wal_level` is the level of the WAL (Write-Ahead Log) records that the master server will generate. This level needs to be set to `replica` to allow the master server to send WAL records to the slave server.
 
-- `max_replication_slots` is the maximum number of replication slots that the master server can create. Replication slots are a mechanism to keep copies of WAL records for the slave server. This level needs to be set to `10` to allow the master server to create up to 10 replication slots.
+-   `max_replication_slots` is the maximum number of replication slots that the master server can create. Replication slots are a mechanism to keep copies of WAL records for the slave server. This level needs to be set to `10` to allow the master server to create up to 10 replication slots.
 
-- `max_connections` is the maximum number of client connections that the master server can accept. This level needs to be set to `1000` to allow the master server to accept up to 1000 client connections.
+-   `max_connections` is the maximum number of client connections that the master server can accept. This level needs to be set to `1000` to allow the master server to accept up to 1000 client connections.
 
 After editing, save and exit the configuration file.
 
@@ -83,8 +81,8 @@ sudo nano /etc/postgresql/16/main/pg_hba.conf
 Add the following lines to the end of the file:
 
 ```shell
-host    replication    replicator              192.168.56.12/32         md5
-host    replication    replicator              192.168.56.13/32         md5
+host    replication    replicator              192.168.50.12/32         md5
+host    replication    replicator              192.168.50.13/32         md5
 ```
 
 {{< figure src="./images/pg_hba.conf.jpg" >}}
@@ -111,6 +109,7 @@ Restart the PostgreSQL service
 ```shell
 sudo systemctl restart postgresql
 ```
+
 ### Step 2: Configure PostgreSQL Slave
 
 Next, we will configure the slave server to receive data from the master server. Open the PostgreSQL configuration file on the slave server with your favorite text editor.
@@ -133,11 +132,13 @@ After editing, save and exit the configuration file.
 ```shell
 sudo systemctl stop postgresql
 ```
+
 #### 2.2 : Delete current PostgreSQL data
 
 ```shell
 sudo rm -rf /var/lib/postgresql/16/main
 ```
+
 #### 2.2 : Backup data from the master server to the slave server
 
 On `postgresql-slave-01`, run the following command:

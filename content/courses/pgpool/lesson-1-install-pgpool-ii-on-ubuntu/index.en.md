@@ -15,18 +15,18 @@ weight: 1
 
 Pgpool-II is a unique middleware solution, specially designed to optimize and scale the capabilities of the PostgreSQL database management system. It offers numerous benefits such as connection optimization, load balancing, and data replication, making Pgpool-II an indispensable tool in managing PostgreSQL deployments. In this detailed guide, we will go through the steps to install and configure Pgpool-II on the Ubuntu Linux operating system, helping you maximize the performance and high availability of your database.
 
-# Installation Architecture
-
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
-
 Before we start, we need to prepare 4 servers
 
 | IP            | Hostname    | vCPU   | RAM | DISK | OS           |
 | ------------- | ----------- | ------ | --- | ---- | ------------ |
-| 192.168.50.10 | pgpool2     | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.10 | pgpool-ii   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+
+# Installation Architecture
+
+{{< figure src="./images/postgresql-pgpool.svg" >}}
 
 ### Install PostgreSQL Replication
 

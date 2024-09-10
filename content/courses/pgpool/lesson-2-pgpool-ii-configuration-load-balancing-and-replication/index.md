@@ -64,14 +64,14 @@ backend_data_directory0 = '/home/ubuntu/postgresql/master'
 backend_flag0 = 'ALLOW_TO_FAILOVER'
 backend_application_name0 = 'postgresql-master'
 
-backend_hostname1 = '192.168.56.12'
+backend_hostname1 = '192.168.50.12'
 backend_port1 = 5432
 backend_weight1 = 1
 backend_data_directory1 = '/home/ubuntu/postgresql/slave-01'
 backend_flag1 = 'ALLOW_TO_FAILOVER'
 backend_application_name1 = 'postgresql-slave-01'
 
-backend_hostname2 = '192.168.56.13'
+backend_hostname2 = '192.168.50.13'
 backend_port2 = 5432
 backend_weight2 = 2
 backend_data_directory2 = '/home/ubuntu/postgresql/slave-02'

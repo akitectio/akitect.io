@@ -15,18 +15,18 @@ weight: 1
 
 PGpool-II là một giải pháp trung gian độc đáo, được thiết kế đặc biệt để tối ưu hóa và mở rộng khả năng của hệ quản trị cơ sở dữ liệu PostgreSQL. Nó mang lại nhiều lợi ích như việc tối ưu hóa kết nối, phân phối tải đều và thực hiện sao chép dữ liệu, biến PGpool-II thành công cụ không thể thiếu trong quản lý các triển khai PostgreSQL. Trong hướng dẫn chi tiết này, chúng ta sẽ đi qua các bước để cài đặt và cấu hình PGpool-II trên hệ điều hành Ubuntu Linux, giúp bạn khai thác tối đa hiệu suất và tính sẵn sàng cao của cơ sở dữ liệu của mình.
 
-# Kiến trúc cài đặt
-
-{{< figure src="./images/postgresql-pgpool.jpeg" >}}
-
 Trước khi bắt đầu ta cần chuẩn bị 4 máy chủ
 
 | IP            | Hostname    | vCPU   | RAM | DISK | OS           |
 | ------------- | ----------- | ------ | --- | ---- | ------------ |
-| 192.168.50.10 | pgpool2     | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+| 192.168.50.10 | pgpool-ii   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.11 | pg-master   | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.12 | pg-slave-01 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
 | 192.168.50.13 | pg-slave-02 | 2 core | 4G  | 60G  | Ubuntu 22.04 |
+
+# Kiến trúc cài đặt
+
+{{< figure src="./images/postgresql-pgpool.svg" >}}
 
 ### Cài đặt PostgreSQL Replication
 
